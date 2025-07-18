@@ -129,31 +129,31 @@ Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,,,Golgari Graveyar
 Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,,,Golgari Graveyard
 Putrid Leech,Mixed,,common,BG,Creature - Zombie Leech,,2,,,Golgari Graveyard
 Undying Malice,Mixed,,common,B,Instant,,1,,,Golgari Graveyard
-Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Stompy
+Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Midrange
 Bloom Hulk,Mixed,,common,G,Creature - Plant Elemental,,4,,,Green Midrange
 Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,,,Green Midrange
-Fertile Ground,Mixed,,common,G,Enchantment - Aura,,2,,,Green Stompy
+Fertile Ground,Mixed,,common,G,Enchantment - Aura,,2,,,Green Midrange
 Grapple with the Past,Mixed,,common,G,Instant,,2,,,Green Midrange
-Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,,,Green Midrange
+Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,,,Green Stompy
 Longstalk Brawl,Mixed,,common,G,Sorcery,,1,,,Green Midrange
-Massive Might,Mixed,,common,G,Instant,,1,,,Green Midrange
-Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Green Midrange
-Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Midrange
+Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
+Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Green Stompy
+Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Stompy
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Midrange
-Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Big Creatures
+Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Stompy
 Generous Ent,Mixed,,common,G,Creature - Treefolk,,6,,,Green Big Creatures
 Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,,,Green Big Creatures
-Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,,,Green Big Creatures
+Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,,,Green Midrange
 Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,,,Green Big Creatures
 Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,,,Green Ramp
-Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Green Big Creatures
-Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Green Big Creatures
-Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,,,Green Big Creatures
+Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Control
+Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Gruul Aggro/Beatdown
+Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,,,Green Ramp
 Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,,,Green Big Creatures
-Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Big Creatures
-Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,,,Green Big Creatures
+Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Stompy
+Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,,,Green Ramp
 Arbor Elf,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Ramp
-Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,,,Green Midrange
+Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,,,Green Big Creatures
 Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Ramp
 Elvish Mystic,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Midrange
 Nyxborn Hydra,Mixed,,common,G,Enchantment Creature - Hydra,,1,,,Green Big Creatures
@@ -163,17 +163,17 @@ Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Green Ramp
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,,,Green Ramp
 Tuskguard Captain,Mixed,,common,G,Creature - Human Warrior,,3,,,Green Ramp
 Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,,,Green Ramp
-Annoyed Altisaur,Mixed,,common,G,Creature - Dinosaur,,7,,,Green Ramp
-Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,,,Green Stompy
-Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,,,Green Stompy
+Annoyed Altisaur,Mixed,,common,G,Creature - Dinosaur,,7,,,Green Big Creatures
+Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,,,Green Midrange
+Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,,,Green Midrange
 Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,,,Green Midrange
 Llanowar Elves,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Stompy
-Llanowar Visionary,Mixed,,common,G,Creature - Elf Druid,,3,,,Green Stompy
+Llanowar Visionary,Mixed,,common,G,Creature - Elf Druid,,3,,,Green Big Creatures
 Mother Bear,Mixed,,common,G,Creature - Bear,,2,,,Green Stompy
 Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,,,Green Stompy
 Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Green Stompy
 Yavimaya Elder,Mixed,,common,G,Creature - Human Druid,,3,,,Green Stompy
-You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Green Stompy
+You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Green Big Creatures
 Blastoderm,Mixed,,common,G,Creature - Beast,,4,,,Gruul Aggro/Beatdown
 Branching Bolt,Mixed,,common,RG,Instant,,3,,,Gruul Aggro/Beatdown
 Burning-Tree Emissary,Mixed,,common,RG,Creature - Human Shaman,,2,,,Gruul Aggro/Beatdown
@@ -182,11 +182,11 @@ Frenzied Goblin,Mixed,,common,R,Creature - Goblin Berserker,,1,,,Gruul Aggro/Bea
 Goblin Anarchomancer,Mixed,,common,GR,Creature - Goblin Shaman,,2,,,Gruul Aggro/Beatdown
 Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,,,Gruul Aggro/Beatdown
 Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Gruul Aggro/Beatdown
-Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,,,Gruul Aggro/Beatdown
+Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,,,Green Big Creatures
 Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,,,Gruul Aggro/Beatdown
 Bloodwater Entity,Mixed,,common,UR,Creature - Elemental,,3,,,Izzet Control
 Fireblast,Mixed,,common,R,Instant,,6,,,Red Aggro
-Improvised Club,Mixed,,common,R,Instant,,2,,,Izzet Control
+Improvised Club,Mixed,,common,R,Instant,,2,,,Red Artifacts
 Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Control
 Jackal Pup,Mixed,,common,R,Creature - Jackal,,1,,,Izzet Control
 Lightning Strike,Mixed,,common,R,Instant,,2,,,Izzet Control
@@ -211,10 +211,9 @@ Dauthi Horror,Mixed,,common,B,Creature - Dauthi Horror,,2,,,Rakdos Burn/Damage
 Death Denied,Mixed,,common,B,Instant - Arcane,,2,,,Rakdos Burn/Damage
 Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,,,Rakdos Burn/Damage
 Galvanic Discharge,Mixed,,common,R,Instant,,1,,,Red Burn
-Goblin Bushwhacker,Mixed,,common,R,Creature - Goblin Warrior,,2,,,Red Artifacts
 Hissing Iguanar,Mixed,,common,R,Creature - Lizard,,3,,,Rakdos Burn/Damage
 Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,,,Rakdos Burn/Damage
-Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Rakdos Burn/Damage
+Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Gruul Aggro/Beatdown
 Abrade,Mixed,,common,R,Instant,,2,,,Red Aggro
 Beetleback Chief,Mixed,,common,R,Creature - Goblin Warrior,,4,,,Red Aggro
 Burst Lightning,Mixed,,common,R,Instant,,1,,,Red Burn
@@ -226,10 +225,9 @@ Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Red Aggro
 Thriving Grubs,Mixed,,common,R,Creature - Gremlin,,2,,,Red Aggro
 Wrangle,Mixed,,common,R,Sorcery,,2,,,Red Aggro
 Yavimaya Steelcrusher,Mixed,,common,R,Creature - Ape Warrior,,2,,,Red Aggro
-Goblin Surprise,Mixed,,common,R,Instant,,3,,,Red Artifacts
-Hobblefiend,Mixed,,common,R,Creature - Devil,,2,,,Red Artifacts
+Hobblefiend,Mixed,,common,R,Creature - Devil,,2,,,Izzet Control
 Monastery Swiftspear,Mixed,,common,R,Creature - Human Monk,,1,,,Red Artifacts
-Oliphaunt,Mixed,,common,R,Creature - Elephant,,6,,,Red Artifacts
+Oliphaunt,Mixed,,common,R,Creature - Elephant,,6,,,Red Small Creatures
 Reckless Charge,Mixed,,common,R,Sorcery,,1,,,Red Artifacts
 Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Red Artifacts
 Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,,,Red Artifacts
@@ -248,7 +246,7 @@ Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,,,Red Burn
 Scholar of Combustion,Mixed,,common,R,Creature - Human Wizard,,4,,,Red Burn
 Skewer the Critics,Mixed,,common,R,Sorcery,,3,,,Red Burn
 Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,,,Red Burn
-Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,,,Red Small Creatures
+Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,,,Red Artifacts
 Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,,,Red Burn
 Fireball,Mixed,,common,R,Sorcery,,1,,,Red Small Creatures
 Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Burn
@@ -268,7 +266,7 @@ Soltari Trooper,Mixed,,common,W,Creature - Soltari Soldier,,2,,,Selesnya Control
 Unbounded Potential,Mixed,,common,W,Instant,,2,,,Selesnya Control
 Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,,,Selesnya Control
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Selesnya Control
-Bramble Wurm,Mixed,,common,G,Creature - Wurm,,7,,,Simic Control
+Bramble Wurm,Mixed,,common,G,Creature - Wurm,,7,,,Green Big Creatures
 Coiling Oracle,Mixed,,common,GU,Creature - Snake Elf Druid,,2,,,Simic Control
 Exclude,Mixed,,common,U,Instant,,3,,,Dimir Control
 Experiment One,Mixed,,common,G,Creature - Human Ooze,,1,,,Green Midrange
@@ -332,7 +330,7 @@ Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,,,Izzet Contro
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Burn/Damage
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Blue Flying
 Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,,,White Control
-Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,,,Green Ramp
+Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,,,Green Big Creatures
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Evasion/Flying
 Skybridge Towers,Mixed,,common,UW,Land,,0,,,Azorius Evasion/Flying
 Judge's Familiar,Mixed,,common,UW,Creature - Bird,,1,,,Azorius Evasion/Flying
@@ -340,8 +338,8 @@ Cavern Harpy,Mixed,,common,UB,Creature - Harpy Beast,,2,,,Dimir Control
 Waterfront District,Mixed,,common,BU,Land,,0,,,Dimir Control
 Dimir Aqueduct,Mixed,,common,BU,Land,,0,,,Dimir Control
 Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Burn/Damage
-Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Aggro/Beatdown
-Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Aggro/Beatdown
+Gruul Turf,Mixed,,common,RG,Land,,0,,,Rakdos Burn/Damage
+Racers' Ring,Mixed,,common,GR,Land,,0,,,Green Ramp
 Botanical Plaza,Mixed,,common,GW,Land,,0,,,Selesnya Control
 Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Selesnya Control
 Selesnya Sanctuary,Mixed,,common,WG,Land,,0,,,Selesnya Control
@@ -386,6 +384,8 @@ Boros Elite,Mixed,,common,W,Creature - Human Soldier,,1,,,White Aggro
 Borrowed Grace,Mixed,,common,W,Instant,,3,,,White Control
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,White Equipment
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,White Tokens
-Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,,,Green Ramp
+Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,,,Gruul Aggro/Beatdown
 Candy Trail,Mixed,,common,,Artifact - Food Clue,,1,,,Blue Card Draw
 Haunted Fengraf,Mixed,,common,Lands,Land,,0,,,Black Graveyard
+Iron Apprentice,Mixed,,common,,Artifact Creature - Construct,,1,,,Red Artifacts
+Scrapwork Mutt,Mixed,,common,,Artifact Creature - Dog,,2,,,Red Artifacts
