@@ -4,7 +4,7 @@ import pandas as pd
 
 def export_cube_to_csv(cube_df, oracle_df, filename=None):
     """
-    Export the cube to a CSV file with the same structure as ThePauperCube.csv
+    Export the cube to a CSV file with the same structure as JumpstartCube_ThePauperCube_ULTIMATE_Final.csv
     
     Parameters:
     - cube_df: The current cube dataframe
@@ -26,46 +26,31 @@ def export_cube_to_csv(cube_df, oracle_df, filename=None):
         card_name = card_row['Name']
         deck_name = card_row.get('Tags', '')
         
-        # Find card details in oracle
-        oracle_card = oracle_df[oracle_df['name'] == card_name]
+        # Find card details in oracle if needed
+        oracle_card = oracle_df[oracle_df['name'] == card_name] if 'name' in oracle_df.columns else pd.DataFrame()
         
-        if oracle_card.empty:
-            # Card not found in oracle, use cube data
-            export_row = {
-                'name': card_name,
-                'CMC': card_row.get('CMC', ''),
-                'Type': card_row.get('Type', ''),
-                'Color': '',
-                'Color Category': '',
-                'Oracle Text': '',
-                'tags': deck_name,  # Deck name goes in tags column
-                'MTGO ID': '',
-                'Power': '',
-                'Toughness': ''
-            }
-        else:
-            # Use oracle data
-            oracle_row = oracle_card.iloc[0]
-            export_row = {
-                'name': card_name,
-                'CMC': oracle_row.get('CMC', ''),
-                'Type': oracle_row.get('Type', ''),
-                'Color': oracle_row.get('Color', ''),
-                'Color Category': oracle_row.get('Color Category', ''),
-                'Oracle Text': oracle_row.get('Oracle Text', ''),
-                'tags': deck_name,  # Deck name goes in tags column
-                'MTGO ID': oracle_row.get('MTGO ID', ''),
-                'Power': oracle_row.get('Power', ''),
-                'Toughness': oracle_row.get('Toughness', '')
-            }
+        # Create export row matching JumpstartCube_ThePauperCube_ULTIMATE_Final.csv structure
+        export_row = {
+            'Name': card_name,
+            'Set': card_row.get('Set', 'Mixed'),  # Default to 'Mixed' like in the original file
+            'Collector Number': card_row.get('Collector Number', ''),
+            'Rarity': card_row.get('Rarity', 'common'),  # Default to 'common' like in the original file
+            'Color Identity': card_row.get('Color Identity', ''),
+            'Type': card_row.get('Type', ''),
+            'Mana Cost': card_row.get('Mana Cost', ''),
+            'CMC': card_row.get('CMC', ''),
+            'Power': card_row.get('Power', ''),
+            'Toughness': card_row.get('Toughness', ''),
+            'Tags': deck_name
+        }
         
         export_data.append(export_row)
     
     # Create dataframe and export
     export_df = pd.DataFrame(export_data)
     
-    # Ensure column order matches ThePauperCube.csv
-    column_order = ['name', 'CMC', 'Type', 'Color', 'Color Category', 'Oracle Text', 'tags', 'MTGO ID', 'Power', 'Toughness']
+    # Ensure column order matches JumpstartCube_ThePauperCube_ULTIMATE_Final.csv
+    column_order = ['Name', 'Set', 'Collector Number', 'Rarity', 'Color Identity', 'Type', 'Mana Cost', 'CMC', 'Power', 'Toughness', 'Tags']
     export_df = export_df[column_order]
     
     # Export to CSV
@@ -74,7 +59,7 @@ def export_cube_to_csv(cube_df, oracle_df, filename=None):
     print(f"✅ Successfully exported {len(export_df)} cards to {filename}")
     
     # Show summary statistics
-    deck_counts = export_df['tags'].value_counts()
+    deck_counts = export_df['Tags'].value_counts()
     print(f"\n📊 Export Summary:")
     print(f"Total cards: {len(export_df)}")
     print(f"Number of decks: {len(deck_counts)}")
@@ -117,7 +102,7 @@ def validate_export(filename, original_cube_df):
         
         # Check that all original cards are present
         original_cards = set(original_cube_df['Name'].tolist())
-        exported_cards = set(exported_df['name'].tolist())
+        exported_cards = set(exported_df['Name'].tolist())
         
         missing_cards = original_cards - exported_cards
         extra_cards = exported_cards - original_cards
@@ -133,7 +118,7 @@ def validate_export(filename, original_cube_df):
         
         # Check deck assignments
         original_assignments = original_cube_df.set_index('Name')['Tags'].to_dict()
-        exported_assignments = exported_df.set_index('name')['tags'].to_dict()
+        exported_assignments = exported_df.set_index('Name')['Tags'].to_dict()
         
         mismatched_assignments = 0
         for card in original_cards:
