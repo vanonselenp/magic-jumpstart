@@ -64,6 +64,26 @@ theme_criteria = {
         'utility_bonus': 2.0,   # High value on utility
         'evasion_bonus': 1.0    # Moderate evasion value
     },
+    'Midrange': {
+        'keywords': theme_keywords['Midrange'],
+        'abilities': ['enters', 'when', 'versatile', 'balanced', 'value'],
+        'stats_matter': True,   # Balanced approach to stats and utility
+        'utility_bonus': 1.5,   # Moderate value on utility
+        'evasion_bonus': 1.2,   # Moderate evasion value
+        'power_threshold': 2,   # Want decent sized creatures
+        'versatility_bonus': 2.0,  # High value on flexible cards
+        'removal_bonus': 1.5    # Bonus for removal effects
+    },
+    'Ramp': {
+        'keywords': theme_keywords['Ramp'],
+        'abilities': ['mana', 'land', 'search', 'add', 'put'],
+        'stats_matter': False,  # Utility over stats initially
+        'utility_bonus': 2.5,   # Very high value on ramp effects
+        'evasion_bonus': 0.5,   # Low evasion value
+        'big_creature_bonus': 2.0,  # High value on expensive creatures
+        'mana_acceleration_bonus': 3.0,  # Very high bonus for ramp
+        'cmc_scaling_bonus': 0.3  # Bonus scales with high CMC
+    },
     'Flying': {
         'keywords': theme_keywords['Flying'],
         'abilities': ['air', 'wing'],
@@ -143,6 +163,17 @@ theme_criteria = {
         'haste_bonus': 2.5,     # Haste is crucial for small aggro
         'efficient_stats_bonus': 1.5  # Bonus for power >= CMC
     },
+    'Tempo': {
+        'keywords': theme_keywords['Tempo'],
+        'abilities': ['enters', 'when', 'bounce', 'tap', 'return', 'flash'],
+        'stats_matter': True,   # Efficient creatures matter for tempo
+        'utility_bonus': 2.0,   # High value on utility effects
+        'evasion_bonus': 2.5,   # Very high value on evasion (flying, etc.)
+        'instant_speed_bonus': 2.0,  # High bonus for instant-speed effects
+        'bounce_bonus': 2.5,    # High bonus for bounce effects
+        'power_threshold': 1,   # Want creatures that can apply pressure
+        'efficient_stats_bonus': 1.5  # Bonus for efficient mana costs
+    },
     'Card Draw': {
         'keywords': theme_keywords['Card Draw'],
         'abilities': ['enters', 'when', 'draw', 'scry', 'look', 'search'],
@@ -151,6 +182,17 @@ theme_criteria = {
         'evasion_bonus': 1.0,   # Moderate evasion value
         'instant_speed_bonus': 1.5,  # Bonus for instant-speed effects
         'card_advantage_bonus': 3.0  # High bonus for drawing multiple cards
+    },
+    'Burn': {
+        'keywords': theme_keywords['Burn'],
+        'abilities': ['damage', 'deals', 'burn', 'direct', 'target'],
+        'stats_matter': True,   # Efficient creatures that deal damage
+        'utility_bonus': 1.5,   # Moderate utility value
+        'evasion_bonus': 1.8,   # High value on getting damage through
+        'direct_damage_bonus': 2.5,  # High bonus for direct damage spells
+        'instant_speed_bonus': 2.0,  # High bonus for instant-speed burn
+        'power_threshold': 1,   # Want creatures that can deal damage
+        'haste_bonus': 2.0      # High value on haste for immediate damage
     }
 }
 
