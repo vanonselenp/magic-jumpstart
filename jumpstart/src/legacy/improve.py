@@ -1,14 +1,14 @@
 from IPython.display import Markdown, display
 import pandas as pd
 
-from src.deck import calculate_card_theme_score, is_card_playable_in_colors, validate_jumpstart_deck_composition
+from src.legacy.deck import calculate_card_theme_score, is_card_playable_in_colors, validate_jumpstart_deck_composition
 
 
 def repair_cube_deck_sizes(cube_df, oracle_df):
     """
     Repair decks that have fewer than 13 cards by adding appropriate cards from oracle
     """
-    from src.deck import get_deck_colour, extract_theme_from_deck_name
+    from src.legacy.deck import get_deck_colour, extract_theme_from_deck_name
     
     updated_cube = cube_df.copy()
     assigned_cards = set(updated_cube['Name'].tolist())
@@ -410,7 +410,7 @@ def apply_swap(cube_df, deck_name, remove_cards, add_cards, oracle_df):
     Returns:
         Updated cube dataframe
     """
-    from src.deck import get_deck_colour, extract_theme_from_deck_name, validate_jumpstart_deck_composition
+    from src.legacy.deck import get_deck_colour, extract_theme_from_deck_name, validate_jumpstart_deck_composition
     
     print(f"Applying swap to {deck_name}: removing {remove_cards}, adding {add_cards}")
     
@@ -591,7 +591,7 @@ def find_replacement_card(oracle_df, current_cube_df, deck_name, deck_colors):
     Returns:
         Best replacement card data or None if no suitable card found
     """
-    from src.deck import extract_theme_from_deck_name
+    from src.legacy.deck import extract_theme_from_deck_name
     
     # Get cards already in the cube
     assigned_cards = set(current_cube_df['Name'].tolist())

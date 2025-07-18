@@ -21,11 +21,11 @@ MONO_COLOR_THEMES = {
         'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
         'archetype': 'Control'
     },
-    'Lifegain': {
+    'White Weenies': {
         'colors': ['W'],
-        'strategy': 'Synergistic lifegain deck with payoffs for gaining life',
-        'keywords': ['lifegain', 'lifelink', 'whenever you gain life', 'life total', 'heal'],
-        'archetype': 'Midrange'
+        'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
+        'keywords': ['1', '2', 'creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance'],
+        'archetype': 'Aggro'
     },
     
     # Blue themes
@@ -221,8 +221,8 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['Soldiers', 'Merfolk', 'Vampires', 'Goblins', 'Burn', 'Stompy', 'Aggro', 'Equipment Aggro'],
-    'Midrange': ['Equipment', 'Lifegain', 'Zombies', 'Sacrifice', 'Artifacts', 'Beasts', 'Big Creatures', 'Tokens', 'Lifedrain', 'Graveyard Value'],
+    'Aggressive': ['Soldiers', 'Merfolk', 'Vampires', 'Goblins', 'Burn', 'Stompy', 'White Weenies', 'Aggro', 'Equipment Aggro'],
+    'Midrange': ['Equipment', 'Zombies', 'Sacrifice', 'Artifacts', 'Beasts', 'Big Creatures', 'Tokens', 'Lifedrain', 'Graveyard Value'],
     'Control': ['Angels', 'Wizards', 'Card Draw', 'Graveyard', 'Control', 'Mill'],
     'Ramp': ['Dragons', 'Elves', 'Ramp', 'Ramp Control'],
     'Tempo': ['Flying', 'Spells Matter']
