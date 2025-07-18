@@ -135,14 +135,73 @@ def is_card_playable_in_colors(card, deck_colors):
 
 def display_card_details(specific_deck, cube_df, coherence_results, oracle_df):
     current_deck = cube_df[cube_df['Tags'] == specific_deck]
-    for card in current_deck['Name']:
+    deck_cards = current_deck['Name'].tolist()
+    
+    # Get current deck composition
+    composition = validate_jumpstart_deck_composition(deck_cards, oracle_df)
+    
+    print(f"\n📊 DECK COMPOSITION: {composition['creature_count']} creatures, {composition['non_creature_count']} non-creatures")
+    print(f"Valid composition: {composition['is_valid']} (need 0-9 creatures)")
+    
+    for card in deck_cards:
         expected_themes = coherence_results[specific_deck]['expected_themes']
         current_card = oracle_df[oracle_df['name'] == card].iloc[0]  # Get the first row for the card
-        score, themes = calculate_card_theme_score(current_card, expected_themes)
-        print(f"Card: {card}, Score: {score}, Themes: {themes}")
+        score, themes = calculate_card_theme_score(current_card, expected_themes, composition)
+        print(f"Card: {card}, Score: {score:.1f}, Themes: {themes}")
 
-def calculate_card_theme_score(card, expected_themes):
-    """Enhanced version of theme score calculation with theme-specific penalties"""
+def validate_jumpstart_deck_composition(deck_cards, oracle_df):
+    """Validate that a deck follows Jumpstart composition rules (0-9 creatures, rest spells/artifacts)"""
+    creatures = 0
+    non_creatures = 0
+    
+    for card_name in deck_cards:
+        # Find card in oracle to get type
+        card_data = oracle_df[oracle_df['name'] == card_name]
+        if not card_data.empty:
+            card_type = str(card_data.iloc[0].get('Type', '')).lower()
+            if 'creature' in card_type:
+                creatures += 1
+            else:
+                non_creatures += 1
+    
+    total_cards = creatures + non_creatures
+    is_valid = (0 <= creatures <= 9) and (total_cards == 13)
+    
+    return {
+        'is_valid': is_valid,
+        'creature_count': creatures,
+        'non_creature_count': non_creatures,
+        'total_cards': total_cards,
+        'creature_range_valid': 0 <= creatures <= 9,
+        'total_count_valid': total_cards == 13
+    }
+
+def calculate_jumpstart_composition_penalty(current_creatures, is_creature_card):
+    """Calculate penalty/bonus based on Jumpstart deck composition rules"""
+    target_min = 0
+    target_max = 9
+    
+    if is_creature_card:
+        # If we're evaluating a creature
+        if current_creatures < target_min:
+            return 2.0  # High bonus - we need more creatures
+        elif current_creatures < target_max:
+            return 1.0  # Medium bonus - still room for creatures
+        elif current_creatures == target_max:
+            return 0.5  # Small bonus - at max but still acceptable
+        else:
+            return -2.0  # Penalty - too many creatures
+    else:
+        # If we're evaluating a non-creature
+        if current_creatures < target_min:
+            return -1.0  # Penalty - we need creatures first
+        elif current_creatures <= target_max:
+            return 1.0   # Bonus - good to add non-creatures when creature count is good
+        else:
+            return 2.0   # High bonus - we have too many creatures, need non-creatures
+    
+def calculate_card_theme_score(card, expected_themes, current_deck_composition=None):
+    """Enhanced version of theme score calculation with Jumpstart composition rules"""
     if not expected_themes or expected_themes == ['Unknown']:
         return 0.0, []
     
@@ -155,6 +214,15 @@ def calculate_card_theme_score(card, expected_themes):
         cmc = float(cmc) if not pd.isna(cmc) else 0
     except:
         cmc = 0
+    
+    # Determine if this is a creature
+    is_creature = 'creature' in card_type
+    
+    # Apply Jumpstart composition bonus/penalty if composition data is provided
+    composition_modifier = 0
+    if current_deck_composition:
+        current_creatures = current_deck_composition.get('creature_count', 0)
+        composition_modifier = calculate_jumpstart_composition_penalty(current_creatures, is_creature)
     
     total_score = 0
     matching_themes = []
@@ -220,4 +288,12 @@ def calculate_card_theme_score(card, expected_themes):
             except:
                 pass
 
-    return total_score, matching_themes
+    # Apply Jumpstart composition modifier to final score
+    final_score = total_score + composition_modifier
+    
+    # Add composition info to matching themes if modifier was applied
+    if composition_modifier != 0:
+        comp_type = "creature" if is_creature else "non-creature"
+        matching_themes.append(f"Jumpstart({comp_type}:{composition_modifier:+.1f})")
+
+    return max(0, final_score), matching_themes
