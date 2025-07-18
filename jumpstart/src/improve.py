@@ -37,7 +37,7 @@ def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_resul
     display(Markdown(f"Current coherence: {current_coherence:.1f}"))
     display(Markdown(f"Expected themes: {', '.join(expected_themes)}"))
     display(Markdown(f"Deck colors: {deck_colors}"))
-    display(Markdown(f"Composition: {current_composition['creature_count']} creatures, {current_composition['non_creature_count']} non-creatures (Valid: {current_composition['is_valid']})"))
+    display(Markdown(f"Composition: {current_composition['creature_count']} creatures, {current_composition['non_creature_count']} non-creatures, {current_composition['non_basic_land_count']} non-basic lands (Valid: {current_composition['is_valid']})"))
     
     # Get potential candidate cards
     candidates = get_candidate_cards_for_swap(deck_name, cube_df, oracle_df, deck_colors, expected_themes)
