@@ -15,10 +15,10 @@ theme_keywords = {
     'Burn': ['damage', 'burn', 'lightning', 'shock', 'fire', 'direct', 'any target', 'bolt', 'deals', 'each', 'enters', 'flashback', 'haste', 'instant', 'kicker', 'sacrifice', 'suspend', 'tap'],
     'Artifacts': ['artifact', 'colorless', 'construct', 'equipment', 'vehicle'],
     'Red Artifacts': ['artifact', 'energy', 'servo', 'golem', 'sacrifice an artifact', 'unearth', 'improvise', 'metalcraft', 'treasure', 'scrap', 'gremlin', 'artificer', 'construct'],
-    'Big Creatures': ['power', 'toughness', '5', '6', '7', 'large', 'trample'],
+    'Big Creatures': ['power', 'toughness', '5', '6', '7', 'large', 'huge', 'massive', 'giant'],
     'Small Creatures': ['1', '2', '3', 'haste', 'prowess', 'menace', 'first strike', 'double strike', 'deathtouch', 'lifelink', 'vigilance', 'reach', 'flash', 'goblin', 'human', 'soldier', 'warrior', 'rogue', 'monk', 'scout', 'enters the battlefield', 'when', 'etb'],
     'Card Draw': ['draw', 'card', 'hand', 'library', 'scry', 'surveil', 'look at', 'cycling'],
-    'Stompy': ['trample', 'power', 'force', 'creature', 'big', 'green'],
+    'Stompy': ['trample', 'force', 'green', 'attack', 'overrun', 'aggressive'],
     'Beatdown': ['attack', 'damage', 'creature', 'aggressive', 'power']
 }
 
@@ -96,19 +96,21 @@ theme_criteria = {
         'keywords': theme_keywords['Big Creatures'],
         'abilities': ['power', 'toughness'],
         'stats_matter': True,   # Power/toughness is primary
-        'utility_bonus': 0.5,
-        'evasion_bonus': 1.0,
-        'power_threshold': 4,   # Want 4+ power creatures
-        'size_bonus_multiplier': 0.2  # Bonus scales with size
+        'utility_bonus': 0.3,   # Lower utility value - focus on size
+        'evasion_bonus': 0.8,   # Lower evasion - big creatures don't need it
+        'power_threshold': 5,   # Want 5+ power creatures (higher than Stompy)
+        'size_bonus_multiplier': 0.3  # Higher bonus for really big creatures
     },
     'Stompy': {
         'keywords': theme_keywords['Stompy'],
-        'abilities': ['power', 'toughness'],
-        'stats_matter': True,   # Power/toughness is primary
-        'utility_bonus': 0.5,
-        'evasion_bonus': 1.0,
-        'power_threshold': 4,   # Want 4+ power creatures
-        'size_bonus_multiplier': 0.2  # Bonus scales with size
+        'abilities': ['trample', 'attack', 'force'],
+        'stats_matter': True,   # Power/toughness matters but not exclusively
+        'utility_bonus': 0.8,   # Higher utility - ramp, pump spells
+        'evasion_bonus': 1.5,   # Higher evasion value - trample matters
+        'power_threshold': 3,   # Want 3+ power creatures (lower than Big Creatures)
+        'trample_bonus': 2.0,   # High bonus for trample
+        'pump_spell_bonus': 1.5,  # Bonus for pump spells
+        'ramp_bonus': 1.2      # Bonus for ramp effects
     },
     'Tokens': {
         'keywords': theme_keywords['Tokens'],

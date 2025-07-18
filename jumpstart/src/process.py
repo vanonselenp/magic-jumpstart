@@ -4,15 +4,24 @@ from src.improve import apply_swap, display_swap_recommendations, find_best_card
 
 # Global variable to track recent swaps to prevent oscillation
 _recent_swaps = []
-_max_swap_history = 10  # Remember last 10 swaps
+_max_swap_history = 20  # Remember last 20 swaps (increased from 10)
+_min_improvement_threshold = 0.1  # Minimum improvement required for a swap
 
 def _is_swap_recently_reversed(deck_name, remove_cards, add_cards):
-    """Check if this swap would reverse a recent swap"""
+    """Check if this swap would reverse a recent swap or if these cards were recently swapped"""
     for recent_swap in _recent_swaps:
+        # Check for exact reversal (what we're adding was recently removed, what we're removing was recently added)
         if (recent_swap['deck'] == deck_name and 
-            set(recent_swap['removed']) == set(add_cards) and  # What we're adding was recently removed
-            set(recent_swap['added']) == set(remove_cards)):   # What we're removing was recently added
+            set(recent_swap['removed']) == set(add_cards) and  
+            set(recent_swap['added']) == set(remove_cards)):   
             return True
+            
+        # Also check if the same cards have been involved in recent swaps between ANY decks
+        # This prevents cards from bouncing between similar decks
+        if (set(recent_swap['removed']) == set(remove_cards) or 
+            set(recent_swap['added']) == set(add_cards)):
+            return True
+            
     return False
 
 def _add_swap_to_history(deck_name, remove_cards, add_cards):
@@ -83,12 +92,17 @@ def optimize_deck_coherence(
             updated_cube = cube_df
 
         updated_coherence_results = analyze_deck_theme_coherence_enhanced(updated_cube, oracle_df)
-        print(updated_coherence_results[specific_deck]['overall_coherence'])
-        print(updated_coherence_results[specific_deck])
-
-        if updated_coherence_results[specific_deck]['overall_coherence'] > original_coherence:
-            print(f"Improved {specific_deck} coherence from {original_coherence:.1f} to {updated_coherence_results[specific_deck]['overall_coherence']:.1f}")
+        new_coherence = updated_coherence_results[specific_deck]['overall_coherence']
+        improvement = new_coherence - original_coherence
+        
+        print(f"Coherence change: {original_coherence:.2f} → {new_coherence:.2f} (improvement: {improvement:.2f})")
+        
+        if improvement >= _min_improvement_threshold:
+            print(f"✅ Improved {specific_deck} coherence from {original_coherence:.1f} to {new_coherence:.1f}")
             return updated_cube
+        else:
+            print(f"❌ Improvement ({improvement:.2f}) below threshold ({_min_improvement_threshold})")
+            return cube_df  # Return original cube if improvement is too small
         
         return cube_df  # Return original cube if no improvements were made
 
