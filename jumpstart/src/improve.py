@@ -518,20 +518,23 @@ def apply_swap(cube_df, deck_name, remove_cards, add_cards, oracle_df):
                                 updated_df = pd.concat([updated_df, pd.DataFrame([new_row])], ignore_index=True)
                                 print(f"Added {replacement_card['name']} to {source_deck} as replacement")
                                 
-                                # Remove the incompatible card completely
-                                updated_df = updated_df.drop(updated_df[mask].index)
+                                # Remove the incompatible card completely (create fresh mask after concat)
+                                fresh_mask = (updated_df['Name'] == card_name) & (updated_df['Tags'] == deck_name)
+                                updated_df = updated_df.drop(updated_df[fresh_mask].index)
                                 print(f"Removed incompatible {card_name} from {deck_name}")
                             else:
                                 print(f"ERROR: No suitable replacement found for {source_deck}")
                                 # In this case, abort the swap to prevent deck size issues
                                 return cube_df
                     else:
-                        # Card not found in oracle, remove it
-                        updated_df = updated_df.drop(updated_df[mask].index)
+                        # Card not found in oracle, remove it (create fresh mask)
+                        fresh_mask = (updated_df['Name'] == card_name) & (updated_df['Tags'] == deck_name)
+                        updated_df = updated_df.drop(updated_df[fresh_mask].index)
                         print(f"Removed {card_name} (not in oracle) from {deck_name}")
                 elif source_info['from_oracle']:
-                    # This card was added from oracle, so just remove the card being swapped out
-                    updated_df = updated_df.drop(updated_df[mask].index)
+                    # This card was added from oracle, so just remove the card being swapped out (create fresh mask)
+                    fresh_mask = (updated_df['Name'] == card_name) & (updated_df['Tags'] == deck_name)
+                    updated_df = updated_df.drop(updated_df[fresh_mask].index)
                     print(f"Removed {card_name} from {deck_name} (replaced by oracle card)")
                 else:
                     print(f"ERROR: No source deck info for {card_name}")
