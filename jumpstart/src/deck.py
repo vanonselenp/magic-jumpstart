@@ -139,13 +139,19 @@ def display_card_details(specific_deck, cube_df, coherence_results, oracle_df):
         print(f"Card: {card}, Score: {score}, Themes: {themes}")
 
 def calculate_card_theme_score(card, expected_themes):
-    """Enhanced version of theme score calculation"""
+    """Enhanced version of theme score calculation with theme-specific penalties"""
     if not expected_themes or expected_themes == ['Unknown']:
         return 0.0, []
     
     oracle_text = str(card.get('Oracle Text', '')).lower()
     card_type = str(card.get('Type', '')).lower()
     card_name = str(card.get('name', '')).lower() or str(card.get('Name', '')).lower()
+    cmc = card.get('CMC', 0)
+    
+    try:
+        cmc = float(cmc) if not pd.isna(cmc) else 0
+    except:
+        cmc = 0
     
     total_score = 0
     matching_themes = []
@@ -154,9 +160,44 @@ def calculate_card_theme_score(card, expected_themes):
         if theme in theme_keywords:
             theme_words = theme_keywords[theme]
             # Count matches in oracle text, type, and name
-            matches = sum(1 for word in theme_words if word in oracle_text or word in card_type or word in card_name)
-            total_score += matches
-            matching_themes.append(theme)
+            base_matches = sum(1 for word in theme_words if word in oracle_text or word in card_type or word in card_name)
+            theme_score = base_matches
+            
+            # Apply theme-specific scoring adjustments
+            if theme == "Ramp":
+                # Ramp cards should prioritize mana acceleration and expensive payoffs
+                if 'land' in oracle_text or 'mana' in oracle_text:
+                    theme_score += 2  # High bonus for mana acceleration
+                if cmc >= 6:  # Expensive cards are good ramp payoffs
+                    theme_score += 2
+                elif cmc >= 4:
+                    theme_score += 1
+                # Penalty for cheap creatures without ramp effects (more midrange-y)
+                if 'creature' in card_type and cmc <= 3 and not any(word in oracle_text for word in ['mana', 'land', 'search']):
+                    theme_score -= 1
+                    
+            elif theme == "Midrange":
+                # Midrange should prioritize efficient creatures and versatile spells
+                if 'creature' in card_type:
+                    # Bonus for creatures in the 2-5 CMC sweet spot
+                    if 2 <= cmc <= 5:
+                        theme_score += 2
+                    elif cmc == 1 or cmc == 6:
+                        theme_score += 1
+                    # Penalty for very expensive creatures (more ramp-y)
+                    elif cmc >= 7:
+                        theme_score -= 1
+                # Bonus for versatile non-creature spells
+                if 'instant' in card_type or 'sorcery' in card_type:
+                    if 1 <= cmc <= 4:  # Efficient spells
+                        theme_score += 1
+                # Penalty for pure mana acceleration (more ramp-y)
+                if any(word in oracle_text for word in ['add mana', 'search.*land', 'basic land']):
+                    theme_score -= 1
+            
+            total_score += max(0, theme_score)  # Don't allow negative theme scores
+            if theme_score > 0:
+                matching_themes.append(theme)
         
         # Special handling for Big Creatures theme
         if theme == "Big Creatures" and 'creature' in card_type:

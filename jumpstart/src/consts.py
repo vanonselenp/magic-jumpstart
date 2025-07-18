@@ -4,8 +4,8 @@ TOTAL_CARDS = 13
 theme_keywords = { 
     'Aggro': ['haste', 'attack', 'damage', 'creature', 'power', 'quick', 'rush', 'fast'],
     'Control': ['counter', 'destroy', 'exile', 'draw', 'instant', 'sorcery', 'tap', 'return'],
-    'Midrange': ['creature', 'value', 'versatile', 'balanced', 'enters', 'when', 'draw', 'search', '+1/+1', 'counter', 'sacrifice', 'dies', 'token', 'adapt', 'evolve', 'outlast', 'kicker', 'vigilance', 'trample', 'treasure', 'mana'],
-    'Ramp': ['mana', 'land', 'search', 'big', 'expensive', 'cost', 'ritual', 'add', 'basic', 'battlefield', 'enters', 'when', 'sacrifice', 'dies', 'treasure', 'create', 'library', 'put', 'token', 'tap', 'channel'],
+    'Midrange': ['creature', 'value', 'versatile', 'balanced', 'enters', 'when', 'draw', '+1/+1', 'counter', 'adapt', 'evolve', 'outlast', 'kicker', 'vigilance', 'trample', 'fight', 'combat', 'removal', 'flexible', 'efficient'],
+    'Ramp': ['mana', 'land', 'search', 'big', 'expensive', 'cost', 'ritual', 'add', 'basic', 'battlefield', 'library', 'put', 'tap', 'channel', 'forest', 'untap', 'colorless', 'seven', 'eight', 'nine', 'ten'],
     'Tempo': ['bounce', 'counter', 'flying', 'cheap', 'efficient', 'flash', 'tap', 'return', 'untap', 'scry', 'cycling', 'ninjutsu', 'draw', 'when', 'enters', 'kicker'],
     'Graveyard': ['graveyard', 'discard', 'mill', 'milling', 'return', 'flashback', 'delve', 'unearth', 'threshold', 'delirium', 'undergrowth', 'escape', 'embalm', 'eternalize', 'reanimator', 'necromancy', 'from.*graveyard', 'to.*graveyard', 'exile.*graveyard', 'creature.*graveyard', 'zombie', 'horror', 'skeleton', 'spirit', 'dies', 'when.*enters', 'sacrifice'],
     'Sacrifice': ['sacrifice', 'dies', 'death', 'token', 'creature', 'enters'],
