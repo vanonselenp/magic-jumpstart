@@ -202,3 +202,21 @@ def create_stompy_scorer() -> CardScorer:
     scorer.set_rule_weight("P/T Efficiency", 2.0)
     scorer.set_rule_weight("Keyword Matching", 1.5)  # For pump spells
     return scorer
+
+
+def create_artifact_scorer() -> CardScorer:
+    """Create a scorer optimized for artifact themes."""
+    rules = [
+        KeywordMatchingRule(),
+        ArchetypeManaCurveRule(),
+        SpecificKeywordRule(),
+        TypeBasedRule(),
+        ArtifactRule(),  # Heavy emphasis on artifact cards and synergies
+    ]
+    
+    scorer = CardScorer(rules)
+    # Weight artifact rules extremely heavily
+    scorer.set_rule_weight("Artifact/Equipment", 3.0)  # Triple weight for artifacts
+    scorer.set_rule_weight("Keyword Matching", 2.0)    # Double weight for artifact keywords
+    scorer.set_rule_weight("Type-based", 1.5)          # Bonus for artifact creatures
+    return scorer
