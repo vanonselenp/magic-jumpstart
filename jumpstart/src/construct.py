@@ -76,6 +76,7 @@ class CardSelector:
         self.used_cards.discard(card_idx)
     
     def get_candidates_for_theme(self, 
+                                theme_name: str,
                                 theme_config: dict, 
                                 deck_state: DeckState,
                                 constraints: CardConstraints,
@@ -84,6 +85,7 @@ class CardSelector:
         Get candidate cards for a theme with appropriate filtering and scoring.
         
         Args:
+            theme_name: Name of the theme being built
             theme_config: Theme configuration
             deck_state: Current deck state
             constraints: Deck building constraints
@@ -109,7 +111,7 @@ class CardSelector:
                 continue
             
             # Score the card
-            score = self._score_card_for_theme(card, theme_config, theme_colors, is_mono)
+            score = self._score_card_for_theme(card, theme_name, theme_config, theme_colors, is_mono, phase)
             
             # Apply phase-specific filtering
             if phase == "multicolor" and not self._is_multicolor_appropriate(card, theme_colors):
@@ -156,14 +158,35 @@ class CardSelector:
         
         return True
     
-    def _score_card_for_theme(self, card: pd.Series, theme_config: dict, 
-                             theme_colors: Set[str], is_mono: bool) -> float:
-        """Score a card for theme appropriateness."""
+    def _score_card_for_theme(self, card: pd.Series, theme_name: str, theme_config: dict, 
+                             theme_colors: Set[str], is_mono: bool, phase: str = "general") -> float:
+        """Score a card for theme appropriateness using specialized scorers."""
         if is_land_card(card):
             return score_land_for_dual_colors(card, theme_colors)
         
-        # Use existing keyword matching logic
-        base_score = score_card_for_theme(card, theme_config)
+        # For core phase, we use specialized scorers in the reservation method
+        # For other phases, use enhanced scoring with specialization
+        if phase == "core":
+            base_score = score_card_for_theme(card, theme_config)
+        else:
+            # Use specialized scoring based on theme type
+            from .scorer import (
+                create_equipment_scorer, create_tribal_scorer, 
+                create_aggressive_scorer, create_default_scorer, score_card_for_theme
+            )
+            
+            if 'equipment' in theme_name.lower():
+                scorer = create_equipment_scorer()
+                base_score = scorer.score_card(card, theme_config)
+            elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
+                scorer = create_tribal_scorer()
+                base_score = scorer.score_card(card, theme_config)
+            elif theme_config.get('archetype') == 'Aggressive':
+                scorer = create_aggressive_scorer()
+                base_score = scorer.score_card(card, theme_config)
+            else:
+                # Use standard scoring for other themes
+                base_score = score_card_for_theme(card, theme_config)
         
         # Color preference bonus
         card_colors = set(get_card_colors(card))
@@ -179,11 +202,12 @@ class CardSelector:
     def _get_score_threshold(self, phase: str) -> float:
         """Get minimum score threshold for different phases."""
         thresholds = {
-            "multicolor": 0.5,
-            "general": 0.2,
-            "completion": 0.1
+            "core": 6.0,        # High threshold for core card reservation
+            "multicolor": 1.0,  # Raised from 0.5 to be more selective
+            "general": 0.5,     # Raised from 0.2 to be more selective  
+            "completion": 0.2   # Raised from 0.1 for better quality
         }
-        return thresholds.get(phase, 0.2)
+        return thresholds.get(phase, 0.5)
 
 
 class DeckBuilder:
@@ -201,6 +225,9 @@ class DeckBuilder:
         
         print("🏗️ CONSTRUCTING JUMPSTART DECKS")
         print("=" * 50)
+        
+        # Phase 0: Core card reservation for theme coherence
+        self._build_core_card_reservation_phase()
         
         # Phase 1: Multicolor cards for dual-color themes
         self._build_multicolor_phase()
@@ -229,6 +256,92 @@ class DeckBuilder:
         """Initialize empty deck states for all themes."""
         for theme_name in ALL_THEMES:
             self.decks[theme_name] = DeckState(cards=[])
+    
+    def _build_core_card_reservation_phase(self):
+        """Phase 0: Reserve core theme-defining cards to ensure theme coherence."""
+        print("\n🔒 Phase 0: Core card reservation")
+        print("Ensuring each theme gets its defining cards before general competition...")
+        
+        # Import specialized scorers
+        from .scorer import (
+            create_equipment_scorer, create_tribal_scorer, 
+            create_aggressive_scorer, create_default_scorer
+        )
+        
+        for theme_name, theme_config in ALL_THEMES.items():
+            self._reserve_core_cards_for_theme(theme_name, theme_config)
+    
+    def _reserve_core_cards_for_theme(self, theme_name: str, theme_config: dict):
+        """Reserve top core cards for a specific theme."""
+        from .scorer import (
+            create_equipment_scorer, create_tribal_scorer, 
+            create_aggressive_scorer, create_default_scorer
+        )
+        
+        # Select appropriate specialized scorer based on theme
+        if 'equipment' in theme_name.lower():
+            scorer = create_equipment_scorer()
+            core_count = 5  # Reserve more equipment cards
+        elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
+            scorer = create_tribal_scorer()
+            core_count = 4  # Reserve key tribal cards
+        elif theme_config.get('archetype') == 'Aggressive':
+            scorer = create_aggressive_scorer()
+            core_count = 3  # Reserve key aggressive cards
+        else:
+            scorer = create_default_scorer()
+            core_count = 3  # Standard reservation
+        
+        # Find top scoring cards for this theme
+        deck_state = self.decks[theme_name]
+        theme_colors = set(theme_config['colors'])
+        is_mono = len(theme_colors) == 1
+        core_candidates = []
+        
+        for idx, card in self.oracle_df.iterrows():
+            if idx in self.selector.used_cards:
+                continue
+            
+            # Check basic color compatibility
+            if not self.selector._is_color_compatible(card, theme_colors, "core"):
+                continue
+            
+            # Check constraints
+            if not self.selector._check_constraints(card, deck_state, self.constraints, is_mono, theme_colors):
+                continue
+            
+            # Score with specialized scorer
+            score_breakdown = scorer.score_with_breakdown(card, theme_config)
+            
+            # Only consider cards with strong theme relevance
+            if score_breakdown.total_score >= 6.0:  # Higher threshold for core cards
+                core_candidates.append((idx, card, score_breakdown.total_score))
+        
+        # Sort by score and take top core_count
+        core_candidates.sort(key=lambda x: x[2], reverse=True)
+        reserved_count = 0
+        
+        print(f"\n🎯 {theme_name}: Reserving core cards")
+        
+        for card_idx, card, score in core_candidates[:core_count]:
+            if reserved_count >= core_count:
+                break
+            
+            # Double-check we can still add this card
+            if not self.selector._check_constraints(card, deck_state, self.constraints, is_mono, theme_colors):
+                continue
+            
+            deck_state.add_card(card_idx, card)
+            self.selector.mark_used(card_idx)
+            reserved_count += 1
+            
+            card_type = card['Type'][:20] + "..." if len(card['Type']) > 20 else card['Type']
+            print(f"  ✅ {card['name']:<25} | {score:5.1f} pts | {card_type}")
+        
+        if reserved_count == 0:
+            print(f"  ⚠️  No core cards found meeting criteria (score ≥6.0)")
+        else:
+            print(f"  📦 Reserved {reserved_count} core cards")
     
     def _build_multicolor_phase(self):
         """Phase 1: Assign multicolor cards to dual-color themes."""
@@ -272,7 +385,7 @@ class DeckBuilder:
         print(f"\n🎯 {phase.title()} phase: {theme_name} ({deck_state.size}/{self.constraints.target_deck_size})")
         
         candidates = self.selector.get_candidates_for_theme(
-            theme_config, deck_state, self.constraints, phase
+            theme_name, theme_config, deck_state, self.constraints, phase
         )
         
         added_count = 0
