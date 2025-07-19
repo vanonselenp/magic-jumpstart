@@ -131,6 +131,91 @@ def can_land_produce_colors(land_card: pd.Series, required_colors: set) -> bool:
     return required_colors.issubset(land_colors)
 
 
+def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> float:
+    """
+    Score a land based on how well it supports a dual-color theme.
+    Higher scores are given to lands that can produce both colors.
+    
+    Args:
+        land_card: The land card to score
+        required_colors: Set of colors needed (e.g., {'W', 'U'})
+        
+    Returns:
+        Land quality score (higher = better for dual-color deck)
+    """
+    if not is_land_card(land_card):
+        return 0.0
+    
+    if len(required_colors) == 1:
+        # For mono-color themes, any land that produces the color is good
+        if can_land_produce_colors(land_card, required_colors):
+            return 1.0
+        return 0.0
+    
+    # For dual-color themes, prioritize lands that can produce both colors
+    if not can_land_produce_colors(land_card, required_colors):
+        return 0.0  # Can't produce both colors
+    
+    # Get the land's producible colors
+    land_colors = set(get_card_colors(land_card))
+    oracle_text = str(land_card.get('Oracle Text', '')).lower()
+    
+    # If land has no color identity, check oracle text for mana production
+    if not land_colors:
+        basic_land_patterns = {
+            'W': ['plains', 'white mana', '{w}'],
+            'U': ['island', 'blue mana', '{u}'],
+            'B': ['swamp', 'black mana', '{b}'],
+            'R': ['mountain', 'red mana', '{r}'],
+            'G': ['forest', 'green mana', '{g}']
+        }
+        
+        producible_colors = set()
+        for color, patterns in basic_land_patterns.items():
+            if any(pattern in oracle_text for pattern in patterns):
+                producible_colors.add(color)
+        
+        # Also check for explicit mana symbols
+        for color in ['W', 'U', 'B', 'R', 'G']:
+            color_symbol = '{' + color.lower() + '}'
+            if color_symbol in oracle_text:
+                producible_colors.add(color)
+        
+        land_colors = producible_colors
+    
+    # Score based on color production efficiency
+    score = 1.0  # Base score for producing both colors
+    
+    # Bonus for dual lands (produce exactly the two colors we need)
+    if land_colors == required_colors:
+        score += 2.0  # Perfect dual land match
+    # Bonus for lands that produce both colors but not too many others
+    elif required_colors.issubset(land_colors) and len(land_colors) <= 3:
+        score += 1.5  # Good multi-color land
+    # Lower score for lands that produce many colors (less efficient)
+    elif len(land_colors) > 3:
+        score += 0.5  # Works but not ideal
+    
+    # Additional scoring based on land type and abilities
+    land_name = str(land_card['name']).lower()
+    land_type = str(land_card['Type']).lower()
+    
+    # Bonus for common dual land types
+    if any(keyword in oracle_text for keyword in ['enters the battlefield tapped', 'enters tapped']):
+        # Taplands are common and reliable but slower
+        score += 0.3
+    
+    if 'basic' in land_type:
+        # Basic lands are less valuable for dual-color (only produce one color each)
+        score = max(0.2, score - 1.0)
+    
+    # Bonus for cycling or other utility
+    if 'cycling' in oracle_text:
+        score += 0.2
+    
+    return score
+
+
 def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 13) -> Dict[str, pd.DataFrame]:
     """
     Construct jumpstart decks for all themes using a practical three-phase approach.
@@ -169,14 +254,20 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
             card_colors = set(get_card_colors(card))
             is_land = is_land_card(card)
             
-            # For lands, check if they can produce both colors
+            # For lands, check if they can produce both colors and score them
             if is_land:
                 if not can_land_produce_colors(card, theme_colors):
                     continue  # Skip lands that can't produce both colors
-                # Lands that can produce both colors are good candidates
-                score = score_card_for_theme(card, theme_config)
-                if score >= 0.1:  # Lower threshold for dual lands
-                    multicolor_candidates.append((idx, card, score))
+                
+                # Use specialized land scoring for dual-color themes
+                land_score = score_land_for_dual_colors(card, theme_colors)
+                theme_score = score_card_for_theme(card, theme_config)
+                
+                # Combine land quality and theme synergy scores
+                combined_score = land_score + (theme_score * 0.3)  # Prioritize land quality
+                
+                if combined_score >= 0.5:  # Higher threshold for better land selection
+                    multicolor_candidates.append((idx, card, combined_score))
             else:
                 # For non-lands, check color compatibility
                 if not card_colors or not card_colors.issubset(theme_colors):
@@ -291,8 +382,17 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
                 # For dual-color themes, ensure lands can produce both colors
                 if not is_mono_color and not can_land_produce_colors(card, theme_colors):
                     continue
-            
-            score = score_card_for_theme(card, theme_config)
+                
+                # Use specialized land scoring for dual-color themes
+                if is_mono_color:
+                    score = score_card_for_theme(card, theme_config)
+                else:
+                    land_score = score_land_for_dual_colors(card, theme_colors)
+                    theme_score = score_card_for_theme(card, theme_config)
+                    score = land_score + (theme_score * 0.3)  # Prioritize dual-color capability
+            else:
+                score = score_card_for_theme(card, theme_config)
+                
             if score >= 0.2:  # Lower threshold for filling decks
                 candidates.append((idx, card, score))
         
