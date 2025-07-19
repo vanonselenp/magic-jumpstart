@@ -561,6 +561,13 @@ def score_card_for_theme(card: pd.Series, theme_config: dict) -> float:
             score += 0.5  # Bonus for expensive cards in control themes
         elif cmc == 1:
             score -= 0.5  # Small penalty for 1-drops in control (unless utility)
+    elif archetype == 'Midrange':
+        if 2 <= cmc <= 4:
+            score += 1.0  # Bonus for 2-4 CMC cards in midrange themes
+        elif cmc == 1:
+            score -= 0.5  # Small penalty for 1-drops in midrange (too aggressive)
+        elif cmc >= 5:
+            score -= 1.0  # Penalty for expensive cards in midrange themes
     
     # B. IMPROVE KEYWORD MATCHING: Add CMC-specific keyword matching
     # Special handling for cost-related keywords
@@ -597,6 +604,34 @@ def score_card_for_theme(card: pd.Series, theme_config: dict) -> float:
         # Bonus for artifacts in artifact themes
         if any(kw in theme_config['keywords'] for kw in ['artifact', 'equipment', 'metalcraft']):
             score += 0.5
+        
+        # SPECIAL EQUIPMENT BONUSES
+        if 'equipment' in card_type:
+            score += 2.0  # Strong bonus for actual equipment cards
+            if 'living weapon' in oracle_text:
+                score += 1.0  # Extra bonus for living weapon equipment
+    
+    # EQUIPMENT-SPECIFIC CREATURE SCORING
+    if 'equipment' in theme_config['keywords'] and 'creature' in card_type:
+        toughness = card.get('Toughness', 0) if pd.notna(card.get('Toughness', 0)) else 0
+        
+        # Bonus for creatures with evasion (good equipment carriers)
+        evasion_keywords = ['flying', 'shadow', 'unblockable', 'menace', 'trample']
+        if any(kw in oracle_text for kw in evasion_keywords):
+            score += 1.0
+        
+        # Bonus for creatures with combat abilities (benefit from equipment)
+        combat_keywords = ['first strike', 'double strike', 'vigilance', 'lifelink']
+        if any(kw in oracle_text for kw in combat_keywords):
+            score += 0.5
+        
+        # Bonus for efficient equipment carriers (low toughness, reasonable power)
+        if power > 0 and toughness > 0 and toughness <= 3:
+            score += 0.5  # Good equipment targets have modest toughness
+        
+        # Penalty for creatures that can't attack (0 power or defender)
+        if power == 0 or 'defender' in oracle_text:
+            score -= 1.0  # Equipment doesn't help non-attackers
     
     return score
 
