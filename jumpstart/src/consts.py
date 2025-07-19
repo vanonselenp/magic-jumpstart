@@ -25,7 +25,7 @@ MONO_COLOR_THEMES = {
     'White Weenies': {
         'colors': ['W'],
         'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
-        'keywords': ['1', '2', 'creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance'],
+        'keywords': ['creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance', 'efficient', 'low cost', 'small'],
         'archetype': 'Aggro'
     },
     
