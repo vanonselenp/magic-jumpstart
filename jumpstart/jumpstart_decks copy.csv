@@ -1,0 +1,367 @@
+Name,Set,Collector Number,Rarity,Color Identity,Type,Mana Cost,CMC,Power,Toughness,Tags
+Skybridge Towers,Mixed,,common,UW,Land,,0,,,Azorius Control
+Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Control
+Tranquil Cove,Mixed,,common,,Land,,0,,,Azorius Control
+Judge's Familiar,Mixed,,common,UW,Creature - Bird,,1,1.0,1.0,Azorius Control
+Momentary Blink,Mixed,,common,UW,Instant,,2,,,Azorius Control
+Thraben Charm,Mixed,,common,W,Instant,,2,,,Azorius Control
+Treasure Cruise,Mixed,,common,U,Sorcery,,8,,,Azorius Control
+Deep Analysis,Mixed,,common,U,Sorcery,,4,,,Azorius Control
+Ephemerate,Mixed,,common,W,Instant,,1,,,Azorius Control
+Mana Tithe,Mixed,,common,W,Instant,,1,,,Azorius Control
+Unbounded Potential,Mixed,,common,W,Instant,,2,,,Azorius Control
+Prismatic Strands,Mixed,,common,W,Instant,,3,,,Azorius Control
+Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,Azorius Control
+Waterfront District,Mixed,,common,BU,Land,,0,,,Dimir Mill
+Dimir Aqueduct,Mixed,,common,BU,Land,,0,,,Dimir Mill
+Dismal Backwater,Mixed,,common,,Land,,0,,,Dimir Mill
+Soul Manipulation,Mixed,,common,BU,Instant,,3,,,Dimir Mill
+Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,2.0,2.0,Dimir Mill
+Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
+Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Dimir Mill
+Quick Study,Mixed,,common,U,Instant,,3,,,Dimir Mill
+Serum Visions,Mixed,,common,U,Sorcery,,1,,,Dimir Mill
+Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Dimir Mill
+Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Dimir Mill
+Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Dimir Mill
+Snapping Voidcraw,Mixed,,common,,Creature - Eldrazi Turtle,,3,1.0,3.0,Dimir Mill
+Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
+Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
+Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
+Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
+Body Dropper,Mixed,,common,BR,Creature - Devil Warrior,,2,2.0,2.0,Rakdos Aggro
+Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Aggro
+Cindering Cutthroat,Mixed,,common,BR,Creature - Lizard Assassin,,3,3.0,2.0,Rakdos Aggro
+Scorched Rusalka,Mixed,,common,R,Creature - Spirit,,1,1.0,1.0,Rakdos Aggro
+Orcish Hellraiser,Mixed,,common,R,Creature - Orc Warrior,,2,3.0,2.0,Rakdos Aggro
+Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Rakdos Aggro
+Loathsome Curator,Mixed,,common,B,Creature - Gorgon Wizard,,5,5.0,4.0,Rakdos Aggro
+Ashes to Ashes,Mixed,,common,B,Sorcery,,3,,,Rakdos Aggro
+Jackal Pup,Mixed,,common,R,Creature - Jackal,,1,2.0,1.0,Rakdos Aggro
+Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Big Creatures
+Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Gruul Big Creatures
+Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Big Creatures
+Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Gruul Big Creatures
+Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Gruul Big Creatures
+Botanical Plaza,Mixed,,common,GW,Land,,0,,,Selesnya Tokens
+Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Selesnya Tokens
+Selesnya Sanctuary,Mixed,,common,WG,Land,,0,,,Selesnya Tokens
+Triplicate Spirits,Mixed,,common,W,Creature Sorcery,,6,,,Selesnya Tokens
+Sandsteppe Outcast,Mixed,,common,W,Creature - Human Warrior,,3,2.0,1.0,Selesnya Tokens
+Pegasus Guardian,Mixed,,common,W,Creature - Pegasus,,6,3.0,3.0,Selesnya Tokens
+Eldrazi Repurposer,Mixed,,common,G,Creature - Eldrazi Drone,,3,3.0,3.0,Selesnya Tokens
+Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Selesnya Tokens
+Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Selesnya Tokens
+Mother Bear,Mixed,,common,G,Creature - Bear,,2,2.0,2.0,Selesnya Tokens
+Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifedrain
+Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
+Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
+Tithe Drinker,Mixed,,common,BW,Creature - Vampire,,2,2.0,1.0,Orzhov Lifedrain
+Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifedrain
+Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
+Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
+Syndic of Tithes,Mixed,,common,W,Creature - Human Cleric,,2,2.0,2.0,Orzhov Lifedrain
+Suture Priest,Mixed,,common,W,Creature - Phyrexian Cleric,,2,1.0,1.0,Orzhov Lifedrain
+Gray Merchant of Asphodel,Mixed,,common,B,Creature - Zombie,,5,2.0,4.0,Orzhov Lifedrain
+Vendetta,Mixed,,common,B,Instant,,1,,,Orzhov Lifedrain
+Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
+Clawing Torment,Mixed,,common,B,Enchantment - Aura,,1,,,Orzhov Lifedrain
+Eroded Canyon,Mixed,,common,,Land - Desert,,0,,,Izzet Spells Matter
+Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
+Prismari Campus,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
+Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,2.0,2.0,Izzet Spells Matter
+Bloodwater Entity,Mixed,,common,UR,Creature - Elemental,,3,2.0,2.0,Izzet Spells Matter
+Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Spells Matter
+Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,3.0,2.0,Izzet Spells Matter
+Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,2.0,1.0,Izzet Spells Matter
+Scholar of Combustion,Mixed,,common,R,Creature - Human Wizard,,4,3.0,2.0,Izzet Spells Matter
+Capsize,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
+Displace,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
+Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
+Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
+Golgari Rot Farm,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
+Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Golgari Graveyard Value
+Witherbloom Campus,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
+Infuse with Vitality,Mixed,,common,BG,Instant,,2,,,Golgari Graveyard Value
+Desecrator Hag,Mixed,,common,BG,Creature - Hag,,4,2.0,2.0,Golgari Graveyard Value
+Dreg Mangler,Mixed,,common,BG,Creature - Plant Zombie,,3,3.0,3.0,Golgari Graveyard Value
+Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyard Value
+Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Golgari Graveyard Value
+Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
+Abraded Bluffs,Mixed,,common,,Land - Desert,,0,,,Boros Equipment Aggro
+Boros Garrison,Mixed,,common,WR,Land,,0,,,Boros Equipment Aggro
+Lorehold Campus,Mixed,,common,RW,Land,,0,,,Boros Equipment Aggro
+Conduit Goblin,Mixed,,common,RW,Creature - Goblin Warrior,,2,2.0,2.0,Boros Equipment Aggro
+Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
+Underworld Rage-Hound,Mixed,,common,R,Creature - Elemental Dog,,2,3.0,1.0,Boros Equipment Aggro
+Grim Initiate,Mixed,,common,R,Creature - Zombie Warrior,,1,1.0,1.0,Boros Equipment Aggro
+Blessed Hippogriff,Mixed,,common,W,Creature - Hippogriff,,4,2.0,3.0,Boros Equipment Aggro
+Frenzied Goblin,Mixed,,common,R,Creature - Goblin Berserker,,1,1.0,1.0,Boros Equipment Aggro
+Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,3.0,2.0,Boros Equipment Aggro
+Wildfire Elemental,Mixed,,common,R,Creature - Elemental,,4,3.0,3.0,Boros Equipment Aggro
+Quandrix Campus,Mixed,,common,GU,Land,,0,,,Simic Ramp Control
+Simic Growth Chamber,Mixed,,common,UG,Land,,0,,,Simic Ramp Control
+Tangled Islet,Mixed,,common,GU,Land - Forest Island,,0,,,Simic Ramp Control
+Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Ramp Control
+Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
+Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
+Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Simic Ramp Control
+Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,1.0,4.0,Simic Ramp Control
+Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,4.0,3.0,Simic Ramp Control
+Giant Growth,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
+Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
+Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
+Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control
+Topan Freeblade,Mixed,,common,W,Creature - Human Soldier,,2,2.0,2.0,White Soldiers
+Militia Bugler,Mixed,,common,W,Creature - Human Soldier,,3,2.0,3.0,White Soldiers
+Boros Elite,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Soldiers
+Ainok Bond-Kin,Mixed,,common,W,Creature - Dog Soldier,,2,2.0,1.0,White Soldiers
+Eagles of the North,Mixed,,common,W,Creature - Bird Soldier,,6,3.0,3.0,White Soldiers
+Cartouche of Solidarity,Mixed,,common,W,Creature Enchantment - Aura Cartouche,,1,,,White Soldiers
+Porcelain Legionnaire,Mixed,,common,,Artifact Creature - Soldier,,2,3.0,1.0,White Soldiers
+Deftblade Elite,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Soldiers
+Soltari Trooper,Mixed,,common,W,Creature - Soltari Soldier,,2,1.0,1.0,White Soldiers
+Dog Umbra,Mixed,,common,W,Enchantment - Aura,,2,,,White Soldiers
+Petrify,Mixed,,common,W,Enchantment - Aura,,2,,,White Soldiers
+Planar Disruption,Mixed,,common,W,Enchantment - Aura,,2,,,White Soldiers
+Faith's Fetters,Mixed,,common,W,Enchantment - Aura,,4,,,White Soldiers
+Mandibular Kite,Mixed,,common,W,Creature Artifact - Equipment,,1,,,White Equipment
+Ancestral Blade,Mixed,,common,W,Creature Artifact - Equipment,,2,,,White Equipment
+Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,White Equipment
+Flayer Husk,Mixed,,common,,Creature Artifact - Equipment,,1,,,White Equipment
+Leonin Bola,Mixed,,common,,Artifact - Equipment,,1,,,White Equipment
+Glimmerlight,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
+Vulshok Morningstar,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
+Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,White Equipment
+Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,White Equipment
+Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,White Equipment
+Iron Apprentice,Mixed,,common,,Artifact Creature - Construct,,1,0.0,0.0,White Equipment
+Vault Skirge,Mixed,,common,,Artifact Creature - Imp,,1,1.0,1.0,White Equipment
+Perilous Myr,Mixed,,common,,Artifact Creature - Myr,,2,1.0,1.0,White Equipment
+Miner's Guidewing,Mixed,,common,W,Creature - Bird,,1,1.0,1.0,White Angels
+Holy Cow,Mixed,,common,W,Creature - Ox Angel,,3,2.0,2.0,White Angels
+Inspiring Overseer,Mixed,,common,W,Creature - Angel Cleric,,3,2.0,1.0,White Angels
+Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,2.0,3.0,White Angels
+Doomed Traveler,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Angels
+Faerie Guidemother,Mixed,,common,W,Creature - Faerie ,,1,1.0,1.0,White Angels
+Kor Skyfisher,Mixed,,common,W,Creature - Kor Soldier,,2,2.0,3.0,White Angels
+Seeker of the Way,Mixed,,common,W,Creature - Human Warrior,,2,2.0,2.0,White Angels
+Stormfront Pegasus,Mixed,,common,W,Creature - Pegasus,,2,2.0,1.0,White Angels
+Gods Willing,Mixed,,common,W,Instant,,1,,,White Angels
+Quicksand,Mixed,,common,,Land,,0,,,White Angels
+Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,White Weenies
+Aerie Auxiliary,Mixed,,common,W,Creature - Bird Soldier,,4,3.0,3.0,White Weenies
+Imperial Oath,Mixed,,common,W,Creature Sorcery,,6,,,White Weenies
+Escape Tunnel,Mixed,,common,,Land,,0,,,White Weenies
+Rhox Veteran,Mixed,,common,W,Creature - Rhino Soldier,,4,2.0,4.0,White Weenies
+Search Party Captain,Mixed,,common,W,Creature - Human Soldier,,4,2.0,2.0,White Weenies
+Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,6.0,5.0,White Weenies
+Ulamog's Crusher,Mixed,,common,,Creature - Eldrazi,,8,8.0,8.0,White Weenies
+Dauntless Unity,Mixed,,common,W,Instant,,2,,,White Weenies
+You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,White Weenies
+Borrowed Grace,Mixed,,common,W,Instant,,3,,,White Weenies
+Novice Inspector,Mixed,,common,W,Creature - Human Detective,,1,1.0,2.0,White Weenies
+Thraben Inspector,Mixed,,common,W,Creature - Human Soldier,,1,1.0,2.0,White Weenies
+Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Flying
+Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Flying
+Exclude,Mixed,,common,U,Instant,,3,,,Blue Flying
+Cloudkin Seer,Mixed,,common,U,Creature - Elemental Wizard,,3,2.0,1.0,Blue Flying
+Frost Trickster,Mixed,,common,U,Creature - Bird Wizard,,3,2.0,2.0,Blue Flying
+Geyser Drake,Mixed,,common,U,Creature - Drake,,3,2.0,3.0,Blue Flying
+Preening Champion,Mixed,,common,U,Creature - Bird Knight,,3,2.0,2.0,Blue Flying
+Warden of Evos Isle,Mixed,,common,U,Creature - Bird Wizard,,3,2.0,2.0,Blue Flying
+Cruel Witness,Mixed,,common,U,Creature - Bird Horror,,4,3.0,3.0,Blue Flying
+Mist Raven,Mixed,,common,U,Creature - Bird,,4,2.0,2.0,Blue Flying
+Murmuring Mystic,Mixed,,common,U,Creature - Human Wizard,,4,1.0,5.0,Blue Flying
+Mulldrifter,Mixed,,common,U,Creature - Elemental,,5,2.0,2.0,Blue Flying
+Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Flying
+Shipwreck Dowser,Mixed,,common,U,Creature - Merfolk Wizard,,5,3.0,3.0,Blue Wizards
+Archaeomancer,Mixed,,common,U,Creature - Human Wizard,,4,1.0,2.0,Blue Wizards
+Tolarian Terror,Mixed,,common,U,Creature - Serpent,,7,5.0,5.0,Blue Wizards
+Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Blue Wizards
+Jhessian Thief,Mixed,,common,U,Creature - Human Rogue,,3,1.0,3.0,Blue Wizards
+Mocking Sprite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Wizards
+Serum Visionary,Mixed,,common,U,Creature - Vedalken Wizard,,3,2.0,2.0,Blue Wizards
+Condescend,Mixed,,common,U,Instant,,1,,,Blue Wizards
+Consider,Mixed,,common,U,Instant,,1,,,Blue Wizards
+Opt,Mixed,,common,U,Instant,,1,,,Blue Wizards
+Repeal,Mixed,,common,U,Instant,,1,,,Blue Wizards
+Counterspell,Mixed,,common,U,Instant,,2,,,Blue Wizards
+Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Wizards
+Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
+Lórien Revealed,Mixed,,common,U,Sorcery,,5,,,Blue Card Draw
+Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Blue Card Draw
+Ponder,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
+Gitaxian Probe,Mixed,,common,,Sorcery,,0,,,Blue Card Draw
+Tranquil Landscape,Mixed,,common,,Land,,0,,,Blue Card Draw
+Faerie Seer,Mixed,,common,U,Creature - Faerie Wizard,,1,1.0,1.0,Blue Card Draw
+Impulse,Mixed,,common,U,Instant,,2,,,Blue Card Draw
+Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature - Human Ninja,,2,2.0,1.0,Blue Card Draw
+Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,1.0,3.0,Blue Card Draw
+Ninja of the Deep Hours,Mixed,,common,U,Creature - Human Ninja,,4,2.0,2.0,Blue Card Draw
+Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,3.0,3.0,Blue Card Draw
+Striped Riverwinder,Mixed,,common,U,Creature - Serpent,,7,5.0,5.0,Blue Card Draw
+Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Merfolk
+Bubble Snare,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
+Weakstone's Subjugation,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
+Zephyr Winder,Mixed,,common,U,Creature - Elemental,,2,2.0,1.0,Blue Merfolk
+Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,2.0,3.0,Blue Merfolk
+Snap,Mixed,,common,U,Instant,,2,,,Blue Merfolk
+Hickory Woodlot,Mixed,,common,,Land,,0,,,Blue Merfolk
+Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Blue Merfolk
+Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,5.0,7.0,Blue Merfolk
+Lose Focus,Mixed,,common,U,Instant,,2,,,Blue Merfolk
+Mana Leak,Mixed,,common,U,Instant,,2,,,Blue Merfolk
+Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Merfolk
+Wayfarer's Bauble,Mixed,,common,,Artifact,,1,,,Blue Merfolk
+Retrofitted Transmogrant,Mixed,,common,B,Artifact Creature - Zombie,,1,1.0,1.0,Black Zombies
+Putrid Goblin,Mixed,,common,B,Creature - Zombie Goblin,,2,2.0,2.0,Black Zombies
+Gravedigger,Mixed,,common,B,Creature - Zombie,,4,2.0,2.0,Black Zombies
+Dread Return,Mixed,,common,B,Sorcery,,4,,,Black Zombies
+Blood Fountain,Mixed,,common,B,Artifact,,1,,,Black Zombies
+Haunted Fengraf,Mixed,,common,,Land,,0,,,Black Zombies
+Tithing Blade,Mixed,,common,B,Artifact,,2,,,Black Zombies
+Carrion Feeder,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Black Zombies
+Nested Shambler,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Black Zombies
+Carrier Thrall,Mixed,,common,B,Creature - Vampire,,2,2.0,1.0,Black Zombies
+Legion Vanguard,Mixed,,common,B,Creature - Vampire Soldier,,2,2.0,2.0,Black Zombies
+Mire Triton,Mixed,,common,B,Creature - Zombie Merfolk,,2,2.0,1.0,Black Zombies
+First-Sphere Gargantua,Mixed,,common,B,Creature - Horror,,6,5.0,4.0,Black Zombies
+Unearth,Mixed,,common,B,Sorcery,,1,,,Black Graveyard
+Death Denied,Mixed,,common,B,Instant - Arcane,,2,,,Black Graveyard
+Tortured Existence,Mixed,,common,B,Enchantment,,1,,,Black Graveyard
+Mystic Sanctuary,Mixed,,common,,Land - Island,,0,,,Black Graveyard
+Unwilling Ingredient,Mixed,,common,B,Creature - Frog,,1,1.0,1.0,Black Graveyard
+Faceless Butcher,Mixed,,common,B,Creature - Nightmare Horror,,4,2.0,3.0,Black Graveyard
+Okiba-Gang Shinobi,Mixed,,common,B,Creature - Rat Ninja,,5,3.0,2.0,Black Graveyard
+Chitin Gravestalker,Mixed,,common,B,Creature - Insect Warrior,,6,5.0,4.0,Black Graveyard
+Gurmag Angler,Mixed,,common,B,Creature - Zombie Fish,,7,5.0,5.0,Black Graveyard
+Feign Death,Mixed,,common,B,Instant,,1,,,Black Graveyard
+Undying Malice,Mixed,,common,B,Instant,,1,,,Black Graveyard
+Wither and Bloom,Mixed,,common,B,Instant,,2,,,Black Graveyard
+Ransack the Lab,Mixed,,common,B,Sorcery,,2,,,Black Graveyard
+Voracious Vermin,Mixed,,common,B,Creature - Rat,,3,2.0,1.0,Black Sacrifice
+Aether Poisoner,Mixed,,common,B,Creature - Human Artificer,,2,1.0,1.0,Black Sacrifice
+Infestation Sage,Mixed,,common,B,Creature - Elf Warlock,,1,1.0,1.0,Black Sacrifice
+Nezumi Linkbreaker,Mixed,,common,B,Creature - Rat Warlock,,1,1.0,1.0,Black Sacrifice
+Gixian Infiltrator,Mixed,,common,B,Creature - Phyrexian Human,,2,2.0,1.0,Black Sacrifice
+Falkenrath Noble,Mixed,,common,B,Creature - Vampire,,4,2.0,2.0,Black Sacrifice
+Candy Grapple,Mixed,,common,B,Instant,,2,,,Black Sacrifice
+Guildsworn Prowler,Mixed,,common,B,Creature - Tiefling Rogue Assassin,,2,2.0,1.0,Black Sacrifice
+Ecstatic Awakener,Mixed,,common,B,Creature - Human Wizard,,1,,,Black Sacrifice
+Plagued Rusalka,Mixed,,common,B,Creature - Spirit,,1,1.0,1.0,Black Sacrifice
+Village Rites,Mixed,,common,B,Instant,,1,,,Black Sacrifice
+Grim Bauble,Mixed,,common,B,Artifact,,1,,,Black Sacrifice
+Pestilence,Mixed,,common,B,Enchantment,,4,,,Black Sacrifice
+Vampire Lacerator,Mixed,,common,B,Creature - Vampire Warrior,,1,2.0,2.0,Black Vampires
+Scurrilous Sentry,Mixed,,common,B,Creature - Human Knight Rogue,,4,2.0,3.0,Black Vampires
+Vampire Sovereign,Mixed,,common,B,Creature - Vampire Noble,,5,3.0,4.0,Black Vampires
+Gift of Fangs,Mixed,,common,B,Enchantment - Aura,,1,,,Black Vampires
+Serrated Arrows,Mixed,,common,,Artifact,,4,,,Black Vampires
+Carnophage,Mixed,,common,B,Creature - Zombie,,1,2.0,2.0,Black Vampires
+Grasping Scoundrel,Mixed,,common,B,Creature - Human Pirate,,1,1.0,1.0,Black Vampires
+Accursed Marauder,Mixed,,common,B,Creature - Zombie Warrior,,2,2.0,1.0,Black Vampires
+Basilica Screecher,Mixed,,common,B,Creature - Bat,,2,1.0,2.0,Black Vampires
+Dauthi Horror,Mixed,,common,B,Creature - Dauthi Horror,,2,2.0,1.0,Black Vampires
+Dauthi Slayer,Mixed,,common,B,Creature - Dauthi Soldier,,2,2.0,2.0,Black Vampires
+Disfigure,Mixed,,common,B,Instant,,1,,,Black Vampires
+Tragic Slip,Mixed,,common,B,Instant,,1,,,Black Vampires
+Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,1.0,1.0,Red Goblins
+Mogg War Marshal,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Goblins
+Goblin Motivator,Mixed,,common,R,Creature - Goblin Warrior,,1,1.0,1.0,Red Goblins
+Harried Spearguard,Mixed,,common,R,Creature - Human Soldier,,1,1.0,1.0,Red Goblins
+Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,2.0,2.0,Red Goblins
+Goblin Bushwhacker,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Goblins
+Mayhem Patrol,Mixed,,common,R,Creature - Devil Warrior,,2,1.0,2.0,Red Goblins
+Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,2.0,2.0,Red Goblins
+Bogardan Dragonheart,Mixed,,common,R,Creature - Human Shaman,,3,2.0,2.0,Red Goblins
+Goblin Surprise,Mixed,,common,R,Instant,,3,,,Red Goblins
+Improvised Club,Mixed,,common,R,Instant,,2,,,Red Goblins
+Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Red Goblins
+Fireblast,Mixed,,common,R,Instant,,6,,,Red Goblins
+Burst Lightning,Mixed,,common,R,Instant,,1,,,Red Burn
+Lightning Bolt,Mixed,,common,R,Instant,,1,,,Red Burn
+Lightning Strike,Mixed,,common,R,Instant,,2,,,Red Burn
+Galvanic Discharge,Mixed,,common,R,Instant,,1,,,Red Burn
+Abrade,Mixed,,common,R,Instant,,2,,,Red Burn
+Incinerate,Mixed,,common,R,Instant,,2,,,Red Burn
+Searing Spear,Mixed,,common,R,Instant,,2,,,Red Burn
+Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Red Burn
+Chain Lightning,Mixed,,common,R,Sorcery,,1,,,Red Burn
+Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Red Burn
+Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,2.0,3.0,Red Burn
+Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Burn
+Fireball,Mixed,,common,R,Sorcery,,1,,,Red Burn
+Thriving Skyclaw,Mixed,,common,R,Creature - Cat Dragon,,4,3.0,2.0,Red Dragons
+Wrangle,Mixed,,common,R,Sorcery,,2,,,Red Dragons
+Clockwork Percussionist,Mixed,,common,R,Artifact Creature - Monkey Toy,,1,1.0,1.0,Red Dragons
+Monastery Swiftspear,Mixed,,common,R,Creature - Human Monk,,1,1.0,2.0,Red Dragons
+Hobblefiend,Mixed,,common,R,Creature - Devil,,2,2.0,1.0,Red Dragons
+Yavimaya Steelcrusher,Mixed,,common,R,Creature - Ape Warrior,,2,2.0,2.0,Red Dragons
+Oliphaunt,Mixed,,common,R,Creature - Elephant,,6,6.0,4.0,Red Dragons
+Reckless Charge,Mixed,,common,R,Sorcery,,1,,,Red Dragons
+Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Dragons
+Rally at the Hornburg,Mixed,,common,R,Creature Sorcery,,2,,,Red Dragons
+Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Red Dragons
+Scrapwork Mutt,Mixed,,common,R,Artifact Creature - Dog,,2,2.0,1.0,Red Dragons
+Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,2.0,1.0,Red Artifacts
+Volatile Wanderglyph,Mixed,,common,R,Artifact Creature - Golem,,2,2.0,2.0,Red Artifacts
+Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Artifacts
+Filigree Familiar,Mixed,,common,,Artifact Creature - Fox,,3,2.0,2.0,Red Artifacts
+Juggernaut,Mixed,,common,,Artifact Creature - Juggernaut,,4,5.0,3.0,Red Artifacts
+Candy Trail,Mixed,,common,,Artifact - Food Clue,,1,,,Red Artifacts
+Guardian Idol,Mixed,,common,,Artifact,,2,,,Red Artifacts
+Mind Stone,Mixed,,common,,Artifact,,2,,,Red Artifacts
+Prophetic Prism,Mixed,,common,,Artifact,,2,,,Red Artifacts
+Bonder's Ornament,Mixed,,common,,Artifact,,3,,,Red Artifacts
+Pristine Talisman,Mixed,,common,,Artifact,,3,,,Red Artifacts
+Thriving Grubs,Mixed,,common,R,Creature - Gremlin,,2,2.0,1.0,Red Artifacts
+Sprout Swarm,Mixed,,common,G,Instant,,2,,,Green Elves
+Arbor Elf,Mixed,,common,G,Creature - Elf Druid,,1,1.0,1.0,Green Elves
+Longstalk Brawl,Mixed,,common,G,Sorcery,,1,,,Green Elves
+Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Elves
+Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Elves
+Experiment One,Mixed,,common,G,Creature - Human Ooze,,1,1.0,1.0,Green Elves
+Basking Broodscale,Mixed,,common,G,Creature - Eldrazi Lizard,,2,2.0,2.0,Green Elves
+Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,3.0,3.0,Green Elves
+Generous Ent,Mixed,,common,G,Creature - Treefolk,,6,5.0,7.0,Green Elves
+Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,2.0,1.0,Green Elves
+Wild Growth,Mixed,,common,G,Enchantment - Aura,,1,,,Green Elves
+Fertile Ground,Mixed,,common,G,Enchantment - Aura,,2,,,Green Elves
+Twisted Landscape,Mixed,,common,,Land,,0,,,Green Elves
+Sheltering Landscape,Mixed,,common,,Land,,0,,,Green Ramp
+Sakura-Tribe Elder,Mixed,,common,G,Creature - Snake Shaman,,2,1.0,1.0,Green Ramp
+Yavimaya Elder,Mixed,,common,G,Creature - Human Druid,,3,2.0,1.0,Green Ramp
+Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,6.0,5.0,Green Ramp
+Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,6.0,5.0,Green Ramp
+Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Ramp
+Nature's Lore,Mixed,,common,G,Sorcery,,2,,,Green Ramp
+Annoyed Altisaur,Mixed,,common,G,Creature - Dinosaur,,7,6.0,5.0,Green Ramp
+Farseek,Mixed,,common,G,Sorcery,,2,,,Green Ramp
+Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,3.0,3.0,Green Ramp
+Grapple with the Past,Mixed,,common,G,Instant,,2,,,Green Ramp
+Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Green Ramp
+Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Ramp
+Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,4.0,4.0,Green Stompy
+Ram Through,Mixed,,common,G,Instant,,2,,,Green Stompy
+Nyxborn Hydra,Mixed,,common,G,Enchantment Creature - Hydra,,1,0.0,1.0,Green Stompy
+Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,2.0,2.0,Green Stompy
+Tuskguard Captain,Mixed,,common,G,Creature - Human Warrior,,3,2.0,3.0,Green Stompy
+Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,4.0,4.0,Green Stompy
+Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,4.0,4.0,Green Stompy
+Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,5.0,4.0,Green Stompy
+Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Stompy
+Bramble Wurm,Mixed,,common,G,Creature - Wurm,,7,7.0,6.0,Green Stompy
+Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
+Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Stompy
+Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Green Stompy
+Blastoderm,Mixed,,common,G,Creature - Beast,,4,5.0,5.0,Green Beasts
+Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,2.0,2.0,Green Beasts
+Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,3.0,1.0,Green Beasts
+Llanowar Visionary,Mixed,,common,G,Creature - Elf Druid,,3,2.0,2.0,Green Beasts
+Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,1.0,0.0,Green Beasts
+Bloom Hulk,Mixed,,common,G,Creature - Plant Elemental,,4,4.0,4.0,Green Beasts
+Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
+Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,3.0,3.0,Green Beasts
+Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,4.0,4.0,Green Beasts
+Witch's Cottage,Mixed,,common,,Land - Swamp,,0,,,Green Beasts
