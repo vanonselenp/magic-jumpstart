@@ -86,49 +86,56 @@ def get_card_colors(card: pd.Series) -> List[str]:
 def can_land_produce_colors(land_card: pd.Series, required_colors: set) -> bool:
     """
     Check if a land can produce all the required colors for a dual-color theme.
+    This function checks for DIRECT mana production, not fetch/cycling abilities.
     
     Args:
         land_card: The land card to check
         required_colors: Set of colors that must be producible (e.g., {'W', 'U'})
         
     Returns:
-        True if the land can produce all required colors
+        True if the land can directly produce all required colors
     """
     if not is_land_card(land_card):
         return False
     
-    # Get the land's color identity
+    oracle_text = str(land_card.get('Oracle Text', '')).lower()
+    
+    # Get the land's color identity first
     land_colors = set(get_card_colors(land_card))
     
-    # If land has no color identity, check oracle text for mana production
-    if not land_colors:
-        oracle_text = str(land_card.get('Oracle Text', '')).lower()
-        
-        # Check for basic land types that produce specific colors
-        basic_land_patterns = {
-            'W': ['plains', 'white mana', '{w}'],
-            'U': ['island', 'blue mana', '{u}'],
-            'B': ['swamp', 'black mana', '{b}'],
-            'R': ['mountain', 'red mana', '{r}'],
-            'G': ['forest', 'green mana', '{g}']
-        }
-        
-        producible_colors = set()
-        for color, patterns in basic_land_patterns.items():
-            if any(pattern in oracle_text for pattern in patterns):
-                producible_colors.add(color)
-        
-        # Also check for generic mana symbols in oracle text
-        for color in required_colors:
-            color_symbol = '{' + color.lower() + '}'
-            if color_symbol in oracle_text:
-                producible_colors.add(color)
-        
-        # Check if this land can produce all required colors
-        return required_colors.issubset(producible_colors)
+    # Check for direct mana production in oracle text
+    directly_producible = set()
     
-    # For lands with color identity, check if it covers all required colors
-    return required_colors.issubset(land_colors)
+    # Look for mana production patterns like "{T}: Add {U}" or "{T}: Add {U} or {B}"
+    if '{t}: add' in oracle_text:
+        for color in ['W', 'U', 'B', 'R', 'G']:
+            color_symbol = '{' + color.lower() + '}'
+            # Check if this color appears in a mana production ability (not cycling cost)
+            if color_symbol in oracle_text:
+                # Make sure it's in a mana production line, not a cycling cost
+                lines = oracle_text.split('|')
+                for line in lines:
+                    line = line.strip()
+                    if '{t}: add' in line and color_symbol in line:
+                        directly_producible.add(color)
+                        break
+    
+    # If land has color identity, it can produce those colors
+    if land_colors:
+        directly_producible.update(land_colors)
+    
+    # For basic lands, add their inherent color
+    basic_land_types = {
+        'plains': 'W', 'island': 'U', 'swamp': 'B', 
+        'mountain': 'R', 'forest': 'G'
+    }
+    
+    for basic_type, color in basic_land_types.items():
+        if basic_type in oracle_text and f'basic {basic_type}' in oracle_text:
+            directly_producible.add(color)
+    
+    # Check if this land can directly produce all required colors
+    return required_colors.issubset(directly_producible)
 
 
 def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> float:
@@ -156,62 +163,70 @@ def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> fl
     if not can_land_produce_colors(land_card, required_colors):
         return 0.0  # Can't produce both colors
     
-    # Get the land's producible colors
-    land_colors = set(get_card_colors(land_card))
     oracle_text = str(land_card.get('Oracle Text', '')).lower()
     
-    # If land has no color identity, check oracle text for mana production
-    if not land_colors:
-        basic_land_patterns = {
-            'W': ['plains', 'white mana', '{w}'],
-            'U': ['island', 'blue mana', '{u}'],
-            'B': ['swamp', 'black mana', '{b}'],
-            'R': ['mountain', 'red mana', '{r}'],
-            'G': ['forest', 'green mana', '{g}']
-        }
+    # Check for DIRECT mana production (not just fetchable)
+    directly_producible_colors = set()
+    
+    # Look for explicit mana symbols in the oracle text (e.g., {U}, {B})
+    for color in ['W', 'U', 'B', 'R', 'G']:
+        color_symbol = '{' + color.lower() + '}'
+        if color_symbol in oracle_text:
+            directly_producible_colors.add(color)
+    
+    # Check for color identity from the card's colors
+    land_colors = set(get_card_colors(land_card))
+    if land_colors:
+        directly_producible_colors.update(land_colors)
+    
+    # IMPORTANT: Don't count lands that only fetch basics as direct producers
+    # Cycling lands and fetch lands are utility, not direct mana production
+    if not directly_producible_colors:
+        # This is likely a utility land (cycling, fetch, etc.)
+        # Check if it only produces {C} or similar
+        if '{c}' in oracle_text or 'add {c}' in oracle_text:
+            # This land only produces colorless - very low priority for dual-color
+            return 0.1  # Minimal score for utility
+    
+    # Score based on direct color production efficiency
+    if not required_colors.issubset(directly_producible_colors):
+        # Can't directly produce both required colors
+        # Check if it's a fetch/utility land that can get the colors
+        can_fetch_both = True
+        for color in required_colors:
+            color_names = {
+                'W': 'plains', 'U': 'island', 'B': 'swamp', 
+                'R': 'mountain', 'G': 'forest'
+            }
+            if color in color_names and color_names[color] not in oracle_text:
+                can_fetch_both = False
+                break
         
-        producible_colors = set()
-        for color, patterns in basic_land_patterns.items():
-            if any(pattern in oracle_text for pattern in patterns):
-                producible_colors.add(color)
-        
-        # Also check for explicit mana symbols
-        for color in ['W', 'U', 'B', 'R', 'G']:
-            color_symbol = '{' + color.lower() + '}'
-            if color_symbol in oracle_text:
-                producible_colors.add(color)
-        
-        land_colors = producible_colors
+        if can_fetch_both and ('search' in oracle_text or 'cycling' in oracle_text):
+            return 0.3  # Low score for utility lands
+        else:
+            return 0.0  # Can't help with mana fixing
     
-    # Score based on color production efficiency
-    score = 1.0  # Base score for producing both colors
+    # Land can directly produce both colors - calculate score
+    score = 2.0  # Base score for direct dual-color production
     
-    # Bonus for dual lands (produce exactly the two colors we need)
-    if land_colors == required_colors:
-        score += 2.0  # Perfect dual land match
-    # Bonus for lands that produce both colors but not too many others
-    elif required_colors.issubset(land_colors) and len(land_colors) <= 3:
-        score += 1.5  # Good multi-color land
-    # Lower score for lands that produce many colors (less efficient)
-    elif len(land_colors) > 3:
-        score += 0.5  # Works but not ideal
+    # Bonus for perfect dual land match
+    if directly_producible_colors == required_colors:
+        score += 2.0  # Exactly the colors we need
+    elif len(directly_producible_colors) <= 3:
+        score += 1.0  # Good but not perfect
+    else:
+        score += 0.5  # Many colors (less focused)
     
-    # Additional scoring based on land type and abilities
-    land_name = str(land_card['name']).lower()
-    land_type = str(land_card['Type']).lower()
+    # Penalty for enters-tapped lands (slower)
+    if 'enters tapped' in oracle_text or 'enters the battlefield tapped' in oracle_text:
+        score -= 0.3  # Small penalty for being slow
     
-    # Bonus for common dual land types
-    if any(keyword in oracle_text for keyword in ['enters the battlefield tapped', 'enters tapped']):
-        # Taplands are common and reliable but slower
-        score += 0.3
-    
-    if 'basic' in land_type:
-        # Basic lands are less valuable for dual-color (only produce one color each)
-        score = max(0.2, score - 1.0)
-    
-    # Bonus for cycling or other utility
+    # Bonus for utility abilities
     if 'cycling' in oracle_text:
         score += 0.2
+    if 'draw a card' in oracle_text:
+        score += 0.1
     
     return score
 
