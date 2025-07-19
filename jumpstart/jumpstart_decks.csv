@@ -246,19 +246,19 @@ Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,5.0,4.0,Green Stompy
 Giant Growth,Mixed,,common,G,Instant,,1,,,Green Stompy
 Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
 Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Stompy
+Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Green Beasts
+Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,3.0,3.0,Green Beasts
+Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Beasts
+Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Green Beasts
+Jade Avenger,Mixed,,common,G,Creature - Frog Samurai,,2,2.0,2.0,Green Beasts
+Mother Bear,Mixed,,common,G,Creature - Bear,,2,2.0,2.0,Green Beasts
 Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,2.0,2.0,Green Beasts
 Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,3.0,1.0,Green Beasts
 Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,1.0,0.0,Green Beasts
 Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
-Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,3.0,3.0,Green Beasts
+Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Beasts
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Green Beasts
-Jade Avenger,Mixed,,common,G,Creature - Frog Samurai,,2,2.0,2.0,Green Beasts
-Mother Bear,Mixed,,common,G,Creature - Bear,,2,2.0,2.0,Green Beasts
-Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Green Beasts
-Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Green Beasts
-Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Green Beasts
-Winding Way,Mixed,,common,G,Sorcery,,2,,,Green Beasts
-Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Green Beasts
+Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Green Beasts
 Skybridge Towers,Mixed,,common,UW,Land,,0,,,Azorius Control
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Control
 Tranquil Cove,Mixed,,common,,Land,,0,,,Azorius Control
@@ -358,11 +358,11 @@ Desecrator Hag,Mixed,,common,BG,Creature - Hag,,4,2.0,2.0,Golgari Graveyard Valu
 Dreg Mangler,Mixed,,common,BG,Creature - Plant Zombie,,3,3.0,3.0,Golgari Graveyard Value
 Putrid Leech,Mixed,,common,BG,Creature - Zombie Leech,,2,2.0,2.0,Golgari Graveyard Value
 Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,2.0,1.0,Golgari Graveyard Value
-Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Golgari Graveyard Value
-Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Golgari Graveyard Value
+Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
+Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyard Value
+Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
 Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Golgari Graveyard Value
 Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Golgari Graveyard Value
-Doom Blade,Mixed,,common,B,Instant,,2,,,Golgari Graveyard Value
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,Boros Equipment Aggro
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,Boros Equipment Aggro
 Vault Skirge,Mixed,,common,,Artifact Creature - Imp,,1,1.0,1.0,Boros Equipment Aggro
@@ -382,10 +382,10 @@ Tangled Islet,Mixed,,common,GU,Land - Forest Island,,0,,,Simic Ramp Control
 Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Ramp Control
 Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,1.0,3.0,Simic Ramp Control
 Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
-Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,5.0,7.0,Simic Ramp Control
+Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Simic Ramp Control
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,1.0,4.0,Simic Ramp Control
 Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,4.0,3.0,Simic Ramp Control
-Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Simic Ramp Control
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
-Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
+Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Simic Ramp Control
+Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control
