@@ -134,8 +134,10 @@ MONO_COLOR_THEMES = {
     'Green Beasts': {
         'colors': ['G'],
         'strategy': 'Large beast creatures with powerful abilities',
-        'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive'],
-        'archetype': 'Midrange'
+        'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive', 'bear', 
+                    'wolf', 'elephant', 'rhino', 'boar', 'ape', 'creature', 'large', 'big', 
+                    'trample', 'fight', 'lord', 'gets +', 'beasts you control'],
+        'archetype': 'Tribal'
     }
 }
 
