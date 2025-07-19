@@ -112,8 +112,10 @@ MONO_COLOR_THEMES = {
     'Green Elves': {
         'colors': ['G'],
         'strategy': 'Elf tribal with mana acceleration and creature synergies',
-        'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token'],
-        'archetype': 'Ramp'
+        'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token', 'druid', 
+                    'shaman', 'ranger', 'creature', 'add', 'produces', 'enters', 'lord', 
+                    'gets +', 'elves you control', 'elf creature'],
+        'archetype': 'Tribal'
     },
     'Green Ramp': {
         'colors': ['G'],
