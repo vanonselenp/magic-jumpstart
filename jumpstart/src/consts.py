@@ -12,7 +12,8 @@ MONO_COLOR_THEMES = {
     'White Equipment': {
         'colors': ['W'],
         'strategy': 'Equipment-based deck with efficient creatures and powerful gear',
-        'keywords': ['equipment', 'attach', 'equipped', 'metalcraft', 'artifact', 'power', 'toughness'],
+        'keywords': ['equipment', 'attach', 'equipped', 'equip', 'metalcraft', 'artifact', 'power', 'toughness', 
+                    'sword', 'blade', 'equipped creature', 'gets +', 'artifact creature', 'living weapon', 'armor'],
         'archetype': 'Midrange'
     },
     'White Angels': {
@@ -203,7 +204,8 @@ DUAL_COLOR_THEMES = {
     'Boros Equipment Aggro': {
         'colors': ['R', 'W'],
         'strategy': 'Aggressive creatures with equipment support and combat tricks',
-        'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump'],
+        'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump', 'equip', 'equipped',
+                    'sword', 'blade', 'artifact', 'gets +', 'equipped creature', 'attach', 'living weapon'],
         'archetype': 'Aggro'
     },
     
