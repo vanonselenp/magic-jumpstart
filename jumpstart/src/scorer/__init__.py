@@ -39,7 +39,8 @@ from .scorer import (
     create_default_scorer,
     create_aggressive_scorer,
     create_tribal_scorer,
-    create_equipment_scorer
+    create_equipment_scorer,
+    create_stompy_scorer
 )
 
 import pandas as pd

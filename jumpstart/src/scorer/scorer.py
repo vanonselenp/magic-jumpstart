@@ -185,3 +185,20 @@ def create_equipment_scorer() -> CardScorer:
     scorer.set_rule_weight("Artifact/Equipment", 1.5)
     scorer.set_rule_weight("Equipment Creatures", 1.3)
     return scorer
+
+
+def create_stompy_scorer() -> CardScorer:
+    """Create a scorer optimized for stompy themes (big creatures + pump)."""
+    rules = [
+        KeywordMatchingRule(),
+        ArchetypeManaCurveRule(),
+        SpecificKeywordRule(),
+        TypeBasedRule(),
+        PowerToughnessRatioRule(),  # Heavily weight P/T efficiency
+    ]
+    
+    scorer = CardScorer(rules)
+    # Weight big creatures and P/T efficiency heavily
+    scorer.set_rule_weight("P/T Efficiency", 2.0)
+    scorer.set_rule_weight("Keyword Matching", 1.5)  # For pump spells
+    return scorer
