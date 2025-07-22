@@ -324,32 +324,32 @@ Sandsteppe Outcast,Mixed,,common,W,Creature - Human Warrior,,3,2.0,1.0,Selesnya 
 Eldrazi Repurposer,Mixed,,common,G,Creature - Eldrazi Drone,,3,3.0,3.0,Selesnya Tokens
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Selesnya Tokens
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Selesnya Tokens
-Tithe Drinker,Mixed,,common,BW,Creature - Vampire,,2,2.0,1.0,Orzhov Lifedrain
-Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
-Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifedrain
-Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
-Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifedrain
-Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
-Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
-Mutagenic Growth,Mixed,,common,,Instant,,0,,,Orzhov Lifedrain
-Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
-Unbounded Potential,Mixed,,common,W,Instant,,2,,,Orzhov Lifedrain
-Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,Orzhov Lifedrain
-Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,1.0,2.0,Orzhov Lifedrain
-Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifedrain
+Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifegain Value
+Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifegain Value
+Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifegain Value
+Tithe Drinker,Mixed,,common,BW,Creature - Vampire,,2,2.0,1.0,Orzhov Lifegain Value
+Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifegain Value
+Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifegain Value
+Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifegain Value
+Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,Orzhov Lifegain Value
+Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,1.0,2.0,Orzhov Lifegain Value
+Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifegain Value
+Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,2.0,4.0,Orzhov Lifegain Value
+Palace Sentinels,Mixed,,common,W,Creature - Human Soldier,,4,2.0,4.0,Orzhov Lifegain Value
+Rhox Veteran,Mixed,,common,W,Creature - Rhino Soldier,,4,2.0,4.0,Orzhov Lifegain Value
 Eroded Canyon,Mixed,,common,,Land - Desert,,0,,,Izzet Spells Matter
 Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
 Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,2.0,2.0,Izzet Spells Matter
 Bloodwater Entity,Mixed,,common,UR,Creature - Elemental,,3,2.0,2.0,Izzet Spells Matter
 Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Spells Matter
+Mutagenic Growth,Mixed,,common,,Instant,,0,,,Izzet Spells Matter
 Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Izzet Spells Matter
 Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,3.0,2.0,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Goblin Surprise,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Izzet Spells Matter
-Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Izzet Spells Matter
 Golgari Rot Farm,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
 Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Golgari Graveyard Value
 Witherbloom Campus,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
@@ -362,7 +362,7 @@ Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
 Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyard Value
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
 Grim Bauble,Mixed,,common,B,Artifact,,1,,,Golgari Graveyard Value
-Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Golgari Graveyard Value
+Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Golgari Graveyard Value
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,Boros Equipment Aggro
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,Boros Equipment Aggro
 Vault Skirge,Mixed,,common,,Artifact Creature - Imp,,1,1.0,1.0,Boros Equipment Aggro
@@ -375,7 +375,7 @@ Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Equipment 
 Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,3.0,1.0,Boros Equipment Aggro
 Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Boros Equipment Aggro
 Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Boros Equipment Aggro
-Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,Boros Equipment Aggro
+Unbounded Potential,Mixed,,common,W,Instant,,2,,,Boros Equipment Aggro
 Quandrix Campus,Mixed,,common,GU,Land,,0,,,Simic Ramp Control
 Simic Growth Chamber,Mixed,,common,UG,Land,,0,,,Simic Ramp Control
 Tangled Islet,Mixed,,common,GU,Land - Forest Island,,0,,,Simic Ramp Control
@@ -384,8 +384,8 @@ Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,1.0,3.0,Simic Ra
 Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
 Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Simic Ramp Control
 Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Simic Ramp Control
+Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Simic Ramp Control
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,1.0,4.0,Simic Ramp Control
 Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,4.0,3.0,Simic Ramp Control
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Simic Ramp Control
-Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control

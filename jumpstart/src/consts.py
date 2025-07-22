@@ -200,10 +200,10 @@ DUAL_COLOR_THEMES = {
     },
     
     # White-Black (Orzhov)
-    'Orzhov Lifedrain': {
+    'Orzhov Lifegain Value': {
         'colors': ['W', 'B'],
-        'strategy': 'Life manipulation with drain effects and powerful creatures',
-        'keywords': ['lifegain', 'drain', 'life', 'extort', 'lifelink', 'aristocrats'],
+        'strategy': 'Incremental advantage through lifegain and card quality',
+        'keywords': ['lifelink', 'lifegain', 'card advantage', 'value', 'ETB effects', 'versatile threats'],
         'archetype': 'Midrange'
     },
     
@@ -247,7 +247,7 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 # Theme categories for organization
 THEME_CATEGORIES = {
     'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
-    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
+    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Tokens', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
