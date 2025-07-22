@@ -255,6 +255,144 @@ def save_prompts_to_file(prompts_dict, filename="theme_image_prompts.txt"):
     print(f"Prompts saved to {filename}")
 
 
+def generate_deck_divider(theme_name, deck_dataframe):
+    """
+    Generate a printable divider card for physical deck storage.
+    
+    Args:
+        theme_name (str): Name of the theme
+        deck_dataframe (pd.DataFrame): DataFrame containing the deck's cards
+        
+    Returns:
+        str: Formatted divider card text ready for printing
+    """
+    # Import theme data
+    try:
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+    except ImportError:
+        try:
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        except ImportError:
+            raise ImportError("Could not import theme constants from consts.py")
+    
+    # Look up theme info
+    theme_info = None
+    if theme_name in MONO_COLOR_THEMES:
+        theme_info = MONO_COLOR_THEMES[theme_name]
+    elif theme_name in DUAL_COLOR_THEMES:
+        theme_info = DUAL_COLOR_THEMES[theme_name]
+    else:
+        # Fallback if theme not found
+        theme_info = {
+            'strategy': 'Strategy not found in theme definitions',
+            'colors': ['?'],
+            'archetype': 'Unknown'
+        }
+    
+    # Get card list in alphabetical order
+    card_names = []
+    for idx, card in deck_dataframe.iterrows():
+        card_name = card.get('name', 'Unknown Card')
+        card_names.append(card_name)
+    
+    card_names.sort()  # Alphabetical order
+    
+    # Format the divider card
+    divider = f"""{'='*50}
+{theme_name.upper().center(50)}
+{'='*50}
+
+STRATEGY:
+{theme_info['strategy']}
+
+COLORS: {' + '.join(theme_info['colors'])}
+ARCHETYPE: {theme_info['archetype']}
+CARDS: {len(card_names)}
+
+{'─'*50}
+DECK LIST (Alphabetical):
+{'─'*50}"""
+    
+    # Add cards in two columns for better space usage
+    for i in range(0, len(card_names), 2):
+        left_card = card_names[i]
+        right_card = card_names[i + 1] if i + 1 < len(card_names) else ""
+        
+        # Format with proper spacing (25 chars per column)
+        divider += f"\n{left_card:<25} {right_card}"
+    
+    divider += f"\n\n{'='*50}"
+    
+    return divider
+
+
+def generate_all_deck_dividers(deck_dataframes, filename="deck_dividers.txt"):
+    """
+    Generate printable dividers for all decks in the collection.
+    
+    Args:
+        deck_dataframes (dict): Dictionary mapping theme names to DataFrames
+        filename (str): Output filename for the dividers
+        
+    Returns:
+        dict: Dictionary mapping theme names to their divider text
+    """
+    dividers = {}
+    
+    # Generate divider for each deck
+    for theme_name, deck_df in deck_dataframes.items():
+        try:
+            dividers[theme_name] = generate_deck_divider(theme_name, deck_df)
+        except Exception as e:
+            print(f"Warning: Could not generate divider for {theme_name}: {e}")
+            # Create a basic divider as fallback
+            card_names = sorted([card.get('name', 'Unknown') for _, card in deck_df.iterrows()])
+            basic_divider = f"""{'='*50}
+{theme_name.upper().center(50)}
+{'='*50}
+
+CARDS: {len(card_names)}
+
+{'─'*50}
+DECK LIST (Alphabetical):
+{'─'*50}"""
+            for i in range(0, len(card_names), 2):
+                left_card = card_names[i]
+                right_card = card_names[i + 1] if i + 1 < len(card_names) else ""
+                basic_divider += f"\n{left_card:<25} {right_card}"
+            basic_divider += f"\n\n{'='*50}"
+            dividers[theme_name] = basic_divider
+    
+    # Save to file
+    with open(filename, 'w', encoding='utf-8') as f:
+        # Sort themes alphabetically for consistent ordering
+        sorted_themes = sorted(dividers.keys())
+        
+        for i, theme_name in enumerate(sorted_themes):
+            f.write(dividers[theme_name])
+            
+            # Add page break between dividers (except for last one)
+            if i < len(sorted_themes) - 1:
+                f.write("\n\n" + "┄" * 50 + " PAGE BREAK " + "┄" * 50 + "\n\n")
+    
+    print(f"Deck dividers saved to {filename}")
+    print(f"Generated {len(dividers)} divider cards")
+    
+    return dividers
+
+
+def print_single_divider(theme_name, deck_dataframe):
+    """
+    Print a single divider to console for immediate viewing.
+    
+    Args:
+        theme_name (str): Name of the theme
+        deck_dataframe (pd.DataFrame): DataFrame containing the deck's cards
+    """
+    divider = generate_deck_divider(theme_name, deck_dataframe)
+    print(divider)
+
+
 # Example usage function
 def generate_all_theme_prompts():
     """
@@ -270,7 +408,7 @@ def generate_all_theme_prompts():
 
 
 if __name__ == "__main__":
-    # Example usage
+    # Example usage for image prompts
     try:
         example_prompt = generate_image_prompt("Selesnya Value")
         
@@ -286,3 +424,16 @@ if __name__ == "__main__":
         print("generate_image_prompt('Rakdos Aggro')")
         print("generate_image_prompt('White Soldiers')")
         print("\nAvailable themes should be defined in consts.py")
+    
+    print("\n" + "="*60)
+    print("DIVIDER CARD FUNCTIONALITY")
+    print("="*60)
+    print("\nTo generate deck dividers:")
+    print("generate_all_deck_dividers(deck_dataframes)")
+    print("print_single_divider('Selesnya Value', deck_dataframe)")
+    print("\nDividers include:")
+    print("- Theme name as header")
+    print("- Strategy description")
+    print("- Color/archetype info")
+    print("- Alphabetical card list in two columns")
+    print("- Formatted for easy printing and physical storage")

@@ -1,0 +1,777 @@
+==================================================
+                 AZORIUS CONTROL                  
+==================================================
+
+STRATEGY:
+Control deck with counterspells, removal, card draw, and efficient win conditions
+
+COLORS: W + U
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Azorius Chancery          Candy Trail
+Condescend                Filigree Familiar
+Judge's Familiar          Lyev Skyknight
+Miscalculation            Momentary Blink
+Phantom Interference      Silver Drake
+Skybridge Towers          Tranquil Cove
+Young Blue Dragon         
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  BLACK CONTROL                   
+==================================================
+
+STRATEGY:
+Control deck with removal spells and efficient creatures for board control
+
+COLORS: B
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Arms of Hadar             Ashes to Ashes
+Doom Blade                Faceless Butcher
+Feed the Swarm            Gray Merchant of Asphodel
+Loathsome Curator         Phyrexian Rager
+Troll of Khazad-dûm       Undying Malice
+Vampire Sovereign         Vendetta
+Wither and Bloom          
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                 BLACK GRAVEYARD                  
+==================================================
+
+STRATEGY:
+Graveyard-based value engine with recursion and reanimation
+
+COLORS: B
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Bone Picker               Chitin Gravestalker
+Dread Return              First-Sphere Gargantua
+Gravedigger               Gurmag Angler
+Okiba-Gang Shinobi        Ransack the Lab
+Scurrilous Sentry         Thorn of the Black Rose
+Tortured Existence        Unearth
+Unwilling Ingredient      
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                 BLACK SACRIFICE                  
+==================================================
+
+STRATEGY:
+Sacrifice-based deck with death triggers and value generation
+
+COLORS: B
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Aether Poisoner           Basilica Screecher
+Cast Down                 Crypt Rats
+Dauthi Horror             Dauthi Slayer
+Feign Death               Go for the Throat
+Infestation Sage          Mardu Skullhunter
+Nested Shambler           Nezumi Linkbreaker
+Pestilence                
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  BLACK ZOMBIES                   
+==================================================
+
+STRATEGY:
+Zombie tribal with graveyard recursion and sacrifice synergies
+
+COLORS: B
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Accursed Marauder         Blood Fountain
+Candy Grapple             Carrier Thrall
+Death Denied              Falkenrath Noble
+Gixian Infiltrator        Guildsworn Prowler
+Legion Vanguard           Putrid Goblin
+Retrofitted Transmogrant  Tithing Blade
+Voracious Vermin          
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  BLUE CARD DRAW                  
+==================================================
+
+STRATEGY:
+Card advantage engine with draw spells and library manipulation
+
+COLORS: U
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Behold the Multiverse     Faerie Seer
+Impulse                   Lórien Revealed
+Moon-Circuit Hacker       Ninja of the Deep Hours
+Opt                       Ponder
+Preordain                 Serum Visions
+Striped Riverwinder       Sword Coast Serpent
+Vizier of Tumbling Sands  
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   BLUE FLYING                    
+==================================================
+
+STRATEGY:
+Evasive creatures with flying and tempo spells
+
+COLORS: U
+ARCHETYPE: Tempo
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Brainstorm                Cloudkin Seer
+Counterspell              Cruel Witness
+Exclude                   Frost Trickster
+Geyser Drake              Mist Raven
+Mulldrifter               Murmuring Mystic
+Preening Champion         Repeal
+Warden of Evos Isle       
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                    BLUE TEMPO                    
+==================================================
+
+STRATEGY:
+Efficient creatures with evasion and tempo spells for board control
+
+COLORS: U
+ARCHETYPE: Tempo
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Aethersnipe               Capsize
+Displace                  Eldrazi Skyspawner
+Ghostly Flicker           Man-o'-War
+Mirrorshell Crab          Mistral Singer
+Peregrine Drake           Pestermite
+Snap                      Winter Eladrin
+Zephyr Winder             
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   BLUE WIZARDS                   
+==================================================
+
+STRATEGY:
+Wizard tribal with spell-based synergies and card advantage
+
+COLORS: U
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Archaeomancer             Hard Evidence
+Into the Roil             Jhessian Thief
+Lose Focus                Mana Leak
+Mocking Sprite            Quick Study
+Remove Soul               Serum Visionary
+Shipwreck Dowser          Tolarian Terror
+Treasure Cruise           
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+              BOROS EQUIPMENT AGGRO               
+==================================================
+
+STRATEGY:
+Aggressive creatures with equipment support and combat tricks
+
+COLORS: R + W
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Abraded Bluffs            Boros Garrison
+Conduit Goblin            Dog Walker
+Firebrand Archer          Fireslinger
+Gingerbrute               Greatsword of Tyr
+Lorehold Campus           Rimrock Knight
+Tenth District Legionnaire Trapped in the Screen
+Vault Skirge              
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                    DIMIR MILL                    
+==================================================
+
+STRATEGY:
+Mill-based strategy with graveyard interaction and card advantage
+
+COLORS: U + B
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Consider                  Deep Analysis
+Deranged Assistant        Dimir Aqueduct
+Dinrova Horror            Dismal Backwater
+Gitaxian Probe            Mind Stone
+Mire Triton               Prophetic Prism
+Shardless Outlander       Soul Manipulation
+Waterfront District       
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+             GOLGARI GRAVEYARD VALUE              
+==================================================
+
+STRATEGY:
+Graveyard-based value engine with recursion and sacrifice
+
+COLORS: B + G
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Desecrator Hag            Dreg Mangler
+Eldrazi Repurposer        Evolution Witness
+Golgari Rot Farm          Grim Bauble
+Haunted Mire              Infuse with Vitality
+Night's Whisper           Pulse of Murasa
+Putrid Leech              Winding Way
+Witherbloom Campus        
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   GREEN BEASTS                   
+==================================================
+
+STRATEGY:
+Large beast creatures with powerful abilities
+
+COLORS: G
+ARCHETYPE: Tribal
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Conclave Naturalists      Jade Avenger
+Jade Guardian             Monstrous Emergence
+Mother Bear               Phantom Tiger
+Rancor                    Sarulf's Packmate
+Snakeskin Veil            Trumpeting Herd
+Vines of Vastwood         Wary Thespian
+Werebear                  
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   GREEN ELVES                    
+==================================================
+
+STRATEGY:
+Elf tribal with mana acceleration and creature synergies
+
+COLORS: G
+ARCHETYPE: Tribal
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Arbor Elf                 Basking Broodscale
+Colossal Dreadmask        Elvish Mystic
+Experiment One            Llanowar Elves
+Llanowar Visionary        Longstalk Brawl
+Malevolent Rumble         Nest Invader
+Nyxborn Hydra             Sprout Swarm
+Utopia Sprawl             
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                    GREEN RAMP                    
+==================================================
+
+STRATEGY:
+Mana acceleration into large threats and expensive spells
+
+COLORS: G
+ARCHETYPE: Ramp
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Annoyed Altisaur          Bushwhack
+Contagious Vorrac         Farseek
+Fertile Ground            Generous Ent
+Grapple with the Past     Greater Tanuki
+Krosan Tusker             Nature's Lore
+Sakura-Tribe Elder        Wild Growth
+Yavimaya Elder            
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   GREEN STOMPY                   
+==================================================
+
+STRATEGY:
+Large creatures with trample and pump effects
+
+COLORS: G
+ARCHETYPE: Stompy
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Bannerhide Krushok        Blastoderm
+Bloom Hulk                Bramble Wurm
+Giant Growth              Hazard of the Dunes
+Hooting Mandrills         Horrific Assault
+Massive Might             Owlbear
+Ram Through               Silverback Shaman
+Tuskguard Captain         
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  GRUUL MIDRANGE                  
+==================================================
+
+STRATEGY:
+Efficient midrange creatures with aggressive abilities and versatile spells
+
+COLORS: R + G
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Branching Bolt            Bristling Backwoods
+Burning-Tree Emissary     Gnarlid Colony
+Goblin Anarchomancer      Gruul Turf
+Hobblefiend               Juggernaut
+Molten Gatekeeper         Racers' Ring
+Serrated Arrows           Ulamog's Crusher
+Writhing Chrysalis        
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+               IZZET SPELLS MATTER                
+==================================================
+
+STRATEGY:
+Instant and sorcery synergies with prowess and spell-based creatures
+
+COLORS: U + R
+ARCHETYPE: Tempo
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Bloodwater Entity         Compulsive Research
+Eroded Canyon             Gnawing Crescendo
+Goblin Electromancer      Goblin Surprise
+Guttersnipe               Izzet Boilerworks
+Izzet Charm               Prismari Campus
+Reckless Impulse          Spelleater Wolverine
+Sulfurous Blast           
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+              ORZHOV LIFEGAIN VALUE               
+==================================================
+
+STRATEGY:
+Incremental advantage through lifegain and card quality
+
+COLORS: W + B
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Coalition Honor Guard     Gift of Orzhova
+Heliod's Pilgrim          Inspiring Paladin
+Kingpin's Pet             Orzhov Basilica
+Palace Sentinels          Phantom Nomad
+Pillory of the Sleepless  Sandsteppe Outcast
+Scoured Barrens           Silverquill Campus
+Tithe Drinker             
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   RAKDOS AGGRO                   
+==================================================
+
+STRATEGY:
+Aggressive deck with efficient creatures and direct damage
+
+COLORS: B + R
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Blightning                Body Dropper
+Carrion Feeder            Fireblade Artist
+Guardian Idol             Iron Apprentice
+Jagged Barrens            Perilous Myr
+Porcelain Legionnaire     Rakdos Carnarium
+Renegade Freighter        Tramway Station
+Wayfarer's Bauble         
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  RED ARTIFACTS                   
+==================================================
+
+STRATEGY:
+Artifact-based deck with improvise and metalcraft synergies
+
+COLORS: R
+ARCHETYPE: Artifacts
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Aether Chaser             Ardent Elementalist
+Barbed Batterfist         Bonesplitter
+Fireblast                 Leonin Bola
+Orcish Hellraiser         Rift Bolt
+Scholar of Combustion     Thriving Grubs
+Underworld Rage-Hound     Volatile Wanderglyph
+Witty Roastmaster         
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                     RED BURN                     
+==================================================
+
+STRATEGY:
+Direct damage spells and hasty creatures for quick wins
+
+COLORS: R
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Abrade                    Chain Lightning
+Fireball                  Firebolt
+Flame Slash               Forbidden Friendship
+Improvised Club           Incinerate
+Jackal Pup                Lightning Strike
+Rally at the Hornburg     Rolling Thunder
+Searing Spear             
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   RED DRAGONS                    
+==================================================
+
+STRATEGY:
+Expensive dragons with powerful effects and flying
+
+COLORS: R
+ARCHETYPE: Ramp
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Ambitious Assault         Bogardan Dragonheart
+Dark-Dweller Oracle       Goblin Bushwhacker
+Mayhem Patrol             Oliphaunt
+Raid Bombardment          Red Herring
+Scrapwork Mutt            Teetering Peaks
+Thriving Skyclaw          Wrangle
+Yavimaya Steelcrusher     
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   RED GOBLINS                    
+==================================================
+
+STRATEGY:
+Fast goblin tribal with haste and explosive plays
+
+COLORS: R
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Burst Lightning           Clockwork Percussionist
+Fanatical Firebrand       Frenzied Goblin
+Galvanic Discharge        Goblin Motivator
+Grim Initiate             Harried Spearguard
+Lightning Bolt            Mogg War Marshal
+Monastery Swiftspear      Reckless Charge
+Scorched Rusalka          
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  SELESNYA VALUE                  
+==================================================
+
+STRATEGY:
+Incremental advantage through efficient creatures, removal, and versatile utility spells
+
+COLORS: G + W
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Armadillo Cloak           Bonder's Ornament
+Botanical Plaza           Captured by Lagacs
+Faithful Watchdog         Jewel Thief
+Mutagenic Growth          Pristine Talisman
+Radiant Grove             Safehold Elite
+Selesnya Sanctuary        Thraben Charm
+Voracious Varmint         
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                SIMIC RAMP CONTROL                
+==================================================
+
+STRATEGY:
+Ramp into large threats with card draw and protection
+
+COLORS: G + U
+ARCHETYPE: Ramp
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Abundant Harvest          Growth Spiral
+Looter il-Kor             Merfolk Looter
+Quandrix Campus           Quandrix Pledgemage
+Simic Growth Chamber      Snapping Voidcraw
+Tamiyo's Safekeeping      Tangled Islet
+Treetop Snarespinner      Urban Daggertooth
+Wall of Roots             
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                   WHITE ANGELS                   
+==================================================
+
+STRATEGY:
+Mid-to-late game deck with powerful flying angels and protection
+
+COLORS: W
+ARCHETYPE: Control
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Aerie Auxiliary           Blessed Hippogriff
+Combat Professor          Contaminated Landscape
+Custodi Squire            Dauntless Unity
+Eagles of the North       Faith's Fetters
+Guardian of the Guildpact Holy Cow
+Inspiring Overseer        Pegasus Guardian
+Settle Beyond Reality     
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                 WHITE EQUIPMENT                  
+==================================================
+
+STRATEGY:
+Equipment-based deck with efficient creatures and powerful gear
+
+COLORS: W
+ARCHETYPE: Midrange
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Ancestral Blade           Ardenvale Tactician
+Cathar Commando           Dog Umbra
+Flayer Husk               Glimmerlight
+Kor Skyfisher             Mandibular Kite
+Militia Bugler            Petrify
+Seeker of the Way         Stormfront Pegasus
+Vulshok Morningstar       
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  WHITE SOLDIERS                  
+==================================================
+
+STRATEGY:
+Aggressive tribal deck focused on soldier creatures with anthem effects
+
+COLORS: W
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Ainok Bond-Kin            Deftblade Elite
+Doomed Traveler           Elite Vanguard
+Ephemerate                Gideon's Lawkeeper
+Gods Willing              Goldmeadow Harrier
+Mana Tithe                Soltari Trooper
+Sunlance                  Thraben Inspector
+Topan Freeblade           
+
+==================================================
+
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ PAGE BREAK ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+
+==================================================
+                  WHITE WEENIES                   
+==================================================
+
+STRATEGY:
+Aggressive low-cost creatures with efficient stats and combat abilities
+
+COLORS: W
+ARCHETYPE: Aggro
+CARDS: 13
+
+──────────────────────────────────────────────────
+DECK LIST (Alphabetical):
+──────────────────────────────────────────────────
+Boros Elite               Cartouche of Solidarity
+Faerie Guidemother        Journey to Nowhere
+Miner's Guidewing         Novice Inspector
+Planar Disruption         Raffine's Informant
+Savannah Lions            Suture Priest
+Syndic of Tithes          Unbounded Potential
+You Hear Something on Watch 
+
+==================================================
