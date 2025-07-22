@@ -79,17 +79,17 @@ Sword Coast Serpent,Mixed,,common,U,Creature - Serpent Dragon,,7,,,Blue Control
 Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,,,Blue Control
 Warden of Evos Isle,Mixed,,common,U,Creature - Bird Wizard,,3,,,Blue Control
 Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,,,Blue Control
-Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Flyers
-Condescend,Mixed,,common,U,Instant,,1,,,Blue Flyers
-Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,,,Blue Flyers
-Geyser Drake,Mixed,,common,U,Creature - Drake,,3,,,Blue Flyers
-Impulse,Mixed,,common,U,Instant,,2,,,Blue Flyers
-Jhessian Thief,Mixed,,common,U,Creature - Human Rogue,,3,,,Blue Flyers
-Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Flyers
-Quick Study,Mixed,,common,U,Instant,,3,,,Blue Flyers
-Repeal,Mixed,,common,U,Instant,,1,,,Blue Flyers
-Striped Riverwinder,Mixed,,common,U,Creature - Serpent,,7,,,Blue Flyers
-Weakstone's Subjugation,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Flyers
+Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Flying
+Condescend,Mixed,,common,U,Instant,,1,,,Blue Flying
+Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,,,Blue Flying
+Geyser Drake,Mixed,,common,U,Creature - Drake,,3,,,Blue Flying
+Impulse,Mixed,,common,U,Instant,,2,,,Blue Flying
+Jhessian Thief,Mixed,,common,U,Creature - Human Rogue,,3,,,Blue Flying
+Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Flying
+Quick Study,Mixed,,common,U,Instant,,3,,,Blue Flying
+Repeal,Mixed,,common,U,Instant,,1,,,Blue Flying
+Striped Riverwinder,Mixed,,common,U,Creature - Serpent,,7,,,Blue Flying
+Weakstone's Subjugation,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Flying
 Capsize,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Cloudkin Seer,Mixed,,common,U,Creature - Elemental Wizard,,3,,,Blue Tempo
 Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Tempo
@@ -332,7 +332,7 @@ Teetering Peaks,Mixed,,common,R,Land,,0,,,Red Small Creatures
 Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Burn/Damage
 Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,,,Izzet Control
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Burn/Damage
-Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Blue Flyers
+Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Blue Flying
 Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,,,White Control
 Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,,,Green Stompy
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Evasion/Flying
@@ -366,7 +366,7 @@ Scrapwork Mutt,Mixed,,common,,Artifact Creature - Dog,,2,,,Black Graveyard
 Basking Broodscale,Mixed,,common,G,Creature - Eldrazi Lizard,,2,,,Green Big Creatures
 Cruel Witness,Mixed,,common,U,Creature - Bird Horror,,4,,,Blue Card Draw
 Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Blue Control
-Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,,,Blue Flyers
+Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,,,Blue Flying
 Shipwreck Dowser,Mixed,,common,U,Creature - Merfolk Wizard,,5,,,Blue Tempo
 Chain Lightning,Mixed,,common,R,Sorcery,,1,,,Boros Aggro/Beatdown
 Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,,,Simic Control
