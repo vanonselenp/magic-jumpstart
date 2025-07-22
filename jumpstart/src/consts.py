@@ -182,10 +182,12 @@ DUAL_COLOR_THEMES = {
     },
     
     # Red-Green (Gruul)
-    'Gruul Big Creatures': {
+    'Gruul Midrange': {
         'colors': ['R', 'G'],
-        'strategy': 'Large creatures with haste and trample effects',
-        'keywords': ['power', 'toughness', 'haste', 'trample', 'big', 'expensive', 'ramp'],
+        'strategy': 'Efficient midrange creatures with aggressive abilities and versatile spells',
+        'keywords': ['haste', 'trample', 'efficient', 'versatile', 'combat', 'removal', 
+                    'creature', 'aggressive', 'power', 'damage', 'burn', 'fight', 
+                    'enters', 'whenever', 'attack', 'deal damage', 'direct'],
         'archetype': 'Midrange'
     },
     
@@ -245,7 +247,7 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 # Theme categories for organization
 THEME_CATEGORIES = {
     'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
-    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Big Creatures', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
+    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
