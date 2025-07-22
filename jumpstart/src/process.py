@@ -52,8 +52,13 @@ def optimize_deck_coherence(
         # Display the recommendations
         display_swap_recommendations(specific_swaps)
 
+        # Check if there was an error or no swaps found
+        if 'error' in specific_swaps:
+            print(f"No swaps available for {specific_deck}: {specific_swaps['error']}")
+            return cube_df
+
         # Check if there are any swaps to apply and they haven't been recently reversed
-        if specific_swaps['best_swaps']:
+        if 'best_swaps' in specific_swaps and specific_swaps['best_swaps']:
             remove_cards = specific_swaps['best_swaps']['remove']
             add_cards = specific_swaps['best_swaps']['add']
             
@@ -84,7 +89,6 @@ def optimize_deck_coherence(
         if updated_coherence_results[specific_deck]['overall_coherence'] > original_coherence:
             print(f"Improved {specific_deck} coherence from {original_coherence:.1f} to {updated_coherence_results[specific_deck]['overall_coherence']:.1f}")
             return updated_cube
-        
         
         return cube_df  # Return original cube if no improvements were made
 
