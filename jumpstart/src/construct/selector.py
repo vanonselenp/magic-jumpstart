@@ -114,7 +114,7 @@ class CardSelector:
         from ..scorer import (
             create_equipment_scorer, create_tribal_scorer, 
             create_aggressive_scorer, create_stompy_scorer, 
-            create_artifact_scorer, create_default_scorer
+            create_artifact_scorer, create_control_scorer, create_default_scorer
         )
         
         if 'equipment' in theme_name.lower():
@@ -127,6 +127,8 @@ class CardSelector:
             return create_artifact_scorer(), 4  # Reserve key artifact cards
         elif theme_config.get('archetype') == 'Stompy':
             return create_stompy_scorer(), 3  # Reserve key stompy creatures
+        elif theme_config.get('archetype') == 'Control':
+            return create_control_scorer(), 4  # Reserve key control spells
         elif theme_config.get('archetype') == 'Aggressive':
             return create_aggressive_scorer(), 3  # Reserve key aggressive cards
         else:

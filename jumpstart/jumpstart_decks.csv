@@ -17,14 +17,15 @@ Glimmerlight,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
 Vulshok Morningstar,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
 Ancestral Blade,Mixed,,common,W,Creature Artifact - Equipment,,2,,,White Equipment
 Flayer Husk,Mixed,,common,,Creature Artifact - Equipment,,1,,,White Equipment
-Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,2.0,3.0,White Equipment
 Seeker of the Way,Mixed,,common,W,Creature - Human Warrior,,2,2.0,2.0,White Equipment
 Militia Bugler,Mixed,,common,W,Creature - Human Soldier,,3,2.0,3.0,White Equipment
 Cathar Commando,Mixed,,common,W,Creature - Human Soldier,,2,3.0,1.0,White Equipment
 Kor Skyfisher,Mixed,,common,W,Creature - Kor Soldier,,2,2.0,3.0,White Equipment
 Stormfront Pegasus,Mixed,,common,W,Creature - Pegasus,,2,2.0,1.0,White Equipment
+Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,2.0,3.0,White Equipment
 Dog Umbra,Mixed,,common,W,Enchantment - Aura,,2,,,White Equipment
 Petrify,Mixed,,common,W,Enchantment - Aura,,2,,,White Equipment
+Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,2.0,3.0,White Angels
 Holy Cow,Mixed,,common,W,Creature - Ox Angel,,3,2.0,2.0,White Angels
 Inspiring Overseer,Mixed,,common,W,Creature - Angel Cleric,,3,2.0,1.0,White Angels
 Aerie Auxiliary,Mixed,,common,W,Creature - Bird Soldier,,4,3.0,3.0,White Angels
@@ -33,7 +34,6 @@ Guardian of the Guildpact,Mixed,,common,W,Creature - Spirit,,4,2.0,3.0,White Ang
 Custodi Squire,Mixed,,common,W,Creature - Spirit Cleric,,5,3.0,3.0,White Angels
 Eagles of the North,Mixed,,common,W,Creature - Bird Soldier,,6,3.0,3.0,White Angels
 Pegasus Guardian,Mixed,,common,W,Creature - Pegasus,,6,3.0,3.0,White Angels
-Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,White Angels
 Settle Beyond Reality,Mixed,,common,W,Sorcery,,5,,,White Angels
 Faith's Fetters,Mixed,,common,W,Enchantment - Aura,,4,,,White Angels
 Contaminated Landscape,Mixed,,common,,Land,,0,,,White Angels
@@ -51,8 +51,6 @@ Planar Disruption,Mixed,,common,W,Enchantment - Aura,,2,,,White Weenies
 You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,White Weenies
 Thraben Charm,Mixed,,common,W,Instant,,2,,,White Weenies
 Journey to Nowhere,Mixed,,common,W,Enchantment,,2,,,White Weenies
-Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Flying
-Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Flying
 Exclude,Mixed,,common,U,Instant,,3,,,Blue Flying
 Cloudkin Seer,Mixed,,common,U,Creature - Elemental Wizard,,3,2.0,1.0,Blue Flying
 Frost Trickster,Mixed,,common,U,Creature - Bird Wizard,,3,2.0,2.0,Blue Flying
@@ -64,91 +62,93 @@ Mist Raven,Mixed,,common,U,Creature - Bird,,4,2.0,2.0,Blue Flying
 Murmuring Mystic,Mixed,,common,U,Creature - Human Wizard,,4,1.0,5.0,Blue Flying
 Mulldrifter,Mixed,,common,U,Creature - Elemental,,5,2.0,2.0,Blue Flying
 Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Flying
+Repeal,Mixed,,common,U,Instant,,1,,,Blue Flying
+Counterspell,Mixed,,common,U,Instant,,2,,,Blue Flying
 Shipwreck Dowser,Mixed,,common,U,Creature - Merfolk Wizard,,5,3.0,3.0,Blue Wizards
 Archaeomancer,Mixed,,common,U,Creature - Human Wizard,,4,1.0,2.0,Blue Wizards
 Tolarian Terror,Mixed,,common,U,Creature - Serpent,,7,5.0,5.0,Blue Wizards
-Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Blue Wizards
-Lórien Revealed,Mixed,,common,U,Sorcery,,5,,,Blue Wizards
 Treasure Cruise,Mixed,,common,U,Sorcery,,8,,,Blue Wizards
 Jhessian Thief,Mixed,,common,U,Creature - Human Rogue,,3,1.0,3.0,Blue Wizards
 Mocking Sprite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Wizards
 Serum Visionary,Mixed,,common,U,Creature - Vedalken Wizard,,3,2.0,2.0,Blue Wizards
-Counterspell,Mixed,,common,U,Instant,,2,,,Blue Wizards
 Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Wizards
 Lose Focus,Mixed,,common,U,Instant,,2,,,Blue Wizards
 Mana Leak,Mixed,,common,U,Instant,,2,,,Blue Wizards
+Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Wizards
+Quick Study,Mixed,,common,U,Instant,,3,,,Blue Wizards
+Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Blue Wizards
 Opt,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
+Lórien Revealed,Mixed,,common,U,Sorcery,,5,,,Blue Card Draw
+Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Blue Card Draw
 Ninja of the Deep Hours,Mixed,,common,U,Creature - Human Ninja,,4,2.0,2.0,Blue Card Draw
-Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,3.0,3.0,Blue Card Draw
 Striped Riverwinder,Mixed,,common,U,Creature - Serpent,,7,5.0,5.0,Blue Card Draw
-Consider,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Impulse,Mixed,,common,U,Instant,,2,,,Blue Card Draw
 Ponder,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
 Faerie Seer,Mixed,,common,U,Creature - Faerie Wizard,,1,1.0,1.0,Blue Card Draw
 Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature - Human Ninja,,2,2.0,1.0,Blue Card Draw
 Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,1.0,3.0,Blue Card Draw
-Condescend,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Sword Coast Serpent,Mixed,,common,U,Creature - Serpent Dragon,,7,6.0,6.0,Blue Card Draw
+Serum Visions,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
 Mistral Singer,Mixed,,common,U,Creature - Siren,,3,2.0,2.0,Blue Tempo
 Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Tempo
 Zephyr Winder,Mixed,,common,U,Creature - Elemental,,2,2.0,1.0,Blue Tempo
 Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,2.0,1.0,Blue Tempo
 Man-o'-War,Mixed,,common,U,Creature - Jellyfish,,3,2.0,2.0,Blue Tempo
 Winter Eladrin,Mixed,,common,U,Creature - Faerie Elf Wizard,,3,2.0,2.0,Blue Tempo
-Repeal,Mixed,,common,U,Instant,,1,,,Blue Tempo
-Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Tempo
 Snap,Mixed,,common,U,Instant,,2,,,Blue Tempo
 Capsize,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Displace,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,2.0,3.0,Blue Tempo
+Aethersnipe,Mixed,,common,U,Creature - Elemental,,6,4.0,4.0,Blue Tempo
+Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,5.0,7.0,Blue Tempo
 Putrid Goblin,Mixed,,common,B,Creature - Zombie Goblin,,2,2.0,2.0,Black Zombies
-Gravedigger,Mixed,,common,B,Creature - Zombie,,4,2.0,2.0,Black Zombies
-Dread Return,Mixed,,common,B,Sorcery,,4,,,Black Zombies
 Tithing Blade,Mixed,,common,B,Artifact,,2,,,Black Zombies
 Carrier Thrall,Mixed,,common,B,Creature - Vampire,,2,2.0,1.0,Black Zombies
 Legion Vanguard,Mixed,,common,B,Creature - Vampire Soldier,,2,2.0,2.0,Black Zombies
-Mire Triton,Mixed,,common,B,Creature - Zombie Merfolk,,2,2.0,1.0,Black Zombies
 Death Denied,Mixed,,common,B,Instant - Arcane,,2,,,Black Zombies
 Retrofitted Transmogrant,Mixed,,common,B,Artifact Creature - Zombie,,1,1.0,1.0,Black Zombies
 Accursed Marauder,Mixed,,common,B,Creature - Zombie Warrior,,2,2.0,1.0,Black Zombies
 Blood Fountain,Mixed,,common,B,Artifact,,1,,,Black Zombies
 Gixian Infiltrator,Mixed,,common,B,Creature - Phyrexian Human,,2,2.0,1.0,Black Zombies
 Guildsworn Prowler,Mixed,,common,B,Creature - Tiefling Rogue Assassin,,2,2.0,1.0,Black Zombies
+Voracious Vermin,Mixed,,common,B,Creature - Rat,,3,2.0,1.0,Black Zombies
+Falkenrath Noble,Mixed,,common,B,Creature - Vampire,,4,2.0,2.0,Black Zombies
+Candy Grapple,Mixed,,common,B,Instant,,2,,,Black Zombies
 First-Sphere Gargantua,Mixed,,common,B,Creature - Horror,,6,5.0,4.0,Black Graveyard
+Dread Return,Mixed,,common,B,Sorcery,,4,,,Black Graveyard
 Unearth,Mixed,,common,B,Sorcery,,1,,,Black Graveyard
-Faceless Butcher,Mixed,,common,B,Creature - Nightmare Horror,,4,2.0,3.0,Black Graveyard
+Gravedigger,Mixed,,common,B,Creature - Zombie,,4,2.0,2.0,Black Graveyard
 Okiba-Gang Shinobi,Mixed,,common,B,Creature - Rat Ninja,,5,3.0,2.0,Black Graveyard
 Chitin Gravestalker,Mixed,,common,B,Creature - Insect Warrior,,6,5.0,4.0,Black Graveyard
 Gurmag Angler,Mixed,,common,B,Creature - Zombie Fish,,7,5.0,5.0,Black Graveyard
 Tortured Existence,Mixed,,common,B,Enchantment,,1,,,Black Graveyard
-Wither and Bloom,Mixed,,common,B,Instant,,2,,,Black Graveyard
 Ransack the Lab,Mixed,,common,B,Sorcery,,2,,,Black Graveyard
 Unwilling Ingredient,Mixed,,common,B,Creature - Frog,,1,1.0,1.0,Black Graveyard
 Bone Picker,Mixed,,common,B,Creature - Bird,,4,3.0,2.0,Black Graveyard
-Falkenrath Noble,Mixed,,common,B,Creature - Vampire,,4,2.0,2.0,Black Graveyard
 Scurrilous Sentry,Mixed,,common,B,Creature - Human Knight Rogue,,4,2.0,3.0,Black Graveyard
-Voracious Vermin,Mixed,,common,B,Creature - Rat,,3,2.0,1.0,Black Sacrifice
+Thorn of the Black Rose,Mixed,,common,B,Creature - Human Assassin,,4,,,Black Graveyard
 Aether Poisoner,Mixed,,common,B,Creature - Human Artificer,,2,1.0,1.0,Black Sacrifice
-Candy Grapple,Mixed,,common,B,Instant,,2,,,Black Sacrifice
 Basilica Screecher,Mixed,,common,B,Creature - Bat,,2,1.0,2.0,Black Sacrifice
 Pestilence,Mixed,,common,B,Enchantment,,4,,,Black Sacrifice
 Infestation Sage,Mixed,,common,B,Creature - Elf Warlock,,1,1.0,1.0,Black Sacrifice
 Nezumi Linkbreaker,Mixed,,common,B,Creature - Rat Warlock,,1,1.0,1.0,Black Sacrifice
-Thorn of the Black Rose,Mixed,,common,B,Creature - Human Assassin,,4,,,Black Sacrifice
 Feign Death,Mixed,,common,B,Instant,,1,,,Black Sacrifice
 Nested Shambler,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Black Sacrifice
 Dauthi Horror,Mixed,,common,B,Creature - Dauthi Horror,,2,2.0,1.0,Black Sacrifice
 Dauthi Slayer,Mixed,,common,B,Creature - Dauthi Soldier,,2,2.0,2.0,Black Sacrifice
+Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Black Sacrifice
+Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Black Sacrifice
 Cast Down,Mixed,,common,B,Instant,,2,,,Black Sacrifice
+Go for the Throat,Mixed,,common,B,Instant,,2,,,Black Sacrifice
+Faceless Butcher,Mixed,,common,B,Creature - Nightmare Horror,,4,2.0,3.0,Black Control
 Loathsome Curator,Mixed,,common,B,Creature - Gorgon Wizard,,5,5.0,4.0,Black Control
 Doom Blade,Mixed,,common,B,Instant,,2,,,Black Control
+Wither and Bloom,Mixed,,common,B,Instant,,2,,,Black Control
 Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Black Control
-Go for the Throat,Mixed,,common,B,Instant,,2,,,Black Control
 Ashes to Ashes,Mixed,,common,B,Sorcery,,3,,,Black Control
 Arms of Hadar,Mixed,,common,B,Sorcery,,4,,,Black Control
-Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Black Control
 Gray Merchant of Asphodel,Mixed,,common,B,Creature - Zombie,,5,2.0,4.0,Black Control
 Vampire Sovereign,Mixed,,common,B,Creature - Vampire Noble,,5,3.0,4.0,Black Control
 Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Black Control
@@ -259,37 +259,36 @@ Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Beasts
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Green Beasts
 Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Green Beasts
+Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,3.0,3.0,Azorius Control
+Miscalculation,Mixed,,common,U,Instant,,2,,,Azorius Control
+Condescend,Mixed,,common,U,Instant,,1,,,Azorius Control
+Phantom Interference,Mixed,,common,U,Instant,,1,,,Azorius Control
 Skybridge Towers,Mixed,,common,UW,Land,,0,,,Azorius Control
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Control
 Tranquil Cove,Mixed,,common,,Land,,0,,,Azorius Control
-Judge's Familiar,Mixed,,common,UW,Creature - Bird,,1,1.0,1.0,Azorius Control
+Lyev Skyknight,Mixed,,common,WU,Creature - Human Knight,,3,3.0,1.0,Azorius Control
 Momentary Blink,Mixed,,common,UW,Instant,,2,,,Azorius Control
-Gitaxian Probe,Mixed,,common,,Sorcery,,0,,,Azorius Control
-Mutagenic Growth,Mixed,,common,,Instant,,0,,,Azorius Control
+Judge's Familiar,Mixed,,common,UW,Creature - Bird,,1,1.0,1.0,Azorius Control
+Candy Trail,Mixed,,common,,Artifact - Food Clue,,1,,,Azorius Control
+Silver Drake,Mixed,,common,UW,Creature - Drake,,3,3.0,3.0,Azorius Control
 Filigree Familiar,Mixed,,common,,Artifact Creature - Fox,,3,2.0,2.0,Azorius Control
-Mind Stone,Mixed,,common,,Artifact,,2,,,Azorius Control
-Prophetic Prism,Mixed,,common,,Artifact,,2,,,Azorius Control
-Serrated Arrows,Mixed,,common,,Artifact,,4,,,Azorius Control
-Deep Analysis,Mixed,,common,U,Sorcery,,4,,,Azorius Control
-Unbounded Potential,Mixed,,common,W,Instant,,2,,,Azorius Control
+Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
+Mire Triton,Mixed,,common,B,Creature - Zombie Merfolk,,2,2.0,1.0,Dimir Mill
+Consider,Mixed,,common,U,Instant,,1,,,Dimir Mill
+Deep Analysis,Mixed,,common,U,Sorcery,,4,,,Dimir Mill
 Waterfront District,Mixed,,common,BU,Land,,0,,,Dimir Mill
 Dimir Aqueduct,Mixed,,common,BU,Land,,0,,,Dimir Mill
 Dismal Backwater,Mixed,,common,,Land,,0,,,Dimir Mill
 Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,6.0,5.0,Dimir Mill
 Soul Manipulation,Mixed,,common,BU,Instant,,3,,,Dimir Mill
+Gitaxian Probe,Mixed,,common,,Sorcery,,0,,,Dimir Mill
+Mind Stone,Mixed,,common,,Artifact,,2,,,Dimir Mill
+Prophetic Prism,Mixed,,common,,Artifact,,2,,,Dimir Mill
 Dinrova Horror,Mixed,,common,UB,Creature - Horror,,6,4.0,4.0,Dimir Mill
-Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,2.0,2.0,Dimir Mill
-Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
-Grim Bauble,Mixed,,common,B,Artifact,,1,,,Dimir Mill
-Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Dimir Mill
-Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Dimir Mill
-Quick Study,Mixed,,common,U,Instant,,3,,,Dimir Mill
-Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Dimir Mill
 Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
 Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
 Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
-Candy Trail,Mixed,,common,,Artifact - Food Clue,,1,,,Rakdos Aggro
 Wayfarer's Bauble,Mixed,,common,,Artifact,,1,,,Rakdos Aggro
 Body Dropper,Mixed,,common,BR,Creature - Devil Warrior,,2,2.0,2.0,Rakdos Aggro
 Iron Apprentice,Mixed,,common,,Artifact Creature - Construct,,1,0.0,0.0,Rakdos Aggro
@@ -298,6 +297,7 @@ Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Aggro
 Porcelain Legionnaire,Mixed,,common,,Artifact Creature - Soldier,,2,3.0,1.0,Rakdos Aggro
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
 Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,Rakdos Aggro
+Carrion Feeder,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Rakdos Aggro
 Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Big Creatures
 Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Gruul Big Creatures
 Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Big Creatures
@@ -308,9 +308,9 @@ Burning-Tree Emissary,Mixed,,common,RG,Creature - Human Shaman,,2,2.0,2.0,Gruul 
 Juggernaut,Mixed,,common,,Artifact Creature - Juggernaut,,4,5.0,3.0,Gruul Big Creatures
 Bonder's Ornament,Mixed,,common,,Artifact,,3,,,Gruul Big Creatures
 Pristine Talisman,Mixed,,common,,Artifact,,3,,,Gruul Big Creatures
+Serrated Arrows,Mixed,,common,,Artifact,,4,,,Gruul Big Creatures
 Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Gruul Big Creatures
 Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Gruul Big Creatures
-Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,3.0,1.0,Gruul Big Creatures
 Botanical Plaza,Mixed,,common,GW,Land,,0,,,Selesnya Tokens
 Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Selesnya Tokens
 Selesnya Sanctuary,Mixed,,common,WG,Land,,0,,,Selesnya Tokens
@@ -322,8 +322,8 @@ Sandsteppe Outcast,Mixed,,common,W,Creature - Human Warrior,,3,2.0,1.0,Selesnya 
 Eldrazi Repurposer,Mixed,,common,G,Creature - Eldrazi Drone,,3,3.0,3.0,Selesnya Tokens
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Selesnya Tokens
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Selesnya Tokens
+Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,Selesnya Tokens
 Triplicate Spirits,Mixed,,common,W,Creature Sorcery,,6,,,Selesnya Tokens
-Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,Selesnya Tokens
 Tithe Drinker,Mixed,,common,BW,Creature - Vampire,,2,2.0,1.0,Orzhov Lifedrain
 Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
 Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifedrain
@@ -331,12 +331,12 @@ Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
 Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifedrain
 Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
 Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
-Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,2.0,3.0,Orzhov Lifedrain
+Mutagenic Growth,Mixed,,common,,Instant,,0,,,Orzhov Lifedrain
+Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
+Unbounded Potential,Mixed,,common,W,Instant,,2,,,Orzhov Lifedrain
+Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,Orzhov Lifedrain
 Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,1.0,2.0,Orzhov Lifedrain
 Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifedrain
-Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,2.0,4.0,Orzhov Lifedrain
-Palace Sentinels,Mixed,,common,W,Creature - Human Soldier,,4,2.0,4.0,Orzhov Lifedrain
-Rhox Veteran,Mixed,,common,W,Creature - Rhino Soldier,,4,2.0,4.0,Orzhov Lifedrain
 Eroded Canyon,Mixed,,common,,Land - Desert,,0,,,Izzet Spells Matter
 Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
@@ -346,10 +346,10 @@ Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Spells Matter
 Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Izzet Spells Matter
 Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,3.0,2.0,Izzet Spells Matter
 Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,2.0,1.0,Izzet Spells Matter
-Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Izzet Spells Matter
-Serum Visions,Mixed,,common,U,Sorcery,,1,,,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
+Goblin Surprise,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
+Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Izzet Spells Matter
 Golgari Rot Farm,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
 Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Golgari Graveyard Value
 Witherbloom Campus,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
@@ -361,7 +361,7 @@ Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,2.0,1.0,Golgar
 Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
 Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyard Value
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
-Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Golgari Graveyard Value
+Grim Bauble,Mixed,,common,B,Artifact,,1,,,Golgari Graveyard Value
 Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Golgari Graveyard Value
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,Boros Equipment Aggro
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,Boros Equipment Aggro
@@ -372,20 +372,20 @@ Boros Garrison,Mixed,,common,WR,Land,,0,,,Boros Equipment Aggro
 Lorehold Campus,Mixed,,common,RW,Land,,0,,,Boros Equipment Aggro
 Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
 Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Equipment Aggro
+Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,3.0,1.0,Boros Equipment Aggro
 Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,Boros Equipment Aggro
 Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,3.0,2.0,Boros Equipment Aggro
 Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Boros Equipment Aggro
-Wrenn's Resolve,Mixed,,common,R,Sorcery,,2,,,Boros Equipment Aggro
 Quandrix Campus,Mixed,,common,GU,Land,,0,,,Simic Ramp Control
 Simic Growth Chamber,Mixed,,common,UG,Land,,0,,,Simic Ramp Control
 Tangled Islet,Mixed,,common,GU,Land - Forest Island,,0,,,Simic Ramp Control
 Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Ramp Control
 Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,1.0,3.0,Simic Ramp Control
 Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
-Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,5.0,7.0,Simic Ramp Control
+Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Simic Ramp Control
+Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Simic Ramp Control
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,1.0,4.0,Simic Ramp Control
 Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,4.0,3.0,Simic Ramp Control
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Simic Ramp Control
 Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control
-You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Simic Ramp Control

@@ -220,3 +220,21 @@ def create_artifact_scorer() -> CardScorer:
     scorer.set_rule_weight("Keyword Matching", 2.0)    # Double weight for artifact keywords
     scorer.set_rule_weight("Type-based", 1.5)          # Bonus for artifact creatures
     return scorer
+
+
+def create_control_scorer() -> CardScorer:
+    """Create a scorer optimized for control themes (counterspells, removal, card draw)."""
+    rules = [
+        KeywordMatchingRule(),      # Heavy emphasis on control keywords
+        ArchetypeManaCurveRule(),   # Control prefers higher CMC
+        SpecificKeywordRule(),      # Context-aware control terms
+        TypeBasedRule(),            # Prefer instants/sorceries over creatures
+    ]
+    
+    scorer = CardScorer(rules)
+    # Weight control elements extremely heavily
+    scorer.set_rule_weight("Keyword Matching", 3.0)      # Triple weight for control keywords
+    scorer.set_rule_weight("Specific Keywords", 2.5)     # Heavy weight for specific control terms  
+    scorer.set_rule_weight("Archetype Mana Curve", 1.5)  # Bonus for control mana curve
+    scorer.set_rule_weight("Type-based", 1.3)            # Prefer non-creature spells
+    return scorer

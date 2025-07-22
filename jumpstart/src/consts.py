@@ -146,9 +146,23 @@ DUAL_COLOR_THEMES = {
     # White-Blue (Azorius)
     'Azorius Control': {
         'colors': ['W', 'U'],
-        'strategy': 'Classic control deck with counterspells, removal, and card draw',
-        'keywords': ['counter', 'destroy', 'exile', 'draw', 'instant', 'sorcery', 'board wipe'],
-        'archetype': 'Control'
+        'strategy': 'Control deck with counterspells, removal, card draw, and efficient win conditions',
+        'keywords': [
+            # Core control spells
+            'counter target', 'negate', 'cancel', 'dispel', 'counter target spell',
+            'destroy target', 'exile target', 'oblivion ring', 'path to exile',
+            'return target', 'bounce', 'unsummon',
+            # Card advantage
+            'draw a card', 'draw two', 'scry', 'divination',
+            # Board control
+            'tap target', 'detain', 'prevent damage', 'wrath', 'board wipe',
+            # Azorius identity
+            'white and blue', 'azorius', 'flying', 'vigilance', 'lifelink',
+            # Control timing
+            'flash', 'instant speed', 'end of turn', 'during upkeep'
+        ],
+        'archetype': 'Control',
+        'color_priority': 'strict'  # Prioritize true WU cards
     },
     
     # Blue-Black (Dimir)

@@ -41,7 +41,8 @@ from .scorer import (
     create_tribal_scorer,
     create_equipment_scorer,
     create_stompy_scorer,
-    create_artifact_scorer
+    create_artifact_scorer,
+    create_control_scorer
 )
 
 import pandas as pd
@@ -143,6 +144,7 @@ __all__ = [
     'create_equipment_scorer',
     'create_stompy_scorer',
     'create_artifact_scorer',
+    'create_control_scorer',
     
     # Main API functions
     'score_card_for_theme',
