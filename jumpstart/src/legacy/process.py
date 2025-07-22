@@ -1,6 +1,6 @@
-from src.coherence import analyze_deck_theme_coherence_enhanced
-from src.deck import display_card_details
-from src.improve import apply_swap, display_swap_recommendations, find_best_card_swaps_for_deck
+from src.legacy.coherence import analyze_deck_theme_coherence_enhanced
+from src.legacy.deck import display_card_details
+from src.legacy.improve import apply_swap, display_swap_recommendations, find_best_card_swaps_for_deck
 
 # Global variable to track recent swaps to prevent oscillation
 _recent_swaps = []

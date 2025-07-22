@@ -1,7 +1,7 @@
 from IPython.display import Markdown, display
 import pandas as pd
 from src.consts import TOTAL_CARDS
-from src.deck import get_deck_colour
+from src.legacy.deck import get_deck_colour
 
 
 def display_validate_results(validation_results):

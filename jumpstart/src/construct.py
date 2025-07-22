@@ -1,0 +1,643 @@
+"""
+Jumpstart Cube Deck Construction
+
+This module handles the construction of jumpstart decks from the oracle card pool
+based on the themes defined in consts.py.
+"""
+
+import pandas as pd
+import re
+from collections import defaultdict
+from typing import Dict, List, Tuple, Optional
+from .consts import ALL_THEMES, MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+
+
+def score_card_for_theme(card: pd.Series, theme_config: dict) -> float:
+    """
+    Score a card based on how well it fits a theme.
+    
+    Args:
+        card: Card data from oracle_df
+        theme_config: Theme configuration from consts.py
+        
+    Returns:
+        Score (higher = better fit)
+    """
+    keywords = theme_config['keywords']
+    score = 0.0
+    
+    # Get text fields for searching
+    oracle_text = str(card['Oracle Text']).lower() if pd.notna(card['Oracle Text']) else ""
+    card_type = str(card['Type']).lower() if pd.notna(card['Type']) else ""
+    card_name = str(card['name']).lower() if pd.notna(card['name']) else ""
+    
+    # Combine all text for searching
+    searchable_text = f"{oracle_text} {card_type} {card_name}"
+    
+    # Score based on keyword matches
+    for keyword in keywords:
+        keyword_lower = keyword.lower()
+        if keyword_lower in searchable_text:
+            # Use regex for precise word boundary matching
+            if re.search(r'\b' + re.escape(keyword_lower) + r'\b', searchable_text):
+                score += 1.0
+            elif keyword_lower in searchable_text:
+                score += 0.5
+    
+    # Bonus scoring based on card type and theme strategy
+    if 'creature' in card_type:
+        # Bonus for creatures in creature-focused themes
+        if any(kw in theme_config['keywords'] for kw in ['creature', 'tribal', 'aggressive']):
+            score += 0.3
+    
+    if 'instant' in card_type or 'sorcery' in card_type:
+        # Bonus for spells in spell-focused themes
+        if any(kw in theme_config['keywords'] for kw in ['instant', 'sorcery', 'spells', 'burn', 'counter']):
+            score += 0.3
+    
+    if 'artifact' in card_type:
+        # Bonus for artifacts in artifact themes
+        if any(kw in theme_config['keywords'] for kw in ['artifact', 'equipment', 'metalcraft']):
+            score += 0.5
+    
+    return score
+
+
+def is_land_card(card: pd.Series) -> bool:
+    """Check if a card is a land."""
+    card_type = str(card['Type']).lower() if pd.notna(card['Type']) else ""
+    return 'land' in card_type
+
+
+def is_creature_card(card: pd.Series) -> bool:
+    """Check if a card is a creature."""
+    card_type = str(card['Type']).lower() if pd.notna(card['Type']) else ""
+    return 'creature' in card_type
+
+
+def get_card_colors(card: pd.Series) -> List[str]:
+    """Get the colors of a card."""
+    color = str(card['Color']) if pd.notna(card['Color']) else ""
+    if not color or color == 'C':  # Colorless
+        return []
+    return list(color)
+
+
+def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 13) -> Dict[str, pd.DataFrame]:
+    """
+    Construct jumpstart decks for all themes using a practical three-phase approach.
+    
+    Args:
+        oracle_df: DataFrame with all available cards
+        target_deck_size: Target number of cards per deck (default 13)
+        
+    Returns:
+        Dictionary mapping theme names to their constructed decks (DataFrames)
+    """
+    
+    # Initialize deck storage
+    decks = {}
+    used_cards = set()  # Track which cards have been assigned
+    
+    print("🏗️ CONSTRUCTING JUMPSTART DECKS")
+    print("=" * 50)
+    
+    # Phase 1: Assign dual-color cards to dual-color themes
+    print("\n📦 Phase 1: Assigning dual-color cards to dual-color themes")
+    
+    for theme_name, theme_config in DUAL_COLOR_THEMES.items():
+        theme_colors = set(theme_config['colors'])
+        decks[theme_name] = []
+        
+        print(f"\n🎯 Building {theme_name} deck ({'/'.join(theme_config['colors'])})")
+        
+        # Find cards that match exactly the theme colors (multicolor cards)
+        multicolor_candidates = []
+        
+        for idx, card in oracle_df.iterrows():
+            if idx in used_cards:
+                continue
+                
+            card_colors = set(get_card_colors(card))
+            
+            # Skip if card doesn't match theme colors exactly
+            if not card_colors or not card_colors.issubset(theme_colors):
+                continue
+            
+            # Must be multicolor (have more than one color) for this phase
+            if len(card_colors) < 2:
+                continue
+                
+            score = score_card_for_theme(card, theme_config)
+            if score >= 0.3:  # More permissive threshold
+                multicolor_candidates.append((idx, card, score))
+        
+        # Sort by score and add best multicolor cards
+        multicolor_candidates.sort(key=lambda x: x[2], reverse=True)
+        
+        for idx, card, score in multicolor_candidates[:target_deck_size]:
+            decks[theme_name].append(idx)
+            used_cards.add(idx)
+            print(f"  ✅ Added: {card['name']} (Score: {score:.1f})")
+            
+            if len(decks[theme_name]) >= target_deck_size:
+                break
+        
+        print(f"  📊 Phase 1 complete: {len(decks[theme_name])}/{target_deck_size} cards")
+    
+    # Phase 2: Fill remaining slots using keyword-matched cards
+    print(f"\n📦 Phase 2: Filling slots with keyword-matched cards")
+    
+    for theme_name, theme_config in ALL_THEMES.items():
+        if theme_name not in decks:
+            decks[theme_name] = []
+        
+        theme_colors = set(theme_config['colors'])
+        current_deck_size = len(decks[theme_name])
+        
+        if current_deck_size >= target_deck_size:
+            continue
+            
+        print(f"\n🎯 Completing {theme_name} deck ({current_deck_size}/{target_deck_size} cards)")
+        
+        # Count current card types in deck
+        creature_count = 0
+        land_count = 0
+        current_lands = set()
+        
+        for card_idx in decks[theme_name]:
+            card = oracle_df.iloc[card_idx]
+            if is_creature_card(card):
+                creature_count += 1
+            elif is_land_card(card):
+                land_count += 1
+                current_lands.add(card['name'])
+        
+        # Set land limits
+        is_mono_color = len(theme_colors) == 1
+        max_lands = 1 if is_mono_color else 3
+        max_creatures = 9
+        
+        # Find candidate cards with keyword matching
+        candidates = []
+        
+        for idx, card in oracle_df.iterrows():
+            if idx in used_cards:
+                continue
+                
+            card_colors = set(get_card_colors(card))
+            
+            # Check color compatibility (include colorless cards)
+            if card_colors and not card_colors.issubset(theme_colors):
+                continue
+            
+            # Apply card type limits
+            if is_creature_card(card) and creature_count >= max_creatures:
+                continue
+                
+            if is_land_card(card):
+                if land_count >= max_lands:
+                    continue
+                if card['name'] in current_lands:  # No duplicate lands
+                    continue
+            
+            score = score_card_for_theme(card, theme_config)
+            if score >= 0.2:  # Lower threshold for filling decks
+                candidates.append((idx, card, score))
+        
+        # Sort candidates by score
+        candidates.sort(key=lambda x: x[2], reverse=True)
+        
+        # Add cards to complete the deck
+        cards_needed = target_deck_size - current_deck_size
+        added_count = 0
+        
+        for idx, card, score in candidates:
+            if added_count >= cards_needed:
+                break
+                
+            # Double-check limits before adding
+            if is_creature_card(card) and creature_count >= max_creatures:
+                continue
+            if is_land_card(card) and (land_count >= max_lands or card['name'] in current_lands):
+                continue
+                
+            decks[theme_name].append(idx)
+            used_cards.add(idx)
+            
+            if is_creature_card(card):
+                creature_count += 1
+            elif is_land_card(card):
+                land_count += 1
+                current_lands.add(card['name'])
+                
+            added_count += 1
+            print(f"  ✅ Added: {card['name']} (Score: {score:.1f}) [{card['Type']}]")
+        
+        final_size = len(decks[theme_name])
+        print(f"  📊 Phase 2 complete: {final_size}/{target_deck_size} cards")
+    
+    # Phase 3: Practical completion for remaining incomplete decks
+    print(f"\n📦 Phase 3: Practical completion for incomplete decks")
+    
+    # Find incomplete decks and sort by completion percentage
+    incomplete_decks = [(name, len(deck_cards)) for name, deck_cards in decks.items() 
+                       if len(deck_cards) < target_deck_size]
+    incomplete_decks.sort(key=lambda x: x[1], reverse=True)  # Most complete first
+    
+    for theme_name, current_size in incomplete_decks:
+        theme_config = ALL_THEMES[theme_name]
+        theme_colors = set(theme_config['colors'])
+        cards_needed = target_deck_size - current_size
+        
+        print(f"\n🔧 Practical completion: {theme_name} (needs {cards_needed} cards)")
+        
+        # Current deck analysis
+        creature_count = 0
+        land_count = 0
+        current_lands = set()
+        
+        for card_idx in decks[theme_name]:
+            card = oracle_df.iloc[card_idx]
+            if is_creature_card(card):
+                creature_count += 1
+            elif is_land_card(card):
+                land_count += 1
+                current_lands.add(card['name'])
+        
+        # Set limits
+        is_mono_color = len(theme_colors) == 1
+        max_lands = 1 if is_mono_color else 3
+        max_creatures = 9
+        
+        creatures_can_add = max_creatures - creature_count
+        lands_can_add = max_lands - land_count
+        
+        # Find color-appropriate cards (relaxed scoring)
+        practical_candidates = []
+        
+        for idx, card in oracle_df.iterrows():
+            if idx in used_cards:
+                continue
+                
+            card_colors = set(get_card_colors(card))
+            
+            # Check color compatibility (be permissive with colorless)
+            if card_colors and not card_colors.issubset(theme_colors):
+                continue
+            
+            is_creature = is_creature_card(card)
+            is_land = is_land_card(card)
+            
+            # Check constraints
+            if is_creature and creatures_can_add <= 0:
+                continue
+            if is_land and lands_can_add <= 0:
+                continue
+            if is_land and card['name'] in current_lands:
+                continue
+            
+            # Relaxed scoring - prioritize color compatibility over perfect keyword match
+            score = 0.0
+            
+            # Keyword matching (reduced weight)
+            theme_score = score_card_for_theme(card, theme_config)
+            score += theme_score * 0.7
+            
+            # Color preference bonus
+            if card_colors == theme_colors:
+                score += 0.5  # Perfect color match
+            elif card_colors and card_colors.issubset(theme_colors):
+                score += 0.3  # Compatible colors
+            elif not card_colors:  # Colorless
+                score += 0.1
+            
+            # Accept any card with reasonable color compatibility
+            if score >= 0.1 or not card_colors:  # Very permissive
+                practical_candidates.append((idx, card, score, is_creature, is_land))
+        
+        # Sort by score and fill deck
+        practical_candidates.sort(key=lambda x: x[2], reverse=True)
+        
+        creatures_added = 0
+        lands_added = 0
+        
+        for idx, card, score, is_creature, is_land in practical_candidates:
+            if len(decks[theme_name]) >= target_deck_size:
+                break
+                
+            if is_creature and creatures_added >= creatures_can_add:
+                continue
+            if is_land and lands_added >= lands_can_add:
+                continue
+                
+            decks[theme_name].append(idx)
+            used_cards.add(idx)
+            
+            if is_creature:
+                creatures_added += 1
+            elif is_land:
+                lands_added += 1
+                
+            print(f"  ✅ Added: {card['name']} (Score: {score:.1f}) [{card['Type']}]")
+        
+        final_size = len(decks[theme_name])
+        print(f"  📊 Final size: {final_size}/{target_deck_size} cards")
+        
+        if final_size < target_deck_size:
+            print(f"  ⚠️  Still incomplete ({target_deck_size - final_size} cards short)")
+    
+    # Convert to DataFrames and add deck analysis
+    deck_dataframes = {}
+    
+    print(f"\n📋 DECK CONSTRUCTION SUMMARY")
+    print("=" * 50)
+    
+    complete_decks = 0
+    incomplete_decks = 0
+    total_cards_used = 0
+    
+    for theme_name, card_indices in decks.items():
+        if not card_indices:
+            deck_dataframes[theme_name] = pd.DataFrame()
+            print(f"{theme_name:20}: 0 cards ❌")
+            continue
+            
+        deck_df = oracle_df.iloc[card_indices].copy()
+        deck_df['theme'] = theme_name
+        deck_dataframes[theme_name] = deck_df
+        
+        # Analyze deck composition
+        creatures = deck_df[deck_df['Type'].str.contains('Creature', case=False, na=False)]
+        lands = deck_df[deck_df['Type'].str.contains('Land', case=False, na=False)]
+        other = deck_df[~deck_df['Type'].str.contains('Creature|Land', case=False, na=False)]
+        
+        deck_size = len(deck_df)
+        total_cards_used += deck_size
+        
+        if deck_size == target_deck_size:
+            complete_decks += 1
+            status = "✅"
+        elif deck_size > 0:
+            incomplete_decks += 1
+            status = "⚠️"
+        else:
+            status = "❌"
+            
+        print(f"{theme_name:20}: {deck_size:2d} cards {status} "
+              f"(C:{len(creatures)} L:{len(lands)} O:{len(other)})")
+    
+    print(f"\n🎯 CONSTRUCTION RESULTS:")
+    print(f"✅ Complete decks: {complete_decks}/{len(ALL_THEMES)}")
+    print(f"⚠️  Incomplete decks: {incomplete_decks}")
+    print(f"📊 Total cards used: {total_cards_used}/{len(oracle_df)}")
+    print(f"🔄 Cards remaining: {len(oracle_df) - total_cards_used}")
+    
+    if complete_decks == len(ALL_THEMES):
+        print(f"\n🎉 SUCCESS! All {len(ALL_THEMES)} jumpstart decks completed!")
+    elif incomplete_decks > 0:
+        print(f"\n💡 TIP: {incomplete_decks} decks need completion. Consider:")
+        print(f"   - Running the practical completion analysis")
+        print(f"   - Adjusting theme requirements for incomplete decks")
+        print(f"   - Using remaining {len(oracle_df) - total_cards_used} cards for completion")
+    
+    return deck_dataframes
+
+
+def complete_incomplete_decks(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
+    """
+    Complete any incomplete decks using a practical approach that prioritizes
+    color compatibility over perfect keyword matching.
+    
+    Args:
+        deck_dataframes: Current deck DataFrames (some may be incomplete)
+        oracle_df: Full oracle DataFrame with all available cards
+        
+    Returns:
+        Updated deck DataFrames with completed decks
+    """
+    
+    print("🔧 COMPLETING INCOMPLETE DECKS")
+    print("=" * 40)
+    
+    # Get used cards
+    used_cards = set()
+    for deck_df in deck_dataframes.values():
+        if not deck_df.empty:
+            used_cards.update(deck_df['name'].tolist())
+    
+    # Get unassigned cards
+    unassigned_cards = oracle_df[~oracle_df['name'].isin(used_cards)].copy()
+    available_cards = unassigned_cards.copy()
+    
+    # Find incomplete decks
+    incomplete_decks = [(name, df) for name, df in deck_dataframes.items() if len(df) < 13]
+    incomplete_decks.sort(key=lambda x: len(x[1]), reverse=True)  # Most complete first
+    
+    updated_decks = deck_dataframes.copy()
+    completion_assignments = {}
+    
+    for theme_name, current_deck in incomplete_decks:
+        cards_needed = 13 - len(current_deck)
+        theme_config = ALL_THEMES[theme_name]
+        theme_colors = set(theme_config['colors'])
+        
+        print(f"\n🎯 {theme_name}: needs {cards_needed} cards")
+        
+        # Analyze current deck
+        current_creatures = current_deck[current_deck['Type'].str.contains('Creature', case=False, na=False)]
+        current_lands = current_deck[current_deck['Type'].str.contains('Land', case=False, na=False)]
+        
+        creatures_can_add = 9 - len(current_creatures)
+        is_mono = len(theme_colors) == 1
+        max_lands = 1 if is_mono else 3
+        lands_can_add = max_lands - current_lands['name'].nunique()
+        
+        # Find compatible cards
+        compatible_candidates = []
+        
+        for _, card in available_cards.iterrows():
+            # Color compatibility
+            card_colors = set(str(card['Color'])) if pd.notna(card['Color']) and str(card['Color']) != 'nan' else set()
+            if card_colors and not card_colors.issubset(theme_colors):
+                continue
+            
+            # Type constraints
+            is_creature = 'creature' in str(card['Type']).lower()
+            is_land = 'land' in str(card['Type']).lower()
+            
+            if is_creature and creatures_can_add <= 0:
+                continue
+            if is_land and lands_can_add <= 0:
+                continue
+            if is_land and card['name'] in current_lands['name'].values:
+                continue
+            
+            # Score for appropriateness
+            score = 0.0
+            
+            # Keyword matching
+            oracle_text = str(card['Oracle Text']).lower() if pd.notna(card['Oracle Text']) else ""
+            card_type = str(card['Type']).lower()
+            card_name = str(card['name']).lower()
+            searchable_text = f"{oracle_text} {card_type} {card_name}"
+            
+            for keyword in theme_config['keywords']:
+                if keyword.lower() in searchable_text:
+                    score += 1.0
+            
+            # Color match bonus
+            if card_colors == theme_colors:
+                score += 0.5
+            elif card_colors and card_colors.issubset(theme_colors):
+                score += 0.3
+            elif not card_colors:  # Colorless
+                score += 0.1
+            
+            compatible_candidates.append((card, score, is_creature, is_land))
+        
+        # Sort and select best cards
+        compatible_candidates.sort(key=lambda x: x[1], reverse=True)
+        selected_cards = []
+        creatures_added = 0
+        lands_added = 0
+        
+        for card, score, is_creature, is_land in compatible_candidates:
+            if len(selected_cards) >= cards_needed:
+                break
+            
+            if is_creature and creatures_added >= creatures_can_add:
+                continue
+            if is_land and lands_added >= lands_can_add:
+                continue
+            
+            selected_cards.append(card)
+            if is_creature:
+                creatures_added += 1
+            elif is_land:
+                lands_added += 1
+            
+            print(f"   + {card['name']} (Score: {score:.1f})")
+        
+        # Update deck
+        if selected_cards:
+            cards_df = pd.DataFrame(selected_cards)
+            updated_deck = pd.concat([current_deck, cards_df], ignore_index=True)
+            updated_deck['theme'] = theme_name
+            updated_decks[theme_name] = updated_deck
+            
+            # Remove from available pool
+            selected_names = [card['name'] for card in selected_cards]
+            available_cards = available_cards[~available_cards['name'].isin(selected_names)]
+            
+            completion_assignments[theme_name] = selected_cards
+            print(f"   ✅ Completed: {len(current_deck)} → {len(updated_deck)} cards")
+        else:
+            print(f"   ❌ No compatible cards found")
+    
+    return updated_decks
+
+
+def analyze_deck_composition(deck_df: pd.DataFrame, theme_name: str) -> Dict:
+    """
+    Analyze the composition of a constructed deck.
+    
+    Args:
+        deck_df: DataFrame containing the deck cards
+        theme_name: Name of the theme
+        
+    Returns:
+        Dictionary with analysis results
+    """
+    
+    if deck_df.empty:
+        return {
+            'theme': theme_name,
+            'total_cards': 0,
+            'creatures': 0,
+            'lands': 0,
+            'spells': 0,
+            'artifacts': 0,
+            'avg_cmc': 0,
+            'color_distribution': {},
+            'type_distribution': {}
+        }
+    
+    # Count card types
+    creatures = deck_df[deck_df['Type'].str.contains('Creature', case=False, na=False)]
+    lands = deck_df[deck_df['Type'].str.contains('Land', case=False, na=False)]
+    instants = deck_df[deck_df['Type'].str.contains('Instant', case=False, na=False)]
+    sorceries = deck_df[deck_df['Type'].str.contains('Sorcery', case=False, na=False)]
+    artifacts = deck_df[deck_df['Type'].str.contains('Artifact', case=False, na=False)]
+    enchantments = deck_df[deck_df['Type'].str.contains('Enchantment', case=False, na=False)]
+    
+    # Calculate average CMC (excluding lands)
+    non_lands = deck_df[~deck_df['Type'].str.contains('Land', case=False, na=False)]
+    avg_cmc = non_lands['CMC'].mean() if not non_lands.empty else 0
+    
+    # Color distribution
+    color_counts = deck_df['Color'].value_counts().to_dict()
+    
+    # Type distribution
+    type_distribution = {
+        'Creatures': len(creatures),
+        'Lands': len(lands),
+        'Instants': len(instants),
+        'Sorceries': len(sorceries),
+        'Artifacts': len(artifacts),
+        'Enchantments': len(enchantments),
+        'Other': len(deck_df) - sum([len(creatures), len(lands), len(instants), 
+                                   len(sorceries), len(artifacts), len(enchantments)])
+    }
+    
+    return {
+        'theme': theme_name,
+        'total_cards': len(deck_df),
+        'creatures': len(creatures),
+        'lands': len(lands),
+        'spells': len(instants) + len(sorceries),
+        'artifacts': len(artifacts),
+        'avg_cmc': avg_cmc,
+        'color_distribution': color_counts,
+        'type_distribution': type_distribution,
+        'creature_list': creatures['name'].tolist() if not creatures.empty else [],
+        'land_list': lands['name'].tolist() if not lands.empty else []
+    }
+
+
+def print_deck_summary(deck_dataframes: Dict[str, pd.DataFrame]):
+    """
+    Print a comprehensive summary of all constructed decks.
+    
+    Args:
+        deck_dataframes: Dictionary of theme name -> deck DataFrame
+    """
+    
+    print("\n🎯 JUMPSTART CUBE CONSTRUCTION COMPLETE")
+    print("=" * 60)
+    
+    successful_decks = 0
+    incomplete_decks = 0
+    total_cards_used = 0
+    
+    for theme_name, deck_df in deck_dataframes.items():
+        analysis = analyze_deck_composition(deck_df, theme_name)
+        
+        if analysis['total_cards'] == 13:
+            successful_decks += 1
+        elif analysis['total_cards'] > 0:
+            incomplete_decks += 1
+            
+        total_cards_used += analysis['total_cards']
+    
+    print(f"✅ Successfully built decks: {successful_decks}")
+    print(f"⚠️  Incomplete decks: {incomplete_decks}")
+    print(f"📊 Total cards used: {total_cards_used}")
+    print(f"🎲 Total themes: {len(deck_dataframes)}")
+    
+    if incomplete_decks > 0:
+        print(f"\n⚠️  INCOMPLETE DECKS:")
+        for theme_name, deck_df in deck_dataframes.items():
+            if 0 < len(deck_df) < 13:
+                shortage = 13 - len(deck_df)
+                print(f"   {theme_name}: {len(deck_df)}/13 cards ({shortage} short)")
