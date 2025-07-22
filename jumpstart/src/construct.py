@@ -83,6 +83,54 @@ def get_card_colors(card: pd.Series) -> List[str]:
     return list(color)
 
 
+def can_land_produce_colors(land_card: pd.Series, required_colors: set) -> bool:
+    """
+    Check if a land can produce all the required colors for a dual-color theme.
+    
+    Args:
+        land_card: The land card to check
+        required_colors: Set of colors that must be producible (e.g., {'W', 'U'})
+        
+    Returns:
+        True if the land can produce all required colors
+    """
+    if not is_land_card(land_card):
+        return False
+    
+    # Get the land's color identity
+    land_colors = set(get_card_colors(land_card))
+    
+    # If land has no color identity, check oracle text for mana production
+    if not land_colors:
+        oracle_text = str(land_card.get('Oracle Text', '')).lower()
+        
+        # Check for basic land types that produce specific colors
+        basic_land_patterns = {
+            'W': ['plains', 'white mana', '{w}'],
+            'U': ['island', 'blue mana', '{u}'],
+            'B': ['swamp', 'black mana', '{b}'],
+            'R': ['mountain', 'red mana', '{r}'],
+            'G': ['forest', 'green mana', '{g}']
+        }
+        
+        producible_colors = set()
+        for color, patterns in basic_land_patterns.items():
+            if any(pattern in oracle_text for pattern in patterns):
+                producible_colors.add(color)
+        
+        # Also check for generic mana symbols in oracle text
+        for color in required_colors:
+            color_symbol = '{' + color.lower() + '}'
+            if color_symbol in oracle_text:
+                producible_colors.add(color)
+        
+        # Check if this land can produce all required colors
+        return required_colors.issubset(producible_colors)
+    
+    # For lands with color identity, check if it covers all required colors
+    return required_colors.issubset(land_colors)
+
+
 def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 13) -> Dict[str, pd.DataFrame]:
     """
     Construct jumpstart decks for all themes using a practical three-phase approach.
@@ -111,7 +159,7 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
         
         print(f"\n🎯 Building {theme_name} deck ({'/'.join(theme_config['colors'])})")
         
-        # Find cards that match exactly the theme colors (multicolor cards)
+        # Find cards that match exactly the theme colors (multicolor cards and appropriate lands)
         multicolor_candidates = []
         
         for idx, card in oracle_df.iterrows():
@@ -119,31 +167,70 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
                 continue
                 
             card_colors = set(get_card_colors(card))
+            is_land = is_land_card(card)
             
-            # Skip if card doesn't match theme colors exactly
-            if not card_colors or not card_colors.issubset(theme_colors):
-                continue
-            
-            # Must be multicolor (have more than one color) for this phase
-            if len(card_colors) < 2:
-                continue
+            # For lands, check if they can produce both colors
+            if is_land:
+                if not can_land_produce_colors(card, theme_colors):
+                    continue  # Skip lands that can't produce both colors
+                # Lands that can produce both colors are good candidates
+                score = score_card_for_theme(card, theme_config)
+                if score >= 0.1:  # Lower threshold for dual lands
+                    multicolor_candidates.append((idx, card, score))
+            else:
+                # For non-lands, check color compatibility
+                if not card_colors or not card_colors.issubset(theme_colors):
+                    continue
                 
-            score = score_card_for_theme(card, theme_config)
-            if score >= 0.3:  # More permissive threshold
-                multicolor_candidates.append((idx, card, score))
+                # Must be multicolor (have more than one color) for this phase, or be colorless
+                if card_colors and len(card_colors) < 2:
+                    continue
+                    
+                score = score_card_for_theme(card, theme_config)
+                if score >= 0.3:  # More permissive threshold
+                    multicolor_candidates.append((idx, card, score))
         
-        # Sort by score and add best multicolor cards
+        # Sort by score and add best multicolor cards with constraint enforcement
         multicolor_candidates.sort(key=lambda x: x[2], reverse=True)
         
-        for idx, card, score in multicolor_candidates[:target_deck_size]:
-            decks[theme_name].append(idx)
-            used_cards.add(idx)
-            print(f"  ✅ Added: {card['name']} (Score: {score:.1f})")
-            
+        # Track constraints for Phase 1
+        creature_count = 0
+        land_count = 0
+        current_lands = set()
+        max_lands = 1 if len(theme_colors) == 1 else 3
+        max_creatures = 9
+        
+        for idx, card, score in multicolor_candidates:
             if len(decks[theme_name]) >= target_deck_size:
                 break
+                
+            # Check constraints before adding
+            is_creature = is_creature_card(card)
+            is_land = is_land_card(card)
+            
+            if is_creature and creature_count >= max_creatures:
+                continue
+                
+            if is_land:
+                if land_count >= max_lands:
+                    continue
+                if card['name'] in current_lands:  # No duplicate lands
+                    continue
+            
+            # Add the card
+            decks[theme_name].append(idx)
+            used_cards.add(idx)
+            
+            # Update counters
+            if is_creature:
+                creature_count += 1
+            elif is_land:
+                land_count += 1
+                current_lands.add(card['name'])
+                
+            print(f"  ✅ Added: {card['name']} (Score: {score:.1f}) [{card['Type'].split(' - ')[0]}]")
         
-        print(f"  📊 Phase 1 complete: {len(decks[theme_name])}/{target_deck_size} cards")
+        print(f"  📊 Phase 1 complete: {len(decks[theme_name])}/{target_deck_size} cards (C:{creature_count} L:{land_count})")
     
     # Phase 2: Fill remaining slots using keyword-matched cards
     print(f"\n📦 Phase 2: Filling slots with keyword-matched cards")
@@ -200,6 +287,10 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
                     continue
                 if card['name'] in current_lands:  # No duplicate lands
                     continue
+                
+                # For dual-color themes, ensure lands can produce both colors
+                if not is_mono_color and not can_land_produce_colors(card, theme_colors):
+                    continue
             
             score = score_card_for_theme(card, theme_config)
             if score >= 0.2:  # Lower threshold for filling decks
@@ -236,6 +327,65 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
         
         final_size = len(decks[theme_name])
         print(f"  📊 Phase 2 complete: {final_size}/{target_deck_size} cards")
+        
+        # Validate constraints after Phase 2
+        if final_size > 0:
+            deck_creatures = sum(1 for idx in decks[theme_name] if is_creature_card(oracle_df.iloc[idx]))
+            deck_lands = sum(1 for idx in decks[theme_name] if is_land_card(oracle_df.iloc[idx]))
+            deck_land_names = {oracle_df.iloc[idx]['name'] for idx in decks[theme_name] if is_land_card(oracle_df.iloc[idx])}
+            
+            # Check for violations
+            if deck_creatures > max_creatures:
+                print(f"  ⚠️  CONSTRAINT VIOLATION: {deck_creatures} creatures (max {max_creatures})")
+            if len(deck_land_names) > max_lands:
+                print(f"  ⚠️  CONSTRAINT VIOLATION: {len(deck_land_names)} unique lands (max {max_lands})")
+    
+    # Phase 2.5: Constraint validation and correction
+    print(f"\n📦 Phase 2.5: Constraint validation and correction")
+    
+    violations_found = 0
+    for theme_name, card_indices in decks.items():
+        if not card_indices:
+            continue
+            
+        theme_config = ALL_THEMES[theme_name]
+        theme_colors = set(theme_config['colors'])
+        is_mono_color = len(theme_colors) == 1
+        max_lands = 1 if is_mono_color else 3
+        max_creatures = 9
+        
+        # Count actual types
+        deck_creatures = [idx for idx in card_indices if is_creature_card(oracle_df.iloc[idx])]
+        deck_lands = [idx for idx in card_indices if is_land_card(oracle_df.iloc[idx])]
+        deck_land_names = {oracle_df.iloc[idx]['name'] for idx in deck_lands}
+        
+        violations = []
+        if len(deck_creatures) > max_creatures:
+            violations.append(f"creatures: {len(deck_creatures)}/{max_creatures}")
+        if len(deck_land_names) > max_lands:
+            violations.append(f"lands: {len(deck_land_names)}/{max_lands}")
+        
+        if violations:
+            violations_found += 1
+            print(f"  ⚠️  {theme_name}: VIOLATION - {', '.join(violations)}")
+            
+            # Auto-fix land violations by removing excess lands
+            if len(deck_land_names) > max_lands:
+                excess_lands = len(deck_land_names) - max_lands
+                lands_to_remove = deck_lands[-excess_lands:]  # Remove last added lands
+                
+                for land_idx in lands_to_remove:
+                    land_card = oracle_df.iloc[land_idx]
+                    decks[theme_name].remove(land_idx)
+                    used_cards.discard(land_idx)
+                    print(f"    🔧 Removed excess land: {land_card['name']}")
+                
+                print(f"    ✅ Land violation fixed: {len(deck_land_names)} → {max_lands} lands")
+    
+    if violations_found == 0:
+        print(f"  ✅ No constraint violations found - all decks properly constructed")
+    else:
+        print(f"  🔧 Fixed {violations_found} constraint violations")
     
     # Phase 3: Practical completion for remaining incomplete decks
     print(f"\n📦 Phase 3: Practical completion for incomplete decks")
@@ -295,6 +445,10 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
             if is_land and lands_can_add <= 0:
                 continue
             if is_land and card['name'] in current_lands:
+                continue
+            
+            # For dual-color themes, ensure lands can produce both colors
+            if is_land and not is_mono_color and not can_land_produce_colors(card, theme_colors):
                 continue
             
             # Relaxed scoring - prioritize color compatibility over perfect keyword match
@@ -396,10 +550,28 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
     if complete_decks == len(ALL_THEMES):
         print(f"\n🎉 SUCCESS! All {len(ALL_THEMES)} jumpstart decks completed!")
     elif incomplete_decks > 0:
-        print(f"\n💡 TIP: {incomplete_decks} decks need completion. Consider:")
-        print(f"   - Running the practical completion analysis")
-        print(f"   - Adjusting theme requirements for incomplete decks")
-        print(f"   - Using remaining {len(oracle_df) - total_cards_used} cards for completion")
+        print(f"\n� Phase 4: Attempting deck reorganization for {incomplete_decks} incomplete decks")
+        deck_dataframes = reorganize_incomplete_decks(deck_dataframes, oracle_df, target_deck_size)
+        
+        # Recount after reorganization
+        complete_after_reorg = sum(1 for deck_df in deck_dataframes.values() if len(deck_df) == target_deck_size)
+        incomplete_after_reorg = len(ALL_THEMES) - complete_after_reorg
+        
+        print(f"\n📊 REORGANIZATION RESULTS:")
+        print(f"✅ Complete decks: {complete_after_reorg}/{len(ALL_THEMES)} (was {complete_decks})")
+        print(f"⚠️  Remaining incomplete: {incomplete_after_reorg} (was {incomplete_decks})")
+        
+        if complete_after_reorg == len(ALL_THEMES):
+            print(f"\n🎉 SUCCESS! All decks completed through reorganization!")
+        elif incomplete_after_reorg < incomplete_decks:
+            print(f"\n💡 Reorganization helped! Reduced incomplete decks from {incomplete_decks} to {incomplete_after_reorg}")
+            if incomplete_after_reorg > 0:
+                print(f"   Consider manual completion for remaining {incomplete_after_reorg} decks")
+        else:
+            print(f"\n⚠️  Reorganization couldn't help. Consider:")
+            print(f"   - Running the practical completion analysis")
+            print(f"   - Adjusting theme requirements for incomplete decks")
+            print(f"   - Using remaining {len(oracle_df) - total_cards_used} cards for completion")
     
     return deck_dataframes
 
@@ -473,6 +645,10 @@ def complete_incomplete_decks(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
             if is_land and card['name'] in current_lands['name'].values:
                 continue
             
+            # For dual-color themes, ensure lands can produce both colors
+            if is_land and len(theme_colors) > 1 and not can_land_produce_colors(card, theme_colors):
+                continue
+            
             # Score for appropriateness
             score = 0.0
             
@@ -534,6 +710,202 @@ def complete_incomplete_decks(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
             print(f"   ✅ Completed: {len(current_deck)} → {len(updated_deck)} cards")
         else:
             print(f"   ❌ No compatible cards found")
+    
+    return updated_decks
+
+
+def reorganize_incomplete_decks(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame, target_deck_size: int = 13) -> Dict[str, pd.DataFrame]:
+    """
+    Attempt to complete incomplete decks through reorganization of cards between decks.
+    This function handles edge cases where simple completion fails due to lack of suitable cards.
+    
+    Args:
+        deck_dataframes: Current deck DataFrames (some may be incomplete)
+        oracle_df: Full oracle DataFrame with all available cards
+        target_deck_size: Target cards per deck (default 13)
+        
+    Returns:
+        Updated deck DataFrames after reorganization attempts
+    """
+    
+    print(f"🔄 REORGANIZING CARDS BETWEEN DECKS")
+    print("=" * 50)
+    
+    # Get used cards and unassigned cards
+    used_cards = set()
+    for deck_df in deck_dataframes.values():
+        if not deck_df.empty:
+            used_cards.update(deck_df['name'].tolist())
+    
+    unassigned_cards = oracle_df[~oracle_df['name'].isin(used_cards)].copy()
+    
+    # Find incomplete decks that need completion
+    incomplete_decks = []
+    for theme_name, deck_df in deck_dataframes.items():
+        if len(deck_df) < target_deck_size:
+            cards_needed = target_deck_size - len(deck_df)
+            theme_config = ALL_THEMES[theme_name]
+            incomplete_decks.append((theme_name, deck_df, cards_needed, theme_config))
+    
+    # Sort by cards needed (fewest first - easier to complete)
+    incomplete_decks.sort(key=lambda x: x[2])
+    
+    updated_decks = deck_dataframes.copy()
+    reorganizations_made = 0
+    
+    for theme_name, current_deck, cards_needed, theme_config in incomplete_decks:
+        theme_colors = set(theme_config['colors'])
+        
+        print(f"\n🎯 Attempting to complete {theme_name} (needs {cards_needed} cards)")
+        print(f"   Colors: {'/'.join(sorted(theme_colors))}")
+        
+        # Analyze what types of cards this deck can accept
+        current_creatures = current_deck[current_deck['Type'].str.contains('Creature', case=False, na=False)]
+        current_lands = current_deck[current_deck['Type'].str.contains('Land', case=False, na=False)]
+        
+        creatures_can_add = 9 - len(current_creatures)
+        is_mono = len(theme_colors) == 1
+        max_lands = 1 if is_mono else 3
+        lands_can_add = max_lands - current_lands['name'].nunique()
+        spells_needed = cards_needed - min(creatures_can_add, cards_needed) - min(lands_can_add, cards_needed)
+        
+        print(f"   Can accept: {creatures_can_add} creatures, {lands_can_add} lands, need {spells_needed} spells")
+        
+        # First, try to use unassigned cards
+        suitable_unassigned = []
+        for _, card in unassigned_cards.iterrows():
+            card_colors = set(str(card['Color'])) if pd.notna(card['Color']) and str(card['Color']) != 'nan' else set()
+            
+            # Check color compatibility
+            if card_colors and not card_colors.issubset(theme_colors):
+                continue
+            
+            # Check type constraints
+            is_creature = 'creature' in str(card['Type']).lower()
+            is_land = 'land' in str(card['Type']).lower()
+            
+            if is_creature and creatures_can_add <= 0:
+                continue
+            if is_land and lands_can_add <= 0:
+                continue
+            if is_land and card['name'] in current_lands['name'].values:
+                continue
+            if is_land and len(theme_colors) > 1 and not can_land_produce_colors(card, theme_colors):
+                continue
+                
+            suitable_unassigned.append(card)
+        
+        if len(suitable_unassigned) >= cards_needed:
+            print(f"   ✅ Can complete using {len(suitable_unassigned)} unassigned cards")
+            # Use the existing completion logic
+            continue
+        
+        print(f"   ⚠️  Only {len(suitable_unassigned)} suitable unassigned cards, need {cards_needed}")
+        print(f"   🔄 Searching for reorganization opportunities...")
+        
+        # Look for potential donor decks that can spare cards and accept unassigned cards
+        reorganization_opportunities = []
+        
+        for donor_theme, donor_deck in updated_decks.items():
+            if len(donor_deck) != target_deck_size:  # Only reorganize with complete decks
+                continue
+                
+            donor_config = ALL_THEMES[donor_theme]
+            donor_colors = set(donor_config['colors'])
+            
+            # Check if donor can accept unassigned cards (specifically creatures from unassigned)
+            unassigned_creatures = unassigned_cards[
+                unassigned_cards['Type'].str.contains('Creature', case=False, na=False)
+            ]
+            
+            compatible_creatures_for_donor = []
+            for _, creature in unassigned_creatures.iterrows():
+                creature_colors = set(str(creature['Color'])) if pd.notna(creature['Color']) and str(creature['Color']) != 'nan' else set()
+                if not creature_colors or creature_colors.issubset(donor_colors):
+                    compatible_creatures_for_donor.append(creature)
+            
+            if not compatible_creatures_for_donor:
+                continue
+                
+            # Check if donor has room for creatures
+            donor_creatures = donor_deck[donor_deck['Type'].str.contains('Creature', case=False, na=False)]
+            if len(donor_creatures) >= 9:
+                continue
+                
+            # Check if donor has spare spells
+            donor_spells = donor_deck[~donor_deck['Type'].str.contains('Creature|Land', case=False, na=False)]
+            if len(donor_spells) <= 2:  # Need at least 3 spells to spare one
+                continue
+                
+            # This donor could potentially help
+            reorganization_opportunities.append({
+                'donor_theme': donor_theme,
+                'donor_deck': donor_deck,
+                'spare_spells': donor_spells,
+                'creatures_room': 9 - len(donor_creatures),
+                'compatible_creatures': compatible_creatures_for_donor[:1]  # Just take one
+            })
+        
+        # Try the best reorganization opportunity
+        if reorganization_opportunities:
+            # Sort by number of spare spells (prefer decks with more spare spells)
+            reorganization_opportunities.sort(key=lambda x: len(x['spare_spells']), reverse=True)
+            
+            best_opportunity = reorganization_opportunities[0]
+            donor_theme = best_opportunity['donor_theme']
+            donor_deck = best_opportunity['donor_deck']
+            spare_spells = best_opportunity['spare_spells']
+            compatible_creatures = best_opportunity['compatible_creatures']
+            
+            print(f"   🔄 Reorganization found: {donor_theme} ↔ unassigned cards")
+            
+            # Take one spell from donor
+            spell_to_take = spare_spells.iloc[0]
+            print(f"      Moving '{spell_to_take['name']}' from {donor_theme} to {theme_name}")
+            
+            # Give one creature to donor
+            if compatible_creatures:
+                creature_to_give = compatible_creatures[0]
+                print(f"      Moving '{creature_to_give['name']}' from unassigned to {donor_theme}")
+                
+                # Execute the reorganization
+                # Remove spell from donor deck
+                updated_donor = donor_deck[donor_deck['name'] != spell_to_take['name']].copy()
+                
+                # Add creature to donor deck
+                creature_df = pd.DataFrame([creature_to_give])
+                creature_df['theme'] = donor_theme
+                updated_donor = pd.concat([updated_donor, creature_df], ignore_index=True)
+                updated_decks[donor_theme] = updated_donor
+                
+                # Add spell to incomplete deck
+                spell_df = pd.DataFrame([spell_to_take])
+                spell_df['theme'] = theme_name
+                updated_incomplete = pd.concat([current_deck, spell_df], ignore_index=True)
+                updated_decks[theme_name] = updated_incomplete
+                
+                # Remove creature from unassigned
+                unassigned_cards = unassigned_cards[unassigned_cards['name'] != creature_to_give['name']]
+                
+                reorganizations_made += 1
+                
+                new_incomplete_size = len(updated_incomplete)
+                print(f"      ✅ {theme_name}: {len(current_deck)} → {new_incomplete_size} cards")
+                print(f"      ✅ {donor_theme}: still {len(updated_donor)} cards")
+                
+                if new_incomplete_size == target_deck_size:
+                    print(f"      🎉 {theme_name} is now complete!")
+        
+        if not reorganization_opportunities:
+            print(f"   ❌ No reorganization opportunities found for {theme_name}")
+    
+    print(f"\n📊 REORGANIZATION SUMMARY:")
+    print(f"🔄 Reorganizations performed: {reorganizations_made}")
+    
+    if reorganizations_made > 0:
+        print(f"✅ Successfully reorganized cards between decks")
+    else:
+        print(f"⚠️  No beneficial reorganizations were possible")
     
     return updated_decks
 
