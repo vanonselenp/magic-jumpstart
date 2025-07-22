@@ -142,6 +142,15 @@ theme_criteria = {
         'evasion_bonus': 2.0,   # High value on evasion for aggro
         'haste_bonus': 2.5,     # Haste is crucial for small aggro
         'efficient_stats_bonus': 1.5  # Bonus for power >= CMC
+    },
+    'Card Draw': {
+        'keywords': theme_keywords['Card Draw'],
+        'abilities': ['enters', 'when', 'draw', 'scry', 'look', 'search'],
+        'stats_matter': False,  # Utility and card advantage over stats
+        'utility_bonus': 2.5,   # Very high value on card draw utility
+        'evasion_bonus': 1.0,   # Moderate evasion value
+        'instant_speed_bonus': 1.5,  # Bonus for instant-speed effects
+        'card_advantage_bonus': 3.0  # High bonus for drawing multiple cards
     }
 }
 
