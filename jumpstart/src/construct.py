@@ -280,6 +280,26 @@ class DeckBuilder:
             if added_count >= cards_needed:
                 break
             
+            # CRITICAL FIX: Re-check constraints before adding each card
+            # The deck state changes as we add cards, so constraints must be re-evaluated
+            theme_colors = set(theme_config['colors'])
+            is_mono = len(theme_colors) == 1
+            
+            # Check creature constraint specifically
+            if is_creature_card(card) and not deck_state.can_add_creature(self.constraints):
+                print(f"  ⚠️  Skipping {card['name']}: would exceed creature limit ({deck_state.creature_count}/9)")
+                continue
+                
+            # Check land constraint specifically  
+            if is_land_card(card) and not deck_state.can_add_land(self.constraints, is_mono, card['name']):
+                print(f"  ⚠️  Skipping {card['name']}: would exceed land limit")
+                continue
+                
+            # For dual-color themes, check land mana production
+            if is_land_card(card) and not is_mono and not can_land_produce_colors(card, theme_colors):
+                print(f"  ⚠️  Skipping {card['name']}: cannot produce required colors")
+                continue
+
             deck_state.add_card(card_idx, card)
             self.selector.mark_used(card_idx)
             added_count += 1
