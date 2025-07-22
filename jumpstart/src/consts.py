@@ -123,8 +123,10 @@ MONO_COLOR_THEMES = {
     'Green Stompy': {
         'colors': ['G'],
         'strategy': 'Large creatures with trample and pump effects',
-        'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight'],
-        'archetype': 'Aggro'
+        'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight', 'big', 'large', 
+                    'creature', 'beast', 'giant', 'wurm', 'elemental', '4/4', '5/5', '6/6', 
+                    'expensive', 'high power', 'stats'],
+        'archetype': 'Stompy'  # Custom archetype instead of generic Aggro
     },
     'Green Beasts': {
         'colors': ['G'],

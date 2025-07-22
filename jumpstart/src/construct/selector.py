@@ -113,13 +113,15 @@ class CardSelector:
         """Get the appropriate specialized scorer and core card count for a theme."""
         from ..scorer import (
             create_equipment_scorer, create_tribal_scorer, 
-            create_aggressive_scorer, create_default_scorer
+            create_aggressive_scorer, create_stompy_scorer, create_default_scorer
         )
         
         if 'equipment' in theme_name.lower():
             return create_equipment_scorer(), 5  # Reserve more equipment cards
         elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
             return create_tribal_scorer(), 4  # Reserve key tribal cards
+        elif theme_config.get('archetype') == 'Stompy':
+            return create_stompy_scorer(), 3  # Reserve key stompy creatures
         elif theme_config.get('archetype') == 'Aggressive':
             return create_aggressive_scorer(), 3  # Reserve key aggressive cards
         else:
