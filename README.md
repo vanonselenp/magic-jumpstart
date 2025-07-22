@@ -1,6 +1,6 @@
 # Magic: The Gathering Jumpstart Cube Constructor
 
-An intelligent deck construction system for building themed Magic: The Gathering Jumpstart cubes with perfect theme coherence and balanced gameplay.
+An intelligent deck construction system for building themed Magic: The Gathering Jumpstart cubes with perfect theme coherence and balanced gameplay from a Pauper Cube. 
 
 ## Overview
 
