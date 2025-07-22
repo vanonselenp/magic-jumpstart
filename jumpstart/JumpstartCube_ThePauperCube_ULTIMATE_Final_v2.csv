@@ -1,12 +1,12 @@
 Name,Set,Collector Number,Rarity,Color Identity,Type,Mana Cost,CMC,Power,Toughness,Tags
 Archaeomancer,Mixed,,common,U,Creature - Human Wizard,,4,,,Azorius Evasion/Flying
-Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Azorius Evasion/Flying
+Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Blue Card Draw
 Ephemerate,Mixed,,common,W,Instant,,1,,,Azorius Evasion/Flying
 Lyev Skyknight,Mixed,,common,WU,Creature - Human Knight,,3,,,Azorius Evasion/Flying
-Lórien Revealed,Mixed,,common,U,Sorcery,,5,,,Azorius Evasion/Flying
+Lórien Revealed,Mixed,,common,U,Sorcery,,5,,,Blue Card Draw
 Momentary Blink,Mixed,,common,UW,Instant,,2,,,Azorius Evasion/Flying
 Oblivion Ring,Mixed,,common,W,Enchantment,,3,,,Azorius Evasion/Flying
-Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,,,Azorius Evasion/Flying
+Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,,,Blue Tempo
 Silver Drake,Mixed,,common,UW,Creature - Drake,,3,,,Azorius Evasion/Flying
 Carrier Thrall,Mixed,,common,B,Creature - Vampire,,2,,,Black Aggro
 Carrion Feeder,Mixed,,common,B,Creature - Zombie,,1,,,Black Aggro
@@ -55,18 +55,17 @@ Go for the Throat,Mixed,,common,B,Instant,,2,,,Black Sacrifice
 Mire Triton,Mixed,,common,B,Creature - Zombie Merfolk,,2,,,Black Sacrifice
 Retrofitted Transmogrant,Mixed,,common,B,Artifact Creature - Zombie,,1,,,Black Sacrifice
 Thorn of the Black Rose,Mixed,,common,B,Creature - Human Assassin,,4,,,Black Sacrifice
-Aethersnipe,Mixed,,common,U,Creature - Elemental,,6,,,Blue Card Draw
-Consider,Mixed,,common,U,Instant,,1,,,Blue Card Draw
-Counterspell,Mixed,,common,U,Instant,,2,,,Blue Card Draw
-Deep Analysis,Mixed,,common,U,Sorcery,,4,,,Blue Card Draw
-Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,,,Blue Card Draw
-Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,,,Blue Card Draw
-Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Card Draw
-Mist Raven,Mixed,,common,U,Creature - Bird,,4,,,Blue Card Draw
+Aethersnipe,Mixed,,common,U,Creature - Elemental,,6,,,Blue Flying
+Consider,Mixed,,common,U,Instant,,1,,,Dimir Control
+Counterspell,Mixed,,common,U,Instant,,2,,,Azorius Evasion/Flying
+Deep Analysis,Mixed,,common,U,Sorcery,,4,,,Blue Flying
+Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,,,Blue Flying
+Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,,,Blue Flying
+Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Tempo
 Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature - Human Ninja,,2,,,Blue Card Draw
 Opt,Mixed,,common,U,Instant,,1,,,Blue Card Draw
-Preening Champion,Mixed,,common,U,Creature - Bird Knight,,3,,,Blue Card Draw
-Winter Eladrin,Mixed,,common,U,Creature - Faerie Elf Wizard,,3,,,Blue Card Draw
+Preening Champion,Mixed,,common,U,Creature - Bird Knight,,3,,,Azorius Evasion/Flying
+Winter Eladrin,Mixed,,common,U,Creature - Faerie Elf Wizard,,3,,,Blue Control
 Displace,Mixed,,common,U,Instant,,3,,,Blue Control
 Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Blue Control
 Man-o'-War,Mixed,,common,U,Creature - Jellyfish,,3,,,Blue Control
@@ -76,31 +75,31 @@ Murmuring Mystic,Mixed,,common,U,Creature - Human Wizard,,4,,,Blue Control
 Ponder,Mixed,,common,U,Sorcery,,1,,,Blue Control
 Snap,Mixed,,common,U,Instant,,2,,,Blue Control
 Sword Coast Serpent,Mixed,,common,U,Creature - Serpent Dragon,,7,,,Blue Control
-Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,,,Blue Control
+Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,,,Blue Tempo
 Warden of Evos Isle,Mixed,,common,U,Creature - Bird Wizard,,3,,,Blue Control
-Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,,,Blue Control
-Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Flying
-Condescend,Mixed,,common,U,Instant,,1,,,Blue Flying
+Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,,,Blue Card Draw
+Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Card Draw
+Condescend,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,,,Blue Flying
 Geyser Drake,Mixed,,common,U,Creature - Drake,,3,,,Blue Flying
 Impulse,Mixed,,common,U,Instant,,2,,,Blue Flying
 Jhessian Thief,Mixed,,common,U,Creature - Human Rogue,,3,,,Blue Flying
-Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Flying
+Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Card Draw
 Quick Study,Mixed,,common,U,Instant,,3,,,Blue Flying
-Repeal,Mixed,,common,U,Instant,,1,,,Blue Flying
+Repeal,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Striped Riverwinder,Mixed,,common,U,Creature - Serpent,,7,,,Blue Flying
 Weakstone's Subjugation,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Flying
 Capsize,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Cloudkin Seer,Mixed,,common,U,Creature - Elemental Wizard,,3,,,Blue Tempo
-Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Tempo
+Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Card Draw
 Lose Focus,Mixed,,common,U,Instant,,2,,,Blue Tempo
-Mana Leak,Mixed,,common,U,Instant,,2,,,Blue Tempo
-Mocking Sprite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Blue Tempo
+Mana Leak,Mixed,,common,U,Instant,,2,,,Blue Control
+Mocking Sprite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Simic Control
 Mulldrifter,Mixed,,common,U,Creature - Elemental,,5,,,Blue Tempo
 Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Tempo
-Serum Visionary,Mixed,,common,U,Creature - Vedalken Wizard,,3,,,Blue Tempo
-Treasure Cruise,Mixed,,common,U,Sorcery,,8,,,Blue Tempo
-Unable to Scream,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Tempo
+Serum Visionary,Mixed,,common,U,Creature - Vedalken Wizard,,3,,,Blue Card Draw
+Treasure Cruise,Mixed,,common,U,Sorcery,,8,,,Azorius Evasion/Flying
+Unable to Scream,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Control
 Zephyr Winder,Mixed,,common,U,Creature - Elemental,,2,,,Blue Tempo
 Bogardan Dragonheart,Mixed,,common,R,Creature - Human Shaman,,3,,,Boros Aggro/Beatdown
 Conduit Goblin,Mixed,,common,RW,Creature - Goblin Warrior,,2,,,Boros Aggro/Beatdown
@@ -114,7 +113,7 @@ Rally the Peasants,Mixed,,common,WR,Instant,,3,,,Boros Aggro/Beatdown
 Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,,,Boros Aggro/Beatdown
 Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,,,Dimir Control
 Dinrova Horror,Mixed,,common,UB,Creature - Horror,,6,,,Dimir Control
-Faerie Seer,Mixed,,common,U,Creature - Faerie Wizard,,1,,,Dimir Control
+Faerie Seer,Mixed,,common,U,Creature - Faerie Wizard,,1,,,Blue Card Draw
 Feign Death,Mixed,,common,B,Instant,,1,,,Dimir Control
 Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Dimir Control
 Ransack the Lab,Mixed,,common,B,Sorcery,,2,,,Dimir Control
@@ -130,10 +129,10 @@ Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,,,Golgari Graveyar
 Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,,,Golgari Graveyard
 Putrid Leech,Mixed,,common,BG,Creature - Zombie Leech,,2,,,Golgari Graveyard
 Undying Malice,Mixed,,common,B,Instant,,1,,,Golgari Graveyard
-Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Midrange
+Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Stompy
 Bloom Hulk,Mixed,,common,G,Creature - Plant Elemental,,4,,,Green Midrange
 Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,,,Green Midrange
-Fertile Ground,Mixed,,common,G,Enchantment - Aura,,2,,,Green Ramp
+Fertile Ground,Mixed,,common,G,Enchantment - Aura,,2,,,Green Stompy
 Grapple with the Past,Mixed,,common,G,Instant,,2,,,Green Midrange
 Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,,,Green Midrange
 Longstalk Brawl,Mixed,,common,G,Sorcery,,1,,,Green Midrange
@@ -146,7 +145,7 @@ Generous Ent,Mixed,,common,G,Creature - Treefolk,,6,,,Green Big Creatures
 Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,,,Green Big Creatures
 Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,,,Green Big Creatures
 Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,,,Green Big Creatures
-Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,,,Green Big Creatures
+Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,,,Green Ramp
 Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Green Big Creatures
 Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Green Big Creatures
 Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,,,Green Big Creatures
@@ -157,18 +156,17 @@ Arbor Elf,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Ramp
 Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,,,Green Midrange
 Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Ramp
 Elvish Mystic,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Midrange
-Giant Growth,Mixed,,common,G,Instant,,1,,,Green Ramp
-Nyxborn Hydra,Mixed,,common,G,Enchantment Creature - Hydra,,1,,,Green Ramp
-Ram Through,Mixed,,common,G,Instant,,2,,,Green Ramp
+Nyxborn Hydra,Mixed,,common,G,Enchantment Creature - Hydra,,1,,,Green Big Creatures
+Ram Through,Mixed,,common,G,Instant,,2,,,Green Stompy
 Sakura-Tribe Elder,Mixed,,common,G,Creature - Snake Shaman,,2,,,Green Ramp
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Green Ramp
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,,,Green Ramp
 Tuskguard Captain,Mixed,,common,G,Creature - Human Warrior,,3,,,Green Ramp
 Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,,,Green Ramp
-Annoyed Altisaur,Mixed,,common,G,Creature - Dinosaur,,7,,,Green Stompy
+Annoyed Altisaur,Mixed,,common,G,Creature - Dinosaur,,7,,,Green Ramp
 Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,,,Green Stompy
 Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,,,Green Stompy
-Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,,,Green Stompy
+Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,,,Green Midrange
 Llanowar Elves,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Stompy
 Llanowar Visionary,Mixed,,common,G,Creature - Elf Druid,,3,,,Green Stompy
 Mother Bear,Mixed,,common,G,Creature - Bear,,2,,,Green Stompy
@@ -219,7 +217,7 @@ Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,,,Rakdos Burn/Dam
 Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Rakdos Burn/Damage
 Abrade,Mixed,,common,R,Instant,,2,,,Red Aggro
 Beetleback Chief,Mixed,,common,R,Creature - Goblin Warrior,,4,,,Red Aggro
-Burst Lightning,Mixed,,common,R,Instant,,1,,,Red Aggro
+Burst Lightning,Mixed,,common,R,Instant,,1,,,Red Burn
 Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,,,Red Aggro
 Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,,,Red Aggro
 Grim Initiate,Mixed,,common,R,Creature - Zombie Warrior,,1,,,Red Aggro
@@ -239,10 +237,10 @@ Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,,,Red Artifacts
 Underworld Rage-Hound,Mixed,,common,R,Creature - Elemental Dog,,2,,,Red Artifacts
 Wildfire Elemental,Mixed,,common,R,Creature - Elemental,,4,,,Red Artifacts
 Wrenn's Resolve,Mixed,,common,R,Sorcery,,2,,,Red Artifacts
-Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Burn
-Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,,,Red Burn
-Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Burn
-Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,,,Red Burn
+Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Aggro
+Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,,,Rakdos Burn/Damage
+Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Small Creatures
+Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,,,Red Small Creatures
 Flame Slash,Mixed,,common,R,Sorcery,,1,,,Red Burn
 Incinerate,Mixed,,common,R,Instant,,2,,,Red Burn
 Mayhem Patrol,Mixed,,common,R,Creature - Devil Warrior,,2,,,Red Burn
@@ -251,9 +249,9 @@ Scholar of Combustion,Mixed,,common,R,Creature - Human Wizard,,4,,,Red Burn
 Skewer the Critics,Mixed,,common,R,Sorcery,,3,,,Red Burn
 Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,,,Red Burn
 Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,,,Red Small Creatures
-Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,,,Red Small Creatures
+Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,,,Red Burn
 Fireball,Mixed,,common,R,Sorcery,,1,,,Red Small Creatures
-Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Small Creatures
+Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Burn
 Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Small Creatures
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Red Small Creatures
 Rally at the Hornburg,Mixed,,common,R,Creature Sorcery,,2,,,Red Small Creatures
@@ -273,8 +271,8 @@ Winding Way,Mixed,,common,G,Sorcery,,2,,,Selesnya Control
 Bramble Wurm,Mixed,,common,G,Creature - Wurm,,7,,,Simic Control
 Coiling Oracle,Mixed,,common,GU,Creature - Snake Elf Druid,,2,,,Simic Control
 Exclude,Mixed,,common,U,Instant,,3,,,Dimir Control
-Experiment One,Mixed,,common,G,Creature - Human Ooze,,1,,,Simic Control
-Frost Trickster,Mixed,,common,U,Creature - Bird Wizard,,3,,,Simic Control
+Experiment One,Mixed,,common,G,Creature - Human Ooze,,1,,,Green Midrange
+Frost Trickster,Mixed,,common,U,Creature - Bird Wizard,,3,,,Blue Tempo
 Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Control
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Simic Control
 Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,,,Simic Control
@@ -334,7 +332,7 @@ Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,,,Izzet Contro
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Burn/Damage
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Blue Flying
 Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,,,White Control
-Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,,,Green Stompy
+Greater Tanuki,Mixed,,common,G,Enchantment Creature - Dog,,6,,,Green Ramp
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Azorius Evasion/Flying
 Skybridge Towers,Mixed,,common,UW,Land,,0,,,Azorius Evasion/Flying
 Judge's Familiar,Mixed,,common,UW,Creature - Bird,,1,,,Azorius Evasion/Flying
@@ -364,21 +362,21 @@ Grasping Scoundrel,Mixed,,common,B,Creature - Human Pirate,,1,,,Black Aggro
 Guildsworn Prowler,Mixed,,common,B,Creature - Tiefling Rogue Assassin,,2,,,Black Control
 Scrapwork Mutt,Mixed,,common,,Artifact Creature - Dog,,2,,,Black Graveyard
 Basking Broodscale,Mixed,,common,G,Creature - Eldrazi Lizard,,2,,,Green Big Creatures
-Cruel Witness,Mixed,,common,U,Creature - Bird Horror,,4,,,Blue Card Draw
-Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Blue Control
+Cruel Witness,Mixed,,common,U,Creature - Bird Horror,,4,,,Blue Tempo
+Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Blue Tempo
 Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,,,Blue Flying
 Shipwreck Dowser,Mixed,,common,U,Creature - Merfolk Wizard,,5,,,Blue Tempo
 Chain Lightning,Mixed,,common,R,Sorcery,,1,,,Boros Aggro/Beatdown
 Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,,,Simic Control
 Eldrazi Repurposer,Mixed,,common,,Creature - Eldrazi Drone,,3,,,Golgari Graveyard
-Farseek,Mixed,,common,G,Sorcery,,2,,,Green Midrange
+Farseek,Mixed,,common,G,Sorcery,,2,,,Simic Control
 Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Ramp
 Flayer Husk,Mixed,,common,,Creature Artifact - Equipment,,1,,,Black Sacrifice
 Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,Green Stompy
 Mutagenic Growth,Mixed,,common,,Instant,,0,,,Gruul Aggro/Beatdown
 Harried Spearguard,Mixed,,common,R,Creature - Human Soldier,,1,,,Izzet Control
 Blessed Hippogriff,Mixed,,common,W,Creature - Hippogriff,,4,,,Orzhov Control
-Lightning Bolt,Mixed,,common,R,Instant,,1,,,Rakdos Burn/Damage
+Lightning Bolt,Mixed,,common,R,Instant,,1,,,Red Burn
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,,,Red Aggro
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Red Artifacts
 Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Red Burn
@@ -389,3 +387,5 @@ Boros Elite,Mixed,,common,W,Creature - Human Soldier,,1,,,White Aggro
 Borrowed Grace,Mixed,,common,W,Instant,,3,,,White Control
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,White Equipment
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,White Tokens
+Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,,,Green Ramp
+Candy Trail,Mixed,,common,,Artifact - Food Clue,,1,,,Blue Card Draw
