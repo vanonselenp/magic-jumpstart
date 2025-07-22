@@ -140,8 +140,8 @@ def display_card_details(specific_deck, cube_df, coherence_results, oracle_df):
     # Get current deck composition
     composition = validate_jumpstart_deck_composition(deck_cards, oracle_df)
     
-    print(f"\n📊 DECK COMPOSITION: {composition['creature_count']} creatures, {composition['non_creature_count']} non-creatures")
-    print(f"Valid composition: {composition['is_valid']} (need 0-9 creatures)")
+    print(f"\n📊 DECK COMPOSITION: {composition['creature_count']} creatures, {composition['non_creature_count']} non-creatures, {composition['non_basic_land_count']} non-basic lands")
+    print(f"Valid composition: {composition['is_valid']} (need 0-9 creatures, ≤2 non-basic lands)")
     
     for card in deck_cards:
         expected_themes = coherence_results[specific_deck]['expected_themes']
@@ -150,30 +150,48 @@ def display_card_details(specific_deck, cube_df, coherence_results, oracle_df):
         print(f"Card: {card}, Score: {score:.1f}, Themes: {themes}")
 
 def validate_jumpstart_deck_composition(deck_cards, oracle_df):
-    """Validate that a deck follows Jumpstart composition rules (0-9 creatures, rest spells/artifacts)"""
+    """Validate that a deck follows Jumpstart composition rules (0-9 creatures, rest spells/artifacts, at most 2 non-basic lands)"""
     creatures = 0
     non_creatures = 0
+    non_basic_lands = 0
     
     for card_name in deck_cards:
         # Find card in oracle to get type
         card_data = oracle_df[oracle_df['name'] == card_name]
         if not card_data.empty:
             card_type = str(card_data.iloc[0].get('Type', '')).lower()
+            card_name_lower = str(card_data.iloc[0].get('name', '')).lower()
+            
             if 'creature' in card_type:
                 creatures += 1
             else:
                 non_creatures += 1
+                
+            # Check for non-basic lands
+            if 'land' in card_type:
+                # Check if it's a basic land (contains the word "basic" in type line)
+                if 'basic' not in card_type:
+                    # Also check common basic land names to be extra sure
+                    basic_land_names = ['plains', 'island', 'swamp', 'mountain', 'forest']
+                    if not any(basic_name in card_name_lower for basic_name in basic_land_names):
+                        non_basic_lands += 1
     
     total_cards = creatures + non_creatures
-    is_valid = (0 <= creatures <= 9) and (total_cards == 13)
+    creature_range_valid = 0 <= creatures <= 9
+    total_count_valid = total_cards == 13
+    non_basic_land_valid = non_basic_lands <= 2
+    
+    is_valid = creature_range_valid and total_count_valid and non_basic_land_valid
     
     return {
         'is_valid': is_valid,
         'creature_count': creatures,
         'non_creature_count': non_creatures,
+        'non_basic_land_count': non_basic_lands,
         'total_cards': total_cards,
-        'creature_range_valid': 0 <= creatures <= 9,
-        'total_count_valid': total_cards == 13
+        'creature_range_valid': creature_range_valid,
+        'total_count_valid': total_count_valid,
+        'non_basic_land_valid': non_basic_land_valid
     }
 
 def calculate_jumpstart_composition_penalty(current_creatures, is_creature_card):
