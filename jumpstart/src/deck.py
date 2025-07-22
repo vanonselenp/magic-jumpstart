@@ -80,20 +80,22 @@ def get_available_cards_for_deck(deck_name, cube_df, oracle_df, deck_colors):
     return available_cards
 
 def is_card_playable_in_colors(card, deck_colors):
-    """Check if a card can be played in the given color identity"""
+    """Check if a card can be played in the given color identity based on mana requirements"""
     if not deck_colors:
         return True
     
     card_color = card.get('Color', '')
     card_category = card.get('Color Category', '')
+    card_type = str(card.get('Type', '')).lower()
+    oracle_text = str(card.get('Oracle Text', '')).lower()
     
-    # Handle truly colorless cards (artifacts, lands, etc.)
+    # Handle truly colorless cards (artifacts, lands, etc.) that don't require colored mana
     if card_category in ['Colorless', 'Artifacts', 'Lands']:
         return True
     
-    # Handle devoid cards - they are colorless but should respect their color category
-    if pd.isna(card_color):
-        # For devoid cards, use color category to determine color identity
+    # Handle cards with NaN color but have a color category (like Scrapwork Mutt)
+    if pd.isna(card_color) and card_category:
+        # Use color category to determine mana requirements
         if card_category == 'Green':
             effective_color = 'G'
         elif card_category == 'Blue':
@@ -105,29 +107,30 @@ def is_card_playable_in_colors(card, deck_colors):
         elif card_category == 'White':
             effective_color = 'W'
         elif card_category == 'Multicolored':
-            # For multicolored devoid cards, we need to be more careful
-            # For now, allow them in multicolored decks only
+            # For multicolored cards, check if deck supports multiple colors
             if isinstance(deck_colors, str):
                 return len(deck_colors) > 1  # Multi-character means multicolored
             elif isinstance(deck_colors, list):
                 return len(deck_colors) > 1  # Multiple colors in list
             return False
         else:
-            # Truly colorless cards (no color category match)
+            # Truly colorless cards (no color category or colorless category)
             return True
         
-        # Check if the effective color matches deck colors
+        # Check if the required color matches deck colors
         if isinstance(deck_colors, str):
             return effective_color in deck_colors
         elif isinstance(deck_colors, list):
             return effective_color in deck_colors
+        return False
     
-    # Check if card colors fit deck colors (normal colored cards)
+    # Handle normal colored cards - check if card colors fit deck colors
     if isinstance(card_color, str) and isinstance(deck_colors, str):
         card_color_set = set(card_color)
         deck_color_set = set(deck_colors)
         return card_color_set.issubset(deck_color_set)
     
+    # Default case for any other situations
     return False
 
 def display_card_details(specific_deck, cube_df, coherence_results, oracle_df):
