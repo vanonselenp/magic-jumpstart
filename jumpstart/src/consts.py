@@ -2,8 +2,8 @@ TOTAL_CARDS = 13
 
 # Define theme keywords and strategies for different deck archetypes
 theme_keywords = { 
-    'Aggro': ['haste', 'attack', 'damage', 'creature', 'power', 'quick', 'rush', 'fast'],
-    'Control': ['counter', 'destroy', 'exile', 'draw', 'instant', 'sorcery', 'tap', 'return'],
+    'Aggro': ['haste', 'attack', 'power', 'menace', 'first strike', 'double strike', 'deathtouch', 'lifelink', 'vigilance', 'reach', 'flash', 'trample', 'prowess', 'shadow', 'fear', 'intimidate', 'unblockable', 'pump', 'gets +', '+1/+1', '+2/+2', 'until end of turn', 'target creature', 'combat', 'enters the battlefield', 'etb', 'when', 'aggressive', 'quick', 'rush', 'fast', 'burn', 'bolt', 'shock', 'deals damage', 'direct damage'],
+    'Control': ['counter', 'destroy', 'exile', 'draw', 'instant', 'sorcery', 'tap', 'return', 'each creature', 'all creatures', 'each player', 'board wipe', 'wrath', 'sweeper', 'mass removal'],
     'Midrange': ['creature', 'value', 'versatile', 'balanced', 'enters', 'when', 'draw', '+1/+1', 'counter', 'adapt', 'evolve', 'outlast', 'kicker', 'vigilance', 'trample', 'fight', 'combat', 'removal', 'flexible', 'efficient'],
     'Ramp': ['mana', 'land', 'search', 'big', 'expensive', 'cost', 'ritual', 'add', 'basic', 'battlefield', 'library', 'put', 'tap', 'channel', 'forest', 'untap', 'colorless', 'seven', 'eight', 'nine', 'ten'],
     'Tempo': ['bounce', 'counter', 'flying', 'cheap', 'efficient', 'flash', 'tap', 'return', 'untap', 'scry', 'cycling', 'ninjutsu', 'draw', 'when', 'enters', 'kicker'],

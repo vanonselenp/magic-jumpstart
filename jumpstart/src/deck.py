@@ -253,7 +253,57 @@ def calculate_card_theme_score(card, expected_themes, current_deck_composition=N
             theme_score = base_matches
             
             # Apply theme-specific scoring adjustments
-            if theme == "Ramp":
+            if theme == "Aggro":
+                # Aggro should prioritize cheap, aggressive creatures and direct damage
+                if 'creature' in card_type:
+                    # Heavy bonus for cheap creatures
+                    if cmc <= 1:
+                        theme_score += 3
+                    elif cmc <= 2:
+                        theme_score += 2
+                    elif cmc <= 3:
+                        theme_score += 1
+                    # Heavy penalty for expensive creatures
+                    elif cmc >= 5:
+                        theme_score -= 4  # Even heavier penalty
+                    elif cmc == 4:
+                        theme_score -= 2  # Increased penalty
+                    
+                    # Bonus for aggressive abilities
+                    if any(ability in oracle_text for ability in ['haste', 'menace', 'first strike', 'double strike']):
+                        theme_score += 2
+                else:
+                    # For non-creatures, heavily penalize control effects
+                    if any(control_word in oracle_text for control_word in ['destroy', 'exile', 'counter', 'each creature', 'all creatures', 'board']):
+                        theme_score -= 4  # Heavy penalty for board wipes and control
+                    
+                    # Bonus for direct damage and aggressive spells
+                    if any(aggro_spell in oracle_text for aggro_spell in ['deals damage', 'target creature', 'any target', 'burn', 'shock', 'bolt']):
+                        theme_score += 2
+                    
+                    # Penalty for expensive non-creatures
+                    if cmc >= 4:
+                        theme_score -= 2
+                        
+            elif theme == "Control":
+                # Control should prioritize removal, card draw, and expensive finishers
+                if 'creature' in card_type:
+                    # Penalty for cheap aggressive creatures
+                    if cmc <= 2:
+                        theme_score -= 2
+                    # Bonus for expensive creatures (finishers)
+                    elif cmc >= 5:
+                        theme_score += 2
+                else:
+                    # Bonus for control spells
+                    if any(control_word in oracle_text for control_word in ['destroy', 'exile', 'counter', 'draw', 'each creature', 'all creatures']):
+                        theme_score += 3
+                    
+                    # Bonus for expensive spells (powerful effects)
+                    if cmc >= 4:
+                        theme_score += 1
+                        
+            elif theme == "Ramp":
                 # Ramp cards should prioritize mana acceleration and expensive payoffs
                 if 'land' in oracle_text or 'mana' in oracle_text:
                     theme_score += 2  # High bonus for mana acceleration
