@@ -6,6 +6,8 @@ An intelligent deck construction system for building themed Magic: The Gathering
 
 This project automatically constructs 30 themed Jumpstart decks from a card pool, ensuring each deck has strong thematic identity while maintaining balanced gameplay. The system uses a sophisticated multi-phase algorithm with specialized scoring to create cohesive, playable decks.
 
+see: [Pauper Jumpstart](https://cubecobra.com/cube/list/pauper-jumpstart-06-2025)
+
 ### Key Features
 
 - **🎯 Theme-Aware Construction**: Advanced scoring system ensures decks match their intended themes
