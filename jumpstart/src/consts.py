@@ -17,7 +17,7 @@ theme_keywords = {
     'Red Artifacts': ['artifact', 'energy', 'servo', 'golem', 'sacrifice an artifact', 'unearth', 'improvise', 'metalcraft', 'treasure', 'scrap', 'gremlin', 'artificer', 'construct'],
     'Big Creatures': ['power', 'toughness', '5', '6', '7', 'large', 'trample'],
     'Small Creatures': ['1', '2', '3', 'haste', 'prowess', 'menace', 'first strike', 'double strike', 'deathtouch', 'lifelink', 'vigilance', 'reach', 'flash', 'goblin', 'human', 'soldier', 'warrior', 'rogue', 'monk', 'scout', 'enters the battlefield', 'when', 'etb'],
-    'Card Draw': ['draw', 'card', 'hand', 'library', 'cantrip', 'scry'],
+    'Card Draw': ['draw', 'card', 'hand', 'library', 'scry', 'surveil', 'look at', 'cycling'],
     'Stompy': ['trample', 'power', 'force', 'creature', 'big', 'green'],
     'Beatdown': ['attack', 'damage', 'creature', 'aggressive', 'power']
 }
