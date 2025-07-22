@@ -61,18 +61,19 @@ def analyze_deck_composition(decks_df: Dict[str, pd.DataFrame]) -> Dict[str, Dic
         # Color analysis
         colors = set()
         for _, card in deck_df.iterrows():
-            if pd.notna(card.get('mana_cost', '')):
-                mana_cost = str(card['mana_cost'])
-                if 'W' in mana_cost: colors.add('W')
-                if 'U' in mana_cost: colors.add('U')  
-                if 'B' in mana_cost: colors.add('B')
-                if 'R' in mana_cost: colors.add('R')
-                if 'G' in mana_cost: colors.add('G')
+            if pd.notna(card.get('Color', '')):
+                color = str(card['Color'])
+                # Parse individual colors from the Color column
+                if 'W' in color: colors.add('W')
+                if 'U' in color: colors.add('U')  
+                if 'B' in color: colors.add('B')
+                if 'R' in color: colors.add('R')
+                if 'G' in color: colors.add('G')
         
         # CMC analysis
         cmcs = []
         for _, card in deck_df.iterrows():
-            cmc = card.get('cmc', 0)
+            cmc = card.get('CMC', 0)  # Use 'CMC' instead of 'cmc'
             if pd.notna(cmc) and isinstance(cmc, (int, float)):
                 cmcs.append(float(cmc))
         
