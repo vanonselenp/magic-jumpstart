@@ -389,7 +389,7 @@ Tenth District Legionnaire,2,Creature - Human Soldier,RW,Multicolored,"Haste | W
 Rally the Peasants,3,Instant,WR,Multicolored,Creatures you control get +2/+0 until end of turn. | Flashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.),EMA Update;graveyard matters,60719.0,,
 Coiling Oracle,2,Creature - Snake Elf Druid,GU,Multicolored,"When this creature enters, reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put that card into your hand.",BBD Update;ETB;card draw,24059.0,1,1
 Growth Spiral,2,Instant,GU,Multicolored,Draw a card. You may put a land card from your hand onto the battlefield.,,85702.0,,
-Snapping Voidcraw,3,Creature - Eldrazi Turtle,,Multicolored,"Devoid (This card has no color.) | {T}: Add {C}{C}. | {3}{C}, {T}: Draw a card.",,126427.0,1,3
+Snapping Voidcraw,3,Creature - Eldrazi Turtle,UG,Multicolored,"Devoid (This card has no color.) | {T}: Add {C}{C}. | {3}{C}, {T}: Draw a card.",,126427.0,1,3
 Judge's Familiar,1,Creature - Bird,UW,Hybrid,Flying | Sacrifice this creature: Counter target instant or sorcery spell unless its controller pays {1}.,,120911.0,1,1
 Dimir Guildmage,2,Creature - Human Wizard,UB,Hybrid,({U/B} can be paid with either {U} or {B}.) | {3}{U}: Target player draws a card. Activate only as a sorcery. | {3}{B}: Target player discards a card. Activate only as a sorcery.,UMA Update;card draw,70499.0,2,2
 Cindering Cutthroat,3,Creature - Lizard Assassin,BR,Hybrid,This creature enters with a +1/+1 counter on it if an opponent lost life this turn. | {1}{B/R}: This creature gains menace until end of turn. (It can't be blocked except by two or more creatures.),,129661.0,3,2
