@@ -18,7 +18,7 @@ theme_keywords = {
     'Big Creatures': ['power', 'toughness', '5', '6', '7', 'large', 'huge', 'massive', 'giant'],
     'Small Creatures': ['1', '2', '3', 'haste', 'prowess', 'menace', 'first strike', 'double strike', 'deathtouch', 'lifelink', 'vigilance', 'reach', 'flash', 'goblin', 'human', 'soldier', 'warrior', 'rogue', 'monk', 'scout', 'enters the battlefield', 'when', 'etb'],
     'Card Draw': ['draw', 'card', 'hand', 'library', 'scry', 'surveil', 'look at', 'cycling'],
-    'Stompy': ['trample', 'force', 'green', 'attack', 'overrun', 'aggressive'],
+    'Stompy': ['trample', 'force', 'green', 'attack', 'overrun', 'aggressive', 'gets +', 'target creature', '+1/+1', '+2/+2', '+3/+3', 'until end of turn', 'power', 'combat'],
     'Beatdown': ['attack', 'damage', 'creature', 'aggressive', 'power']
 }
 
