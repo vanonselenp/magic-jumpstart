@@ -121,6 +121,8 @@ class CardSelector:
             return create_equipment_scorer(), 5  # Reserve more equipment cards
         elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
             return create_tribal_scorer(), 4  # Reserve key tribal cards
+        elif theme_config.get('archetype') == 'Tribal':
+            return create_tribal_scorer(), 4  # Reserve key tribal cards
         elif theme_config.get('archetype') == 'Artifacts':
             return create_artifact_scorer(), 4  # Reserve key artifact cards
         elif theme_config.get('archetype') == 'Stompy':
