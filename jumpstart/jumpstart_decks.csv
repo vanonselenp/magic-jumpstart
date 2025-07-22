@@ -15,31 +15,30 @@ Faith's Fetters,Mixed,,common,W,Enchantment - Aura,,4,,,White Soldiers
 Mandibular Kite,Mixed,,common,W,Creature Artifact - Equipment,,1,,,White Equipment
 Ancestral Blade,Mixed,,common,W,Creature Artifact - Equipment,,2,,,White Equipment
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,White Equipment
+Gods Willing,Mixed,,common,W,Instant,,1,,,White Equipment
+Faerie Guidemother,Mixed,,common,W,Creature - Faerie ,,1,1.0,1.0,White Equipment
 Novice Inspector,Mixed,,common,W,Creature - Human Detective,,1,1.0,2.0,White Equipment
 Thraben Inspector,Mixed,,common,W,Creature - Human Soldier,,1,1.0,2.0,White Equipment
 Cathar Commando,Mixed,,common,W,Creature - Human Soldier,,2,3.0,1.0,White Equipment
+Seeker of the Way,Mixed,,common,W,Creature - Human Warrior,,2,2.0,2.0,White Equipment
+Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,2.0,3.0,White Equipment
 Custodi Squire,Mixed,,common,W,Creature - Spirit Cleric,,5,3.0,3.0,White Equipment
-Gods Willing,Mixed,,common,W,Instant,,1,,,White Equipment
 Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,White Equipment
 Contaminated Landscape,Mixed,,common,,Land,,0,,,White Equipment
-Doomed Traveler,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Equipment
-Elite Vanguard,Mixed,,common,W,Creature - Human Soldier,,1,2.0,1.0,White Equipment
-Faerie Guidemother,Mixed,,common,W,Creature - Faerie ,,1,1.0,1.0,White Equipment
 Miner's Guidewing,Mixed,,common,W,Creature - Bird,,1,1.0,1.0,White Angels
 Holy Cow,Mixed,,common,W,Creature - Ox Angel,,3,2.0,2.0,White Angels
 Inspiring Overseer,Mixed,,common,W,Creature - Angel Cleric,,3,2.0,1.0,White Angels
-Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,2.0,3.0,White Angels
+Doomed Traveler,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Angels
 Kor Skyfisher,Mixed,,common,W,Creature - Kor Soldier,,2,2.0,3.0,White Angels
-Seeker of the Way,Mixed,,common,W,Creature - Human Warrior,,2,2.0,2.0,White Angels
 Stormfront Pegasus,Mixed,,common,W,Creature - Pegasus,,2,2.0,1.0,White Angels
 Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,2.0,3.0,White Angels
 Sandsteppe Outcast,Mixed,,common,W,Creature - Human Warrior,,3,2.0,1.0,White Angels
+Aerie Auxiliary,Mixed,,common,W,Creature - Bird Soldier,,4,3.0,3.0,White Angels
 Deceptive Landscape,Mixed,,common,,Land,,0,,,White Angels
 Ephemerate,Mixed,,common,W,Instant,,1,,,White Angels
 Mana Tithe,Mixed,,common,W,Instant,,1,,,White Angels
 Dauntless Unity,Mixed,,common,W,Instant,,2,,,White Angels
 Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,White Weenies
-Aerie Auxiliary,Mixed,,common,W,Creature - Bird Soldier,,4,3.0,3.0,White Weenies
 Imperial Oath,Mixed,,common,W,Creature Sorcery,,6,,,White Weenies
 Search Party Captain,Mixed,,common,W,Creature - Human Soldier,,4,2.0,2.0,White Weenies
 You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,White Weenies
@@ -49,6 +48,7 @@ Raffine's Informant,Mixed,,common,W,Creature - Human Wizard,,2,2.0,1.0,White Wee
 Suture Priest,Mixed,,common,W,Creature - Phyrexian Cleric,,2,1.0,1.0,White Weenies
 Syndic of Tithes,Mixed,,common,W,Creature - Human Cleric,,2,2.0,2.0,White Weenies
 Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,3.0,4.0,White Weenies
+Pegasus Guardian,Mixed,,common,W,Creature - Pegasus,,6,3.0,3.0,White Weenies
 Unbounded Potential,Mixed,,common,W,Instant,,2,,,White Weenies
 Thraben Charm,Mixed,,common,W,Instant,,2,,,White Weenies
 Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Flying
@@ -320,10 +320,10 @@ Armadillo Cloak,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Tokens
 Captured by Lagacs,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Tokens
 Safehold Elite,Mixed,,common,GW,Creature - Elf Scout,,2,2.0,2.0,Selesnya Tokens
 Triplicate Spirits,Mixed,,common,W,Creature Sorcery,,6,,,Selesnya Tokens
-Pegasus Guardian,Mixed,,common,W,Creature - Pegasus,,6,3.0,3.0,Selesnya Tokens
 Eldrazi Repurposer,Mixed,,common,G,Creature - Eldrazi Drone,,3,3.0,3.0,Selesnya Tokens
 Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Selesnya Tokens
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Selesnya Tokens
+Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,Selesnya Tokens
 Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
 Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifedrain
 Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
@@ -363,14 +363,14 @@ Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyar
 Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Golgari Graveyard Value
 Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Golgari Graveyard Value
 Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Golgari Graveyard Value
+Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,Boros Equipment Aggro
 Abraded Bluffs,Mixed,,common,,Land - Desert,,0,,,Boros Equipment Aggro
 Boros Garrison,Mixed,,common,WR,Land,,0,,,Boros Equipment Aggro
 Lorehold Campus,Mixed,,common,RW,Land,,0,,,Boros Equipment Aggro
 Conduit Goblin,Mixed,,common,RW,Creature - Goblin Warrior,,2,2.0,2.0,Boros Equipment Aggro
 Juggernaut,Mixed,,common,,Artifact Creature - Juggernaut,,4,5.0,3.0,Boros Equipment Aggro
-Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,Boros Equipment Aggro
-Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Boros Equipment Aggro
+Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
 Rally the Peasants,Mixed,,common,WR,Instant,,3,,,Boros Equipment Aggro
 Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Equipment Aggro
 Blessed Hippogriff,Mixed,,common,W,Creature - Hippogriff,,4,2.0,3.0,Boros Equipment Aggro
