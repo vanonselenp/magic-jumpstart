@@ -231,6 +231,368 @@ def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> fl
     return score
 
 
+class DeckConstraintValidator:
+    """Handles constraint validation and enforcement for deck construction."""
+    
+    def __init__(self, max_creatures: int = 9, max_lands_mono: int = 1, max_lands_dual: int = 3):
+        self.max_creatures = max_creatures
+        self.max_lands_mono = max_lands_mono
+        self.max_lands_dual = max_lands_dual
+    
+    def get_max_lands(self, theme_colors: set) -> int:
+        return self.max_lands_mono if len(theme_colors) == 1 else self.max_lands_dual
+    
+    def can_add_card(self, card: pd.Series, theme_colors: set, current_state: dict) -> bool:
+        """Check if a card can be added without violating constraints."""
+        if is_creature_card(card) and current_state['creatures'] >= self.max_creatures:
+            return False
+        
+        if is_land_card(card):
+            max_lands = self.get_max_lands(theme_colors)
+            if current_state['lands'] >= max_lands:
+                return False
+            if card['name'] in current_state['land_names']:
+                return False
+            
+            # For dual-color themes, ensure lands can produce both colors
+            if len(theme_colors) > 1 and not can_land_produce_colors(card, theme_colors):
+                return False
+        
+        return True
+
+
+class CardCandidateSelector:
+    """Handles card selection and candidate generation for themes."""
+    
+    def __init__(self, oracle_df: pd.DataFrame):
+        self.oracle_df = oracle_df
+    
+    def get_multicolor_candidates(self, theme_config: dict, used_cards: set, 
+                                validator: DeckConstraintValidator, current_state: dict) -> List[Tuple]:
+        """Get multicolor candidates for dual-color themes."""
+        theme_colors = set(theme_config['colors'])
+        candidates = []
+        
+        for idx, card in self.oracle_df.iterrows():
+            if idx in used_cards:
+                continue
+            
+            if not validator.can_add_card(card, theme_colors, current_state):
+                continue
+            
+            card_colors = set(get_card_colors(card))
+            is_land = is_land_card(card)
+            
+            # For lands, check dual-color capability and score
+            if is_land:
+                if not can_land_produce_colors(card, theme_colors):
+                    continue
+                
+                land_score = score_land_for_dual_colors(card, theme_colors)
+                theme_score = score_card_for_theme(card, theme_config)
+                combined_score = land_score + (theme_score * 0.3)
+                
+                if combined_score >= 0.5:
+                    candidates.append((idx, card, combined_score))
+            else:
+                # For non-lands, require multicolor or colorless
+                if not card_colors or not card_colors.issubset(theme_colors):
+                    continue
+                
+                if card_colors and len(card_colors) < 2:
+                    continue
+                
+                score = score_card_for_theme(card, theme_config)
+                if score >= 0.3:
+                    candidates.append((idx, card, score))
+        
+        return sorted(candidates, key=lambda x: x[2], reverse=True)
+    
+    def get_general_candidates(self, theme_config: dict, used_cards: set,
+                             validator: DeckConstraintValidator, current_state: dict,
+                             min_score: float = 0.2) -> List[Tuple]:
+        """Get general candidates for any theme."""
+        theme_colors = set(theme_config['colors'])
+        is_mono_color = len(theme_colors) == 1
+        candidates = []
+        
+        for idx, card in self.oracle_df.iterrows():
+            if idx in used_cards:
+                continue
+            
+            if not validator.can_add_card(card, theme_colors, current_state):
+                continue
+            
+            card_colors = set(get_card_colors(card))
+            
+            # Check color compatibility
+            if card_colors and not card_colors.issubset(theme_colors):
+                continue
+            
+            # Score the card
+            if is_land_card(card):
+                if is_mono_color:
+                    score = score_card_for_theme(card, theme_config)
+                else:
+                    land_score = score_land_for_dual_colors(card, theme_colors)
+                    theme_score = score_card_for_theme(card, theme_config)
+                    score = land_score + (theme_score * 0.3)
+            else:
+                score = score_card_for_theme(card, theme_config)
+            
+            if score >= min_score:
+                candidates.append((idx, card, score))
+        
+        return sorted(candidates, key=lambda x: x[2], reverse=True)
+
+
+class DeckConstructionManager:
+    """Manages the overall deck construction process."""
+    
+    def __init__(self, oracle_df: pd.DataFrame, target_deck_size: int = 13):
+        self.oracle_df = oracle_df
+        self.target_deck_size = target_deck_size
+        self.decks = {}  # theme_name -> list of card indices
+        self.used_cards = set()
+        self.validator = DeckConstraintValidator()
+        self.selector = CardCandidateSelector(oracle_df)
+    
+    def execute_multicolor_phase(self):
+        """Phase 1: Assign multicolor cards to dual-color themes."""
+        print("\n📦 Phase 1: Assigning dual-color cards to dual-color themes")
+        
+        for theme_name, theme_config in DUAL_COLOR_THEMES.items():
+            self.decks[theme_name] = []
+            self._build_theme_multicolor(theme_name, theme_config)
+    
+    def execute_general_phase(self):
+        """Phase 2: Fill remaining slots with general cards."""
+        print("\n📦 Phase 2: Filling slots with keyword-matched cards")
+        
+        for theme_name, theme_config in ALL_THEMES.items():
+            if theme_name not in self.decks:
+                self.decks[theme_name] = []
+            
+            if len(self.decks[theme_name]) < self.target_deck_size:
+                self._build_theme_general(theme_name, theme_config)
+    
+    def execute_completion_phase(self):
+        """Phase 3: Complete remaining incomplete decks."""
+        print("\n📦 Phase 3: Practical completion for incomplete decks")
+        
+        incomplete_decks = [
+            (name, deck) for name, deck in self.decks.items() 
+            if len(deck) < self.target_deck_size
+        ]
+        incomplete_decks.sort(key=lambda x: len(x[1]), reverse=True)
+        
+        for theme_name, _ in incomplete_decks:
+            theme_config = ALL_THEMES[theme_name]
+            self._complete_theme_practical(theme_name, theme_config)
+    
+    def validate_and_fix_constraints(self):
+        """Phase 2.5: Validate constraints and fix violations."""
+        print("\n📦 Phase 2.5: Constraint validation and correction")
+        
+        violations_found = 0
+        for theme_name in self.decks:
+            violations = self._check_theme_constraints(theme_name)
+            if violations:
+                violations_found += 1
+                print(f"  ⚠️  {theme_name}: VIOLATION - {', '.join(violations)}")
+                self._fix_theme_violations(theme_name)
+        
+        if violations_found == 0:
+            print("  ✅ No constraint violations found - all decks properly constructed")
+        else:
+            print(f"  🔧 Fixed {violations_found} constraint violations")
+    
+    def finalize_decks(self) -> Dict[str, pd.DataFrame]:
+        """Convert to DataFrames and provide summary."""
+        deck_dataframes = {}
+        
+        print(f"\n📋 DECK CONSTRUCTION SUMMARY")
+        print("=" * 50)
+        
+        complete_decks = 0
+        total_cards_used = 0
+        
+        for theme_name, card_indices in self.decks.items():
+            if not card_indices:
+                deck_dataframes[theme_name] = pd.DataFrame()
+                print(f"{theme_name:20}: 0 cards ❌")
+                continue
+            
+            deck_df = self.oracle_df.iloc[card_indices].copy()
+            deck_df['theme'] = theme_name
+            deck_dataframes[theme_name] = deck_df
+            
+            # Analyze deck composition
+            creatures = sum(1 for idx in card_indices if is_creature_card(self.oracle_df.iloc[idx]))
+            lands = sum(1 for idx in card_indices if is_land_card(self.oracle_df.iloc[idx]))
+            
+            deck_size = len(deck_df)
+            total_cards_used += deck_size
+            
+            if deck_size == self.target_deck_size:
+                complete_decks += 1
+                status = "✅"
+            elif deck_size > 0:
+                status = "⚠️"
+            else:
+                status = "❌"
+            
+            print(f"{theme_name:20}: {deck_size:2d} cards {status} "
+                  f"(C:{creatures} L:{lands})")
+        
+        print(f"\n🎯 CONSTRUCTION RESULTS:")
+        print(f"✅ Complete decks: {complete_decks}/{len(ALL_THEMES)}")
+        print(f"📊 Total cards used: {total_cards_used}/{len(self.oracle_df)}")
+        
+        return deck_dataframes
+    
+    def _build_theme_multicolor(self, theme_name: str, theme_config: dict):
+        """Build multicolor phase for a specific theme."""
+        theme_colors = set(theme_config['colors'])
+        current_state = self._get_current_state(theme_name)
+        
+        print(f"\n🎯 Building {theme_name} deck ({'/'.join(theme_config['colors'])})")
+        
+        candidates = self.selector.get_multicolor_candidates(
+            theme_config, self.used_cards, self.validator, current_state
+        )
+        
+        self._add_candidates_to_deck(theme_name, candidates, theme_config)
+        
+        deck_size = len(self.decks[theme_name])
+        current_state = self._get_current_state(theme_name)
+        print(f"  📊 Phase 1 complete: {deck_size}/{self.target_deck_size} cards "
+              f"(C:{current_state['creatures']} L:{current_state['lands']})")
+    
+    def _build_theme_general(self, theme_name: str, theme_config: dict):
+        """Build general phase for a specific theme."""
+        current_deck_size = len(self.decks[theme_name])
+        if current_deck_size >= self.target_deck_size:
+            return
+        
+        print(f"\n🎯 Completing {theme_name} deck ({current_deck_size}/{self.target_deck_size} cards)")
+        
+        current_state = self._get_current_state(theme_name)
+        candidates = self.selector.get_general_candidates(
+            theme_config, self.used_cards, self.validator, current_state
+        )
+        
+        cards_needed = self.target_deck_size - current_deck_size
+        self._add_candidates_to_deck(theme_name, candidates, theme_config, cards_needed)
+        
+        final_size = len(self.decks[theme_name])
+        print(f"  📊 Phase 2 complete: {final_size}/{self.target_deck_size} cards")
+    
+    def _complete_theme_practical(self, theme_name: str, theme_config: dict):
+        """Practical completion for a specific theme."""
+        current_size = len(self.decks[theme_name])
+        cards_needed = self.target_deck_size - current_size
+        
+        print(f"\n🔧 Practical completion: {theme_name} (needs {cards_needed} cards)")
+        
+        current_state = self._get_current_state(theme_name)
+        candidates = self.selector.get_general_candidates(
+            theme_config, self.used_cards, self.validator, current_state, min_score=0.1
+        )
+        
+        self._add_candidates_to_deck(theme_name, candidates, theme_config, cards_needed)
+        
+        final_size = len(self.decks[theme_name])
+        print(f"  📊 Final size: {final_size}/{self.target_deck_size} cards")
+    
+    def _add_candidates_to_deck(self, theme_name: str, candidates: List[Tuple], 
+                               theme_config: dict, max_cards: int = None):
+        """Add candidates to a deck with constraint checking."""
+        added_count = 0
+        max_to_add = max_cards or self.target_deck_size
+        
+        for idx, card, score in candidates:
+            if len(self.decks[theme_name]) >= self.target_deck_size or added_count >= max_to_add:
+                break
+            
+            # Double-check constraints
+            current_state = self._get_current_state(theme_name)
+            theme_colors = set(theme_config['colors'])
+            
+            if not self.validator.can_add_card(card, theme_colors, current_state):
+                continue
+            
+            self.decks[theme_name].append(idx)
+            self.used_cards.add(idx)
+            added_count += 1
+            
+            print(f"  ✅ Added: {card['name']} (Score: {score:.1f}) [{card['Type'].split(' - ')[0] if ' - ' in str(card['Type']) else card['Type']}]")
+    
+    def _get_current_state(self, theme_name: str) -> dict:
+        """Get current state of a deck for constraint checking."""
+        card_indices = self.decks[theme_name]
+        creatures = sum(1 for idx in card_indices if is_creature_card(self.oracle_df.iloc[idx]))
+        lands = sum(1 for idx in card_indices if is_land_card(self.oracle_df.iloc[idx]))
+        land_names = {self.oracle_df.iloc[idx]['name'] for idx in card_indices 
+                     if is_land_card(self.oracle_df.iloc[idx])}
+        
+        return {
+            'creatures': creatures,
+            'lands': lands,
+            'land_names': land_names
+        }
+    
+    def _check_theme_constraints(self, theme_name: str) -> List[str]:
+        """Check if a theme violates constraints."""
+        card_indices = self.decks[theme_name]
+        if not card_indices:
+            return []
+        
+        theme_config = ALL_THEMES[theme_name]
+        theme_colors = set(theme_config['colors'])
+        is_mono_color = len(theme_colors) == 1
+        max_lands = self.validator.get_max_lands(theme_colors)
+        
+        current_state = self._get_current_state(theme_name)
+        violations = []
+        
+        if current_state['creatures'] > self.validator.max_creatures:
+            violations.append(f"creatures: {current_state['creatures']}/{self.validator.max_creatures}")
+        
+        if len(current_state['land_names']) > max_lands:
+            violations.append(f"lands: {len(current_state['land_names'])}/{max_lands}")
+        
+        return violations
+    
+    def _fix_theme_violations(self, theme_name: str):
+        """Fix constraint violations for a theme."""
+        theme_config = ALL_THEMES[theme_name]
+        theme_colors = set(theme_config['colors'])
+        max_lands = self.validator.get_max_lands(theme_colors)
+        current_state = self._get_current_state(theme_name)
+        
+        if len(current_state['land_names']) > max_lands:
+            # Remove excess lands (last added ones)
+            excess_lands = len(current_state['land_names']) - max_lands
+            lands_removed = 0
+            
+            # Go through deck in reverse order and remove lands
+            for i in range(len(self.decks[theme_name]) - 1, -1, -1):
+                if lands_removed >= excess_lands:
+                    break
+                
+                card_idx = self.decks[theme_name][i]
+                card = self.oracle_df.iloc[card_idx]
+                
+                if is_land_card(card):
+                    self.decks[theme_name].pop(i)
+                    self.used_cards.discard(card_idx)
+                    lands_removed += 1
+                    print(f"    🔧 Removed excess land: {card['name']}")
+            
+            print(f"    ✅ Land violation fixed: {len(current_state['land_names'])} → {max_lands} lands")
+
+
 def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 13) -> Dict[str, pd.DataFrame]:
     """
     Construct jumpstart decks for all themes using a practical three-phase approach.
@@ -243,102 +605,22 @@ def construct_jumpstart_decks(oracle_df: pd.DataFrame, target_deck_size: int = 1
         Dictionary mapping theme names to their constructed decks (DataFrames)
     """
     
-    # Initialize deck storage
-    decks = {}
-    used_cards = set()  # Track which cards have been assigned
+    # Initialize construction manager
+    builder = DeckConstructionManager(oracle_df, target_deck_size)
     
     print("🏗️ CONSTRUCTING JUMPSTART DECKS")
     print("=" * 50)
     
-    # Phase 1: Assign dual-color cards to dual-color themes
-    print("\n📦 Phase 1: Assigning dual-color cards to dual-color themes")
+    # Execute the three-phase construction process
+    builder.execute_multicolor_phase()
+    builder.execute_general_phase()
+    builder.execute_completion_phase()
+    builder.validate_and_fix_constraints()
     
-    for theme_name, theme_config in DUAL_COLOR_THEMES.items():
-        theme_colors = set(theme_config['colors'])
-        decks[theme_name] = []
-        
-        print(f"\n🎯 Building {theme_name} deck ({'/'.join(theme_config['colors'])})")
-        
-        # Find cards that match exactly the theme colors (multicolor cards and appropriate lands)
-        multicolor_candidates = []
-        
-        for idx, card in oracle_df.iterrows():
-            if idx in used_cards:
-                continue
-                
-            card_colors = set(get_card_colors(card))
-            is_land = is_land_card(card)
-            
-            # For lands, check if they can produce both colors and score them
-            if is_land:
-                if not can_land_produce_colors(card, theme_colors):
-                    continue  # Skip lands that can't produce both colors
-                
-                # Use specialized land scoring for dual-color themes
-                land_score = score_land_for_dual_colors(card, theme_colors)
-                theme_score = score_card_for_theme(card, theme_config)
-                
-                # Combine land quality and theme synergy scores
-                combined_score = land_score + (theme_score * 0.3)  # Prioritize land quality
-                
-                if combined_score >= 0.5:  # Higher threshold for better land selection
-                    multicolor_candidates.append((idx, card, combined_score))
-            else:
-                # For non-lands, check color compatibility
-                if not card_colors or not card_colors.issubset(theme_colors):
-                    continue
-                
-                # Must be multicolor (have more than one color) for this phase, or be colorless
-                if card_colors and len(card_colors) < 2:
-                    continue
-                    
-                score = score_card_for_theme(card, theme_config)
-                if score >= 0.3:  # More permissive threshold
-                    multicolor_candidates.append((idx, card, score))
-        
-        # Sort by score and add best multicolor cards with constraint enforcement
-        multicolor_candidates.sort(key=lambda x: x[2], reverse=True)
-        
-        # Track constraints for Phase 1
-        creature_count = 0
-        land_count = 0
-        current_lands = set()
-        max_lands = 1 if len(theme_colors) == 1 else 3
-        max_creatures = 9
-        
-        for idx, card, score in multicolor_candidates:
-            if len(decks[theme_name]) >= target_deck_size:
-                break
-                
-            # Check constraints before adding
-            is_creature = is_creature_card(card)
-            is_land = is_land_card(card)
-            
-            if is_creature and creature_count >= max_creatures:
-                continue
-                
-            if is_land:
-                if land_count >= max_lands:
-                    continue
-                if card['name'] in current_lands:  # No duplicate lands
-                    continue
-            
-            # Add the card
-            decks[theme_name].append(idx)
-            used_cards.add(idx)
-            
-            # Update counters
-            if is_creature:
-                creature_count += 1
-            elif is_land:
-                land_count += 1
-                current_lands.add(card['name'])
-                
-            print(f"  ✅ Added: {card['name']} (Score: {score:.1f}) [{card['Type'].split(' - ')[0]}]")
-        
-        print(f"  📊 Phase 1 complete: {len(decks[theme_name])}/{target_deck_size} cards (C:{creature_count} L:{land_count})")
-    
-    # Phase 2: Fill remaining slots using keyword-matched cards
+    return builder.finalize_decks()
+
+
+def complete_incomplete_decks(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     print(f"\n📦 Phase 2: Filling slots with keyword-matched cards")
     
     for theme_name, theme_config in ALL_THEMES.items():
