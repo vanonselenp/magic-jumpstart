@@ -740,12 +740,18 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Ainok Bond-Kin            Deftblade Elite
-Doomed Traveler           Elite Vanguard
-Ephemerate                Gideon's Lawkeeper
-Gods Willing              Goldmeadow Harrier
-Mana Tithe                Soltari Trooper
-Sunlance                  Thraben Inspector
+Ainok Bond-Kin            
+Deftblade Elite
+Doomed Traveler           
+Elite Vanguard
+Ephemerate                
+Gideon's Lawkeeper
+Gods Willing              
+Goldmeadow Harrier
+Mana Tithe                
+Soltari Trooper
+Sunlance                  
+Thraben Inspector
 Topan Freeblade           
 
 ==================================================
