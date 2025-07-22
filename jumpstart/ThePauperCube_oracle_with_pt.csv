@@ -33,10 +33,10 @@ Blessed Hippogriff,4,Creature - Hippogriff,W,White,"Flying | Whenever this creat
 Coalition Honor Guard,4,Creature - Human Flagbearer,W,White,"While an opponent is choosing targets as part of casting a spell they control or activating an ability they control, that player must choose at least one Flagbearer on the battlefield if able.",AVR Update,60661.0,2,4
 Combat Professor,4,Creature - Bird Cleric,W,White,"Flying | At the beginning of combat on your turn, target creature you control gets +1/+0 and gains vigilance until end of turn.",STX Update,88499.0,2,3
 Guardian of the Guildpact,4,Creature - Spirit,W,White,Protection from monocolored,Since the beginning;evasion,24303.0,2,3
-Palace Sentinels,4,Creature - Human Soldier,W,White,,,,,
+Palace Sentinels,4,Creature - Human Soldier,W,White,"When Palace Sentinels enters the battlefield, you become the monarch.",,,2,4
 Rhox Veteran,4,Creature - Rhino Soldier,W,White,"Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) | Whenever this creature attacks, tap target creature an opponent controls.",MH1 Update;tapper;removal;soft removal,72420.0,2,4
 Search Party Captain,4,Creature - Human Soldier,W,White,"This spell costs {1} less to cast for each creature you attacked with this turn. | When this creature enters, draw a card.",,92994.0,2,2
-Custodi Squire,5,Creature - Spirit Cleric,W,White,,CNS/VMA Update;evasion;UW fliers;ETB,,,
+Custodi Squire,5,Creature - Spirit Cleric,W,White,"Flying | Will of the council — When Custodi Squire enters the battlefield, starting with you, each player votes for an artifact, creature, or enchantment card in your graveyard. Return each card with the most votes or tied for most votes to your hand.",CNS/VMA Update;evasion;UW fliers;ETB,,3,3
 Alabaster Host Intercessor,6,Creature - Phyrexian Samurai,W,White,"When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield. | Plainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",,109800.0,3,4
 Eagles of the North,6,Creature - Bird Soldier,W,White,"Flying | When this creature enters, creatures you control get +1/+0 and gain first strike until end of turn. | Plainscycling {1} ({1}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",,111924.0,3,3
 Pegasus Guardian,6,Creature - Pegasus,W,White,"Flying | At the beginning of your end step, if a permanent you controlled left the battlefield this turn, create a 1/1 white Pegasus creature token with flying. // Exile target creature you control, then return that card to the battlefield under its owner's control. (Then exile this card. You may cast the creature later from exile.)",,100068.0,3,3
@@ -90,7 +90,7 @@ Archaeomancer,4,Creature - Human Wizard,U,Blue,"When this creature enters, retur
 Cruel Witness,4,Creature - Bird Horror,U,Blue,"Flying | Whenever you cast a noncreature spell, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",,94414.0,3,3
 Mist Raven,4,Creature - Bird,U,Blue,"Flying | When this creature enters, return target creature to its owner's hand.",AVR Update;UW fliers;evasion;flicker and bounce;ETB;removal;soft removal,44205.0,2,2
 Murmuring Mystic,4,Creature - Human Wizard,U,Blue,"Whenever you cast an instant or sorcery spell, create a 1/1 blue Bird Illusion creature token with flying.",,115313.0,1,5
-Ninja of the Deep Hours,4,Creature - Human Ninja,U,Blue,,Since the beginning;flicker and bounce;card draw,,,
+Ninja of the Deep Hours,4,Creature - Human Ninja,U,Blue,"Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.) | Whenever Ninja of the Deep Hours deals combat damage to a player, you may draw a card.",Since the beginning;flicker and bounce;card draw,,2,2
 Mulldrifter,5,Creature - Elemental,U,Blue,"Flying | When this creature enters, draw two cards. | Evoke {2}{U} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",Since the beginning;UW fliers;ETB;evasion;card draw,28245.0,2,2
 Peregrine Drake,5,Creature - Drake,U,Blue,"Flying | When this creature enters, untap up to five lands.",,107619.0,2,3
 Shipwreck Dowser,5,Creature - Merfolk Wizard,U,Blue,"Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) | When this creature enters, return target instant or sorcery card from your graveyard to your hand.",,115337.0,3,3
@@ -107,13 +107,13 @@ Opt,1,Instant,U,Blue,Scry 1. (Look at the top card of your library. You may put 
 Phantom Interference,1,Instant,U,Blue,Spree (Choose one or more additional costs.) | + {3} — Create a 2/2 white Spirit creature token with flying. | + {1} — Counter target spell unless its controller pays {2}.,,124033.0,,
 Repeal,1,Instant,U,Blue,Return target nonland permanent with mana value X to its owner's hand. | Draw a card.,GRN Update;flicker and bounce;removal;soft removal;card draw,23627.0,,
 Counterspell,2,Instant,U,Blue,Counter target spell.,Since the beginning,115261.0,,
-Impulse,2,Instant,U,Blue,,,,,
+Impulse,2,Instant,U,Blue,"Look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",,,,
 Into the Roil,2,Instant,U,Blue,"Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.) | Return target nonland permanent to its owner's hand. If this spell was kicked, draw a card.",Since the beginning;flicker and bounce;removal;soft removal;card draw,34448.0,,
 Lose Focus,2,Instant,U,Blue,"Replicate {U} (When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.) | Counter target spell unless its controller pays {2}.",AFR/MH2 Update,90467.0,,
 Mana Leak,2,Instant,U,Blue,Counter target spell unless its controller pays {3}.,May 2010 Update,66011.0,,
 Miscalculation,2,Instant,U,Blue,"Counter target spell unless its controller pays {2}. | Cycling {2} ({2}, Discard this card: Draw a card.)",MBS Update;card draw,12607.0,,
 Remove Soul,2,Instant,U,Blue,Counter target creature spell.,July 2010 Update,27420.0,,
-Snap,2,Instant,U,Blue,,AVR Update;flicker and bounce;removal;soft removal,,,
+Snap,2,Instant,U,Blue,"Return target creature to its owner's hand. Untap up to two lands.",AVR Update;flicker and bounce;removal;soft removal,,,
 Capsize,3,Instant,U,Blue,"Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.) | Return target permanent to its owner's hand.",SOM Update;flicker and bounce;removal;soft removal,9641.0,,
 Displace,3,Instant,U,Blue,"Exile up to two target creatures you control, then return those cards to the battlefield under their owner's control.",M20 Update;flicker and bounce,61330.0,,
 Exclude,3,Instant,U,Blue,Counter target creature spell. | Draw a card.,,14459.0,,
@@ -121,7 +121,7 @@ Ghostly Flicker,3,Instant,U,Blue,"Exile two target artifacts, creatures, and/or 
 Quick Study,3,Instant,U,Blue,Draw two cards.,,116436.0,,
 Behold the Multiverse,4,Instant,U,Blue,"Scry 2, then draw two cards. | Foretell {1}{U} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",KHM/CMR Update,87417.0,,
 Hard Evidence,1,Creature Sorcery,U,Blue,"Create a 0/3 blue Crab creature token. | Investigate. (Create a Clue token. It's an artifact with ""{2}, Sacrifice this token: Draw a card."")",AFR/MH2 Update,90461.0,,
-Ponder,1,Sorcery,U,Blue,,,,,
+Ponder,1,Sorcery,U,Blue,"Look at the top three cards of your library, then put them back in any order. You may shuffle. | Draw a card.",,,,
 Preordain,1,Sorcery,U,Blue,"Scry 2, then draw a card. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",SOM Update;card draw;card selection,37388.0,,
 Serum Visions,1,Sorcery,U,Blue,Draw a card. Scry 2.,,20956.0,,
 Compulsive Research,3,Sorcery,U,Blue,Target player draws three cards. Then that player discards two cards unless they discard a land card.,,23294.0,,
@@ -148,7 +148,7 @@ Accursed Marauder,2,Creature - Zombie Warrior,B,Black,"When this creature enters
 Aether Poisoner,2,Creature - Human Artificer,B,Black,"Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.) | When this creature enters, you get {E}{E} (two energy counters). | Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",,62663.0,1,1
 Basilica Screecher,2,Creature - Bat,B,Black,"Flying | Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.)",,47717.0,1,2
 Carrier Thrall,2,Creature - Vampire,B,Black,"When this creature dies, create a 1/1 colorless Eldrazi Scion creature token. It has ""Sacrifice this token: Add {C}.""",,101628.0,2,1
-Dauthi Horror,2,Creature - Dauthi Horror,B,Black,,,,,
+Dauthi Horror,2,Creature - Dauthi Horror,B,Black,"Shadow (This creature can block or be blocked by only creatures with shadow.) | Dauthi Horror can't be blocked by white creatures.",,,2,1
 Dauthi Slayer,2,Creature - Dauthi Soldier,B,Black,Shadow (This creature can block or be blocked by only creatures with shadow.) | This creature attacks each combat if able.,,9481.0,2,2
 Gixian Infiltrator,2,Creature - Phyrexian Human,B,Black,"Whenever you sacrifice another permanent, put a +1/+1 counter on this creature.",,104814.0,2,1
 Guildsworn Prowler,2,Creature - Tiefling Rogue Assassin,B,Black,"Deathtouch | When this creature dies, if it wasn't blocking, draw a card.",,100276.0,2,1
@@ -167,7 +167,7 @@ Scurrilous Sentry,4,Creature - Human Knight Rogue,B,Black,"Menace | Whenever thi
 Thorn of the Black Rose,4,Creature - Human Assassin,B,Black,"Deathtouch. When this creature enters, you become the monarch.",CN2/KLD/C16 Update;ETB;card draw;deathtouch,,,
 Gray Merchant of Asphodel,5,Creature - Zombie,B,Black,"When this creature enters, each opponent loses X life, where X is your devotion to black. You gain life equal to the life lost this way. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)",,55089.0,2,4
 Loathsome Curator,5,Creature - Gorgon Wizard,B,Black,"Exploit (When this creature enters, you may sacrifice a creature.) | Menace | When this creature exploits a creature, destroy target creature you don't control with mana value 3 or less.",AFR/MH2 Update,90555.0,5,4
-Okiba-Gang Shinobi,5,Creature - Rat Ninja,B,Black,,,,,
+Okiba-Gang Shinobi,5,Creature - Rat Ninja,B,Black,"Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.) | Whenever Okiba-Gang Shinobi deals combat damage to a player, that player discards two cards.",,,3,2
 Vampire Sovereign,5,Creature - Vampire Noble,B,Black,"Flying | When this creature enters, target opponent loses 3 life and you gain 3 life.",,101678.0,3,4
 Chitin Gravestalker,6,Creature - Insect Warrior,B,Black,"This spell costs {1} less to cast for each artifact and/or creature card in your graveyard. | Cycling {2} ({2}, Discard this card: Draw a card.)",,136281.0,5,4
 First-Sphere Gargantua,6,Creature - Horror,B,Black,"When this creature enters, you draw a card and you lose 1 life. | Unearth {2}{B} ({2}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",MH1 Update;ETB;graveyard matters;card draw,72554.0,5,4
@@ -182,21 +182,21 @@ Village Rites,1,Instant,B,Black,"As an additional cost to cast this spell, sacri
 Candy Grapple,2,Instant,B,Black,"Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.) | Target creature gets -3/-3 until end of turn. If this spell was bargained, that creature gets -5/-5 until end of turn instead.",,116476.0,,
 Cast Down,2,Instant,B,Black,Destroy target nonlegendary creature.,Creature Removal;2XM/ZNR Update,82192.0,,
 Death Denied,2,Instant - Arcane,B,Black,Return X target creature cards from your graveyard to your hand.,May 2010 Update;graveyard matters,70257.0,,
-Doom Blade,2,Instant,B,Black,,,,,
+Doom Blade,2,Instant,B,Black,"Destroy target nonblack creature.",,,,
 Go for the Throat,2,Instant,B,Black,Destroy target nonartifact creature.,,108256.0,,
 Wither and Bloom,2,Instant,B,Black,"Target creature gets -3/-3 until end of turn. | {1}{B}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. Activate only as a sorcery.",,126239.0,,
 Unearth,1,Sorcery,B,Black,"Return target creature card with mana value 3 or less from your graveyard to the battlefield. | Cycling {2} ({2}, Discard this card: Draw a card.)",Since the beginning;graveyard matters;card draw,72598.0,,
 Feed the Swarm,2,Sorcery,B,Black,Destroy target creature or enchantment an opponent controls. You lose life equal to that permanent's mana value.,hard removal;removal;Creature Removal;2XM/ZNR Update,83167.0,,
 Night's Whisper,2,Sorcery,B,Black,You draw two cards and you lose 2 life.,EMA Update;card draw,95040.0,,
 Ransack the Lab,2,Sorcery,B,Black,Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.,THB Update,72578.0,,
-Ashes to Ashes,3,Sorcery,B,Black,,,,,
+Ashes to Ashes,3,Sorcery,B,Black,"Exile two target nonartifact creatures. Ashes to Ashes deals 5 damage to you.",,,,
 Arms of Hadar,4,Sorcery,B,Black,Creatures target player controls get -2/-2 until end of turn.,,100238.0,,
 Dread Return,4,Sorcery,B,Black,Return target creature card from your graveyard to the battlefield. | Flashback—Sacrifice three creatures. (You may cast this card from your graveyard for its flashback cost. Then exile it.),,115405.0,,
 Blood Fountain,1,Artifact,B,Black,"When this artifact enters, create a Blood token. (It's an artifact with ""{1}, {T}, Discard a card, Sacrifice this token: Draw a card."") | {3}{B}, {T}, Sacrifice this artifact: Return up to two target creature cards from your graveyard to your hand.",,94506.0,,
 Grim Bauble,1,Artifact,B,Black,"When this artifact enters, target creature an opponent controls gets -2/-2 until end of turn. | {2}{B}, {T}, Sacrifice this artifact: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",,136299.0,,
 Tithing Blade,2,Artifact,B,Black,"When this artifact enters, each opponent sacrifices a creature of their choice. | Craft with creature {4}{B} ({4}{B}, Exile this artifact, Exile a creature you control or a creature card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.) // At the beginning of your upkeep, each opponent loses 1 life and you gain 1 life.",,118064.0,,
 Clawing Torment,1,Enchantment - Aura,B,Black,"Enchant artifact or creature | As long as enchanted permanent is a creature, it gets -1/-1 and can't block. | Enchanted permanent has ""At the beginning of your upkeep, you lose 1 life.""",,97102.0,,
-Gift of Fangs,1,Enchantment - Aura,B,Black,,,,,
+Gift of Fangs,1,Enchantment - Aura,B,Black,"Enchant creature | Enchanted creature gets +2/+2 as long as it's a Vampire. Otherwise, it gets -2/-2.",,,,
 Tortured Existence,1,Enchantment,B,Black,"{B}, Discard a creature card: Return target creature card from your graveyard to your hand.",,10329.0,,
 Pestilence,4,Enchantment,B,Black,"At the beginning of the end step, if no creatures are on the battlefield, sacrifice this enchantment. | {B}: This enchantment deals 1 damage to each creature and each player.",Since the beginning;removal;hard removal;Creature Removal,12409.0,,
 Witch's Cottage,0,Land - Swamp,,Black,"({T}: Add {B}.) | This land enters tapped unless you control three or more other Swamps. | When this land enters untapped, you may put target creature card from your graveyard on top of your library.",,78644.0,,
@@ -249,9 +249,9 @@ Ambitious Assault,3,Instant,R,Red,"Creatures you control get +2/+0 until end of 
 Gnawing Crescendo,3,Instant,R,Red,"Creatures you control get +2/+0 until end of turn. Whenever a nontoken creature you control dies this turn, create a 1/1 black Rat creature token with ""This token can't block.""",,116582.0,,
 Goblin Surprise,3,Instant,R,Red,Choose one — | • Creatures you control get +2/+0 until end of turn. | • Create two 1/1 red Goblin creature tokens.,,133426.0,,
 Sulfurous Blast,4,Instant,R,Red,"Sulfurous Blast deals 2 damage to each creature and each player. If you cast this spell during your main phase, Sulfurous Blast deals 3 damage to each creature and each player instead.",,114751.0,,
-Fireblast,6,Instant,R,Red,,,,,
+Fireblast,6,Instant,R,Red,"You may sacrifice two Mountains rather than pay this spell's mana cost. | Fireblast deals 4 damage to any target.",,,,
 Chain Lightning,1,Sorcery,R,Red,"Chain Lightning deals 3 damage to any target. Then that player or that permanent's controller may pay {R}{R}. If the player does, they may copy this spell and may choose a new target for that copy.",Since the beginning;hard removal;removal;Creature Removal,107715.0,,
-Fireball,1,Sorcery,R,Red,,,,,
+Fireball,1,Sorcery,R,Red,"This spell costs {1} more to cast for each target beyond the first. | Fireball deals X damage divided evenly, rounded down, among any number of targets.",,,,
 Firebolt,1,Sorcery,R,Red,Firebolt deals 2 damage to any target. | Flashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.),Since the beginning;removal;hard removal;graveyard matters;Creature Removal,60939.0,,
 Flame Slash,1,Sorcery,R,Red,Flame Slash deals 4 damage to target creature.,,36640.0,,
 Reckless Charge,1,Sorcery,R,Red,Target creature gets +3/+0 and gains haste until end of turn. | Flashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.),July 2010 Update,72660.0,,
@@ -291,7 +291,7 @@ Phantom Tiger,3,Creature - Cat Spirit,G,Green,"This creature enters with two +1/
 Tuskguard Captain,3,Creature - Human Warrior,G,Green,"Outlast {G} ({G}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.) | Each creature you control with a +1/+1 counter on it has trample.",,101810.0,2,3
 Yavimaya Elder,3,Creature - Human Druid,G,Green,"When this creature dies, you may search your library for up to two basic land cards, reveal them, put them into your hand, then shuffle. | {2}, Sacrifice this creature: Draw a card.",Since the beginning;card draw,93710.0,2,1
 Bannerhide Krushok,4,Creature - Beast,G,Green,"Trample | Reinforce 2—{1}{G} ({1}{G}, Discard this card: Put two +1/+1 counters on target creature.) | Scavenge {5}{G}{G} ({5}{G}{G}, Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a sorcery.)",AFR/MH2 Update,90675.0,4,4
-Blastoderm,4,Creature - Beast,G,Green,,,,,
+Blastoderm,4,Creature - Beast,G,Green,"Shroud (This creature can't be the target of spells or abilities.) | Fading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",,,5,5
 Bloom Hulk,4,Creature - Plant Elemental,G,Green,"When this creature enters, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",,71914.0,4,4
 Hazard of the Dunes,4,Creature - Wurm,G,Green,"Trample, reach | Exhaust — {6}{G}: Put three +1/+1 counters on this creature. (Activate each exhaust ability only once.)",,136453.0,4,4
 Jade Guardian,4,Creature - Merfolk Shaman,G,Green,"Hexproof (This creature can't be the target of spells or abilities your opponents control.) | When this creature enters, put a +1/+1 counter on target Merfolk you control.",IKO Update,65408.0,2,2
@@ -323,16 +323,16 @@ Longstalk Brawl,1,Sorcery,G,Green,"Gift a tapped Fish (You may promise an oppone
 Farseek,2,Sorcery,G,Green,"Search your library for a Plains, Island, Swamp, or Mountain card, put it onto the battlefield tapped, then shuffle.",,23262.0,,
 Malevolent Rumble,2,Sorcery,G,Green,"Reveal the top four cards of your library. You may put a permanent card from among them into your hand. Put the rest into your graveyard. Create a 0/1 colorless Eldrazi Spawn creature token with ""Sacrifice this token: Add {C}.""",,126339.0,,
 Monstrous Emergence,2,Sorcery,G,Green,"As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand. | Monstrous Emergence deals damage equal to the power of the creature you chose or the card you revealed to target creature.",,130513.0,,
-Nature's Lore,2,Sorcery,G,Green,,BBD Update,,,
+Nature's Lore,2,Sorcery,G,Green,"Search your library for a Forest card, put that card onto the battlefield, then shuffle.",BBD Update,,,
 Winding Way,2,Sorcery,G,Green,Choose creature or land. Reveal the top four cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest into your graveyard.,MH1 Update;card selection,72758.0,,
 Lead the Stampede,3,Sorcery,G,Green,Look at the top five cards of your library. You may reveal any number of creature cards from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.,,66225.0,,
 Trumpeting Herd,4,Creature Sorcery,G,Green,"Create a 3/3 green Elephant creature token. | Rebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",MH1 Update;token generator;WG tokens,72746.0,,
-You Meet in a Tavern,4,Sorcery,G,Green,,,,,
+You Meet in a Tavern,4,Sorcery,G,Green,"Choose one — | • Form a Party — Look at the top five cards of your library. You may reveal any number of creature cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order. | • Start a Brawl — Creatures you control get +2/+2 until end of turn.",,,,
 Colossal Dreadmask,6,Creature Artifact - Equipment,G,Green,"Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.) | Equipped creature gets +6/+6 and has trample. | Equip {3}{G}{G}",,126313.0,,
 Rancor,1,Enchantment - Aura,G,Green,"Enchant creature | Enchanted creature gets +2/+0 and has trample. | When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",Since the beginning,12677.0,,
 Utopia Sprawl,1,Enchantment - Aura,G,Green,"Enchant Forest | As this Aura enters, choose a color. | Whenever enchanted Forest is tapped for mana, its controller adds an additional one mana of the chosen color.",,24297.0,,
-Wild Growth,1,Enchantment - Aura,G,Green,,,,,
-Fertile Ground,2,Enchantment - Aura,G,Green,,,,,
+Wild Growth,1,Enchantment - Aura,G,Green,"Enchant land | Whenever enchanted land is tapped for mana, its controller adds an additional {G}.",,,,
+Fertile Ground,2,Enchantment - Aura,G,Green,"Enchant land | Whenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.",,,,
 Hickory Woodlot,0,Land,,Green,"This land enters tapped with two depletion counters on it. | {T}, Remove a depletion counter from this land: Add {G}{G}. If there are no depletion counters on this land, sacrifice it.",,13409.0,,
 Gingerbrute,1,Artifact Creature - Food Golem,,Colorless,"Haste (This creature can attack and {T} as soon as it comes under your control.) | {1}: This creature can't be blocked this turn except by creatures with haste. | {2}, {T}, Sacrifice this creature: You gain 3 life.",ELD Update,78584.0,1,1
 Iron Apprentice,1,Artifact Creature - Construct,,Colorless,"This creature enters with a +1/+1 counter on it. | When this creature dies, if it had counters on it, put those counters on target creature you control.",,97446.0,0,0
@@ -350,7 +350,7 @@ Bonesplitter,1,Artifact - Equipment,,Colorless,Equipped creature gets +2/+0. | E
 Candy Trail,1,Artifact - Food Clue,,Colorless,"When this artifact enters, scry 2. | {2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.",,116874.0,,
 Flayer Husk,1,Creature Artifact - Equipment,,Colorless,"Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.) | Equipped creature gets +1/+1. | Equip {2}",MBS Update;token generator,39583.0,,
 Leonin Bola,1,Artifact - Equipment,,Colorless,"Equipped creature has ""{T}, Unattach Leonin Bola: Tap target creature."" | Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery. This card enters unattached and stays on the battlefield if the creature leaves.)",Since the beginning,20509.0,,
-Wayfarer's Bauble,1,Artifact,,Colorless,,Since the beginning,,,
+Wayfarer's Bauble,1,Artifact,,Colorless,"{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",Since the beginning,,,
 Glimmerlight,2,Artifact - Equipment,,Colorless,"When this Equipment enters, create a 1/1 white Glimmer enchantment creature token. | Equipped creature gets +1/+1. | Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",,130629.0,,
 Guardian Idol,2,Artifact,,Colorless,This artifact enters tapped. | {T}: Add {C}. | {2}: This artifact becomes a 2/2 Golem artifact creature until end of turn.,HOU/XLN/IMA Update,66311.0,,
 Mind Stone,2,Artifact,,Colorless,"{T}: Add {C}. | {1}, {T}, Sacrifice this artifact: Draw a card.",Since the beginning;card draw,9135.0,,
@@ -359,7 +359,7 @@ Vulshok Morningstar,2,Artifact - Equipment,,Colorless,Equipped creature gets +2/
 Bonder's Ornament,3,Artifact,,Colorless,"{T}: Add one mana of any color. | {4}, {T}: Each player who controls a permanent named Bonder's Ornament draws a card.",,80715.0,,
 Pristine Talisman,3,Artifact,,Colorless,{T}: Add {C}. You gain 1 life.,NPH Update,40004.0,,
 Renegade Freighter,3,Artifact - Vehicle,,Colorless,"Whenever this Vehicle attacks, it gets +1/+1 and gains trample until end of turn. | Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",CN2/KLD/C16 Update,61593.0,,
-Serrated Arrows,4,Artifact,,Colorless,,Since the beginning;removal;hard removal;Creature Removal,,,
+Serrated Arrows,4,Artifact,,Colorless,"Serrated Arrows enters the battlefield with three arrowhead counters on it. | At the beginning of your upkeep, if there are no arrowhead counters on Serrated Arrows, sacrifice it.",Since the beginning;removal;hard removal;Creature Removal,,,
 Momentary Blink,2,Instant,UW,Multicolored,"Exile target creature you control, then return it to the battlefield under its owner's control. | Flashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",Since the beginning;flicker and bounce;graveyard matters,25533.0,,
 Lyev Skyknight,3,Creature - Human Knight,WU,Multicolored,"Flying | When this creature enters, detain target nonland permanent an opponent controls. (Until your next turn, that permanent can't attack or block and its activated abilities can't be activated.)",,101976.0,3,1
 Silver Drake,3,Creature - Drake,UW,Multicolored,"Flying | When this creature enters, return a white or blue creature you control to its owner's hand.",AFR/MH2 Update,15255.0,3,3
@@ -375,7 +375,7 @@ Writhing Chrysalis,4,Creature - Eldrazi Drone,,Multicolored,"Devoid (This card h
 Faithful Watchdog,2,Creature - Dog,GW,Multicolored,Vigilance | This creature enters with three +1/+1 counters on it.,,126387.0,0,0
 Armadillo Cloak,3,Enchantment - Aura,GW,Multicolored,"Enchant creature | Enchanted creature gets +2/+2 and has trample. | Whenever enchanted creature deals damage, you gain that much life.",,60653.0,,
 Captured by Lagacs,3,Enchantment - Aura,GW,Multicolored,"Enchant creature | Enchanted creature can't attack or block. | When this Aura enters, support 2. (Put a +1/+1 counter on each of up to two target creatures.)",AFR/MH2 Update,90753.0,,
-Tithe Drinker,2,Creature - Vampire,BW,Multicolored,,,,,
+Tithe Drinker,2,Creature - Vampire,BW,Multicolored,"Lifelink (Damage dealt by this creature also causes you to gain that much life.) | Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.)",,,2,1
 Kingpin's Pet,3,Creature - Thrull,WB,Multicolored,"Flying | Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.)",GTC Update;evasion,47857.0,2,2
 Pillory of the Sleepless,3,Enchantment - Aura,BW,Multicolored,"Enchant creature | Enchanted creature can't attack or block. | Enchanted creature has ""At the beginning of your upkeep, you lose 1 life.""",Since the beginning;removal;soft removal,23693.0,,
 Goblin Electromancer,2,Creature - Goblin Wizard,UR,Multicolored,Instant and sorcery spells you cast cost {1} less to cast.,UMA Update;spells matter,46363.0,2,2
@@ -407,7 +407,7 @@ Dimir Aqueduct,0,Land,BU,Lands,"This land enters tapped. | When this land enters
 Dismal Backwater,0,Land,,Lands,"This land enters tapped. | When this land enters, you gain 1 life. | {T}: Add {U} or {B}.",,54466.0,,
 Waterfront District,0,Land,BU,Lands,"This land enters tapped. | {T}: Add {U} or {B}. | {2}{U}{B}, {T}, Sacrifice this land: Draw a card.",,98737.0,,
 Jagged Barrens,0,Land - Desert,,Lands,"This land enters tapped. | When this land enters, it deals 1 damage to target opponent. | {T}: Add {B} or {R}.",,124429.0,,
-Rakdos Carnarium,0,Land,BR,Lands,,,,,
+Rakdos Carnarium,0,Land,BR,Lands,"This land enters tapped. | When this land enters, return a land you control to its owner's hand. | {T}: Add {B}{R}.",,,,
 Tramway Station,0,Land,BR,Lands,"This land enters tapped. | {T}: Add {B} or {R}. | {2}{B}{R}, {T}, Sacrifice this land: Draw a card.",,98735.0,,
 Bristling Backwoods,0,Land - Desert,,Lands,"This land enters tapped. | When this land enters, it deals 1 damage to target opponent. | {T}: Add {R} or {G}.",,124417.0,,
 Gruul Turf,0,Land,RG,Lands,"This land enters tapped. | When this land enters, return a land you control to its owner's hand. | {T}: Add {R}{G}.",,23851.0,,
@@ -415,11 +415,11 @@ Racers' Ring,0,Land,GR,Lands,"This land enters tapped. | {T}: Add {R} or {G}. | 
 Botanical Plaza,0,Land,GW,Lands,"This land enters tapped. | {T}: Add {G} or {W}. | {2}{G}{W}, {T}, Sacrifice this land: Draw a card.",,98713.0,,
 Radiant Grove,0,Land - Forest Plains,GW,Lands,({T}: Add {G} or {W}.) | This land enters tapped.,,102982.0,,
 Selesnya Sanctuary,0,Land,WG,Lands,"This land enters tapped. | When this land enters, return a land you control to its owner's hand. | {T}: Add {G}{W}.",,23248.0,,
-Orzhov Basilica,0,Land,BW,Lands,,,,,
+Orzhov Basilica,0,Land,BW,Lands,"This land enters tapped. | When this land enters, return a land you control to its owner's hand. | {T}: Add {W}{B}.",,,,
 Scoured Barrens,0,Land,,Lands,"This land enters tapped. | When this land enters, you gain 1 life. | {T}: Add {W} or {B}.",,54070.0,,
 Silverquill Campus,0,Land,BW,Lands,"This land enters tapped. | {T}: Add {W} or {B}. | {4}, {T}: Scry 1.",STX Update,89053.0,,
 Eroded Canyon,0,Land - Desert,,Lands,"This land enters tapped. | When this land enters, it deals 1 damage to target opponent. | {T}: Add {U} or {R}.",,124423.0,,
-Izzet Boilerworks,0,Land,RU,Lands,,,,,
+Izzet Boilerworks,0,Land,RU,Lands,"Izzet Boilerworks enters the battlefield tapped. | When Izzet Boilerworks enters the battlefield, return a land you control to its owner's hand. | {T}: Add {U}{R}.",,,,
 Prismari Campus,0,Land,RU,Lands,"This land enters tapped. | {T}: Add {U} or {R}. | {4}, {T}: Scry 1.",STX Update,89047.0,,
 Golgari Rot Farm,0,Land,BG,Lands,"This land enters tapped. | When this land enters, return a land you control to its owner's hand. | {T}: Add {B}{G}.",,23206.0,,
 Haunted Mire,0,Land - Swamp Forest,BG,Lands,({T}: Add {B} or {G}.) | This land enters tapped.,,102972.0,,
@@ -442,7 +442,7 @@ Perilous Landscape,0,Land,,Lands,"{T}: Add {C}. | {T}, Sacrifice this land: Sear
 Foreboding Landscape,0,Land,,Lands,"{T}: Add {C}. | {T}, Sacrifice this land: Search your library for a basic Swamp, Forest, or Island card, put it onto the battlefield tapped, then shuffle. | Cycling {B}{G}{U} ({B}{G}{U}, Discard this card: Draw a card.)",,126461.0,,
 Basilisk Gate,0,Land - Gate,,Lands,"{T}: Add {C}. | {2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.",,100730.0,,
 Conduit Pylons,0,Land - Desert,,Lands,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.) | {T}: Add {C}. | {1}, {T}: Add one mana of any color.",,124419.0,,
-Desert,0,Land - Desert,,Lands,,Since the beginning;removal;hard removal,,,
+Desert,0,Land - Desert,,Lands,"{T}: Add {C}. | {T}: Desert deals 1 damage to target attacking creature. Activate only during the end of combat step.",Since the beginning;removal;hard removal,,,
 Escape Tunnel,0,Land,,Lands,"{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. | {T}, Sacrifice this land: Target creature with power 2 or less can't be blocked this turn.",,122014.0,,
 Haunted Fengraf,0,Land,,Lands,"{T}: Add {C}. | {3}, {T}, Sacrifice this land: Return a creature card at random from your graveyard to your hand.",,43259.0,,
 Hidden Grotto,0,Land,,Lands,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.) | {T}: Add {C}. | {1}, {T}: Add one mana of any color.",,129753.0,,
