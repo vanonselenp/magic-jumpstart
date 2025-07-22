@@ -103,8 +103,9 @@ MONO_COLOR_THEMES = {
     'Red Artifacts': {
         'colors': ['R'],
         'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
-        'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy'],
-        'archetype': 'Midrange'
+        'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy', 
+                    'equipment', 'enters', 'tap', 'sacrifice', 'colorless', 'cost', 'thopter'],
+        'archetype': 'Artifacts'
     },
     
     # Green themes
