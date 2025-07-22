@@ -141,7 +141,7 @@ def generate_image_prompt(theme_name):
     prompt = f"""Create a fantasy art image for a Magic: The Gathering theme called "{theme_name}". 
 
 **Image Specifications:**
-- Dimensions: 100m × 78m aspect ratio (landscape orientation)
+- Dimensions: 100mm × 78mm aspect ratio (landscape orientation)
 - High resolution, suitable for card art or promotional material
 - Fantasy art style reminiscent of Magic: The Gathering illustrations
 
