@@ -170,22 +170,14 @@ class CardSelector:
             base_score = score_card_for_theme(card, theme_config)
         else:
             # Use specialized scoring based on theme type
-            from .scorer import (
-                create_equipment_scorer, create_tribal_scorer, 
-                create_aggressive_scorer, create_default_scorer, score_card_for_theme
-            )
+            from .scorer import score_card_for_theme
             
-            if 'equipment' in theme_name.lower():
-                scorer = create_equipment_scorer()
-                base_score = scorer.score_card(card, theme_config)
-            elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
-                scorer = create_tribal_scorer()
-                base_score = scorer.score_card(card, theme_config)
-            elif theme_config.get('archetype') == 'Aggressive':
-                scorer = create_aggressive_scorer()
+            scorer, _ = self._get_specialized_scorer_and_count(theme_name, theme_config)
+            
+            # Use scorer if it's not the default scorer, otherwise use standard scoring
+            if scorer.__class__.__name__ != 'CardScorer' or hasattr(scorer, '_is_specialized'):
                 base_score = scorer.score_card(card, theme_config)
             else:
-                # Use standard scoring for other themes
                 base_score = score_card_for_theme(card, theme_config)
         
         # Color preference bonus
@@ -271,26 +263,26 @@ class DeckBuilder:
         for theme_name, theme_config in ALL_THEMES.items():
             self._reserve_core_cards_for_theme(theme_name, theme_config)
     
-    def _reserve_core_cards_for_theme(self, theme_name: str, theme_config: dict):
-        """Reserve top core cards for a specific theme."""
+    def _get_specialized_scorer_and_count(self, theme_name: str, theme_config: dict) -> tuple:
+        """Get the appropriate specialized scorer and core card count for a theme."""
         from .scorer import (
             create_equipment_scorer, create_tribal_scorer, 
             create_aggressive_scorer, create_default_scorer
         )
         
-        # Select appropriate specialized scorer based on theme
         if 'equipment' in theme_name.lower():
-            scorer = create_equipment_scorer()
-            core_count = 5  # Reserve more equipment cards
+            return create_equipment_scorer(), 5  # Reserve more equipment cards
         elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
-            scorer = create_tribal_scorer()
-            core_count = 4  # Reserve key tribal cards
+            return create_tribal_scorer(), 4  # Reserve key tribal cards
         elif theme_config.get('archetype') == 'Aggressive':
-            scorer = create_aggressive_scorer()
-            core_count = 3  # Reserve key aggressive cards
+            return create_aggressive_scorer(), 3  # Reserve key aggressive cards
         else:
-            scorer = create_default_scorer()
-            core_count = 3  # Standard reservation
+            return create_default_scorer(), 3  # Standard reservation
+    
+    def _reserve_core_cards_for_theme(self, theme_name: str, theme_config: dict):
+        """Reserve top core cards for a specific theme."""
+        # Get appropriate scorer and count
+        scorer, core_count = self._get_specialized_scorer_and_count(theme_name, theme_config)
         
         # Find top scoring cards for this theme
         deck_state = self.decks[theme_name]
