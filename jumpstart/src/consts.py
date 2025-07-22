@@ -3,19 +3,19 @@
 # Mono-color themes (4 per color)
 MONO_COLOR_THEMES = {
     # White themes
-    'Soldiers': {
+    'White Soldiers': {
         'colors': ['W'],
         'strategy': 'Aggressive tribal deck focused on soldier creatures with anthem effects',
         'keywords': ['soldier', 'tribal', 'anthem', 'pump', 'attack', 'vigilance', 'first strike'],
         'archetype': 'Aggro'
     },
-    'Equipment': {
+    'White Equipment': {
         'colors': ['W'],
         'strategy': 'Equipment-based deck with efficient creatures and powerful gear',
         'keywords': ['equipment', 'attach', 'equipped', 'metalcraft', 'artifact', 'power', 'toughness'],
         'archetype': 'Midrange'
     },
-    'Angels': {
+    'White Angels': {
         'colors': ['W'],
         'strategy': 'Mid-to-late game deck with powerful flying angels and protection',
         'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
@@ -29,25 +29,25 @@ MONO_COLOR_THEMES = {
     },
     
     # Blue themes
-    'Flying': {
+    'Blue Flying': {
         'colors': ['U'],
         'strategy': 'Evasive creatures with flying and tempo spells',
         'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw'],
         'archetype': 'Tempo'
     },
-    'Wizards': {
+    'Blue Wizards': {
         'colors': ['U'],
         'strategy': 'Wizard tribal with spell-based synergies and card advantage',
         'keywords': ['wizard', 'instant', 'sorcery', 'prowess', 'draw', 'counter', 'tribal'],
         'archetype': 'Control'
     },
-    'Card Draw': {
+    'Blue Card Draw': {
         'colors': ['U'],
         'strategy': 'Card advantage engine with draw spells and library manipulation',
         'keywords': ['draw', 'card', 'scry', 'look', 'library', 'hand', 'cycling'],
         'archetype': 'Control'
     },
-    'Merfolk': {
+    'Blue Merfolk': {
         'colors': ['U'],
         'strategy': 'Aggressive merfolk tribal with evasion and tribal synergies',
         'keywords': ['merfolk', 'tribal', 'islandwalk', 'counter', 'tap', 'untap'],
@@ -55,25 +55,25 @@ MONO_COLOR_THEMES = {
     },
     
     # Black themes
-    'Zombies': {
+    'Black Zombies': {
         'colors': ['B'],
         'strategy': 'Zombie tribal with graveyard recursion and sacrifice synergies',
         'keywords': ['zombie', 'tribal', 'graveyard', 'return', 'sacrifice', 'dies'],
         'archetype': 'Midrange'
     },
-    'Graveyard': {
+    'Black Graveyard': {
         'colors': ['B'],
         'strategy': 'Graveyard-based value engine with recursion and reanimation',
         'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold'],
         'archetype': 'Control'
     },
-    'Sacrifice': {
+    'Black Sacrifice': {
         'colors': ['B'],
         'strategy': 'Sacrifice-based deck with death triggers and value generation',
         'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
         'archetype': 'Midrange'
     },
-    'Vampires': {
+    'Black Vampires': {
         'colors': ['B'],
         'strategy': 'Aggressive vampire tribal with lifedrain and +1/+1 counters',
         'keywords': ['vampire', 'tribal', 'lifelink', 'counter', 'drain', 'aggressive'],
@@ -81,25 +81,25 @@ MONO_COLOR_THEMES = {
     },
     
     # Red themes
-    'Goblins': {
+    'Red Goblins': {
         'colors': ['R'],
         'strategy': 'Fast goblin tribal with haste and explosive plays',
         'keywords': ['goblin', 'tribal', 'haste', 'sacrifice', 'token', 'aggressive'],
         'archetype': 'Aggro'
     },
-    'Burn': {
+    'Red Burn': {
         'colors': ['R'],
         'strategy': 'Direct damage spells and hasty creatures for quick wins',
         'keywords': ['damage', 'burn', 'lightning', 'shock', 'direct', 'haste', 'instant'],
         'archetype': 'Aggro'
     },
-    'Dragons': {
+    'Red Dragons': {
         'colors': ['R'],
         'strategy': 'Expensive dragons with powerful effects and flying',
         'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
         'archetype': 'Ramp'
     },
-    'Artifacts': {
+    'Red Artifacts': {
         'colors': ['R'],
         'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
         'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy'],
@@ -107,25 +107,25 @@ MONO_COLOR_THEMES = {
     },
     
     # Green themes
-    'Elves': {
+    'Green Elves': {
         'colors': ['G'],
         'strategy': 'Elf tribal with mana acceleration and creature synergies',
         'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token'],
         'archetype': 'Ramp'
     },
-    'Ramp': {
+    'Green Ramp': {
         'colors': ['G'],
         'strategy': 'Mana acceleration into large threats and expensive spells',
         'keywords': ['mana', 'land', 'search', 'expensive', 'big', 'ritual', 'forest'],
         'archetype': 'Ramp'
     },
-    'Stompy': {
+    'Green Stompy': {
         'colors': ['G'],
         'strategy': 'Large creatures with trample and pump effects',
         'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight'],
         'archetype': 'Aggro'
     },
-    'Beasts': {
+    'Green Beasts': {
         'colors': ['G'],
         'strategy': 'Large beast creatures with powerful abilities',
         'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive'],
@@ -136,7 +136,7 @@ MONO_COLOR_THEMES = {
 # Dual-color themes (2-color combinations)
 DUAL_COLOR_THEMES = {
     # White-Blue (Azorius)
-    'Control': {
+    'Azorius Control': {
         'colors': ['W', 'U'],
         'strategy': 'Classic control deck with counterspells, removal, and card draw',
         'keywords': ['counter', 'destroy', 'exile', 'draw', 'instant', 'sorcery', 'board wipe'],
@@ -144,7 +144,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Blue-Black (Dimir)
-    'Mill': {
+    'Dimir Mill': {
         'colors': ['U', 'B'],
         'strategy': 'Mill-based strategy with graveyard interaction and card advantage',
         'keywords': ['mill', 'graveyard', 'library', 'flashback', 'threshold', 'draw'],
@@ -152,7 +152,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Black-Red (Rakdos)
-    'Aggro': {
+    'Rakdos Aggro': {
         'colors': ['B', 'R'],
         'strategy': 'Aggressive deck with efficient creatures and direct damage',
         'keywords': ['haste', 'damage', 'aggressive', 'sacrifice', 'burn', 'power'],
@@ -160,7 +160,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Red-Green (Gruul)
-    'Big Creatures': {
+    'Gruul Big Creatures': {
         'colors': ['R', 'G'],
         'strategy': 'Large creatures with haste and trample effects',
         'keywords': ['power', 'toughness', 'haste', 'trample', 'big', 'expensive', 'ramp'],
@@ -168,7 +168,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Green-White (Selesnya)
-    'Tokens': {
+    'Selesnya Tokens': {
         'colors': ['G', 'W'],
         'strategy': 'Token generation with anthem effects and populate mechanics',
         'keywords': ['token', 'create', 'populate', 'convoke', 'anthem', 'pump'],
@@ -176,7 +176,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # White-Black (Orzhov)
-    'Lifedrain': {
+    'Orzhov Lifedrain': {
         'colors': ['W', 'B'],
         'strategy': 'Life manipulation with drain effects and powerful creatures',
         'keywords': ['lifegain', 'drain', 'life', 'extort', 'lifelink', 'aristocrats'],
@@ -184,7 +184,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Blue-Red (Izzet)
-    'Spells Matter': {
+    'Izzet Spells Matter': {
         'colors': ['U', 'R'],
         'strategy': 'Instant and sorcery synergies with prowess and spell-based creatures',
         'keywords': ['instant', 'sorcery', 'prowess', 'spells', 'trigger', 'burn'],
@@ -192,7 +192,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Black-Green (Golgari)
-    'Graveyard Value': {
+    'Golgari Graveyard Value': {
         'colors': ['B', 'G'],
         'strategy': 'Graveyard-based value engine with recursion and sacrifice',
         'keywords': ['graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies'],
@@ -200,7 +200,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Red-White (Boros)
-    'Equipment Aggro': {
+    'Boros Equipment Aggro': {
         'colors': ['R', 'W'],
         'strategy': 'Aggressive creatures with equipment support and combat tricks',
         'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump'],
@@ -208,7 +208,7 @@ DUAL_COLOR_THEMES = {
     },
     
     # Green-Blue (Simic)
-    'Ramp Control': {
+    'Simic Ramp Control': {
         'colors': ['G', 'U'],
         'strategy': 'Ramp into large threats with card draw and protection',
         'keywords': ['ramp', 'mana', 'draw', 'expensive', 'evolve', 'counter', 'adapt'],
@@ -221,11 +221,11 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['Soldiers', 'Merfolk', 'Vampires', 'Goblins', 'Burn', 'Stompy', 'White Weenies', 'Aggro', 'Equipment Aggro'],
-    'Midrange': ['Equipment', 'Zombies', 'Sacrifice', 'Artifacts', 'Beasts', 'Big Creatures', 'Tokens', 'Lifedrain', 'Graveyard Value'],
-    'Control': ['Angels', 'Wizards', 'Card Draw', 'Graveyard', 'Control', 'Mill'],
-    'Ramp': ['Dragons', 'Elves', 'Ramp', 'Ramp Control'],
-    'Tempo': ['Flying', 'Spells Matter']
+    'Aggressive': ['White Soldiers', 'Blue Merfolk', 'Black Vampires', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
+    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Big Creatures', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
+    'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Azorius Control', 'Dimir Mill'],
+    'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
+    'Tempo': ['Blue Flying', 'Izzet Spells Matter']
 }
 
 # Color identity mapping for validation
