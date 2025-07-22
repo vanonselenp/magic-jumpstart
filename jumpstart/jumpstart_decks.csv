@@ -13,8 +13,8 @@ Unbounded Potential,Mixed,,common,W,Instant,,2,,,Azorius Control
 Prismatic Strands,Mixed,,common,W,Instant,,3,,,Azorius Control
 Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,Azorius Control
 Waterfront District,Mixed,,common,BU,Land,,0,,,Dimir Mill
-Contaminated Landscape,Mixed,,common,,Land,,0,,,Dimir Mill
-Seething Landscape,Mixed,,common,,Land,,0,,,Dimir Mill
+Dimir Aqueduct,Mixed,,common,BU,Land,,0,,,Dimir Mill
+Dismal Backwater,Mixed,,common,,Land,,0,,,Dimir Mill
 Soul Manipulation,Mixed,,common,BU,Instant,,3,,,Dimir Mill
 Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,2.0,2.0,Dimir Mill
 Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
@@ -25,10 +25,10 @@ Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Dimir Mill
 Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Dimir Mill
 Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Dimir Mill
 Snapping Voidcraw,Mixed,,common,,Creature - Eldrazi Turtle,,3,1.0,3.0,Dimir Mill
-Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
 Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
-Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
+Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
+Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
 Body Dropper,Mixed,,common,BR,Creature - Devil Warrior,,2,2.0,2.0,Rakdos Aggro
 Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Aggro
 Cindering Cutthroat,Mixed,,common,BR,Creature - Lizard Assassin,,3,3.0,2.0,Rakdos Aggro
@@ -38,9 +38,9 @@ Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Rakdos Aggro
 Loathsome Curator,Mixed,,common,B,Creature - Gorgon Wizard,,5,5.0,4.0,Rakdos Aggro
 Ashes to Ashes,Mixed,,common,B,Sorcery,,3,,,Rakdos Aggro
 Jackal Pup,Mixed,,common,R,Creature - Jackal,,1,2.0,1.0,Rakdos Aggro
+Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Big Creatures
 Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Gruul Big Creatures
 Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Big Creatures
-Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Big Creatures
 Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Gruul Big Creatures
 Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Gruul Big Creatures
 Goblin Anarchomancer,Mixed,,common,GR,Creature - Goblin Shaman,,2,2.0,2.0,Gruul Big Creatures
