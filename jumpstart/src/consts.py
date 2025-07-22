@@ -192,10 +192,12 @@ DUAL_COLOR_THEMES = {
     },
     
     # Green-White (Selesnya)
-    'Selesnya Tokens': {
+    'Selesnya Value': {
         'colors': ['G', 'W'],
-        'strategy': 'Token generation with anthem effects and populate mechanics',
-        'keywords': ['token', 'create', 'populate', 'convoke', 'anthem', 'pump'],
+        'strategy': 'Incremental advantage through efficient creatures, removal, and versatile utility spells',
+        'keywords': ['efficient', 'creature', 'removal', 'destroy', 'exile', 'enchantment', 
+                    'versatile', 'value', 'enters', 'lifegain', 'vigilance', 'flying', 
+                    'combat tricks', 'instant', 'sorcery', 'token', 'utility', 'aura'],
         'archetype': 'Midrange'
     },
     
@@ -247,7 +249,7 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 # Theme categories for organization
 THEME_CATEGORIES = {
     'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
-    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Tokens', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
+    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
