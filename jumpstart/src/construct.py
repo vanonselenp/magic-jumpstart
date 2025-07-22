@@ -525,6 +525,11 @@ def score_card_for_theme(card: pd.Series, theme_config: dict) -> float:
     keywords = theme_config['keywords']
     score = 0.0
     
+    # Get card properties
+    cmc = card.get('CMC', 0) if pd.notna(card.get('CMC', 0)) else 0
+    power = card.get('Power', 0) if pd.notna(card.get('Power', 0)) else 0
+    archetype = theme_config.get('archetype', '')
+    
     # Get text fields for searching
     oracle_text = str(card['Oracle Text']).lower() if pd.notna(card['Oracle Text']) else ""
     card_type = str(card['Type']).lower() if pd.notna(card['Type']) else ""
@@ -542,6 +547,40 @@ def score_card_for_theme(card: pd.Series, theme_config: dict) -> float:
                 score += 1.0
             elif keyword_lower in searchable_text:
                 score += 0.5
+    
+    # A. ADD MANA CURVE SCORING: Bonus points for cards matching theme strategy
+    if archetype == 'Aggro':
+        if cmc == 1:
+            score += 2.0  # Big bonus for 1-drops in aggro themes
+        elif cmc == 2:
+            score += 1.0  # Good bonus for 2-drops in aggro themes
+        elif cmc >= 4:
+            score -= 1.0  # Penalty for expensive cards in aggro themes
+    elif archetype == 'Control':
+        if cmc >= 4:
+            score += 0.5  # Bonus for expensive cards in control themes
+        elif cmc == 1:
+            score -= 0.5  # Small penalty for 1-drops in control (unless utility)
+    
+    # B. IMPROVE KEYWORD MATCHING: Add CMC-specific keyword matching
+    # Special handling for cost-related keywords
+    if 'cheap' in keywords and cmc <= 2:
+        score += 1.0  # Bonus for actually cheap cards
+    
+    if 'efficient' in keywords:
+        # Bonus for good power/CMC ratio (creatures only)
+        if 'creature' in card_type and power > 0 and cmc > 0:
+            if power >= cmc:  # Power >= CMC is efficient
+                score += 1.0
+            elif power >= cmc - 1:  # Almost efficient
+                score += 0.5
+    
+    if 'low cost' in keywords and cmc <= 2:
+        score += 1.0  # Bonus for actually low cost cards
+        
+    if 'small' in keywords and 'creature' in card_type:
+        if power <= 2:  # Small creatures typically have low power
+            score += 0.5
     
     # Bonus scoring based on card type and theme strategy
     if 'creature' in card_type:
