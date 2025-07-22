@@ -74,11 +74,11 @@ MONO_COLOR_THEMES = {
         'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
         'archetype': 'Midrange'
     },
-    'Black Vampires': {
+    'Black Control': {
         'colors': ['B'],
-        'strategy': 'Aggressive vampire tribal with lifedrain and +1/+1 counters',
-        'keywords': ['vampire', 'tribal', 'lifelink', 'counter', 'drain', 'aggressive'],
-        'archetype': 'Aggro'
+        'strategy': 'Control deck with removal spells and efficient creatures for board control',
+        'keywords': ['destroy', 'remove', 'target', 'exile', 'control', 'doom blade', 'murder', 'kill', 'discard', 'draw'],
+        'archetype': 'Control'
     },
     
     # Red themes
@@ -230,9 +230,9 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Black Vampires', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
+    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Big Creatures', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
-    'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Azorius Control', 'Dimir Mill'],
+    'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
 }

@@ -142,19 +142,19 @@ Nested Shambler,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Black Sacrifice
 Dauthi Horror,Mixed,,common,B,Creature - Dauthi Horror,,2,2.0,1.0,Black Sacrifice
 Dauthi Slayer,Mixed,,common,B,Creature - Dauthi Soldier,,2,2.0,2.0,Black Sacrifice
 Cast Down,Mixed,,common,B,Instant,,2,,,Black Sacrifice
-Carrion Feeder,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Black Vampires
-Vampire Lacerator,Mixed,,common,B,Creature - Vampire Warrior,,1,2.0,2.0,Black Vampires
-Undying Malice,Mixed,,common,B,Instant,,1,,,Black Vampires
-Gift of Fangs,Mixed,,common,B,Enchantment - Aura,,1,,,Black Vampires
-Carnophage,Mixed,,common,B,Creature - Zombie,,1,2.0,2.0,Black Vampires
-Ecstatic Awakener,Mixed,,common,B,Creature - Human Wizard,,1,,,Black Vampires
-Grasping Scoundrel,Mixed,,common,B,Creature - Human Pirate,,1,1.0,1.0,Black Vampires
-Plagued Rusalka,Mixed,,common,B,Creature - Spirit,,1,1.0,1.0,Black Vampires
-Disfigure,Mixed,,common,B,Instant,,1,,,Black Vampires
-Tragic Slip,Mixed,,common,B,Instant,,1,,,Black Vampires
-Vendetta,Mixed,,common,B,Instant,,1,,,Black Vampires
-Village Rites,Mixed,,common,B,Instant,,1,,,Black Vampires
-Grim Bauble,Mixed,,common,B,Artifact,,1,,,Black Vampires
+Loathsome Curator,Mixed,,common,B,Creature - Gorgon Wizard,,5,5.0,4.0,Black Control
+Doom Blade,Mixed,,common,B,Instant,,2,,,Black Control
+Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Black Control
+Go for the Throat,Mixed,,common,B,Instant,,2,,,Black Control
+Ashes to Ashes,Mixed,,common,B,Sorcery,,3,,,Black Control
+Arms of Hadar,Mixed,,common,B,Sorcery,,4,,,Black Control
+Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Black Control
+Gray Merchant of Asphodel,Mixed,,common,B,Creature - Zombie,,5,2.0,4.0,Black Control
+Vampire Sovereign,Mixed,,common,B,Creature - Vampire Noble,,5,3.0,4.0,Black Control
+Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Black Control
+Undying Malice,Mixed,,common,B,Instant,,1,,,Black Control
+Vendetta,Mixed,,common,B,Instant,,1,,,Black Control
+Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Black Control
 Mogg War Marshal,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Goblins
 Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,1.0,1.0,Red Goblins
 Goblin Motivator,Mixed,,common,R,Creature - Goblin Warrior,,1,1.0,1.0,Red Goblins
@@ -280,11 +280,11 @@ Soul Manipulation,Mixed,,common,BU,Instant,,3,,,Dimir Mill
 Dinrova Horror,Mixed,,common,UB,Creature - Horror,,6,4.0,4.0,Dimir Mill
 Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,2.0,2.0,Dimir Mill
 Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
-Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Dimir Mill
+Grim Bauble,Mixed,,common,B,Artifact,,1,,,Dimir Mill
 Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Dimir Mill
 Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Dimir Mill
 Quick Study,Mixed,,common,U,Instant,,3,,,Dimir Mill
-Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Dimir Mill
+Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Dimir Mill
 Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
 Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
 Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
@@ -331,12 +331,12 @@ Silverquill Campus,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
 Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifedrain
 Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
 Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
-Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
-Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
 Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,2.0,3.0,Orzhov Lifedrain
 Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,1.0,2.0,Orzhov Lifedrain
 Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifedrain
 Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,2.0,4.0,Orzhov Lifedrain
+Palace Sentinels,Mixed,,common,W,Creature - Human Soldier,,4,2.0,4.0,Orzhov Lifedrain
+Rhox Veteran,Mixed,,common,W,Creature - Rhino Soldier,,4,2.0,4.0,Orzhov Lifedrain
 Eroded Canyon,Mixed,,common,,Land - Desert,,0,,,Izzet Spells Matter
 Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
@@ -361,8 +361,8 @@ Evolution Witness,Mixed,,common,G,Creature - Elf Shaman Mutant,,3,2.0,1.0,Golgar
 Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
 Voracious Varmint,Mixed,,common,G,Creature - Varmint,,2,2.0,2.0,Golgari Graveyard Value
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
-Mardu Skullhunter,Mixed,,common,B,Creature - Human Warrior,,2,2.0,1.0,Golgari Graveyard Value
 Crypt Rats,Mixed,,common,B,Creature - Rat,,3,1.0,1.0,Golgari Graveyard Value
+Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Golgari Graveyard Value
 Greatsword of Tyr,Mixed,,common,W,Artifact - Equipment,,2,,,Boros Equipment Aggro
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,Boros Equipment Aggro
 Vault Skirge,Mixed,,common,,Artifact Creature - Imp,,1,1.0,1.0,Boros Equipment Aggro
@@ -383,9 +383,9 @@ Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Ramp Control
 Snapping Voidcraw,Mixed,,common,UG,Creature - Eldrazi Turtle,,3,1.0,3.0,Simic Ramp Control
 Quandrix Pledgemage,Mixed,,common,GU,Creature - Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
 Mirrorshell Crab,Mixed,,common,U,Artifact Creature - Crab,,7,5.0,7.0,Simic Ramp Control
-Wall of Roots,Mixed,,common,G,Creature - Plant Wall,,2,0.0,5.0,Simic Ramp Control
 Treetop Snarespinner,Mixed,,common,G,Creature - Spider,,4,1.0,4.0,Simic Ramp Control
 Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,4.0,3.0,Simic Ramp Control
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Simic Ramp Control
 Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control
+You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Simic Ramp Control
