@@ -2,13 +2,12 @@ from gradio import Markdown
 import pandas as pd
 
 
-def export_cube_to_csv(cube_df, oracle_df, filename=None):
+def export_cube_to_csv(deck_dataframes, filename=None):
     """
-    Export the cube to a CSV file with the same structure as JumpstartCube_ThePauperCube_ULTIMATE_Final.csv
+    Export the jumpstart cube to a CSV file with the same structure as JumpstartCube_ThePauperCube_ULTIMATE_Final.csv
     
     Parameters:
-    - cube_df: The current cube dataframe
-    - oracle_df: The oracle dataframe with card details
+    - deck_dataframes: Dictionary mapping theme names to their deck DataFrames
     - filename: Output filename (if None, generates timestamp-based name)
     """
     
@@ -17,34 +16,35 @@ def export_cube_to_csv(cube_df, oracle_df, filename=None):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"JumpstartCube_Export_{timestamp}.csv"
     
-    print(f"Exporting cube to {filename}...")
+    print(f"Exporting jumpstart cube to {filename}...")
     
     # Create export dataframe with proper structure
     export_data = []
     
-    for _, card_row in cube_df.iterrows():
-        card_name = card_row['Name']
-        deck_name = card_row.get('Tags', '')
-        
-        # Find card details in oracle if needed
-        oracle_card = oracle_df[oracle_df['name'] == card_name] if 'name' in oracle_df.columns else pd.DataFrame()
-        
-        # Create export row matching JumpstartCube_ThePauperCube_ULTIMATE_Final.csv structure
-        export_row = {
-            'Name': card_name,
-            'Set': card_row.get('Set', 'Mixed'),  # Default to 'Mixed' like in the original file
-            'Collector Number': card_row.get('Collector Number', ''),
-            'Rarity': card_row.get('Rarity', 'common'),  # Default to 'common' like in the original file
-            'Color Identity': card_row.get('Color Identity', ''),
-            'Type': card_row.get('Type', ''),
-            'Mana Cost': card_row.get('Mana Cost', ''),
-            'CMC': card_row.get('CMC', ''),
-            'Power': card_row.get('Power', ''),
-            'Toughness': card_row.get('Toughness', ''),
-            'Tags': deck_name
-        }
-        
-        export_data.append(export_row)
+    for theme_name, deck_df in deck_dataframes.items():
+        if deck_df.empty:
+            continue
+            
+        for _, card_row in deck_df.iterrows():
+            # Map from oracle_df columns to export format
+            card_name = card_row['name']
+            
+            # Create export row matching JumpstartCube_ThePauperCube_ULTIMATE_Final.csv structure
+            export_row = {
+                'Name': card_name,
+                'Set': 'Mixed',  # Default to 'Mixed' like in the original file
+                'Collector Number': '',  # Not available in oracle_df
+                'Rarity': 'common',  # Default to 'common' like in the original file
+                'Color Identity': card_row.get('Color', ''),
+                'Type': card_row.get('Type', ''),
+                'Mana Cost': '',  # Not available in oracle_df
+                'CMC': card_row.get('CMC', ''),
+                'Power': card_row.get('Power', ''),
+                'Toughness': card_row.get('Toughness', ''),
+                'Tags': theme_name  # Use theme name as the deck tag
+            }
+            
+            export_data.append(export_row)
     
     # Create dataframe and export
     export_df = pd.DataFrame(export_data)
@@ -75,14 +75,14 @@ def export_cube_to_csv(cube_df, oracle_df, filename=None):
     
     return filename
 
-def quick_export_cube(cube_df, oracle_df, filename=None):
-    """Quick wrapper to export and display success message"""
-    filename = export_cube_to_csv(cube_df, oracle_df, filename)
+def quick_export_cube(deck_dataframes, filename=None):
+    """Quick wrapper to export jumpstart cube and display success message"""
+    filename = export_cube_to_csv(deck_dataframes, filename)
     print(Markdown(f"**File:** `{filename}`"))
     return filename
 
-def validate_export(filename, original_cube_df):
-    """Validate that the exported file matches the original cube"""
+def validate_export(filename, deck_dataframes):
+    """Validate that the exported file matches the original deck dataframes"""
     
     try:
         # Read the exported file
@@ -90,22 +90,26 @@ def validate_export(filename, original_cube_df):
         
         print(f"🔍 Validating export: {filename}")
         
-        # Check card count
-        original_count = len(original_cube_df)
+        # Calculate expected counts
+        expected_count = sum(len(deck_df) for deck_df in deck_dataframes.values())
         exported_count = len(exported_df)
         
-        if original_count == exported_count:
+        if expected_count == exported_count:
             print(f"✅ Card count matches: {exported_count} cards")
         else:
-            print(f"❌ Card count mismatch: Original {original_count}, Exported {exported_count}")
+            print(f"❌ Card count mismatch: Expected {expected_count}, Exported {exported_count}")
             return False
         
-        # Check that all original cards are present
-        original_cards = set(original_cube_df['Name'].tolist())
+        # Check that all cards are present
+        expected_cards = set()
+        for deck_df in deck_dataframes.values():
+            if not deck_df.empty:
+                expected_cards.update(deck_df['name'].tolist())
+        
         exported_cards = set(exported_df['Name'].tolist())
         
-        missing_cards = original_cards - exported_cards
-        extra_cards = exported_cards - original_cards
+        missing_cards = expected_cards - exported_cards
+        extra_cards = exported_cards - expected_cards
         
         if not missing_cards and not extra_cards:
             print("✅ All cards match between original and export")
@@ -117,15 +121,20 @@ def validate_export(filename, original_cube_df):
             return False
         
         # Check deck assignments
-        original_assignments = original_cube_df.set_index('Name')['Tags'].to_dict()
+        expected_assignments = {}
+        for theme_name, deck_df in deck_dataframes.items():
+            if not deck_df.empty:
+                for card_name in deck_df['name']:
+                    expected_assignments[card_name] = theme_name
+        
         exported_assignments = exported_df.set_index('Name')['Tags'].to_dict()
         
         mismatched_assignments = 0
-        for card in original_cards:
+        for card in expected_cards:
             if card in exported_assignments:
-                orig_deck = original_assignments.get(card, '')
-                exp_deck = exported_assignments.get(card, '')
-                if str(orig_deck) != str(exp_deck):
+                expected_theme = expected_assignments.get(card, '')
+                exported_theme = exported_assignments.get(card, '')
+                if str(expected_theme) != str(exported_theme):
                     mismatched_assignments += 1
         
         if mismatched_assignments == 0:
