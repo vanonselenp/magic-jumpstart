@@ -141,18 +141,18 @@ Massive Might,Mixed,,common,G,Instant,,1,,,Green Midrange
 Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Green Midrange
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Midrange
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Midrange
-Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Elves
-Generous Ent,Mixed,,common,G,Creature - Treefolk,,6,,,Green Elves
-Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,,,Green Elves
-Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,,,Green Elves
-Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,,,Green Elves
-Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,,,Green Elves
-Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Green Elves
-Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Green Elves
-Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,,,Green Elves
-Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,,,Green Elves
-Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Elves
-Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,,,Green Elves
+Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Big Creatures
+Generous Ent,Mixed,,common,G,Creature - Treefolk,,6,,,Green Big Creatures
+Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,,,Green Big Creatures
+Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,,,Green Big Creatures
+Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,,,Green Big Creatures
+Krosan Tusker,Mixed,,common,G,Creature - Boar Beast,,7,,,Green Big Creatures
+Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Green Big Creatures
+Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Green Big Creatures
+Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,,,Green Big Creatures
+Urban Daggertooth,Mixed,,common,G,Creature - Dinosaur,,4,,,Green Big Creatures
+Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Big Creatures
+Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,,,Green Big Creatures
 Arbor Elf,Mixed,,common,G,Creature - Elf Druid,,1,,,Green Ramp
 Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,,,Green Midrange
 Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Ramp
@@ -179,7 +179,7 @@ You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Green Stompy
 Blastoderm,Mixed,,common,G,Creature - Beast,,4,,,Gruul Aggro/Beatdown
 Branching Bolt,Mixed,,common,RG,Instant,,3,,,Gruul Aggro/Beatdown
 Burning-Tree Emissary,Mixed,,common,RG,Creature - Human Shaman,,2,,,Gruul Aggro/Beatdown
-Clockwork Percussionist,Mixed,,common,R,Artifact Creature - Monkey Toy,,1,,,Red Goblins
+Clockwork Percussionist,Mixed,,common,R,Artifact Creature - Monkey Toy,,1,,,Red Small Creatures
 Frenzied Goblin,Mixed,,common,R,Creature - Goblin Berserker,,1,,,Gruul Aggro/Beatdown
 Goblin Anarchomancer,Mixed,,common,GR,Creature - Goblin Shaman,,2,,,Gruul Aggro/Beatdown
 Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,,,Gruul Aggro/Beatdown
@@ -250,17 +250,17 @@ Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,,,Red Burn
 Scholar of Combustion,Mixed,,common,R,Creature - Human Wizard,,4,,,Red Burn
 Skewer the Critics,Mixed,,common,R,Sorcery,,3,,,Red Burn
 Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,,,Red Burn
-Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,,,Red Goblins
-Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,,,Red Goblins
-Fireball,Mixed,,common,R,Sorcery,,1,,,Red Goblins
-Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Goblins
-Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Goblins
-Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Red Goblins
-Rally at the Hornburg,Mixed,,common,R,Creature Sorcery,,2,,,Red Goblins
-Scorched Rusalka,Mixed,,common,R,Creature - Spirit,,1,,,Red Goblins
-Searing Spear,Mixed,,common,R,Instant,,2,,,Red Goblins
-Thriving Skyclaw,Mixed,,common,R,Creature - Cat Dragon,,4,,,Red Goblins
-Witty Roastmaster,Mixed,,common,R,Creature - Devil Citizen,,3,,,Red Goblins
+Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,,,Red Small Creatures
+Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,,,Red Small Creatures
+Fireball,Mixed,,common,R,Sorcery,,1,,,Red Small Creatures
+Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Small Creatures
+Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Small Creatures
+Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Red Small Creatures
+Rally at the Hornburg,Mixed,,common,R,Creature Sorcery,,2,,,Red Small Creatures
+Scorched Rusalka,Mixed,,common,R,Creature - Spirit,,1,,,Red Small Creatures
+Searing Spear,Mixed,,common,R,Instant,,2,,,Red Small Creatures
+Thriving Skyclaw,Mixed,,common,R,Creature - Cat Dragon,,4,,,Red Small Creatures
+Witty Roastmaster,Mixed,,common,R,Creature - Devil Citizen,,3,,,Red Small Creatures
 Armadillo Cloak,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Control
 Captured by Lagacs,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Control
 Faithful Watchdog,Mixed,,common,GW,Creature - Dog,,2,,,Selesnya Control
@@ -305,13 +305,13 @@ Custodi Squire,Mixed,,common,W,Creature - Spirit Cleric,,5,,,White Equipment
 Deftblade Elite,Mixed,,common,W,Creature - Human Soldier,,1,,,White Equipment
 Doomed Traveler,Mixed,,common,W,Creature - Human Soldier,,1,,,White Equipment
 Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,,,White Equipment
-Imperial Oath,Mixed,,common,W,Creature Sorcery,,6,,,White Equipment
+Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,White Equipment
 Miner's Guidewing,Mixed,,common,W,Creature - Bird,,1,,,White Equipment
 Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,,,White Equipment
 Planar Disruption,Mixed,,common,W,Enchantment - Aura,,2,,,White Equipment
-Prismatic Strands,Mixed,,common,W,Instant,,3,,,White Equipment
+Vulshok Morningstar,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
 Seeker of the Way,Mixed,,common,W,Creature - Human Warrior,,2,,,White Equipment
-Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,White Equipment
+Glimmerlight,Mixed,,common,,Artifact - Equipment,,2,,,White Equipment
 Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,,,White Tokens
 Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,,,White Tokens
 Combat Professor,Mixed,,common,W,Creature - Bird Cleric,,4,,,White Tokens
@@ -328,7 +328,7 @@ Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,White Tokens
 Cathar Commando,Mixed,,common,W,Creature - Human Soldier,,2,,,White Control
 Plagued Rusalka,Mixed,,common,B,Creature - Spirit,,1,,,Black Control
 Wild Growth,Mixed,,common,G,Enchantment - Aura,,1,,,Green Ramp
-Teetering Peaks,Mixed,,common,R,Land,,0,,,Red Goblins
+Teetering Peaks,Mixed,,common,R,Land,,0,,,Red Small Creatures
 Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Burn/Damage
 Goblin Electromancer,Mixed,,common,UR,Creature - Goblin Wizard,,2,,,Izzet Control
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Rakdos Burn/Damage
@@ -363,7 +363,7 @@ Bubble Snare,Mixed,,common,U,Enchantment - Aura,,1,,,Azorius Evasion/Flying
 Grasping Scoundrel,Mixed,,common,B,Creature - Human Pirate,,1,,,Black Aggro
 Guildsworn Prowler,Mixed,,common,B,Creature - Tiefling Rogue Assassin,,2,,,Black Control
 Scrapwork Mutt,Mixed,,common,,Artifact Creature - Dog,,2,,,Black Graveyard
-Basking Broodscale,Mixed,,common,G,Creature - Eldrazi Lizard,,2,,,Green Elves
+Basking Broodscale,Mixed,,common,G,Creature - Eldrazi Lizard,,2,,,Green Big Creatures
 Cruel Witness,Mixed,,common,U,Creature - Bird Horror,,4,,,Blue Card Draw
 Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,,,Blue Control
 Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,,,Blue Flyers
