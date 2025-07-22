@@ -1,3 +1,5 @@
+**Note**: I wrote this as an experiment in learning how to vibe code. The end result came out better than I expected with a solution to a problem I had at the time. This was a fun experiment. 
+
 # Magic: The Gathering Jumpstart Cube Constructor
 
 An intelligent deck construction system for building themed Magic: The Gathering Jumpstart cubes with perfect theme coherence and balanced gameplay from a Pauper Cube. 
