@@ -1,7 +1,7 @@
 from IPython.display import Markdown, display
 import pandas as pd
 
-from src.deck import calculate_card_theme_score, is_card_playable_in_colors
+from src.deck import calculate_card_theme_score, is_card_playable_in_colors, validate_jumpstart_deck_composition
 
 
 def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_results, num_swaps=1):
@@ -29,10 +29,15 @@ def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_resul
     expected_themes = deck_analysis['expected_themes']
     deck_colors = deck_analysis['deck_colors']
     
+    # Get current deck composition for Jumpstart rules
+    current_deck_card_names = current_deck_cards['Name'].tolist()
+    current_composition = validate_jumpstart_deck_composition(current_deck_card_names, oracle_df)
+    
     display(Markdown(f"Analyzing deck: {deck_name}"))
     display(Markdown(f"Current coherence: {current_coherence:.1f}"))
     display(Markdown(f"Expected themes: {', '.join(expected_themes)}"))
     display(Markdown(f"Deck colors: {deck_colors}"))
+    display(Markdown(f"Composition: {current_composition['creature_count']} creatures, {current_composition['non_creature_count']} non-creatures (Valid: {current_composition['is_valid']})"))
     
     # Get potential candidate cards
     candidates = get_candidate_cards_for_swap(deck_name, cube_df, oracle_df, deck_colors, expected_themes)
@@ -46,7 +51,7 @@ def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_resul
         }
     
     # Find worst performing cards in current deck to consider removing
-    worst_cards = find_worst_cards_in_deck(current_deck_cards, oracle_df, expected_themes, deck_colors)
+    worst_cards = find_worst_cards_in_deck(current_deck_cards, oracle_df, expected_themes, deck_colors, current_composition)
     
     display(Markdown(f"Identified {len(worst_cards)} cards as potential removal candidates"))
     
@@ -69,6 +74,10 @@ def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_resul
 
 def get_candidate_cards_for_swap(deck_name, cube_df, oracle_df, deck_colors, expected_themes):
     """Get all cards that could potentially be good additions to this deck"""
+    
+    # Get current deck composition for Jumpstart rules
+    current_deck_cards = cube_df[cube_df['Tags'] == deck_name]['Name'].tolist()
+    current_composition = validate_jumpstart_deck_composition(current_deck_cards, oracle_df)
     
     # Get cards already in the cube
     assigned_cards = set(cube_df['Name'].tolist())
@@ -96,8 +105,8 @@ def get_candidate_cards_for_swap(deck_name, cube_df, oracle_df, deck_colors, exp
         if not is_card_playable_in_colors(card, deck_colors):
             continue
             
-        # Calculate theme score for this card
-        theme_score, _ = calculate_card_theme_score(card, expected_themes)
+        # Calculate theme score for this card (considering current deck composition)
+        theme_score, _ = calculate_card_theme_score(card, expected_themes, current_composition)
         
         # Only consider cards with some theme relevance
         if theme_score > 0:
@@ -143,7 +152,7 @@ def get_candidate_cards_for_swap(deck_name, cube_df, oracle_df, deck_colors, exp
     return candidates
 
 
-def find_worst_cards_in_deck(deck_cards, oracle_df, expected_themes, deck_colors):
+def find_worst_cards_in_deck(deck_cards, oracle_df, expected_themes, deck_colors, current_composition=None):
     """Identify the worst performing cards in the current deck for potential removal"""
     
     card_scores = []
@@ -163,8 +172,8 @@ def find_worst_cards_in_deck(deck_cards, oracle_df, expected_themes, deck_colors
         
         card = oracle_card.iloc[0]
         
-        # Calculate various scores
-        theme_score, _ = calculate_card_theme_score(card, expected_themes)
+        # Calculate various scores (considering current deck composition)
+        theme_score, _ = calculate_card_theme_score(card, expected_themes, current_composition)
         color_score = 1.0 if is_card_playable_in_colors(card, deck_colors) else 0.0
         
         # Check mana cost efficiency
