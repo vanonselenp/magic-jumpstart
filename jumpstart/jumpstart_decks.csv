@@ -90,19 +90,19 @@ Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature - Human Ninja,,2,2.0,1.
 Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,1.0,3.0,Blue Card Draw
 Condescend,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Sword Coast Serpent,Mixed,,common,U,Creature - Serpent Dragon,,7,6.0,6.0,Blue Card Draw
-Bubble Snare,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
-Weakstone's Subjugation,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
-Zephyr Winder,Mixed,,common,U,Creature - Elemental,,2,2.0,1.0,Blue Merfolk
-Snap,Mixed,,common,U,Instant,,2,,,Blue Merfolk
-Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Blue Merfolk
-Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Blue Merfolk
-Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Merfolk
-Repeal,Mixed,,common,U,Instant,,1,,,Blue Merfolk
-Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Merfolk
-Serum Visions,Mixed,,common,U,Sorcery,,1,,,Blue Merfolk
-Unable to Scream,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
-Witness Protection,Mixed,,common,U,Enchantment - Aura,,1,,,Blue Merfolk
-Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Blue Merfolk
+Mistral Singer,Mixed,,common,U,Creature - Siren,,3,2.0,2.0,Blue Tempo
+Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Tempo
+Zephyr Winder,Mixed,,common,U,Creature - Elemental,,2,2.0,1.0,Blue Tempo
+Eldrazi Skyspawner,Mixed,,common,U,Creature - Eldrazi Drone,,3,2.0,1.0,Blue Tempo
+Man-o'-War,Mixed,,common,U,Creature - Jellyfish,,3,2.0,2.0,Blue Tempo
+Winter Eladrin,Mixed,,common,U,Creature - Faerie Elf Wizard,,3,2.0,2.0,Blue Tempo
+Repeal,Mixed,,common,U,Instant,,1,,,Blue Tempo
+Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Tempo
+Snap,Mixed,,common,U,Instant,,2,,,Blue Tempo
+Capsize,Mixed,,common,U,Instant,,3,,,Blue Tempo
+Displace,Mixed,,common,U,Instant,,3,,,Blue Tempo
+Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Blue Tempo
+Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,2.0,3.0,Blue Tempo
 Putrid Goblin,Mixed,,common,B,Creature - Zombie Goblin,,2,2.0,2.0,Black Zombies
 Gravedigger,Mixed,,common,B,Creature - Zombie,,4,2.0,2.0,Black Zombies
 Dread Return,Mixed,,common,B,Sorcery,,4,,,Black Zombies
@@ -279,12 +279,12 @@ Shardless Outlander,Mixed,,common,,Artifact Creature - Construct Scout,,7,6.0,5.
 Soul Manipulation,Mixed,,common,BU,Instant,,3,,,Dimir Mill
 Dinrova Horror,Mixed,,common,UB,Creature - Horror,,6,4.0,4.0,Dimir Mill
 Dimir Guildmage,Mixed,,common,UB,Creature - Human Wizard,,2,2.0,2.0,Dimir Mill
+Deranged Assistant,Mixed,,common,U,Creature - Human Wizard,,2,1.0,1.0,Dimir Mill
 Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Dimir Mill
 Looter il-Kor,Mixed,,common,U,Creature - Kor Rogue,,2,1.0,1.0,Dimir Mill
+Merfolk Looter,Mixed,,common,U,Creature - Merfolk Rogue,,2,1.0,1.0,Dimir Mill
 Quick Study,Mixed,,common,U,Instant,,3,,,Dimir Mill
 Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Dimir Mill
-Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Dimir Mill
-Peregrine Drake,Mixed,,common,U,Creature - Drake,,5,2.0,3.0,Dimir Mill
 Fireblade Artist,Mixed,,common,BR,Creature - Human Shaman,,2,2.0,2.0,Rakdos Aggro
 Tramway Station,Mixed,,common,BR,Land,,0,,,Rakdos Aggro
 Jagged Barrens,Mixed,,common,,Land - Desert,,0,,,Rakdos Aggro
@@ -332,11 +332,11 @@ Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifedrain
 Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
 Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifedrain
 Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
+Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifedrain
 Ardenvale Tactician,Mixed,,common,W,Creature - Human Knight ,,3,2.0,3.0,Orzhov Lifedrain
 Heliod's Pilgrim,Mixed,,common,W,Creature - Human Cleric,,3,1.0,2.0,Orzhov Lifedrain
 Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifedrain
 Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,2.0,4.0,Orzhov Lifedrain
-Palace Sentinels,Mixed,,common,W,Creature - Human Soldier,,4,2.0,4.0,Orzhov Lifedrain
 Eroded Canyon,Mixed,,common,,Land - Desert,,0,,,Izzet Spells Matter
 Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Izzet Spells Matter
@@ -346,10 +346,10 @@ Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Spells Matter
 Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Izzet Spells Matter
 Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,3.0,2.0,Izzet Spells Matter
 Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,2.0,1.0,Izzet Spells Matter
-Capsize,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
-Displace,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
-Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
+Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Izzet Spells Matter
+Serum Visions,Mixed,,common,U,Sorcery,,1,,,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
+Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Golgari Rot Farm,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
 Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Golgari Graveyard Value
 Witherbloom Campus,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value

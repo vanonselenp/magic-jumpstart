@@ -48,11 +48,11 @@ MONO_COLOR_THEMES = {
         'keywords': ['draw', 'card', 'scry', 'look', 'library', 'hand', 'cycling'],
         'archetype': 'Control'
     },
-    'Blue Merfolk': {
+    'Blue Tempo': {
         'colors': ['U'],
-        'strategy': 'Aggressive merfolk tribal with evasion and tribal synergies',
-        'keywords': ['merfolk', 'tribal', 'islandwalk', 'counter', 'tap', 'untap'],
-        'archetype': 'Aggro'
+        'strategy': 'Efficient creatures with evasion and tempo spells for board control',
+        'keywords': ['bounce', 'return', 'counter', 'flying', 'flash', 'prowess', 'tempo', 'efficient', 'evasion'],
+        'archetype': 'Tempo'
     },
     
     # Black themes
@@ -230,11 +230,11 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Blue Merfolk', 'Black Vampires', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
+    'Aggressive': ['White Soldiers', 'Black Vampires', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Big Creatures', 'Selesnya Tokens', 'Orzhov Lifedrain', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
-    'Tempo': ['Blue Flying', 'Izzet Spells Matter']
+    'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
 }
 
 # Color identity mapping for validation
