@@ -4,7 +4,7 @@ import pandas as pd
 from src.deck import calculate_card_theme_score, is_card_playable_in_colors
 
 
-def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_results, num_swaps=2):
+def find_best_card_swaps_for_deck(deck_name, cube_df, oracle_df, coherence_results, num_swaps=1):
     """
     Find the best card swaps to improve a deck's coherence.
     
