@@ -104,6 +104,7 @@ The system enforces realistic deck building constraints:
 - **Creature Limit**: Maximum 9 creatures per deck  
 - **Land Limits**: 1 land for mono-color, 3 for dual-color themes
 - **Card Uniqueness**: No card appears in multiple decks
+- **Basic Land**: 7 Basic land to be added at the end
 
 ## Project Structure
 
