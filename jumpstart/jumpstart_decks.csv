@@ -185,27 +185,27 @@ Bogardan Dragonheart,Mixed,,common,R,Creature - Human Shaman,,3,2.0,2.0,Red Drag
 Thriving Skyclaw,Mixed,,common,R,Creature - Cat Dragon,,4,3.0,2.0,Red Dragons
 Wrangle,Mixed,,common,R,Sorcery,,2,,,Red Dragons
 Goblin Bushwhacker,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Dragons
-Hobblefiend,Mixed,,common,R,Creature - Devil,,2,2.0,1.0,Red Dragons
 Mayhem Patrol,Mixed,,common,R,Creature - Devil Warrior,,2,1.0,2.0,Red Dragons
 Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,2.0,2.0,Red Dragons
 Yavimaya Steelcrusher,Mixed,,common,R,Creature - Ape Warrior,,2,2.0,2.0,Red Dragons
-Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,2.0,3.0,Red Dragons
 Oliphaunt,Mixed,,common,R,Creature - Elephant,,6,6.0,4.0,Red Dragons
 Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Red Dragons
+Scrapwork Mutt,Mixed,,common,R,Artifact Creature - Dog,,2,2.0,1.0,Red Dragons
 Teetering Peaks,Mixed,,common,R,Land,,0,,,Red Dragons
+Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,2.0,2.0,Red Dragons
 Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Dragons
 Leonin Bola,Mixed,,common,,Artifact - Equipment,,1,,,Red Artifacts
 Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Artifacts
 Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,Red Artifacts
 Aether Chaser,Mixed,,common,R,Creature - Human Artificer,,2,2.0,1.0,Red Artifacts
-Scrapwork Mutt,Mixed,,common,R,Artifact Creature - Dog,,2,2.0,1.0,Red Artifacts
 Orcish Hellraiser,Mixed,,common,R,Creature - Orc Warrior,,2,3.0,2.0,Red Artifacts
 Thriving Grubs,Mixed,,common,R,Creature - Gremlin,,2,2.0,1.0,Red Artifacts
 Volatile Wanderglyph,Mixed,,common,R,Artifact Creature - Golem,,2,2.0,2.0,Red Artifacts
-Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,2.0,2.0,Red Artifacts
 Scholar of Combustion,Mixed,,common,R,Creature - Human Wizard,,4,3.0,2.0,Red Artifacts
 Fireblast,Mixed,,common,R,Instant,,6,,,Red Artifacts
 Underworld Rage-Hound,Mixed,,common,R,Creature - Elemental Dog,,2,3.0,1.0,Red Artifacts
+Witty Roastmaster,Mixed,,common,R,Creature - Devil Citizen,,3,3.0,2.0,Red Artifacts
+Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,2.0,1.0,Red Artifacts
 Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Red Artifacts
 Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Elves
 Jewel Thief,Mixed,,common,G,Creature - Cat Rogue,,3,3.0,3.0,Green Elves
@@ -234,7 +234,6 @@ Farseek,Mixed,,common,G,Sorcery,,2,,,Green Ramp
 Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,3.0,3.0,Green Ramp
 Grapple with the Past,Mixed,,common,G,Instant,,2,,,Green Ramp
 Bannerhide Krushok,Mixed,,common,G,Creature - Beast,,4,4.0,4.0,Green Stompy
-Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,2.0,2.0,Green Stompy
 Hazard of the Dunes,Mixed,,common,G,Creature - Wurm,,4,4.0,4.0,Green Stompy
 Bramble Wurm,Mixed,,common,G,Creature - Wurm,,7,7.0,6.0,Green Stompy
 Ram Through,Mixed,,common,G,Instant,,2,,,Green Stompy
@@ -243,12 +242,12 @@ Blastoderm,Mixed,,common,G,Creature - Beast,,4,5.0,5.0,Green Stompy
 Bloom Hulk,Mixed,,common,G,Creature - Plant Elemental,,4,4.0,4.0,Green Stompy
 Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,4.0,4.0,Green Stompy
 Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,5.0,4.0,Green Stompy
+Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Stompy
 Giant Growth,Mixed,,common,G,Instant,,1,,,Green Stompy
 Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
 Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Stompy
 Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Green Beasts
 Sarulf's Packmate,Mixed,,common,G,Creature - Wolf,,4,3.0,3.0,Green Beasts
-Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Beasts
 Rancor,Mixed,,common,G,Enchantment - Aura,,1,,,Green Beasts
 Jade Avenger,Mixed,,common,G,Creature - Frog Samurai,,2,2.0,2.0,Green Beasts
 Mother Bear,Mixed,,common,G,Creature - Bear,,2,2.0,2.0,Green Beasts
@@ -256,6 +255,7 @@ Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,2.0,2.0,Green Beasts
 Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,3.0,1.0,Green Beasts
 Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,1.0,0.0,Green Beasts
 Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
+Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,4.0,4.0,Green Beasts
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Beasts
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Green Beasts
 Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Green Beasts
@@ -298,19 +298,19 @@ Porcelain Legionnaire,Mixed,,common,,Artifact Creature - Soldier,,2,3.0,1.0,Rakd
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
 Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,Rakdos Aggro
 Carrion Feeder,Mixed,,common,B,Creature - Zombie,,1,1.0,1.0,Rakdos Aggro
-Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Big Creatures
-Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Gruul Big Creatures
-Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Big Creatures
-Goblin Anarchomancer,Mixed,,common,GR,Creature - Goblin Shaman,,2,2.0,2.0,Gruul Big Creatures
-Branching Bolt,Mixed,,common,RG,Instant,,3,,,Gruul Big Creatures
-Writhing Chrysalis,Mixed,,common,GR,Creature - Eldrazi Drone,,4,2.0,3.0,Gruul Big Creatures
-Burning-Tree Emissary,Mixed,,common,RG,Creature - Human Shaman,,2,2.0,2.0,Gruul Big Creatures
-Juggernaut,Mixed,,common,,Artifact Creature - Juggernaut,,4,5.0,3.0,Gruul Big Creatures
-Bonder's Ornament,Mixed,,common,,Artifact,,3,,,Gruul Big Creatures
-Pristine Talisman,Mixed,,common,,Artifact,,3,,,Gruul Big Creatures
-Serrated Arrows,Mixed,,common,,Artifact,,4,,,Gruul Big Creatures
-Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Gruul Big Creatures
-Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Gruul Big Creatures
+Gnarlid Colony,Mixed,,common,G,Creature - Beast,,2,2.0,2.0,Gruul Midrange
+Hobblefiend,Mixed,,common,R,Creature - Devil,,2,2.0,1.0,Gruul Midrange
+Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,2.0,3.0,Gruul Midrange
+Burning-Tree Emissary,Mixed,,common,RG,Creature - Human Shaman,,2,2.0,2.0,Gruul Midrange
+Juggernaut,Mixed,,common,,Artifact Creature - Juggernaut,,4,5.0,3.0,Gruul Midrange
+Ulamog's Crusher,Mixed,,common,,Creature - Eldrazi,,8,8.0,8.0,Gruul Midrange
+Racers' Ring,Mixed,,common,GR,Land,,0,,,Gruul Midrange
+Goblin Anarchomancer,Mixed,,common,GR,Creature - Goblin Shaman,,2,2.0,2.0,Gruul Midrange
+Branching Bolt,Mixed,,common,RG,Instant,,3,,,Gruul Midrange
+Writhing Chrysalis,Mixed,,common,GR,Creature - Eldrazi Drone,,4,2.0,3.0,Gruul Midrange
+Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Gruul Midrange
+Gruul Turf,Mixed,,common,RG,Land,,0,,,Gruul Midrange
+Serrated Arrows,Mixed,,common,,Artifact,,4,,,Gruul Midrange
 Botanical Plaza,Mixed,,common,GW,Land,,0,,,Selesnya Tokens
 Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Selesnya Tokens
 Selesnya Sanctuary,Mixed,,common,WG,Land,,0,,,Selesnya Tokens
@@ -318,12 +318,12 @@ Faithful Watchdog,Mixed,,common,GW,Creature - Dog,,2,0.0,0.0,Selesnya Tokens
 Armadillo Cloak,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Tokens
 Captured by Lagacs,Mixed,,common,GW,Enchantment - Aura,,3,,,Selesnya Tokens
 Safehold Elite,Mixed,,common,GW,Creature - Elf Scout,,2,2.0,2.0,Selesnya Tokens
+Bonder's Ornament,Mixed,,common,,Artifact,,3,,,Selesnya Tokens
+Pristine Talisman,Mixed,,common,,Artifact,,3,,,Selesnya Tokens
 Sandsteppe Outcast,Mixed,,common,W,Creature - Human Warrior,,3,2.0,1.0,Selesnya Tokens
 Eldrazi Repurposer,Mixed,,common,G,Creature - Eldrazi Drone,,3,3.0,3.0,Selesnya Tokens
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Selesnya Tokens
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Selesnya Tokens
-Battle Screech,Mixed,,common,W,Creature Sorcery,,4,,,Selesnya Tokens
-Triplicate Spirits,Mixed,,common,W,Creature Sorcery,,6,,,Selesnya Tokens
 Tithe Drinker,Mixed,,common,BW,Creature - Vampire,,2,2.0,1.0,Orzhov Lifedrain
 Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifedrain
 Scoured Barrens,Mixed,,common,,Land,,0,,,Orzhov Lifedrain
@@ -345,11 +345,11 @@ Bloodwater Entity,Mixed,,common,UR,Creature - Elemental,,3,2.0,2.0,Izzet Spells 
 Izzet Charm,Mixed,,common,UR,Instant,,2,,,Izzet Spells Matter
 Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Izzet Spells Matter
 Spelleater Wolverine,Mixed,,common,R,Creature - Wolverine,,3,3.0,2.0,Izzet Spells Matter
-Ardent Elementalist,Mixed,,common,R,Creature - Human Shaman,,4,2.0,1.0,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Goblin Surprise,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Izzet Spells Matter
+Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Izzet Spells Matter
 Golgari Rot Farm,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
 Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Golgari Graveyard Value
 Witherbloom Campus,Mixed,,common,BG,Land,,0,,,Golgari Graveyard Value
@@ -373,9 +373,9 @@ Lorehold Campus,Mixed,,common,RW,Land,,0,,,Boros Equipment Aggro
 Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
 Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Equipment Aggro
 Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,3.0,1.0,Boros Equipment Aggro
+Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Boros Equipment Aggro
+Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Boros Equipment Aggro
 Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,Boros Equipment Aggro
-Tuskeri Firewalker,Mixed,,common,R,Creature - Human Berserker,,3,3.0,2.0,Boros Equipment Aggro
-Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Boros Equipment Aggro
 Quandrix Campus,Mixed,,common,GU,Land,,0,,,Simic Ramp Control
 Simic Growth Chamber,Mixed,,common,UG,Land,,0,,,Simic Ramp Control
 Tangled Islet,Mixed,,common,GU,Land - Forest Island,,0,,,Simic Ramp Control
