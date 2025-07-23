@@ -2,13 +2,14 @@ from gradio import Markdown
 import pandas as pd
 
 
-def export_cube_to_csv(deck_dataframes, filename=None):
+def export_cube_to_csv(deck_dataframes, filename=None, oracle_df=None):
     """
     Export the jumpstart cube to a CSV file with the same structure as JumpstartCube_ThePauperCube_ULTIMATE_Final.csv
     
     Parameters:
     - deck_dataframes: Dictionary mapping theme names to their deck DataFrames
     - filename: Output filename (if None, generates timestamp-based name)
+    - oracle_df: Original oracle DataFrame to identify unassigned cards (optional)
     """
     
     if filename is None:
@@ -46,6 +47,43 @@ def export_cube_to_csv(deck_dataframes, filename=None):
             
             export_data.append(export_row)
     
+    # Add unassigned cards if oracle_df is provided
+    if oracle_df is not None:
+        # Get all assigned card names
+        assigned_cards = set()
+        for deck_df in deck_dataframes.values():
+            if not deck_df.empty:
+                assigned_cards.update(deck_df['name'].tolist())
+        
+        # Find unassigned cards
+        all_oracle_cards = set(oracle_df['name'].tolist())
+        unassigned_cards = all_oracle_cards - assigned_cards
+        
+        if unassigned_cards:
+            print(f"Adding {len(unassigned_cards)} unassigned cards...")
+            
+            # Add unassigned cards to export
+            for card_name in sorted(unassigned_cards):  # Sort for consistent ordering
+                # Find the card in oracle_df
+                card_row = oracle_df[oracle_df['name'] == card_name].iloc[0]
+                
+                # Create export row for unassigned card
+                export_row = {
+                    'Name': card_name,
+                    'Set': 'Mixed',
+                    'Collector Number': '',
+                    'Rarity': 'common',
+                    'Color Identity': card_row.get('Color', ''),
+                    'Type': card_row.get('Type', ''),
+                    'Mana Cost': '',
+                    'CMC': card_row.get('CMC', ''),
+                    'Power': card_row.get('Power', ''),
+                    'Toughness': card_row.get('Toughness', ''),
+                    'Tags': 'Unassigned'  # Tag for unassigned cards
+                }
+                
+                export_data.append(export_row)
+    
     # Create dataframe and export
     export_df = pd.DataFrame(export_data)
     
@@ -60,24 +98,38 @@ def export_cube_to_csv(deck_dataframes, filename=None):
     
     # Show summary statistics
     deck_counts = export_df['Tags'].value_counts()
+    unassigned_count = deck_counts.get('Unassigned', 0)
+    assigned_count = len(export_df) - unassigned_count
+    
     print(f"\n📊 Export Summary:")
     print(f"Total cards: {len(export_df)}")
-    print(f"Number of decks: {len(deck_counts)}")
+    print(f"Assigned cards: {assigned_count}")
+    if unassigned_count > 0:
+        print(f"Unassigned cards: {unassigned_count}")
+    print(f"Number of decks: {len(deck_counts) - (1 if unassigned_count > 0 else 0)}")  # Don't count "Unassigned" as a deck
     
     if len(deck_counts) > 0:
         print(f"\nDeck breakdown:")
-        for deck, count in deck_counts.head(10).items():
+        
+        # Show regular decks first (exclude Unassigned)
+        regular_decks = deck_counts[deck_counts.index != 'Unassigned'] if 'Unassigned' in deck_counts.index else deck_counts
+        
+        for deck, count in regular_decks.head(10).items():
             if deck and deck.strip():
                 print(f"  {deck}: {count} cards")
         
-        if len(deck_counts) > 10:
-            print(f"  ... and {len(deck_counts) - 10} more decks")
+        # Show unassigned cards separately at the end
+        if unassigned_count > 0:
+            print(f"  Unassigned: {unassigned_count} cards")
+        
+        if len(regular_decks) > 10:
+            print(f"  ... and {len(regular_decks) - 10} more decks")
     
     return filename
 
-def quick_export_cube(deck_dataframes, filename=None):
+def quick_export_cube(deck_dataframes, filename=None, oracle_df=None):
     """Quick wrapper to export jumpstart cube and display success message"""
-    filename = export_cube_to_csv(deck_dataframes, filename)
+    filename = export_cube_to_csv(deck_dataframes, filename, oracle_df)
     print(Markdown(f"**File:** `{filename}`"))
     return filename
 
