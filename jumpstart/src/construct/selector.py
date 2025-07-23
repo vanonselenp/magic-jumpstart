@@ -111,28 +111,17 @@ class CardSelector:
     
     def _get_specialized_scorer_and_count(self, theme_name: str, theme_config: dict) -> tuple:
         """Get the appropriate specialized scorer and core card count for a theme."""
-        from ..scorer import (
-            create_equipment_scorer, create_tribal_scorer, 
-            create_aggressive_scorer, create_stompy_scorer, 
-            create_artifact_scorer, create_control_scorer, create_default_scorer
-        )
+        # Get scorer function directly from theme config, fallback to default
+        scorer_function = theme_config.get('scorer')
+        core_card_count = theme_config.get('core_card_count', 3)
         
-        if 'equipment' in theme_name.lower():
-            return create_equipment_scorer(), 5  # Reserve more equipment cards
-        elif any(tribe in theme_name.lower() for tribe in ['soldiers', 'wizards', 'goblins', 'elves']):
-            return create_tribal_scorer(), 4  # Reserve key tribal cards
-        elif theme_config.get('archetype') == 'Tribal':
-            return create_tribal_scorer(), 4  # Reserve key tribal cards
-        elif theme_config.get('archetype') == 'Artifacts':
-            return create_artifact_scorer(), 4  # Reserve key artifact cards
-        elif theme_config.get('archetype') == 'Stompy':
-            return create_stompy_scorer(), 3  # Reserve key stompy creatures
-        elif theme_config.get('archetype') == 'Control':
-            return create_control_scorer(), 4  # Reserve key control spells
-        elif theme_config.get('archetype') == 'Aggressive':
-            return create_aggressive_scorer(), 3  # Reserve key aggressive cards
-        else:
-            return create_default_scorer(), 3  # Standard reservation
+        # If no scorer function is configured, import and use default
+        if scorer_function is None:
+            from ..scorer import create_default_scorer
+            scorer_function = create_default_scorer
+        
+        # Call the scorer factory function to create the actual scorer
+        return scorer_function(), core_card_count
     
     def _score_card_for_theme(self, card: pd.Series, theme_name: str, theme_config: dict, 
                              theme_colors: Set[str], is_mono: bool, phase: str = "general") -> float:

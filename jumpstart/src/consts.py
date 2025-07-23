@@ -1,5 +1,12 @@
 # Jumpstart Cube Themes Configuration
 
+# Import scorer factory functions
+from .scorer import (
+    create_default_scorer, create_tribal_scorer, create_equipment_scorer,
+    create_aggressive_scorer, create_stompy_scorer, create_artifact_scorer,
+    create_control_scorer
+)
+
 # Mono-color themes (4 per color)
 MONO_COLOR_THEMES = {
     # White themes
@@ -7,26 +14,34 @@ MONO_COLOR_THEMES = {
         'colors': ['W'],
         'strategy': 'Aggressive tribal deck focused on soldier creatures with anthem effects',
         'keywords': ['soldier', 'tribal', 'anthem', 'pump', 'attack', 'vigilance', 'first strike'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     },
     'White Equipment': {
         'colors': ['W'],
         'strategy': 'Equipment-based deck with efficient creatures and powerful gear',
         'keywords': ['equipment', 'attach', 'equipped', 'equip', 'metalcraft', 'artifact', 'power', 'toughness', 
                     'sword', 'blade', 'equipped creature', 'gets +', 'artifact creature', 'living weapon', 'armor'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_equipment_scorer,
+        'core_card_count': 5
     },
     'White Angels': {
         'colors': ['W'],
         'strategy': 'Mid-to-late game deck with powerful flying angels and protection',
         'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     'White Weenies': {
         'colors': ['W'],
         'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
         'keywords': ['creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance', 'efficient', 'low cost', 'small'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_aggressive_scorer,
+        'core_card_count': 3
     },
     
     # Blue themes
@@ -34,25 +49,33 @@ MONO_COLOR_THEMES = {
         'colors': ['U'],
         'strategy': 'Evasive creatures with flying and tempo spells',
         'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw'],
-        'archetype': 'Tempo'
+        'archetype': 'Tempo',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     'Blue Wizards': {
         'colors': ['U'],
         'strategy': 'Wizard tribal with spell-based synergies and card advantage',
         'keywords': ['wizard', 'instant', 'sorcery', 'prowess', 'draw', 'counter', 'tribal'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     },
     'Blue Card Draw': {
         'colors': ['U'],
         'strategy': 'Card advantage engine with draw spells and library manipulation',
         'keywords': ['draw', 'card', 'scry', 'look', 'library', 'hand', 'cycling'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     'Blue Tempo': {
         'colors': ['U'],
         'strategy': 'Efficient creatures with evasion and tempo spells for board control',
         'keywords': ['bounce', 'return', 'counter', 'flying', 'flash', 'prowess', 'tempo', 'efficient', 'evasion'],
-        'archetype': 'Tempo'
+        'archetype': 'Tempo',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # Black themes
@@ -60,25 +83,33 @@ MONO_COLOR_THEMES = {
         'colors': ['B'],
         'strategy': 'Zombie tribal with graveyard recursion and sacrifice synergies',
         'keywords': ['zombie', 'tribal', 'graveyard', 'return', 'sacrifice', 'dies'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     },
     'Black Graveyard': {
         'colors': ['B'],
         'strategy': 'Graveyard-based value engine with recursion and reanimation',
         'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     'Black Sacrifice': {
         'colors': ['B'],
         'strategy': 'Sacrifice-based deck with death triggers and value generation',
         'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     'Black Control': {
         'colors': ['B'],
         'strategy': 'Control deck with removal spells and efficient creatures for board control',
         'keywords': ['destroy', 'remove', 'target', 'exile', 'control', 'doom blade', 'murder', 'kill', 'discard', 'draw'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     
     # Red themes
@@ -86,26 +117,34 @@ MONO_COLOR_THEMES = {
         'colors': ['R'],
         'strategy': 'Fast goblin tribal with haste and explosive plays',
         'keywords': ['goblin', 'tribal', 'haste', 'sacrifice', 'token', 'aggressive'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     },
     'Red Burn': {
         'colors': ['R'],
         'strategy': 'Direct damage spells and hasty creatures for quick wins',
         'keywords': ['damage', 'burn', 'lightning', 'shock', 'direct', 'haste', 'instant'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_aggressive_scorer,
+        'core_card_count': 4
     },
     'Red Dragons': {
         'colors': ['R'],
         'strategy': 'Expensive dragons with powerful effects and flying',
         'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
-        'archetype': 'Ramp'
+        'archetype': 'Ramp',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 3
     },
     'Red Artifacts': {
         'colors': ['R'],
         'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
         'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy', 
                     'equipment', 'enters', 'tap', 'sacrifice', 'colorless', 'cost', 'thopter'],
-        'archetype': 'Artifacts'
+        'archetype': 'Artifacts',
+        'scorer': create_artifact_scorer,
+        'core_card_count': 4
     },
     
     # Green themes
@@ -115,13 +154,17 @@ MONO_COLOR_THEMES = {
         'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token', 'druid', 
                     'shaman', 'ranger', 'creature', 'add', 'produces', 'enters', 'lord', 
                     'gets +', 'elves you control', 'elf creature'],
-        'archetype': 'Tribal'
+        'archetype': 'Tribal',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     },
     'Green Ramp': {
         'colors': ['G'],
         'strategy': 'Mana acceleration into large threats and expensive spells',
         'keywords': ['mana', 'land', 'search', 'expensive', 'big', 'ritual', 'forest'],
-        'archetype': 'Ramp'
+        'archetype': 'Ramp',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     'Green Stompy': {
         'colors': ['G'],
@@ -129,7 +172,9 @@ MONO_COLOR_THEMES = {
         'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight', 'big', 'large', 
                     'creature', 'beast', 'giant', 'wurm', 'elemental', '4/4', '5/5', '6/6', 
                     'expensive', 'high power', 'stats'],
-        'archetype': 'Stompy'  # Custom archetype instead of generic Aggro
+        'archetype': 'Stompy',  # Custom archetype instead of generic Aggro
+        'scorer': create_aggressive_scorer,
+        'core_card_count': 3
     },
     'Green Beasts': {
         'colors': ['G'],
@@ -137,7 +182,9 @@ MONO_COLOR_THEMES = {
         'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive', 'bear', 
                     'wolf', 'elephant', 'rhino', 'boar', 'ape', 'creature', 'large', 'big', 
                     'trample', 'fight', 'lord', 'gets +', 'beasts you control'],
-        'archetype': 'Tribal'
+        'archetype': 'Tribal',
+        'scorer': create_tribal_scorer,
+        'core_card_count': 4
     }
 }
 
@@ -162,7 +209,9 @@ DUAL_COLOR_THEMES = {
             'flash', 'instant speed', 'end of turn', 'during upkeep'
         ],
         'archetype': 'Control',
-        'color_priority': 'strict'  # Prioritize true WU cards
+        'color_priority': 'strict',  # Prioritize true WU cards
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     
     # Blue-Black (Dimir)
@@ -170,7 +219,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['U', 'B'],
         'strategy': 'Mill-based strategy with graveyard interaction and card advantage',
         'keywords': ['mill', 'graveyard', 'library', 'flashback', 'threshold', 'draw'],
-        'archetype': 'Control'
+        'archetype': 'Control',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     },
     
     # Black-Red (Rakdos)
@@ -178,7 +229,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['B', 'R'],
         'strategy': 'Aggressive deck with efficient creatures and direct damage',
         'keywords': ['haste', 'damage', 'aggressive', 'sacrifice', 'burn', 'power'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_aggressive_scorer,
+        'core_card_count': 3
     },
     
     # Red-Green (Gruul)
@@ -188,7 +241,9 @@ DUAL_COLOR_THEMES = {
         'keywords': ['haste', 'trample', 'efficient', 'versatile', 'combat', 'removal', 
                     'creature', 'aggressive', 'power', 'damage', 'burn', 'fight', 
                     'enters', 'whenever', 'attack', 'deal damage', 'direct'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # Green-White (Selesnya)
@@ -198,7 +253,9 @@ DUAL_COLOR_THEMES = {
         'keywords': ['efficient', 'creature', 'removal', 'destroy', 'exile', 'enchantment', 
                     'versatile', 'value', 'enters', 'lifegain', 'vigilance', 'flying', 
                     'combat tricks', 'instant', 'sorcery', 'token', 'utility', 'aura'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # White-Black (Orzhov)
@@ -206,7 +263,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['W', 'B'],
         'strategy': 'Incremental advantage through lifegain and card quality',
         'keywords': ['lifelink', 'lifegain', 'card advantage', 'value', 'ETB effects', 'versatile threats'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # Blue-Red (Izzet)
@@ -214,7 +273,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['U', 'R'],
         'strategy': 'Instant and sorcery synergies with prowess and spell-based creatures',
         'keywords': ['instant', 'sorcery', 'prowess', 'spells', 'trigger', 'burn'],
-        'archetype': 'Tempo'
+        'archetype': 'Tempo',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # Black-Green (Golgari)
@@ -222,7 +283,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['B', 'G'],
         'strategy': 'Graveyard-based value engine with recursion and sacrifice',
         'keywords': ['graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies'],
-        'archetype': 'Midrange'
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     
     # Red-White (Boros)
@@ -231,7 +294,9 @@ DUAL_COLOR_THEMES = {
         'strategy': 'Aggressive creatures with equipment support and combat tricks',
         'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump', 'equip', 'equipped',
                     'sword', 'blade', 'artifact', 'gets +', 'equipped creature', 'attach', 'living weapon'],
-        'archetype': 'Aggro'
+        'archetype': 'Aggro',
+        'scorer': create_equipment_scorer,
+        'core_card_count': 5
     },
     
     # Green-Blue (Simic)
@@ -239,7 +304,9 @@ DUAL_COLOR_THEMES = {
         'colors': ['G', 'U'],
         'strategy': 'Ramp into large threats with card draw and protection',
         'keywords': ['ramp', 'mana', 'draw', 'expensive', 'evolve', 'counter', 'adapt'],
-        'archetype': 'Ramp'
+        'archetype': 'Ramp',
+        'scorer': create_control_scorer,
+        'core_card_count': 4
     }
 }
 
