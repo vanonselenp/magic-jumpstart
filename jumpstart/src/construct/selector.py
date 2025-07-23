@@ -60,14 +60,14 @@ class CardSelector:
             # Check constraints
             if not self._check_constraints(card, deck_state, constraints, is_mono, theme_colors):
                 continue
-            
-            # Score the card
-            score = self._score_card_for_theme(card, theme_name, theme_config, theme_colors, is_mono, phase)
-            
+
             # Apply phase-specific filtering
             if phase == "multicolor" and not self._is_multicolor_appropriate(card, theme_colors):
                 continue
             
+            # Score the card
+            score = self._score_card_for_theme(card, theme_name, theme_config, theme_colors, is_mono, phase)
+
             if score >= self._get_score_threshold(phase):
                 candidates.append((idx, card, score))
         
