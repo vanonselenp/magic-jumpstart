@@ -333,8 +333,13 @@ class DeckBuilder:
                 current_creatures = len(current_deck[current_deck['Type'].str.contains('Creature', case=False, na=False)])
                 current_lands = current_deck[current_deck['Type'].str.contains('Land', case=False, na=False)]
                 current_land_names = set(current_lands['name'].tolist()) if not current_lands.empty else set()
+                current_non_lands = len(current_deck) - len(current_lands)
                 
                 if is_creature_card(card) and current_creatures >= self.constraints.max_creatures:
+                    continue
+                
+                # Check total non-land constraint
+                if not is_land_card(card) and current_non_lands >= self.constraints.total_non_land:
                     continue
                 
                 if is_land_card(card):
