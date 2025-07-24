@@ -245,7 +245,7 @@ Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,5.0,4.0,Green Stompy
 Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Stompy
 Giant Growth,Mixed,,common,G,Instant,,1,,,Green Stompy
 Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
-Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Stompy
+Escape Tunnel,Mixed,,common,,Land,,0,,,Green Stompy
 Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,3.0,3.0,Green Beasts
 Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,Green Beasts
 Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,4.0,4.0,Green Beasts
@@ -258,7 +258,7 @@ Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,1.0,0.0,Green Beasts
 Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
 Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,4.0,4.0,Green Beasts
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Beasts
-Escape Tunnel,Mixed,,common,,Land,,0,,,Green Beasts
+Basilisk Gate,Mixed,,common,,Land - Gate,,0,,,Green Beasts
 Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,3.0,3.0,Azorius Control
 Condescend,Mixed,,common,U,Instant,,1,,,Azorius Control
 Blessed Hippogriff,Mixed,,common,W,Creature - Hippogriff,,4,2.0,3.0,Azorius Control
@@ -392,7 +392,6 @@ Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Unassigned
 Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,3.0,4.0,Unassigned
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Unassigned
-Basilisk Gate,Mixed,,common,,Land - Gate,,0,,,Unassigned
 Boros Garrison,Mixed,,common,WR,Land,,0,,,Unassigned
 Borrowed Grace,Mixed,,common,W,Instant,,3,,,Unassigned
 Bubble Snare,Mixed,,common,U,Enchantment - Aura,,1,,,Unassigned
@@ -414,6 +413,7 @@ Hickory Woodlot,Mixed,,common,,Land,,0,,,Unassigned
 Hidden Grotto,Mixed,,common,,Land,,0,,,Unassigned
 Hissing Iguanar,Mixed,,common,R,Creature - Lizard,,3,3.0,1.0,Unassigned
 Hordeling Outburst,Mixed,,common,R,Creature Sorcery,,3,,,Unassigned
+Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Unassigned
 Imperial Oath,Mixed,,common,W,Creature Sorcery,,6,,,Unassigned
 Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Unassigned
 Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Unassigned
