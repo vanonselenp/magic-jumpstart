@@ -106,9 +106,10 @@ The system enforces realistic deck building constraints:
 
 - **Deck Size**: 13 cards per deck (390 cards total)
 - **Creature Limit**: Maximum 9 creatures per deck  
-- **Land Limits**: 1 land for mono-color, 3 for dual-color themes
+- **Non-Land Limit**: Maximum 12 non-land cards per deck  
+- **Land Limits**: 1 land per deck (mono and dual-color themes)
 - **Card Uniqueness**: No card appears in multiple decks
-- **Basic Land**: 7 Basic land to be added at the end
+- **Basic Lands**: Added separately during play (not part of the 13-card deck)
 
 ## Project Structure
 
@@ -122,6 +123,10 @@ jumpstart/
 │   │   ├── core.py         # Data structures and constraints
 │   │   └── utils.py        # Card analysis utilities
 │   ├── scorer/             # Specialized theme scoring system
+│   │   ├── __init__.py     # Scorer factory functions
+│   │   ├── base.py         # Base scorer classes
+│   │   ├── rules.py        # Individual scoring rules
+│   │   └── scorer.py       # Main scorer implementation
 │   ├── export.py           # CSV export functionality
 │   ├── validation.py       # Deck validation and analysis
 │   └── consts.py          # Theme definitions and constants
@@ -172,7 +177,13 @@ import pandas as pd
 oracle_df = pd.read_csv('ThePauperCube_oracle_with_pt.csv')
 
 # Set up constraints  
-constraints = CardConstraints(target_deck_size=13)
+constraints = CardConstraints(
+    target_deck_size=13,
+    total_non_land=12,  # All 12 cards should be non-lands
+    max_lands_dual=1,
+    max_lands_mono=1,
+    max_creatures=9, 
+)
 
 # Build all decks
 deck_dataframes = construct_jumpstart_decks(oracle_df, constraints=constraints)
@@ -180,7 +191,7 @@ deck_dataframes = construct_jumpstart_decks(oracle_df, constraints=constraints)
 # Analyze results
 from src.construct import analyze_deck_composition, print_detailed_deck_analysis
 analysis = analyze_deck_composition(deck_dataframes)
-print_detailed_deck_analysis(deck_dataframes, analysis)
+print_detailed_deck_analysis(deck_dataframes, analysis, constraints)
 ```
 
 **Running with uv:**
@@ -195,14 +206,18 @@ uv run python your_script.py
 #### Advanced Usage - Custom Constraints
 
 ```python
-# Custom constraints
+from src.construct import CardConstraints
+
+# Custom constraints with detailed configuration
 constraints = CardConstraints(
-    max_creatures=9,        # Maximum creatures per deck
+    target_deck_size=13,    # Cards per deck
+    total_non_land=12,      # Maximum non-land cards per deck
     max_lands_mono=1,       # Lands for mono-color themes  
-    max_lands_dual=3,       # Lands for dual-color themes
-    target_deck_size=13     # Cards per deck
+    max_lands_dual=1,       # Lands for dual-color themes
+    max_creatures=9,        # Max creatures per deck
 )
 
+# Build decks with custom constraints
 deck_dataframes = construct_jumpstart_decks(oracle_df, constraints=constraints)
 ```
 
@@ -210,19 +225,62 @@ deck_dataframes = construct_jumpstart_decks(oracle_df, constraints=constraints)
 
 ```python
 from src.export import export_cube_to_csv
-export_cube_to_csv(deck_dataframes, 'my_jumpstart_cube.csv')
+
+# Export decks to CSV with card database integration
+export_cube_to_csv(deck_dataframes, 'my_jumpstart_cube.csv', oracle_df)
 ```
 
 #### Validation and Analysis
 
 ```python
 from src.validation import validate_jumpstart_cube, analyze_card_distribution
+from src.consts import ALL_THEMES
+from src.construct import CardConstraints
 
-# Comprehensive validation
-validation_results = validate_jumpstart_cube(deck_dataframes)
+constraints = CardConstraints(
+    target_deck_size=13,    # Cards per deck
+    total_non_land=12,      # Maximum non-land cards per deck
+    max_lands_mono=1,       # Lands for mono-color themes  
+    max_lands_dual=1,       # Lands for dual-color themes
+    max_creatures=9,        # Max creatures per deck
+)
+
+# Comprehensive validation with proper parameters
+validation_results = validate_jumpstart_cube(
+    deck_dataframes, 
+    oracle_df, 
+    ALL_THEMES, 
+    constraints
+)
 
 # Distribution analysis  
-distribution = analyze_card_distribution(deck_dataframes, oracle_df)
+distribution = analyze_card_distribution(deck_dataframes, oracle_df, constraints)
+
+# Check validation results
+print("Overall valid:", validation_results['overall_valid'])
+print("Card uniqueness:", validation_results['uniqueness']['valid'])
+print("Constraint compliance:", validation_results['constraints']['valid'])
+```
+
+#### Working with Themes and Colors
+
+```python
+from src.consts import ALL_THEMES, MagicColor, MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+
+# Access all available themes
+print("Total themes:", len(ALL_THEMES))
+print("Mono-color themes:", len(MONO_COLOR_THEMES))
+print("Dual-color themes:", len(DUAL_COLOR_THEMES))
+
+# Work with the MagicColor enum
+print("All colors:", MagicColor.all_colors())  # ['W', 'U', 'B', 'R', 'G']
+print("Color names:", MagicColor.color_names())  # {'W': 'White', 'U': 'Blue', ...}
+print("Basic lands:", MagicColor.basic_land_names())  # {'W': 'plains', 'U': 'island', ...}
+
+# Example: Check theme colors
+theme = ALL_THEMES['White Soldiers']
+print(f"White Soldiers colors: {theme['colors']}")  # [MagicColor.WHITE.value]
+print(f"Strategy: {theme['strategy']}")
 ```
 
 ## Algorithm Innovations
