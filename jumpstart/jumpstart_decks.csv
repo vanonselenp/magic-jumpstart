@@ -36,8 +36,8 @@ Eagles of the North,Mixed,,common,W,Creature - Bird Soldier,,6,3.0,3.0,White Ang
 Pegasus Guardian,Mixed,,common,W,Creature - Pegasus,,6,3.0,3.0,White Angels
 Settle Beyond Reality,Mixed,,common,W,Sorcery,,5,,,White Angels
 Faith's Fetters,Mixed,,common,W,Enchantment - Aura,,4,,,White Angels
-Contaminated Landscape,Mixed,,common,,Land,,0,,,White Angels
 Dauntless Unity,Mixed,,common,W,Instant,,2,,,White Angels
+Quicksand,Mixed,,common,,Land,,0,,,White Angels
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,White Weenies
 Deftblade Elite,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Weenies
 Elite Vanguard,Mixed,,common,W,Creature - Human Soldier,,1,2.0,1.0,White Weenies
@@ -50,7 +50,7 @@ Sunlance,Mixed,,common,W,Sorcery,,1,,,White Weenies
 Petrify,Mixed,,common,W,Enchantment - Aura,,2,,,White Weenies
 Planar Disruption,Mixed,,common,W,Enchantment - Aura,,2,,,White Weenies
 Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,White Weenies
-Deceptive Landscape,Mixed,,common,,Land,,0,,,White Weenies
+Escape Tunnel,Mixed,,common,,Land,,0,,,White Weenies
 Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Flying
 Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Flying
 Exclude,Mixed,,common,U,Instant,,3,,,Blue Flying
@@ -89,7 +89,7 @@ Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature - Human Ninja,,2,2.0,1.
 Vizier of Tumbling Sands,Mixed,,common,U,Creature - Human Cleric,,3,1.0,3.0,Blue Card Draw
 Brainstorm,Mixed,,common,U,Instant,,1,,,Blue Card Draw
 Sword Coast Serpent,Mixed,,common,U,Creature - Serpent Dragon,,7,6.0,6.0,Blue Card Draw
-Seething Landscape,Mixed,,common,,Land,,0,,,Blue Card Draw
+Contaminated Landscape,Mixed,,common,,Land,,0,,,Blue Card Draw
 Mistral Singer,Mixed,,common,U,Creature - Siren,,3,2.0,2.0,Blue Tempo
 Pestermite,Mixed,,common,U,Creature - Faerie Rogue,,3,2.0,1.0,Blue Tempo
 Faerie Seer,Mixed,,common,U,Creature - Faerie Wizard,,1,1.0,1.0,Blue Tempo
@@ -102,7 +102,7 @@ Capsize,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Displace,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Blue Tempo
 Aethersnipe,Mixed,,common,U,Creature - Elemental,,6,4.0,4.0,Blue Tempo
-Perilous Landscape,Mixed,,common,,Land,,0,,,Blue Tempo
+Hickory Woodlot,Mixed,,common,,Land,,0,,,Blue Tempo
 Legion Vanguard,Mixed,,common,B,Creature - Vampire Soldier,,2,2.0,2.0,Black Zombies
 Gixian Infiltrator,Mixed,,common,B,Creature - Phyrexian Human,,2,2.0,1.0,Black Zombies
 Putrid Goblin,Mixed,,common,B,Creature - Zombie Goblin,,2,2.0,2.0,Black Zombies
@@ -141,7 +141,7 @@ Dauthi Horror,Mixed,,common,B,Creature - Dauthi Horror,,2,2.0,1.0,Black Sacrific
 Dauthi Slayer,Mixed,,common,B,Creature - Dauthi Soldier,,2,2.0,2.0,Black Sacrifice
 Cast Down,Mixed,,common,B,Instant,,2,,,Black Sacrifice
 Go for the Throat,Mixed,,common,B,Instant,,2,,,Black Sacrifice
-Twisted Landscape,Mixed,,common,,Land,,0,,,Black Sacrifice
+Seething Landscape,Mixed,,common,,Land,,0,,,Black Sacrifice
 Faceless Butcher,Mixed,,common,B,Creature - Nightmare Horror,,4,2.0,3.0,Black Control
 Loathsome Curator,Mixed,,common,B,Creature - Gorgon Wizard,,5,5.0,4.0,Black Control
 Doom Blade,Mixed,,common,B,Instant,,2,,,Black Control
@@ -154,7 +154,7 @@ Vampire Sovereign,Mixed,,common,B,Creature - Vampire Noble,,5,3.0,4.0,Black Cont
 Troll of Khazad-dûm,Mixed,,common,B,Creature - Troll,,6,6.0,5.0,Black Control
 Undying Malice,Mixed,,common,B,Instant,,1,,,Black Control
 Vendetta,Mixed,,common,B,Instant,,1,,,Black Control
-Foreboding Landscape,Mixed,,common,,Land,,0,,,Black Control
+Twisted Landscape,Mixed,,common,,Land,,0,,,Black Control
 Mogg War Marshal,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Goblins
 Fanatical Firebrand,Mixed,,common,R,Creature - Goblin Pirate,,1,1.0,1.0,Red Goblins
 Goblin Surprise,Mixed,,common,R,Instant,,3,,,Red Goblins
@@ -188,12 +188,12 @@ Yavimaya Steelcrusher,Mixed,,common,R,Creature - Ape Warrior,,2,2.0,2.0,Red Drag
 Oliphaunt,Mixed,,common,R,Creature - Elephant,,6,6.0,4.0,Red Dragons
 Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Red Dragons
 Scrapwork Mutt,Mixed,,common,R,Artifact Creature - Dog,,2,2.0,1.0,Red Dragons
-Sheltering Landscape,Mixed,,common,,Land,,0,,,Red Dragons
 Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Red Dragons
 Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Red Dragons
 Orcish Hellraiser,Mixed,,common,R,Creature - Orc Warrior,,2,3.0,2.0,Red Dragons
 Rimrock Knight,Mixed,,common,R,Creature - Dwarf Knight,,2,3.0,1.0,Red Dragons
 Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Dragons
+Sheltering Landscape,Mixed,,common,,Land,,0,,,Red Dragons
 Leonin Bola,Mixed,,common,,Artifact - Equipment,,1,,,Red Artifacts
 Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Artifacts
 Bonesplitter,Mixed,,common,,Artifact - Equipment,,1,,,Red Artifacts
@@ -219,7 +219,7 @@ Llanowar Elves,Mixed,,common,G,Creature - Elf Druid,,1,1.0,1.0,Green Elves
 Nest Invader,Mixed,,common,G,Creature - Eldrazi Drone,,2,2.0,2.0,Green Elves
 Werebear,Mixed,,common,G,Creature - Human Bear Druid,,2,1.0,1.0,Green Elves
 Utopia Sprawl,Mixed,,common,G,Enchantment - Aura,,1,,,Green Elves
-Bountiful Landscape,Mixed,,common,,Land,,0,,,Green Elves
+Night Market,Mixed,,common,,Land,,0,,,Green Elves
 Colossal Dreadmask,Mixed,,common,G,Creature Artifact - Equipment,,6,,,Green Ramp
 Tranquil Landscape,Mixed,,common,,Land,,0,,,Green Ramp
 Sakura-Tribe Elder,Mixed,,common,G,Creature - Snake Shaman,,2,1.0,1.0,Green Ramp
@@ -245,7 +245,7 @@ Silverback Shaman,Mixed,,common,G,Creature - Ape Shaman,,5,5.0,4.0,Green Stompy
 Hooting Mandrills,Mixed,,common,G,Creature - Ape,,6,4.0,4.0,Green Stompy
 Giant Growth,Mixed,,common,G,Instant,,1,,,Green Stompy
 Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
-Escape Tunnel,Mixed,,common,,Land,,0,,,Green Stompy
+Basilisk Gate,Mixed,,common,,Land - Gate,,0,,,Green Stompy
 Contagious Vorrac,Mixed,,common,G,Creature - Phyrexian Boar Beast,,3,3.0,3.0,Green Beasts
 Renegade Freighter,Mixed,,common,,Artifact - Vehicle,,3,,,Green Beasts
 Owlbear,Mixed,,common,G,Creature - Bird Bear,,5,4.0,4.0,Green Beasts
@@ -258,7 +258,7 @@ Phantom Tiger,Mixed,,common,G,Creature - Cat Spirit,,3,1.0,0.0,Green Beasts
 Jade Guardian,Mixed,,common,G,Creature - Merfolk Shaman,,4,2.0,2.0,Green Beasts
 Conclave Naturalists,Mixed,,common,G,Creature - Dryad,,5,4.0,4.0,Green Beasts
 Trumpeting Herd,Mixed,,common,G,Creature Sorcery,,4,,,Green Beasts
-Basilisk Gate,Mixed,,common,,Land - Gate,,0,,,Green Beasts
+Conduit Pylons,Mixed,,common,,Land - Desert,,0,,,Green Beasts
 Young Blue Dragon,Mixed,,common,U,Creature - Dragon,,5,3.0,3.0,Azorius Control
 Condescend,Mixed,,common,U,Instant,,1,,,Azorius Control
 Blessed Hippogriff,Mixed,,common,W,Creature - Hippogriff,,4,2.0,3.0,Azorius Control
@@ -394,22 +394,23 @@ Alabaster Host Intercessor,Mixed,,common,W,Creature - Phyrexian Samurai,,6,3.0,4
 Azorius Chancery,Mixed,,common,WU,Land,,0,,,Unassigned
 Boros Garrison,Mixed,,common,WR,Land,,0,,,Unassigned
 Borrowed Grace,Mixed,,common,W,Instant,,3,,,Unassigned
+Bountiful Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Bubble Snare,Mixed,,common,U,Enchantment - Aura,,1,,,Unassigned
 Carnophage,Mixed,,common,B,Creature - Zombie,,1,2.0,2.0,Unassigned
 Cavern Harpy,Mixed,,common,UB,Creature - Harpy Beast,,2,2.0,1.0,Unassigned
 Cindering Cutthroat,Mixed,,common,BR,Creature - Lizard Assassin,,3,3.0,2.0,Unassigned
 Clawing Torment,Mixed,,common,B,Enchantment - Aura,,1,,,Unassigned
 Coiling Oracle,Mixed,,common,GU,Creature - Snake Elf Druid,,2,1.0,1.0,Unassigned
-Conduit Pylons,Mixed,,common,,Land - Desert,,0,,,Unassigned
+Deceptive Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Desert,Mixed,,common,,Land - Desert,,0,,,Unassigned
 Dimir Aqueduct,Mixed,,common,BU,Land,,0,,,Unassigned
 Disfigure,Mixed,,common,B,Instant,,1,,,Unassigned
+Foreboding Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Gift of Fangs,Mixed,,common,B,Enchantment - Aura,,1,,,Unassigned
 Grasping Scoundrel,Mixed,,common,B,Creature - Human Pirate,,1,1.0,1.0,Unassigned
 Gruul Turf,Mixed,,common,RG,Land,,0,,,Unassigned
 Haunted Fengraf,Mixed,,common,,Land,,0,,,Unassigned
 Haunted Mire,Mixed,,common,BG,Land - Swamp Forest,,0,,,Unassigned
-Hickory Woodlot,Mixed,,common,,Land,,0,,,Unassigned
 Hidden Grotto,Mixed,,common,,Land,,0,,,Unassigned
 Hissing Iguanar,Mixed,,common,R,Creature - Lizard,,3,3.0,1.0,Unassigned
 Hordeling Outburst,Mixed,,common,R,Creature Sorcery,,3,,,Unassigned
@@ -419,13 +420,12 @@ Izzet Boilerworks,Mixed,,common,RU,Land,,0,,,Unassigned
 Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Unassigned
 Lorehold Campus,Mixed,,common,RW,Land,,0,,,Unassigned
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Unassigned
-Night Market,Mixed,,common,,Land,,0,,,Unassigned
 Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Unassigned
 Oblivion Ring,Mixed,,common,W,Enchantment,,3,,,Unassigned
+Perilous Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Unassigned
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Unassigned
 Prismatic Strands,Mixed,,common,W,Instant,,3,,,Unassigned
-Quicksand,Mixed,,common,,Land,,0,,,Unassigned
 Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Unassigned
 Raise the Alarm,Mixed,,common,W,Creature Instant,,2,,,Unassigned
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Unassigned

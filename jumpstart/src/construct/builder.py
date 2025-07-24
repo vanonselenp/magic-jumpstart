@@ -356,7 +356,18 @@ class DeckBuilder:
                 # Score the card
                 from ..scorer import score_card_for_theme
                 score = score_card_for_theme(card, theme_config)
-                if score >= 0.1:  # Very permissive threshold
+                
+                # Special case: if deck needs exactly 1 land and this is a land, accept ANY land
+                needs_land_to_complete = (
+                    cards_needed == 1 and 
+                    current_non_lands >= self.constraints.total_non_land and 
+                    is_land_card(card)
+                )
+                
+                if needs_land_to_complete:
+                    # For completion lands, accept any land regardless of score
+                    compatible_cards.append((card, max(score, 0.1)))  # Ensure positive score for sorting
+                elif score >= 0.1:  # Normal threshold for other cards
                     compatible_cards.append((card, score))
             
             # Sort by score and add best cards

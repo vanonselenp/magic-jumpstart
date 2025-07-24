@@ -5,6 +5,10 @@ This module contains functions to validate deck construction results,
 check for constraint compliance, and analyze card distribution.
 """
 
+import pandas as pd
+from typing import Dict, List, Set, Tuple
+from .consts import MagicColor
+
 # from src.validation import (
 #     validate_card_uniqueness,      # Check for duplicate cards
 #     validate_deck_constraints,     # Check deck building rules  
@@ -15,8 +19,8 @@ check for constraint compliance, and analyze card distribution.
 
 import pandas as pd
 from typing import Dict, List, Tuple
-
-from src.construct.core import CardConstraints
+from .consts import MagicColor
+from .construct.core import CardConstraints
 
 
 def validate_card_uniqueness(deck_dataframes: Dict[str, pd.DataFrame]) -> Dict:
@@ -211,8 +215,9 @@ def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
     # Analyze by color
     print(f"\n🎨 USAGE BY COLOR:")
     color_stats = {}
+    color_names = MagicColor.color_names()
     
-    for color in ['W', 'U', 'B', 'R', 'G', 'C']:
+    for color in MagicColor.all_colors_including_colorless():
         color_cards = oracle_df[oracle_df['Color'] == color] if color != 'C' else oracle_df[oracle_df['Color'].isna() | (oracle_df['Color'] == '')]
         available = len(color_cards)
         
@@ -221,8 +226,7 @@ def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
         
         if available > 0:
             usage_pct = used_in_color / available * 100
-            color_name = {'W': 'White', 'U': 'Blue', 'B': 'Black', 
-                         'R': 'Red', 'G': 'Green', 'C': 'Colorless'}[color]
+            color_name = color_names[color]
             print(f"  {color_name:9}: {used_in_color:3d}/{available:3d} cards ({usage_pct:5.1f}%)")
             color_stats[color] = {'used': used_in_color, 'available': available, 'rate': usage_pct}
     

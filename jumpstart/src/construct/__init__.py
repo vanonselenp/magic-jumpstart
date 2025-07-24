@@ -8,17 +8,17 @@ The module is organized into several focused components:
 - core: Core data structures (CardConstraints, DeckState)  
 - utils: Card utility functions (type checking, color analysis)
 - selector: CardSelector for finding and scoring candidate cards
-- builder: DeckBuilder orchestrator for the main construction phases
+- builder: DeckBuilder orchestrator for multi-phase construction
 
-Main entry point is the DeckBuilder class which implements a phase-based
-construction algorithm:
-0. Core card reservation (ensures theme coherence)
-1. Multicolor cards (for dual-color themes)  
-2. General card assignment
-3. Completion phase
-4. Constraint validation and fixes
-5. Optional reorganization for incomplete decks
+Main exports:
+- construct_jumpstart_decks: Primary function for building all decks
+- CardConstraints: Configuration class for deck building rules
+- DeckBuilder: Main orchestrator class
 """
+
+import pandas as pd
+from typing import Dict, Any, List
+from ..consts import MagicColor
 
 from .core import CardConstraints, DeckState
 from .selector import CardSelector  
@@ -64,11 +64,9 @@ def analyze_deck_composition(decks_df: Dict[str, pd.DataFrame]) -> Dict[str, Dic
             if pd.notna(card.get('Color', '')):
                 color = str(card['Color'])
                 # Parse individual colors from the Color column
-                if 'W' in color: colors.add('W')
-                if 'U' in color: colors.add('U')  
-                if 'B' in color: colors.add('B')
-                if 'R' in color: colors.add('R')
-                if 'G' in color: colors.add('G')
+                for magic_color in MagicColor.all_colors():
+                    if magic_color in color:
+                        colors.add(magic_color)
         
         # CMC analysis
         cmcs = []

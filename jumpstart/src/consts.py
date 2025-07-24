@@ -1,5 +1,50 @@
 # Jumpstart Cube Themes Configuration
 
+from enum import Enum
+from typing import Set, List, Dict
+
+class MagicColor(Enum):
+    """Magic: The Gathering color constants."""
+    WHITE = 'W'
+    BLUE = 'U'
+    BLACK = 'B'
+    RED = 'R'
+    GREEN = 'G'
+    COLORLESS = 'C'
+    
+    @classmethod
+    def all_colors(cls) -> List[str]:
+        """Get all color values as a list."""
+        return [color.value for color in cls if color != cls.COLORLESS]
+    
+    @classmethod
+    def all_colors_including_colorless(cls) -> List[str]:
+        """Get all color values including colorless as a list."""
+        return [color.value for color in cls]
+    
+    @classmethod
+    def color_names(cls) -> Dict[str, str]:
+        """Get mapping of color abbreviations to full names."""
+        return {
+            cls.WHITE.value: 'White',
+            cls.BLUE.value: 'Blue', 
+            cls.BLACK.value: 'Black',
+            cls.RED.value: 'Red',
+            cls.GREEN.value: 'Green',
+            cls.COLORLESS.value: 'Colorless'
+        }
+    
+    @classmethod
+    def basic_land_names(cls) -> Dict[str, str]:
+        """Get mapping of colors to basic land type names."""
+        return {
+            cls.WHITE.value: 'plains',
+            cls.BLUE.value: 'island',
+            cls.BLACK.value: 'swamp', 
+            cls.RED.value: 'mountain',
+            cls.GREEN.value: 'forest'
+        }
+
 # Import scorer factory functions
 from .scorer import (
     create_default_scorer, create_tribal_scorer, create_equipment_scorer,

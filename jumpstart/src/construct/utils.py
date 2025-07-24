@@ -4,6 +4,7 @@ Utility functions for card type checking, color analysis, and land evaluation.
 
 import pandas as pd
 from typing import List, Set
+from ..consts import MagicColor
 
 
 def is_land_card(card: pd.Series) -> bool:
@@ -44,7 +45,7 @@ def can_land_produce_colors(land_card: pd.Series, required_colors: set) -> bool:
     
     # Look for mana production patterns like "{T}: Add {U}" or "{T}: Add {U} or {B}"
     if '{t}: add' in oracle_text:
-        for color in ['W', 'U', 'B', 'R', 'G']:
+        for color in MagicColor.all_colors():
             color_symbol = '{' + color.lower() + '}'
             # Check if this color appears in a mana production ability (not cycling cost)
             if color_symbol in oracle_text:
@@ -61,10 +62,7 @@ def can_land_produce_colors(land_card: pd.Series, required_colors: set) -> bool:
         directly_producible.update(land_colors)
     
     # For basic lands, add their inherent color
-    basic_land_types = {
-        'plains': 'W', 'island': 'U', 'swamp': 'B', 
-        'mountain': 'R', 'forest': 'G'
-    }
+    basic_land_types = MagicColor.basic_land_names()
     
     for basic_type, color in basic_land_types.items():
         if basic_type in oracle_text and f'basic {basic_type}' in oracle_text:
@@ -98,7 +96,7 @@ def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> fl
     directly_producible_colors = set()
     
     # Look for explicit mana symbols in the oracle text (e.g., {U}, {B})
-    for color in ['W', 'U', 'B', 'R', 'G']:
+    for color in MagicColor.all_colors():
         color_symbol = '{' + color.lower() + '}'
         if color_symbol in oracle_text:
             directly_producible_colors.add(color)
@@ -118,11 +116,8 @@ def score_land_for_dual_colors(land_card: pd.Series, required_colors: set) -> fl
     if not required_colors.issubset(directly_producible_colors):
         # Check if it's a fetch/utility land that can get the colors
         can_fetch_both = True
+        color_names = MagicColor.basic_land_names()
         for color in required_colors:
-            color_names = {
-                'W': 'plains', 'U': 'island', 'B': 'swamp', 
-                'R': 'mountain', 'G': 'forest'
-            }
             if color in color_names and color_names[color] not in oracle_text:
                 can_fetch_both = False
                 break
