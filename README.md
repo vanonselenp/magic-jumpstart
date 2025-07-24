@@ -116,23 +116,23 @@ The system enforces realistic deck building constraints:
 ```
 jumpstart/
 ├── src/
-│   ├── construct/           # Modular deck construction system
-│   │   ├── __init__.py     # Main API and analysis functions
-│   │   ├── builder.py      # Phase-based construction orchestrator  
-│   │   ├── selector.py     # Card selection and scoring logic
-│   │   ├── core.py         # Data structures and constraints
-│   │   └── utils.py        # Card analysis utilities
-│   ├── scorer/             # Specialized theme scoring system
-│   │   ├── __init__.py     # Scorer factory functions
-│   │   ├── base.py         # Base scorer classes
-│   │   ├── rules.py        # Individual scoring rules
-│   │   └── scorer.py       # Main scorer implementation
-│   ├── export.py           # CSV export functionality
-│   ├── validation.py       # Deck validation and analysis
-│   └── consts.py          # Theme definitions and constants
-├── jumpstart.ipynb        # Main analysis notebook
+│   ├── construct/                    # Modular deck construction system
+│   │   ├── __init__.py               # Main API and analysis functions
+│   │   ├── builder.py                # Phase-based construction orchestrator  
+│   │   ├── selector.py               # Card selection and scoring logic
+│   │   ├── core.py                   # Data structures and constraints
+│   │   └── utils.py                  # Card analysis utilities
+│   ├── scorer/                       # Specialized theme scoring system
+│   │   ├── __init__.py               # Scorer factory functions
+│   │   ├── base.py                   # Base scorer classes
+│   │   ├── rules.py                  # Individual scoring rules
+│   │   └── scorer.py                 # Main scorer implementation
+│   ├── export.py                     # CSV export functionality
+│   ├── validation.py                 # Deck validation and analysis
+│   └── consts.py                     # Theme definitions and constants
+├── jumpstart.ipynb                   # Main analysis notebook
 ├── ThePauperCube_oracle_with_pt.csv  # Card database
-└── jumpstart_decks.csv    # Generated deck output
+└── jumpstart_decks.csv               # Generated deck output
 ```
 
 ## Getting Started
