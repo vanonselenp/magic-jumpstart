@@ -106,6 +106,10 @@ class CardSelector:
             # For dual-color themes, ensure lands can produce both colors
             if not is_mono and not can_land_produce_colors(card, theme_colors):
                 return False
+        else:
+            # For non-land cards, check the total_non_land constraint
+            if not deck_state.can_add_non_land(constraints):
+                return False
         
         return True
     
