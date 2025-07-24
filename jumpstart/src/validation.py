@@ -16,6 +16,8 @@ check for constraint compliance, and analyze card distribution.
 import pandas as pd
 from typing import Dict, List, Tuple, Optional
 
+from src.construct.core import CardConstraints
+
 
 def validate_card_uniqueness(deck_dataframes: Dict[str, pd.DataFrame]) -> Dict:
     """
@@ -90,24 +92,21 @@ def validate_card_uniqueness(deck_dataframes: Dict[str, pd.DataFrame]) -> Dict:
         }
 
 
-def validate_deck_constraints(deck_dataframes: Dict[str, pd.DataFrame], all_themes: Dict) -> Dict:
+def validate_deck_constraints(deck_dataframes: Dict[str, pd.DataFrame], all_themes: Dict, constraints: CardConstraints) -> Dict:
     """
     Validate that all deck construction constraints are met.
     
     Args:
         deck_dataframes: Dictionary mapping theme names to their deck DataFrames
         all_themes: Dictionary of all theme configurations
+        constraints: CardConstraints object defining the deck building rules
     
     Returns:
         dict: Validation results for constraints
     """
-    from .construct.core import CardConstraints
     
     print("🔍 VALIDATING DECK CONSTRAINTS")
     print("=" * 50)
-    
-    # Create constraints object
-    constraints = CardConstraints()
     
     constraint_violations = []
     valid_decks = 0
@@ -291,13 +290,15 @@ def validate_jumpstart_cube(deck_dataframes: Dict[str, pd.DataFrame], oracle_df:
     Returns:
         dict: Complete validation results
     """
-    
     print("🎯 COMPREHENSIVE JUMPSTART CUBE VALIDATION")
     print("=" * 60)
     
+    # Create constraints object
+    constraints = CardConstraints()
+    
     # Run all validations
     uniqueness_result = validate_card_uniqueness(deck_dataframes)
-    constraint_result = validate_deck_constraints(deck_dataframes, all_themes)
+    constraint_result = validate_deck_constraints(deck_dataframes, all_themes, constraints)
     distribution_result = analyze_card_distribution(deck_dataframes, oracle_df)
     
     # Overall validation status
