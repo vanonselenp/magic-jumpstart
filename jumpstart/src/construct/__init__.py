@@ -89,7 +89,7 @@ def analyze_deck_composition(decks_df: Dict[str, pd.DataFrame]) -> Dict[str, Dic
     return analysis
 
 
-def print_detailed_deck_analysis(decks_df: Dict[str, pd.DataFrame], analysis: Dict[str, Dict]):
+def print_detailed_deck_analysis(decks_df: Dict[str, pd.DataFrame], analysis: Dict[str, Dict], constraints: CardConstraints):
     """Print detailed analysis of all constructed decks."""
     print("\n" + "="*60)
     print("DETAILED DECK ANALYSIS")
@@ -110,11 +110,11 @@ def print_detailed_deck_analysis(decks_df: Dict[str, pd.DataFrame], analysis: Di
             continue
         
         # Status
-        if total_cards == 13:
+        if total_cards == constraints.target_deck_size:
             complete_decks += 1
             status = "✅ COMPLETE"
         else:
-            status = f"⚠️  INCOMPLETE ({total_cards}/13)"
+            status = f"⚠️  INCOMPLETE ({total_cards}/{constraints.target_deck_size})"
         
         print(f"Status: {status}")
         total_cards_used += total_cards
@@ -139,13 +139,14 @@ def print_detailed_deck_analysis(decks_df: Dict[str, pd.DataFrame], analysis: Di
     print("\n" + "="*60)
     print("SUMMARY")
     print("="*60)
-    print(f"Complete decks: {complete_decks}/30")
+    total_themes = len(analysis)
+    print(f"Complete decks: {complete_decks}/{total_themes}")
     print(f"Total cards used: {total_cards_used}")
     
-    if complete_decks == 30:
+    if complete_decks == total_themes:
         print("\n🎉 SUCCESS! All jumpstart decks completed!")
     else:
-        incomplete_count = 30 - complete_decks
+        incomplete_count = total_themes - complete_decks
         print(f"\n⚠️  {incomplete_count} decks still need completion.")
 
 
