@@ -56,7 +56,7 @@ from .scorer import (
 MONO_COLOR_THEMES = {
     # White themes
     'White Soldiers': {
-        'colors': ['W'],
+        'colors': [MagicColor.WHITE.value],
         'strategy': 'Aggressive tribal deck focused on soldier creatures with anthem effects',
         'keywords': ['soldier', 'tribal', 'anthem', 'pump', 'attack', 'vigilance', 'first strike'],
         'archetype': 'Aggro',
@@ -64,7 +64,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'White Equipment': {
-        'colors': ['W'],
+        'colors': [MagicColor.WHITE.value],
         'strategy': 'Equipment-based deck with efficient creatures and powerful gear',
         'keywords': ['equipment', 'attach', 'equipped', 'equip', 'metalcraft', 'artifact', 'power', 'toughness', 
                     'sword', 'blade', 'equipped creature', 'gets +', 'artifact creature', 'living weapon', 'armor'],
@@ -73,7 +73,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 5
     },
     'White Angels': {
-        'colors': ['W'],
+        'colors': [MagicColor.WHITE.value],
         'strategy': 'Mid-to-late game deck with powerful flying angels and protection',
         'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
         'archetype': 'Control',
@@ -81,7 +81,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'White Weenies': {
-        'colors': ['W'],
+        'colors': [MagicColor.WHITE.value],
         'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
         'keywords': ['creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance', 'efficient', 'low cost', 'small'],
         'archetype': 'Aggro',
@@ -91,7 +91,7 @@ MONO_COLOR_THEMES = {
     
     # Blue themes
     'Blue Flying': {
-        'colors': ['U'],
+        'colors': [MagicColor.BLUE.value],
         'strategy': 'Evasive creatures with flying and tempo spells',
         'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw'],
         'archetype': 'Tempo',
@@ -99,7 +99,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 3
     },
     'Blue Wizards': {
-        'colors': ['U'],
+        'colors': [MagicColor.BLUE.value],
         'strategy': 'Wizard tribal with spell-based synergies and card advantage',
         'keywords': ['wizard', 'instant', 'sorcery', 'prowess', 'draw', 'counter', 'tribal'],
         'archetype': 'Control',
@@ -107,7 +107,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Blue Card Draw': {
-        'colors': ['U'],
+        'colors': [MagicColor.BLUE.value],
         'strategy': 'Card advantage engine with draw spells and library manipulation',
         'keywords': ['draw', 'card', 'scry', 'look', 'library', 'hand', 'cycling'],
         'archetype': 'Control',
@@ -115,7 +115,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Blue Tempo': {
-        'colors': ['U'],
+        'colors': [MagicColor.BLUE.value],
         'strategy': 'Efficient creatures with evasion and tempo spells for board control',
         'keywords': ['bounce', 'return', 'counter', 'flying', 'flash', 'prowess', 'tempo', 'efficient', 'evasion'],
         'archetype': 'Tempo',
@@ -125,7 +125,7 @@ MONO_COLOR_THEMES = {
     
     # Black themes
     'Black Zombies': {
-        'colors': ['B'],
+        'colors': [MagicColor.BLACK.value],
         'strategy': 'Zombie tribal with graveyard recursion and sacrifice synergies',
         'keywords': ['zombie', 'tribal', 'graveyard', 'return', 'sacrifice', 'dies'],
         'archetype': 'Midrange',
@@ -133,7 +133,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Black Graveyard': {
-        'colors': ['B'],
+        'colors': [MagicColor.BLACK.value],
         'strategy': 'Graveyard-based value engine with recursion and reanimation',
         'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold'],
         'archetype': 'Control',
@@ -141,7 +141,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Black Sacrifice': {
-        'colors': ['B'],
+        'colors': [MagicColor.BLACK.value],
         'strategy': 'Sacrifice-based deck with death triggers and value generation',
         'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
         'archetype': 'Midrange',
@@ -149,7 +149,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 3
     },
     'Black Control': {
-        'colors': ['B'],
+        'colors': [MagicColor.BLACK.value],
         'strategy': 'Control deck with removal spells and efficient creatures for board control',
         'keywords': ['destroy', 'remove', 'target', 'exile', 'control', 'doom blade', 'murder', 'kill', 'discard', 'draw'],
         'archetype': 'Control',
@@ -159,7 +159,7 @@ MONO_COLOR_THEMES = {
     
     # Red themes
     'Red Goblins': {
-        'colors': ['R'],
+        'colors': [MagicColor.RED.value],
         'strategy': 'Fast goblin tribal with haste and explosive plays',
         'keywords': ['goblin', 'tribal', 'haste', 'sacrifice', 'token', 'aggressive'],
         'archetype': 'Aggro',
@@ -167,7 +167,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Red Burn': {
-        'colors': ['R'],
+        'colors': [MagicColor.RED.value],
         'strategy': 'Direct damage spells and hasty creatures for quick wins',
         'keywords': ['damage', 'burn', 'lightning', 'shock', 'direct', 'haste', 'instant'],
         'archetype': 'Aggro',
@@ -175,7 +175,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Red Dragons': {
-        'colors': ['R'],
+        'colors': [MagicColor.RED.value],
         'strategy': 'Expensive dragons with powerful effects and flying',
         'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
         'archetype': 'Ramp',
@@ -183,7 +183,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 3
     },
     'Red Artifacts': {
-        'colors': ['R'],
+        'colors': [MagicColor.RED.value],
         'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
         'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy', 
                     'equipment', 'enters', 'tap', 'sacrifice', 'colorless', 'cost', 'thopter'],
@@ -194,7 +194,7 @@ MONO_COLOR_THEMES = {
     
     # Green themes
     'Green Elves': {
-        'colors': ['G'],
+        'colors': [MagicColor.GREEN.value],
         'strategy': 'Elf tribal with mana acceleration and creature synergies',
         'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token', 'druid', 
                     'shaman', 'ranger', 'creature', 'add', 'produces', 'enters', 'lord', 
@@ -204,7 +204,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 4
     },
     'Green Ramp': {
-        'colors': ['G'],
+        'colors': [MagicColor.GREEN.value],
         'strategy': 'Mana acceleration into large threats and expensive spells',
         'keywords': ['mana', 'land', 'search', 'expensive', 'big', 'ritual', 'forest'],
         'archetype': 'Ramp',
@@ -212,7 +212,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 3
     },
     'Green Stompy': {
-        'colors': ['G'],
+        'colors': [MagicColor.GREEN.value],
         'strategy': 'Large creatures with trample and pump effects',
         'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight', 'big', 'large', 
                     'creature', 'beast', 'giant', 'wurm', 'elemental', '4/4', '5/5', '6/6', 
@@ -222,7 +222,7 @@ MONO_COLOR_THEMES = {
         'core_card_count': 3
     },
     'Green Beasts': {
-        'colors': ['G'],
+        'colors': [MagicColor.GREEN.value],
         'strategy': 'Large beast creatures with powerful abilities',
         'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive', 'bear', 
                     'wolf', 'elephant', 'rhino', 'boar', 'ape', 'creature', 'large', 'big', 
@@ -237,7 +237,7 @@ MONO_COLOR_THEMES = {
 DUAL_COLOR_THEMES = {
     # White-Blue (Azorius)
     'Azorius Control': {
-        'colors': ['W', 'U'],
+        'colors': [MagicColor.WHITE.value, MagicColor.BLUE.value],
         'strategy': 'Control deck with counterspells, removal, card draw, and efficient win conditions',
         'keywords': [
             # Core control spells
@@ -261,7 +261,7 @@ DUAL_COLOR_THEMES = {
     
     # Blue-Black (Dimir)
     'Dimir Mill': {
-        'colors': ['U', 'B'],
+        'colors': [MagicColor.BLUE.value, MagicColor.BLACK.value],
         'strategy': 'Mill-based strategy with graveyard interaction and card advantage',
         'keywords': ['mill', 'graveyard', 'library', 'flashback', 'threshold', 'draw'],
         'archetype': 'Control',
@@ -271,7 +271,7 @@ DUAL_COLOR_THEMES = {
     
     # Black-Red (Rakdos)
     'Rakdos Aggro': {
-        'colors': ['B', 'R'],
+        'colors': [MagicColor.BLACK.value, MagicColor.RED.value],
         'strategy': 'Aggressive deck with efficient creatures and direct damage',
         'keywords': ['haste', 'damage', 'aggressive', 'sacrifice', 'burn', 'power'],
         'archetype': 'Aggro',
@@ -281,7 +281,7 @@ DUAL_COLOR_THEMES = {
     
     # Red-Green (Gruul)
     'Gruul Midrange': {
-        'colors': ['R', 'G'],
+        'colors': [MagicColor.RED.value, MagicColor.GREEN.value],
         'strategy': 'Efficient midrange creatures with aggressive abilities and versatile spells',
         'keywords': ['haste', 'trample', 'efficient', 'versatile', 'combat', 'removal', 
                     'creature', 'aggressive', 'power', 'damage', 'burn', 'fight', 
@@ -293,7 +293,7 @@ DUAL_COLOR_THEMES = {
     
     # Green-White (Selesnya)
     'Selesnya Value': {
-        'colors': ['G', 'W'],
+        'colors': [MagicColor.GREEN.value, MagicColor.WHITE.value],
         'strategy': 'Incremental advantage through efficient creatures, removal, and versatile utility spells',
         'keywords': ['efficient', 'creature', 'removal', 'destroy', 'exile', 'enchantment', 
                     'versatile', 'value', 'enters', 'lifegain', 'vigilance', 'flying', 
@@ -305,7 +305,7 @@ DUAL_COLOR_THEMES = {
     
     # White-Black (Orzhov)
     'Orzhov Lifegain Value': {
-        'colors': ['W', 'B'],
+        'colors': [MagicColor.WHITE.value, MagicColor.BLACK.value],
         'strategy': 'Incremental advantage through lifegain and card quality',
         'keywords': ['lifelink', 'lifegain', 'card advantage', 'value', 'ETB effects', 'versatile threats'],
         'archetype': 'Midrange',
@@ -315,7 +315,7 @@ DUAL_COLOR_THEMES = {
     
     # Blue-Red (Izzet)
     'Izzet Spells Matter': {
-        'colors': ['U', 'R'],
+        'colors': [MagicColor.BLUE.value, MagicColor.RED.value],
         'strategy': 'Instant and sorcery synergies with prowess and spell-based creatures',
         'keywords': ['instant', 'sorcery', 'prowess', 'spells', 'trigger', 'burn'],
         'archetype': 'Tempo',
@@ -325,7 +325,7 @@ DUAL_COLOR_THEMES = {
     
     # Black-Green (Golgari)
     'Golgari Graveyard Value': {
-        'colors': ['B', 'G'],
+        'colors': [MagicColor.BLACK.value, MagicColor.GREEN.value],
         'strategy': 'Graveyard-based value engine with recursion and sacrifice',
         'keywords': ['graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies'],
         'archetype': 'Midrange',
@@ -335,7 +335,7 @@ DUAL_COLOR_THEMES = {
     
     # Red-White (Boros)
     'Boros Equipment Aggro': {
-        'colors': ['R', 'W'],
+        'colors': [MagicColor.RED.value, MagicColor.WHITE.value],
         'strategy': 'Aggressive creatures with equipment support and combat tricks',
         'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump', 'equip', 'equipped',
                     'sword', 'blade', 'artifact', 'gets +', 'equipped creature', 'attach', 'living weapon'],
@@ -346,7 +346,7 @@ DUAL_COLOR_THEMES = {
     
     # Green-Blue (Simic)
     'Simic Ramp Control': {
-        'colors': ['G', 'U'],
+        'colors': [MagicColor.GREEN.value, MagicColor.BLUE.value],
         'strategy': 'Ramp into large threats with card draw and protection',
         'keywords': ['ramp', 'mana', 'draw', 'expensive', 'evolve', 'counter', 'adapt'],
         'archetype': 'Ramp',
@@ -369,9 +369,9 @@ THEME_CATEGORIES = {
 
 # Color identity mapping for validation
 COLOR_IDENTITY_MAP = {
-    'W': 'White',
-    'U': 'Blue', 
-    'B': 'Black',
-    'R': 'Red',
-    'G': 'Green'
+    MagicColor.WHITE.value: 'White',
+    MagicColor.BLUE.value: 'Blue', 
+    MagicColor.BLACK.value: 'Black',
+    MagicColor.RED.value: 'Red',
+    MagicColor.GREEN.value: 'Green'
 }
