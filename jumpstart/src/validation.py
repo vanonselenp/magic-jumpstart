@@ -101,9 +101,13 @@ def validate_deck_constraints(deck_dataframes: Dict[str, pd.DataFrame], all_them
     Returns:
         dict: Validation results for constraints
     """
+    from .construct.core import CardConstraints
     
     print("🔍 VALIDATING DECK CONSTRAINTS")
     print("=" * 50)
+    
+    # Create constraints object
+    constraints = CardConstraints()
     
     constraint_violations = []
     valid_decks = 0
@@ -123,21 +127,21 @@ def validate_deck_constraints(deck_dataframes: Dict[str, pd.DataFrame], all_them
         # Get unique land names
         unique_lands = lands['name'].nunique() if not lands.empty else 0
         
-        # Check constraints
+        # Check constraints using CardConstraints object
         violations = []
         
-        # Creature limit (max 9)
-        if len(creatures) > 9:
-            violations.append(f"Too many creatures: {len(creatures)}/9")
+        # Creature limit
+        if len(creatures) > constraints.max_creatures:
+            violations.append(f"Too many creatures: {len(creatures)}/{constraints.max_creatures}")
         
-        # Land limit (max 1 for mono, max 3 for dual)
-        max_lands = 1 if is_mono_color else 3
+        # Land limit
+        max_lands = constraints.get_max_lands(is_mono_color)
         if unique_lands > max_lands:
             violations.append(f"Too many unique lands: {unique_lands}/{max_lands}")
         
-        # Deck size (should be 13)
-        if len(deck_df) != 13:
-            violations.append(f"Wrong deck size: {len(deck_df)}/13")
+        # Deck size
+        if len(deck_df) != constraints.target_deck_size:
+            violations.append(f"Wrong deck size: {len(deck_df)}/{constraints.target_deck_size}")
         
         if violations:
             constraint_violations.append({
