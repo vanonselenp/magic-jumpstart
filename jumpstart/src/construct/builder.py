@@ -91,9 +91,8 @@ class DeckBuilder:
             # Score with specialized scorer
             score_breakdown = scorer.score_with_breakdown(card, theme_config)
             
-            # Only consider cards with strong theme relevance
-            if score_breakdown.total_score >= 6.0:  # Higher threshold for core cards
-                core_candidates.append((idx, card, score_breakdown.total_score))
+            # Collect all valid candidates (no minimum score threshold)
+            core_candidates.append((idx, card, score_breakdown.total_score))
         
         # Sort by score and take top core_count
         core_candidates.sort(key=lambda x: x[2], reverse=True)
@@ -117,7 +116,7 @@ class DeckBuilder:
             print(f"  ✅ {card['name']:<25} | {score:5.1f} pts | {card_type}")
         
         if reserved_count == 0:
-            print(f"  ⚠️  No core cards found meeting criteria (score ≥6.0)")
+            print(f"  ⚠️  No core cards could be reserved (no valid candidates found)")
         else:
             print(f"  📦 Reserved {reserved_count} core cards")
     
