@@ -23,46 +23,46 @@ see: [Pauper Jumpstart](https://cubecobra.com/cube/list/pauper-jumpstart-06-2025
 The system constructs 30 different themed decks across all colors:
 
 ### White Themes
-- **White Soldiers**: Aggressive creature strategies with combat synergies
-- **White Equipment**: Artifact equipment with creatures that benefit from them  
-- **White Angels**: Flying creatures and divine magic
-- **White Weenies**: Fast, low-cost aggressive creatures
+- **White Soldiers**: Aggressive tribal deck focused on soldier creatures with anthem effects
+- **White Equipment**: Equipment-based deck with efficient creatures and powerful gear  
+- **White Angels**: Mid-to-late game deck with powerful flying angels and protection
+- **White Weenies**: Aggressive low-cost creatures with efficient stats and combat abilities
 
 ### Blue Themes  
-- **Blue Flying**: Aerial creatures and evasive strategies
-- **Blue Wizards**: Spell-slinging with wizard tribal synergies
-- **Blue Card Draw**: Card advantage and library manipulation
-- **Blue Merfolk**: Merfolk tribal with tempo strategies
+- **Blue Flying**: Evasive creatures with flying and tempo spells
+- **Blue Wizards**: Wizard tribal with spell-based synergies and card advantage
+- **Blue Card Draw**: Card advantage engine with draw spells and library manipulation
+- **Blue Tempo**: Efficient creatures with evasion and tempo spells for board control
 
 ### Black Themes
-- **Black Zombies**: Undead creatures with graveyard recursion
-- **Black Graveyard**: Graveyard-as-resource strategies  
-- **Black Sacrifice**: Sacrificial strategies for value
-- **Black Vampires**: Vampire tribal with life drain
+- **Black Zombies**: Zombie tribal with graveyard recursion and sacrifice synergies
+- **Black Graveyard**: Graveyard-based value engine with recursion and reanimation  
+- **Black Sacrifice**: Sacrifice-based deck with death triggers and value generation
+- **Black Control**: Control deck with removal spells and efficient creatures for board control
 
 ### Red Themes
-- **Red Goblins**: Goblin tribal aggression
-- **Red Burn**: Direct damage spells and aggressive creatures
-- **Red Dragons**: Large flying threats and ramp
-- **Red Artifacts**: Artifact creatures and synergies
+- **Red Goblins**: Fast goblin tribal with haste and explosive plays
+- **Red Burn**: Direct damage spells and hasty creatures for quick wins
+- **Red Dragons**: Expensive dragons with powerful effects and flying
+- **Red Artifacts**: Artifact-based deck with improvise and metalcraft synergies
 
 ### Green Themes  
-- **Green Elves**: Elf tribal with mana acceleration
-- **Green Ramp**: Large creatures enabled by mana acceleration
-- **Green Stompy**: Aggressive creatures with pump spells
-- **Green Beasts**: Beast tribal with large bodies
+- **Green Elves**: Elf tribal with mana acceleration and creature synergies
+- **Green Ramp**: Mana acceleration into large threats and expensive spells
+- **Green Stompy**: Large creatures with trample and pump effects
+- **Green Beasts**: Large beast creatures with powerful abilities
 
 ### Multicolor Themes
-- **Azorius Control** (W/U): Control magic with card draw
-- **Dimir Mill** (U/B): Library manipulation and graveyard value
-- **Rakdos Aggro** (B/R): Fast, aggressive strategies  
-- **Gruul Big Creatures** (R/G): Large creatures and ramp
-- **Selesnya Tokens** (G/W): Token generation and wide strategies
-- **Orzhov Lifedrain** (W/B): Life manipulation strategies
-- **Izzet Spells Matter** (U/R): Instant/sorcery focused strategies
-- **Golgari Graveyard Value** (B/G): Graveyard recursion and value
-- **Boros Equipment Aggro** (R/W): Equipment-based aggressive strategies  
-- **Simic Ramp Control** (G/U): Ramp into large threats with control elements
+- **Azorius Control** (W/U): Control deck with counterspells, removal, card draw, and efficient win conditions
+- **Dimir Mill** (U/B): Mill-based strategy with graveyard interaction and card advantage
+- **Rakdos Aggro** (B/R): Aggressive deck with efficient creatures and direct damage  
+- **Gruul Midrange** (R/G): Efficient midrange creatures with aggressive abilities and versatile spells
+- **Selesnya Value** (G/W): Incremental advantage through efficient creatures, removal, and versatile utility spells
+- **Orzhov Lifegain Value** (W/B): Incremental advantage through lifegain and card quality
+- **Izzet Spells Matter** (U/R): Instant and sorcery synergies with prowess and spell-based creatures
+- **Golgari Graveyard Value** (B/G): Graveyard-based value engine with recursion and sacrifice
+- **Boros Equipment Aggro** (R/W): Aggressive creatures with equipment support and combat tricks  
+- **Simic Ramp Control** (G/U): Ramp into large threats with card draw and protection
 
 ## How It Works
 
