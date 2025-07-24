@@ -14,7 +14,7 @@ check for constraint compliance, and analyze card distribution.
 # )
 
 import pandas as pd
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple
 
 from src.construct.core import CardConstraints
 
@@ -176,13 +176,14 @@ def validate_deck_constraints(deck_dataframes: Dict[str, pd.DataFrame], all_them
     }
 
 
-def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame) -> Dict:
+def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame, constraints: CardConstraints) -> Dict:
     """
     Analyze how cards are distributed across decks and themes.
     
     Args:
         deck_dataframes: Dictionary mapping theme names to their deck DataFrames
         oracle_df: DataFrame with all available cards
+        constraints: CardConstraints object defining the deck building rules
     
     Returns:
         dict: Analysis results
@@ -232,18 +233,18 @@ def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
     
     for theme_name, deck_df in deck_dataframes.items():
         deck_size = len(deck_df)
-        if deck_size == 13:
+        if deck_size == constraints.target_deck_size:
             complete_decks += 1
         elif deck_size > 0:
             incomplete_decks.append((theme_name, deck_size))
     
-    print(f"Complete decks (13 cards): {complete_decks}")
+    print(f"Complete decks ({constraints.target_deck_size} cards): {complete_decks}")
     print(f"Incomplete decks: {len(incomplete_decks)}")
     
     if incomplete_decks:
         print(f"\nIncomplete deck details:")
         for theme, size in incomplete_decks:
-            print(f"  {theme}: {size}/13 cards")
+            print(f"  {theme}: {size}/{constraints.target_deck_size} cards")
     
     # Analyze unused cards by type
     if unused_count > 0:
@@ -278,7 +279,7 @@ def analyze_card_distribution(deck_dataframes: Dict[str, pd.DataFrame], oracle_d
     }
 
 
-def validate_jumpstart_cube(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame, all_themes: Dict) -> Dict:
+def validate_jumpstart_cube(deck_dataframes: Dict[str, pd.DataFrame], oracle_df: pd.DataFrame, all_themes: Dict, constraints: CardConstraints) -> Dict:
     """
     Comprehensive validation of the entire jumpstart cube construction.
     
@@ -286,6 +287,7 @@ def validate_jumpstart_cube(deck_dataframes: Dict[str, pd.DataFrame], oracle_df:
         deck_dataframes: Dictionary mapping theme names to their deck DataFrames
         oracle_df: DataFrame with all available cards
         all_themes: Dictionary of all theme configurations
+        constraints: CardConstraints object defining the deck building rules
     
     Returns:
         dict: Complete validation results
@@ -293,13 +295,10 @@ def validate_jumpstart_cube(deck_dataframes: Dict[str, pd.DataFrame], oracle_df:
     print("🎯 COMPREHENSIVE JUMPSTART CUBE VALIDATION")
     print("=" * 60)
     
-    # Create constraints object
-    constraints = CardConstraints()
-    
     # Run all validations
     uniqueness_result = validate_card_uniqueness(deck_dataframes)
     constraint_result = validate_deck_constraints(deck_dataframes, all_themes, constraints)
-    distribution_result = analyze_card_distribution(deck_dataframes, oracle_df)
+    distribution_result = analyze_card_distribution(deck_dataframes, oracle_df, constraints)
     
     # Overall validation status
     overall_valid = uniqueness_result['valid'] and constraint_result['valid']
