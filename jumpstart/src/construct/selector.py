@@ -66,7 +66,7 @@ class CardSelector:
                 continue
             
             # Score the card
-            score = self._score_card_for_theme(card, theme_name, theme_config, theme_colors, is_mono, phase)
+            score = self._score_card_for_theme(card, theme_name, theme_config, theme_colors, is_mono, phase, deck_state, constraints)
 
             if score >= self._get_score_threshold(phase):
                 candidates.append((idx, card, score))
@@ -128,11 +128,12 @@ class CardSelector:
         return scorer_function(), core_card_count
     
     def _score_card_for_theme(self, card: pd.Series, theme_name: str, theme_config: dict, 
-                             theme_colors: Set[str], is_mono: bool, phase: str = "general") -> float:
+                             theme_colors: Set[str], is_mono: bool, phase: str = "general", 
+                             deck_state: DeckState = None, constraints: CardConstraints = None) -> float:
         """Score a card for theme appropriateness using specialized scorers."""
         if is_land_card(card):
             return score_land_for_dual_colors(card, theme_colors)
-        
+
         # For core phase, we use specialized scorers in the reservation method
         # For other phases, use enhanced scoring with specialization
         if phase == "core":
@@ -149,7 +150,7 @@ class CardSelector:
                 base_score = scorer.score_card(card, theme_config)
             else:
                 base_score = score_card_for_theme(card, theme_config)
-        
+
         # Color preference bonus
         card_colors = set(get_card_colors(card))
         if card_colors == theme_colors:
@@ -158,9 +159,15 @@ class CardSelector:
             base_score += 0.3
         elif not card_colors:  # Colorless
             base_score += 0.1
-        
+
+        # Creature prioritization boost when below minimum
+        if (deck_state and constraints and 
+            is_creature_card(card) and 
+            deck_state.needs_more_creatures(constraints)):
+            base_score += 2.0  # Significant boost to prioritize creatures when below minimum
+
         return base_score
-    
+
     def _get_score_threshold(self, phase: str) -> float:
         """Get minimum score threshold for different phases."""
         thresholds = {

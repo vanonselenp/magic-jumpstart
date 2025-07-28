@@ -105,7 +105,7 @@ Each theme uses **specialized scorers** for accurate card evaluation:
 The system enforces realistic deck building constraints:
 
 - **Deck Size**: 13 cards per deck (390 cards total)
-- **Creature Limit**: Maximum 9 creatures per deck  
+- **Creature Constraints**: Minimum 3 and maximum 9 creatures per deck  
 - **Non-Land Limit**: Maximum 12 non-land cards per deck  
 - **Land Limits**: 1 land per deck (mono and dual-color themes)
 - **Card Uniqueness**: No card appears in multiple decks
@@ -211,10 +211,11 @@ from src.construct import CardConstraints
 # Custom constraints with detailed configuration
 constraints = CardConstraints(
     target_deck_size=13,    # Cards per deck
+    min_creatures=4,        # Minimum creatures per deck
+    max_creatures=8,        # Maximum creatures per deck
     total_non_land=12,      # Maximum non-land cards per deck
     max_lands_mono=1,       # Lands for mono-color themes  
     max_lands_dual=1,       # Lands for dual-color themes
-    max_creatures=9,        # Max creatures per deck
 )
 
 # Build decks with custom constraints

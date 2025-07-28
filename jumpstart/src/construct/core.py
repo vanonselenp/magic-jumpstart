@@ -10,6 +10,7 @@ from typing import Set, List
 @dataclass
 class CardConstraints:
     """Encapsulates deck building constraints for a theme."""
+    min_creatures: int = 3
     max_creatures: int = 9
     max_lands_mono: int = 1
     max_lands_dual: int = 3
@@ -47,6 +48,10 @@ class DeckState:
     
     def can_add_creature(self, constraints: CardConstraints) -> bool:
         return self.creature_count < constraints.max_creatures
+    
+    def needs_more_creatures(self, constraints: CardConstraints) -> bool:
+        """Check if we need more creatures to meet the minimum requirement."""
+        return self.creature_count < constraints.min_creatures
     
     def can_add_land(self, constraints: CardConstraints, is_mono: bool, land_name: str) -> bool:
         max_lands = constraints.get_max_lands(is_mono)

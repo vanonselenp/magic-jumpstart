@@ -155,12 +155,17 @@ class DeckBuilder:
         """Build cards for a specific theme in a specific phase."""
         deck_state = self.decks[theme_name]
         cards_needed = self.constraints.target_deck_size - deck_state.size
-        
+
         if cards_needed <= 0:
             return
-        
+
         print(f"\n🎯 {phase.title()} phase: {theme_name} ({deck_state.size}/{self.constraints.target_deck_size})")
         
+        # Log if below minimum creatures
+        if deck_state.needs_more_creatures(self.constraints):
+            creatures_needed = self.constraints.min_creatures - deck_state.creature_count
+            print(f"  ⚠️  Below minimum creatures: {deck_state.creature_count}/{self.constraints.min_creatures} (need {creatures_needed} more)")
+
         candidates = self.selector.get_candidates_for_theme(
             theme_name, theme_config, deck_state, self.constraints, phase
         )
@@ -210,6 +215,8 @@ class DeckBuilder:
             violations = []
             if deck_state.creature_count > self.constraints.max_creatures:
                 violations.append(f"creatures: {deck_state.creature_count}/{self.constraints.max_creatures}")
+            if deck_state.creature_count < self.constraints.min_creatures:
+                violations.append(f"min creatures: {deck_state.creature_count}/{self.constraints.min_creatures}")
             if deck_state.land_count > max_lands:
                 violations.append(f"lands: {deck_state.land_count}/{max_lands}")
             
@@ -356,6 +363,11 @@ class DeckBuilder:
                 # Score the card
                 from ..scorer import score_card_for_theme
                 score = score_card_for_theme(card, theme_config)
+                
+                # Creature prioritization boost when below minimum
+                if is_creature_card(card) and current_creatures < self.constraints.min_creatures:
+                    score += 2.0  # Significant boost to prioritize creatures when below minimum
+                    print(f"  🎯 Prioritizing creature {card['name']} (below min: {current_creatures}/{self.constraints.min_creatures})")
                 
                 # Special case: if deck needs exactly 1 land and this is a land, accept ANY land
                 needs_land_to_complete = (
