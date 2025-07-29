@@ -105,7 +105,7 @@ Each theme uses **specialized scorers** for accurate card evaluation:
 The system enforces realistic deck building constraints:
 
 - **Deck Size**: 13 cards per deck (390 cards total)
-- **Creature Constraints**: Minimum 3 and maximum 9 creatures per deck  
+- **Creature Limit**: Maximum 9 creatures per deck  
 - **Non-Land Limit**: Maximum 12 non-land cards per deck  
 - **Land Limits**: 1 land per deck (mono and dual-color themes)
 - **Card Uniqueness**: No card appears in multiple decks

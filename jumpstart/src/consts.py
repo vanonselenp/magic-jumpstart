@@ -337,11 +337,14 @@ DUAL_COLOR_THEMES = {
     'Boros Equipment Aggro': {
         'colors': [MagicColor.RED.value, MagicColor.WHITE.value],
         'strategy': 'Aggressive creatures with equipment support and combat tricks',
-        'keywords': ['equipment', 'haste', 'first strike', 'attack', 'combat', 'pump', 'equip', 'equipped',
-                    'sword', 'blade', 'artifact', 'gets +', 'equipped creature', 'attach', 'living weapon'],
+        'keywords': [
+            'equipment', 'equip', 'equipped', 'artifact', 'sword', 'blade', 'living weapon', 'attach', 'gets +',
+            'haste', 'first strike', 'attack', 'combat', 'pump'
+        ],
         'archetype': 'Aggro',
         'scorer': create_equipment_scorer,
-        'core_card_count': 5
+        'core_card_count': 7,  # Increased to reserve more equipment
+        'color_priority': 'strict'  # Optional, if you want only RW equipment
     },
     
     # Green-Blue (Simic)
