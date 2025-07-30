@@ -319,11 +319,11 @@ DECK LIST (Alphabetical):
 {'─'*50}"""
 
     # Add cards in two columns for better space usage
-    for i in range(0, len(card_names), 2):
+    for i in range(0, len(card_names), 1):
         left_card = card_names[i]
-        right_card = card_names[i + 1] if i + 1 < len(card_names) else ""
+        # right_card = card_names[i + 1] if i + 1 < len(card_names) else ""
         # Format with proper spacing (25 chars per column)
-        divider += f"\n{left_card:<25} {right_card}"
+        divider += f"\n{left_card:<25}"
 
     divider += f"\n\n{'='*50}"
 

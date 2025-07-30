@@ -13,13 +13,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Blessed Hippogriff        Candy Trail
-Condescend                Filigree Familiar
-Gitaxian Probe            Judge's Familiar
-Lyev Skyknight            Momentary Blink
-Mutagenic Growth          Rhox Veteran
-Silver Drake              Skybridge Towers
-Young Blue Dragon         
+Blessed Hippogriff       
+Candy Trail              
+Condescend               
+Filigree Familiar        
+Gitaxian Probe           
+Judge's Familiar         
+Lyev Skyknight           
+Momentary Blink          
+Mutagenic Growth         
+Rhox Veteran             
+Silver Drake             
+Skybridge Towers         
+Young Blue Dragon        
 
 ==================================================
 
@@ -40,13 +46,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Arms of Hadar             Ashes to Ashes
-Doom Blade                Faceless Butcher
-Gray Merchant of Asphodel Loathsome Curator
-Mardu Skullhunter         Troll of Khazad-dûm
-Twisted Landscape         Undying Malice
-Vampire Sovereign         Vendetta
-Wither and Bloom          
+Arms of Hadar            
+Ashes to Ashes           
+Doom Blade               
+Faceless Butcher         
+Gray Merchant of Asphodel
+Loathsome Curator        
+Mardu Skullhunter        
+Troll of Khazad-dûm      
+Twisted Landscape        
+Undying Malice           
+Vampire Sovereign        
+Vendetta                 
+Wither and Bloom         
 
 ==================================================
 
@@ -67,13 +79,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bone Picker               Chitin Gravestalker
-Dread Return              First-Sphere Gargantua
-Gravedigger               Gurmag Angler
-Jagged Barrens            Okiba-Gang Shinobi
-Scurrilous Sentry         Thorn of the Black Rose
-Tortured Existence        Unearth
-Unwilling Ingredient      
+Bone Picker              
+Chitin Gravestalker      
+Dread Return             
+First-Sphere Gargantua   
+Gravedigger              
+Gurmag Angler            
+Jagged Barrens           
+Okiba-Gang Shinobi       
+Scurrilous Sentry        
+Thorn of the Black Rose  
+Tortured Existence       
+Unearth                  
+Unwilling Ingredient     
 
 ==================================================
 
@@ -94,13 +112,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Aether Poisoner           Basilica Screecher
-Carrier Thrall            Cast Down
-Dauthi Horror             Dauthi Slayer
-Falkenrath Noble          Feign Death
-Go for the Throat         Infestation Sage
-Nested Shambler           Nezumi Linkbreaker
-Seething Landscape        
+Aether Poisoner          
+Basilica Screecher       
+Carrier Thrall           
+Cast Down                
+Dauthi Horror            
+Dauthi Slayer            
+Falkenrath Noble         
+Feign Death              
+Go for the Throat        
+Infestation Sage         
+Nested Shambler          
+Nezumi Linkbreaker       
+Seething Landscape       
 
 ==================================================
 
@@ -121,13 +145,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Accursed Marauder         Blood Fountain
-Candy Grapple             Carrion Feeder
-Gixian Infiltrator        Guildsworn Prowler
-Legion Vanguard           Pestilence
-Putrid Goblin             Ransack the Lab
-Retrofitted Transmogrant  Voracious Vermin
-Witch's Cottage           
+Accursed Marauder        
+Blood Fountain           
+Candy Grapple            
+Carrion Feeder           
+Gixian Infiltrator       
+Guildsworn Prowler       
+Legion Vanguard          
+Pestilence               
+Putrid Goblin            
+Ransack the Lab          
+Retrofitted Transmogrant 
+Voracious Vermin         
+Witch's Cottage          
 
 ==================================================
 
@@ -148,13 +178,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Aethersnipe               Behold the Multiverse
-Contaminated Landscape    Looter il-Kor
-Lórien Revealed           Merfolk Looter
-Moon-Circuit Hacker       Ninja of the Deep Hours
-Opt                       Preordain
-Striped Riverwinder       Sword Coast Serpent
-Vizier of Tumbling Sands  
+Aethersnipe              
+Behold the Multiverse    
+Contaminated Landscape   
+Looter il-Kor            
+Lórien Revealed          
+Merfolk Looter           
+Moon-Circuit Hacker      
+Ninja of the Deep Hours  
+Opt                      
+Preordain                
+Striped Riverwinder      
+Sword Coast Serpent      
+Vizier of Tumbling Sands 
 
 ==================================================
 
@@ -174,13 +210,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Cloudkin Seer             Cruel Witness
-Exclude                   Frost Trickster
-Geyser Drake              Miscalculation
-Mist Raven                Mulldrifter
-Mystic Sanctuary          Peregrine Drake
-Phantom Interference      Preening Champion
-Warden of Evos Isle       
+Cloudkin Seer            
+Cruel Witness            
+Exclude                  
+Frost Trickster          
+Geyser Drake             
+Miscalculation           
+Mist Raven               
+Mulldrifter              
+Mystic Sanctuary         
+Peregrine Drake          
+Phantom Interference     
+Preening Champion        
+Warden of Evos Isle      
 
 ==================================================
 
@@ -201,13 +243,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Capsize                   Displace
-Eldrazi Skyspawner        Faerie Seer
-Ghostly Flicker           Hickory Woodlot
-Man-o'-War                Mirrorshell Crab
-Mistral Singer            Pestermite
-Snap                      Winter Eladrin
-Zephyr Winder             
+Capsize                  
+Displace                 
+Eldrazi Skyspawner       
+Faerie Seer              
+Ghostly Flicker          
+Hickory Woodlot          
+Man-o'-War               
+Mirrorshell Crab         
+Mistral Singer           
+Pestermite               
+Snap                     
+Winter Eladrin           
+Zephyr Winder            
 
 ==================================================
 
@@ -228,13 +276,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Archaeomancer             Counterspell
-Dismal Backwater          Into the Roil
-Jhessian Thief            Lose Focus
-Murmuring Mystic          Quick Study
-Remove Soul               Serum Visionary
-Shipwreck Dowser          Tolarian Terror
-Treasure Cruise           
+Archaeomancer            
+Counterspell             
+Dismal Backwater         
+Into the Roil            
+Jhessian Thief           
+Lose Focus               
+Murmuring Mystic         
+Quick Study              
+Remove Soul              
+Serum Visionary          
+Shipwreck Dowser         
+Tolarian Terror          
+Treasure Cruise          
 
 ==================================================
 
@@ -255,13 +309,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Abraded Bluffs            Cartouche of Solidarity
-Clockwork Percussionist   Conduit Goblin
-Dog Walker                Flame Slash
-Grim Initiate             Inspiring Paladin
-Reckless Charge           Rolling Thunder
-Tenth District Legionnaire Unbounded Potential
-You Hear Something on Watch 
+Abraded Bluffs           
+Cartouche of Solidarity  
+Clockwork Percussionist  
+Conduit Goblin           
+Dog Walker               
+Flame Slash              
+Grim Initiate            
+Inspiring Paladin        
+Reckless Charge          
+Rolling Thunder          
+Tenth District Legionnaire
+Unbounded Potential      
+You Hear Something on Watch
 
 ==================================================
 
@@ -282,13 +342,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Brainstorm                Consider
-Deep Analysis             Deranged Assistant
-Dimir Guildmage           Dinrova Horror
-Grim Bauble               Mind Stone
-Mire Triton               Ponder
-Shardless Outlander       Soul Manipulation
-Waterfront District       
+Brainstorm               
+Consider                 
+Deep Analysis            
+Deranged Assistant       
+Dimir Guildmage          
+Dinrova Horror           
+Grim Bauble              
+Mind Stone               
+Mire Triton              
+Ponder                   
+Shardless Outlander      
+Soul Manipulation        
+Waterfront District      
 
 ==================================================
 
@@ -309,13 +375,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Death Denied              Desecrator Hag
-Dreg Mangler              Eldrazi Repurposer
-Golgari Rot Farm          Grapple with the Past
-Infuse with Vitality      Malevolent Rumble
-Pulse of Murasa           Putrid Leech
-Tithing Blade             Wary Thespian
-Winding Way               
+Death Denied             
+Desecrator Hag           
+Dreg Mangler             
+Eldrazi Repurposer       
+Golgari Rot Farm         
+Grapple with the Past    
+Infuse with Vitality     
+Malevolent Rumble        
+Pulse of Murasa          
+Putrid Leech             
+Tithing Blade            
+Wary Thespian            
+Winding Way              
 
 ==================================================
 
@@ -335,13 +407,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bushwhack                 Conclave Naturalists
-Conduit Pylons            Contagious Vorrac
-Horrific Assault          Jade Guardian
-Mother Bear               Owlbear
-Phantom Tiger             Rancor
-Renegade Freighter        Sarulf's Packmate
-Vines of Vastwood         
+Bushwhack                
+Conclave Naturalists     
+Conduit Pylons           
+Contagious Vorrac        
+Horrific Assault         
+Jade Guardian            
+Mother Bear              
+Owlbear                  
+Phantom Tiger            
+Rancor                   
+Renegade Freighter       
+Sarulf's Packmate        
+Vines of Vastwood        
 
 ==================================================
 
@@ -362,13 +440,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Arbor Elf                 Basking Broodscale
-Elvish Mystic             Experiment One
-Llanowar Elves            Llanowar Visionary
-Longstalk Brawl           Nest Invader
-Night Market              Nyxborn Hydra
-Sprout Swarm              Utopia Sprawl
-Werebear                  
+Arbor Elf                
+Basking Broodscale       
+Elvish Mystic            
+Experiment One           
+Llanowar Elves           
+Llanowar Visionary       
+Longstalk Brawl          
+Nest Invader             
+Night Market             
+Nyxborn Hydra            
+Sprout Swarm             
+Utopia Sprawl            
+Werebear                 
 
 ==================================================
 
@@ -389,13 +473,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Annoyed Altisaur          Colossal Dreadmask
-Fertile Ground            Generous Ent
-Greater Tanuki            Jade Avenger
-Krosan Tusker             Nature's Lore
-Sakura-Tribe Elder        Tranquil Landscape
-Trumpeting Herd           Wild Growth
-Yavimaya Elder            
+Annoyed Altisaur         
+Colossal Dreadmask       
+Fertile Ground           
+Generous Ent             
+Greater Tanuki           
+Jade Avenger             
+Krosan Tusker            
+Nature's Lore            
+Sakura-Tribe Elder       
+Tranquil Landscape       
+Trumpeting Herd          
+Wild Growth              
+Yavimaya Elder           
 
 ==================================================
 
@@ -415,13 +505,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bannerhide Krushok        Basilisk Gate
-Blastoderm                Bloom Hulk
-Bramble Wurm              Giant Growth
-Gnarlid Colony            Hazard of the Dunes
-Hooting Mandrills         Massive Might
-Ram Through               Silverback Shaman
-Tuskguard Captain         
+Bannerhide Krushok       
+Basilisk Gate            
+Blastoderm               
+Bloom Hulk               
+Bramble Wurm             
+Giant Growth             
+Gnarlid Colony           
+Hazard of the Dunes      
+Hooting Mandrills        
+Massive Might            
+Ram Through              
+Silverback Shaman        
+Tuskguard Captain        
 
 ==================================================
 
@@ -442,13 +538,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bonder's Ornament         Branching Bolt
-Burning-Tree Emissary     Goblin Anarchomancer
-Hobblefiend               Juggernaut
-Molten Gatekeeper         Pristine Talisman
-Racers' Ring              Serrated Arrows
-Ulamog's Crusher          Witty Roastmaster
-Writhing Chrysalis        
+Bonder's Ornament        
+Branching Bolt           
+Burning-Tree Emissary    
+Goblin Anarchomancer     
+Hobblefiend              
+Juggernaut               
+Molten Gatekeeper        
+Pristine Talisman        
+Racers' Ring             
+Serrated Arrows          
+Ulamog's Crusher         
+Witty Roastmaster        
+Writhing Chrysalis       
 
 ==================================================
 
@@ -469,13 +571,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bloodwater Entity         Compulsive Research
-Eroded Canyon             Gnawing Crescendo
-Goblin Electromancer      Hard Evidence
-Impulse                   Incinerate
-Izzet Charm               Mocking Sprite
-Searing Spear             Serum Visions
-Sulfurous Blast           
+Bloodwater Entity        
+Compulsive Research      
+Eroded Canyon            
+Gnawing Crescendo        
+Goblin Electromancer     
+Hard Evidence            
+Impulse                  
+Incinerate               
+Izzet Charm              
+Mocking Sprite           
+Searing Spear            
+Serum Visions            
+Sulfurous Blast          
 
 ==================================================
 
@@ -496,13 +604,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Coalition Honor Guard     Feed the Swarm
-Gift of Orzhova           Greatsword of Tyr
-Kingpin's Pet             Orzhov Basilica
-Palace Sentinels          Phantom Nomad
-Pillory of the Sleepless  Raise the Alarm
-Search Party Captain      Seeker of the Way
-Tithe Drinker             
+Coalition Honor Guard    
+Feed the Swarm           
+Gift of Orzhova          
+Greatsword of Tyr        
+Kingpin's Pet            
+Orzhov Basilica          
+Palace Sentinels         
+Phantom Nomad            
+Pillory of the Sleepless 
+Raise the Alarm          
+Search Party Captain     
+Seeker of the Way        
+Tithe Drinker            
 
 ==================================================
 
@@ -523,13 +637,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Blightning                Body Dropper
-Ecstatic Awakener         Fireblade Artist
-Guardian Idol             Iron Apprentice
-Jackal Pup                Monastery Swiftspear
-Perilous Myr              Porcelain Legionnaire
-Scorched Rusalka          Tramway Station
-Wayfarer's Bauble         
+Blightning               
+Body Dropper             
+Ecstatic Awakener        
+Fireblade Artist         
+Guardian Idol            
+Iron Apprentice          
+Jackal Pup               
+Monastery Swiftspear     
+Perilous Myr             
+Porcelain Legionnaire    
+Scorched Rusalka         
+Tramway Station          
+Wayfarer's Bauble        
 
 ==================================================
 
@@ -550,13 +670,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Aether Chaser             Ambitious Assault
-Ardent Elementalist       Barbed Batterfist
-Beetleback Chief          Bonesplitter
-Fireblast                 Firebolt
-Leonin Bola               Rift Bolt
-Scholar of Combustion     Shattered Landscape
-Spelleater Wolverine      
+Aether Chaser            
+Ambitious Assault        
+Ardent Elementalist      
+Barbed Batterfist        
+Beetleback Chief         
+Bonesplitter             
+Fireblast                
+Firebolt                 
+Leonin Bola              
+Rift Bolt                
+Scholar of Combustion    
+Shattered Landscape      
+Spelleater Wolverine     
 
 ==================================================
 
@@ -577,13 +703,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Bristling Backwoods       Burst Lightning
-Chain Lightning           Firebrand Archer
-Fireslinger               Forbidden Friendship
-Galvanic Discharge        Guttersnipe
-Lightning Bolt            Lightning Strike
-Orcish Hellraiser         Rally at the Hornburg
-Scrapwork Mutt            
+Bristling Backwoods      
+Burst Lightning          
+Chain Lightning          
+Firebrand Archer         
+Fireslinger              
+Forbidden Friendship     
+Galvanic Discharge       
+Guttersnipe              
+Lightning Bolt           
+Lightning Strike         
+Orcish Hellraiser        
+Rally at the Hornburg    
+Scrapwork Mutt           
 
 ==================================================
 
@@ -603,13 +735,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Abrade                    Bogardan Dragonheart
-Hissing Iguanar           Oliphaunt
-Raid Bombardment          Rimrock Knight
-Sheltering Landscape      Thriving Grubs
-Thriving Skyclaw          Underworld Rage-Hound
-Volatile Wanderglyph      Wrangle
-Yavimaya Steelcrusher     
+Abrade                   
+Bogardan Dragonheart     
+Hissing Iguanar          
+Oliphaunt                
+Raid Bombardment         
+Rimrock Knight           
+Sheltering Landscape     
+Thriving Grubs           
+Thriving Skyclaw         
+Underworld Rage-Hound    
+Volatile Wanderglyph     
+Wrangle                  
+Yavimaya Steelcrusher    
 
 ==================================================
 
@@ -629,13 +767,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Dark-Dweller Oracle       Fanatical Firebrand
-Fireball                  Frenzied Goblin
-Goblin Bushwhacker        Goblin Motivator
-Goblin Surprise           Harried Spearguard
-Improvised Club           Mayhem Patrol
-Mogg War Marshal          Red Herring
-Teetering Peaks           
+Dark-Dweller Oracle      
+Fanatical Firebrand      
+Fireball                 
+Frenzied Goblin          
+Goblin Bushwhacker       
+Goblin Motivator         
+Goblin Surprise          
+Harried Spearguard       
+Improvised Club          
+Mayhem Patrol            
+Mogg War Marshal         
+Red Herring              
+Teetering Peaks          
 
 ==================================================
 
@@ -656,13 +800,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Armadillo Cloak           Battle Screech
-Botanical Plaza           Captured by Lagacs
-Faithful Watchdog         Heliod's Pilgrim
-Jewel Thief               Journey to Nowhere
-Safehold Elite            Thraben Charm
-Trapped in the Screen     Treetop Snarespinner
-Voracious Varmint         
+Armadillo Cloak          
+Battle Screech           
+Botanical Plaza          
+Captured by Lagacs       
+Faithful Watchdog        
+Heliod's Pilgrim         
+Jewel Thief              
+Journey to Nowhere       
+Safehold Elite           
+Thraben Charm            
+Trapped in the Screen    
+Treetop Snarespinner     
+Voracious Varmint        
 
 ==================================================
 
@@ -683,13 +833,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Coiling Oracle            Evolution Witness
-Growth Spiral             Mana Leak
-Prophetic Prism           Quandrix Campus
-Quandrix Pledgemage       Repeal
-Snakeskin Veil            Snapping Voidcraw
-Tamiyo's Safekeeping      Urban Daggertooth
-Wall of Roots             
+Coiling Oracle           
+Evolution Witness        
+Growth Spiral            
+Mana Leak                
+Prophetic Prism          
+Quandrix Campus          
+Quandrix Pledgemage      
+Repeal                   
+Snakeskin Veil           
+Snapping Voidcraw        
+Tamiyo's Safekeeping     
+Urban Daggertooth        
+Wall of Roots            
 
 ==================================================
 
@@ -710,13 +866,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Aerie Auxiliary           Combat Professor
-Custodi Squire            Dauntless Unity
-Eagles of the North       Faith's Fetters
-Guardian of the Guildpact Holy Cow
-Inspiring Overseer        Pegasus Guardian
-Quicksand                 Settle Beyond Reality
-Vault Skirge              
+Aerie Auxiliary          
+Combat Professor         
+Custodi Squire           
+Dauntless Unity          
+Eagles of the North      
+Faith's Fetters          
+Guardian of the Guildpact
+Holy Cow                 
+Inspiring Overseer       
+Pegasus Guardian         
+Quicksand                
+Settle Beyond Reality    
+Vault Skirge             
 
 ==================================================
 
@@ -737,13 +899,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Ancestral Blade           Ardenvale Tactician
-Cathar Commando           Dog Umbra
-Flayer Husk               Glimmerlight
-Kor Skyfisher             Mandibular Kite
-Militia Bugler            Sandsteppe Outcast
-Scoured Barrens           Stormfront Pegasus
-Vulshok Morningstar       
+Ancestral Blade          
+Ardenvale Tactician      
+Cathar Commando          
+Dog Umbra                
+Flayer Husk              
+Glimmerlight             
+Kor Skyfisher            
+Mandibular Kite          
+Militia Bugler           
+Sandsteppe Outcast       
+Scoured Barrens          
+Stormfront Pegasus       
+Vulshok Morningstar      
 
 ==================================================
 
@@ -764,13 +932,19 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Ainok Bond-Kin            Boros Elite
-Doomed Traveler           Ephemerate
-Gideon's Lawkeeper        Gods Willing
-Goldmeadow Harrier        Mana Tithe
-Miner's Guidewing         Soltari Trooper
-Thraben Inspector         Topan Freeblade
-Tranquil Cove             
+Ainok Bond-Kin           
+Boros Elite              
+Doomed Traveler          
+Ephemerate               
+Gideon's Lawkeeper       
+Gods Willing             
+Goldmeadow Harrier       
+Mana Tithe               
+Miner's Guidewing        
+Soltari Trooper          
+Thraben Inspector        
+Topan Freeblade          
+Tranquil Cove            
 
 ==================================================
 
@@ -791,12 +965,18 @@ CARDS: 13
 ──────────────────────────────────────────────────
 DECK LIST (Alphabetical):
 ──────────────────────────────────────────────────
-Deftblade Elite           Elite Vanguard
-Escape Tunnel             Faerie Guidemother
-Gingerbrute               Novice Inspector
-Petrify                   Planar Disruption
-Raffine's Informant       Savannah Lions
-Sunlance                  Suture Priest
-Syndic of Tithes          
+Deftblade Elite          
+Elite Vanguard           
+Escape Tunnel            
+Faerie Guidemother       
+Gingerbrute              
+Novice Inspector         
+Petrify                  
+Planar Disruption        
+Raffine's Informant      
+Savannah Lions           
+Sunlance                 
+Suture Priest            
+Syndic of Tithes         
 
 ==================================================
