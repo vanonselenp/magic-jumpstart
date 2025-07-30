@@ -3,11 +3,11 @@ Boros Elite,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Soldiers
 Miner's Guidewing,Mixed,,common,W,Creature - Bird,,1,1.0,1.0,White Soldiers
 Topan Freeblade,Mixed,,common,W,Creature - Human Soldier,,2,2.0,2.0,White Soldiers
 Ainok Bond-Kin,Mixed,,common,W,Creature - Dog Soldier,,2,2.0,1.0,White Soldiers
-Cartouche of Solidarity,Mixed,,common,W,Creature Enchantment - Aura Cartouche,,1,,,White Soldiers
 Doomed Traveler,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Soldiers
 Gideon's Lawkeeper,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Soldiers
 Goldmeadow Harrier,Mixed,,common,W,Creature - Kithkin Soldier,,1,1.0,1.0,White Soldiers
 Thraben Inspector,Mixed,,common,W,Creature - Human Soldier,,1,1.0,2.0,White Soldiers
+Soltari Trooper,Mixed,,common,W,Creature - Soltari Soldier,,2,1.0,1.0,White Soldiers
 Ephemerate,Mixed,,common,W,Instant,,1,,,White Soldiers
 Gods Willing,Mixed,,common,W,Instant,,1,,,White Soldiers
 Mana Tithe,Mixed,,common,W,Instant,,1,,,White Soldiers
@@ -41,6 +41,7 @@ Quicksand,Mixed,,common,,Land,,0,,,White Angels
 Gingerbrute,Mixed,,common,,Artifact Creature - Food Golem,,1,1.0,1.0,White Weenies
 Deftblade Elite,Mixed,,common,W,Creature - Human Soldier,,1,1.0,1.0,White Weenies
 Elite Vanguard,Mixed,,common,W,Creature - Human Soldier,,1,2.0,1.0,White Weenies
+Faerie Guidemother,Mixed,,common,W,Creature - Faerie ,,1,1.0,1.0,White Weenies
 Novice Inspector,Mixed,,common,W,Creature - Human Detective,,1,1.0,2.0,White Weenies
 Savannah Lions,Mixed,,common,W,Creature - Cat,,1,2.0,1.0,White Weenies
 Raffine's Informant,Mixed,,common,W,Creature - Human Wizard,,2,2.0,1.0,White Weenies
@@ -49,7 +50,6 @@ Suture Priest,Mixed,,common,W,Creature - Phyrexian Cleric,,2,1.0,1.0,White Weeni
 Sunlance,Mixed,,common,W,Sorcery,,1,,,White Weenies
 Petrify,Mixed,,common,W,Enchantment - Aura,,2,,,White Weenies
 Planar Disruption,Mixed,,common,W,Enchantment - Aura,,2,,,White Weenies
-Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,White Weenies
 Escape Tunnel,Mixed,,common,,Land,,0,,,White Weenies
 Phantom Interference,Mixed,,common,U,Instant,,1,,,Blue Flying
 Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Flying
@@ -161,25 +161,25 @@ Goblin Surprise,Mixed,,common,R,Instant,,3,,,Red Goblins
 Goblin Motivator,Mixed,,common,R,Creature - Goblin Warrior,,1,1.0,1.0,Red Goblins
 Harried Spearguard,Mixed,,common,R,Creature - Human Soldier,,1,1.0,1.0,Red Goblins
 Frenzied Goblin,Mixed,,common,R,Creature - Goblin Berserker,,1,1.0,1.0,Red Goblins
-Grim Initiate,Mixed,,common,R,Creature - Zombie Warrior,,1,1.0,1.0,Red Goblins
 Dark-Dweller Oracle,Mixed,,common,R,Creature - Goblin Shaman,,2,2.0,2.0,Red Goblins
 Goblin Bushwhacker,Mixed,,common,R,Creature - Goblin Warrior,,2,1.0,1.0,Red Goblins
-Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Goblins
-Reckless Charge,Mixed,,common,R,Sorcery,,1,,,Red Goblins
+Mayhem Patrol,Mixed,,common,R,Creature - Devil Warrior,,2,1.0,2.0,Red Goblins
+Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,2.0,2.0,Red Goblins
 Improvised Club,Mixed,,common,R,Instant,,2,,,Red Goblins
+Fireball,Mixed,,common,R,Sorcery,,1,,,Red Goblins
 Teetering Peaks,Mixed,,common,R,Land,,0,,,Red Goblins
 Burst Lightning,Mixed,,common,R,Instant,,1,,,Red Burn
 Lightning Bolt,Mixed,,common,R,Instant,,1,,,Red Burn
 Galvanic Discharge,Mixed,,common,R,Instant,,1,,,Red Burn
 Chain Lightning,Mixed,,common,R,Sorcery,,1,,,Red Burn
 Lightning Strike,Mixed,,common,R,Instant,,2,,,Red Burn
+Forbidden Friendship,Mixed,,common,R,Creature Sorcery,,2,,,Red Burn
 Rally at the Hornburg,Mixed,,common,R,Creature Sorcery,,2,,,Red Burn
 Firebrand Archer,Mixed,,common,R,Creature - Human Archer,,2,2.0,1.0,Red Burn
 Fireslinger,Mixed,,common,R,Creature - Human Wizard,,2,1.0,1.0,Red Burn
 Orcish Hellraiser,Mixed,,common,R,Creature - Orc Warrior,,2,3.0,2.0,Red Burn
 Guttersnipe,Mixed,,common,R,Creature - Goblin Shaman,,3,2.0,2.0,Red Burn
 Scrapwork Mutt,Mixed,,common,R,Artifact Creature - Dog,,2,2.0,1.0,Red Burn
-Abrade,Mixed,,common,R,Instant,,2,,,Red Burn
 Bristling Backwoods,Mixed,,common,,Land - Desert,,0,,,Red Burn
 Bogardan Dragonheart,Mixed,,common,R,Creature - Human Shaman,,3,2.0,2.0,Red Dragons
 Thriving Skyclaw,Mixed,,common,R,Creature - Cat Dragon,,4,3.0,2.0,Red Dragons
@@ -192,7 +192,7 @@ Thriving Grubs,Mixed,,common,R,Creature - Gremlin,,2,2.0,1.0,Red Dragons
 Underworld Rage-Hound,Mixed,,common,R,Creature - Elemental Dog,,2,3.0,1.0,Red Dragons
 Volatile Wanderglyph,Mixed,,common,R,Artifact Creature - Golem,,2,2.0,2.0,Red Dragons
 Hissing Iguanar,Mixed,,common,R,Creature - Lizard,,3,3.0,1.0,Red Dragons
-Incinerate,Mixed,,common,R,Instant,,2,,,Red Dragons
+Abrade,Mixed,,common,R,Instant,,2,,,Red Dragons
 Sheltering Landscape,Mixed,,common,,Land,,0,,,Red Dragons
 Leonin Bola,Mixed,,common,,Artifact - Equipment,,1,,,Red Artifacts
 Barbed Batterfist,Mixed,,common,R,Creature Artifact - Equipment,,2,,,Red Artifacts
@@ -295,9 +295,9 @@ Body Dropper,Mixed,,common,BR,Creature - Devil Warrior,,2,2.0,2.0,Rakdos Aggro
 Iron Apprentice,Mixed,,common,,Artifact Creature - Construct,,1,0.0,0.0,Rakdos Aggro
 Perilous Myr,Mixed,,common,,Artifact Creature - Myr,,2,1.0,1.0,Rakdos Aggro
 Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Aggro
+Porcelain Legionnaire,Mixed,,common,,Artifact Creature - Soldier,,2,3.0,1.0,Rakdos Aggro
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
 Ecstatic Awakener,Mixed,,common,B,Creature - Human Wizard,,1,,,Rakdos Aggro
-Plagued Rusalka,Mixed,,common,B,Creature - Spirit,,1,1.0,1.0,Rakdos Aggro
 Hobblefiend,Mixed,,common,R,Creature - Devil,,2,2.0,1.0,Gruul Midrange
 Molten Gatekeeper,Mixed,,common,R,Artifact Creature - Golem,,3,2.0,3.0,Gruul Midrange
 Witty Roastmaster,Mixed,,common,R,Creature - Devil Citizen,,3,3.0,2.0,Gruul Midrange
@@ -332,7 +332,7 @@ Orzhov Basilica,Mixed,,common,BW,Land,,0,,,Orzhov Lifegain Value
 Kingpin's Pet,Mixed,,common,WB,Creature - Thrull,,3,2.0,2.0,Orzhov Lifegain Value
 Gift of Orzhova,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifegain Value
 Pillory of the Sleepless,Mixed,,common,BW,Enchantment - Aura,,3,,,Orzhov Lifegain Value
-Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Orzhov Lifegain Value
+Phantom Nomad,Mixed,,common,W,Creature - Spirit Nomad,,2,0.0,0.0,Orzhov Lifegain Value
 Coalition Honor Guard,Mixed,,common,W,Creature - Human Flagbearer,,4,2.0,4.0,Orzhov Lifegain Value
 Palace Sentinels,Mixed,,common,W,Creature - Human Soldier,,4,2.0,4.0,Orzhov Lifegain Value
 Search Party Captain,Mixed,,common,W,Creature - Human Soldier,,4,2.0,2.0,Orzhov Lifegain Value
@@ -346,10 +346,10 @@ Impulse,Mixed,,common,U,Instant,,2,,,Izzet Spells Matter
 Hard Evidence,Mixed,,common,U,Creature Sorcery,,1,,,Izzet Spells Matter
 Serum Visions,Mixed,,common,U,Sorcery,,1,,,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
+Incinerate,Mixed,,common,R,Instant,,2,,,Izzet Spells Matter
 Searing Spear,Mixed,,common,R,Instant,,2,,,Izzet Spells Matter
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
 Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Izzet Spells Matter
-Fireball,Mixed,,common,R,Sorcery,,1,,,Izzet Spells Matter
 Tithing Blade,Mixed,,common,B,Artifact,,2,,,Golgari Graveyard Value
 Death Denied,Mixed,,common,B,Instant - Arcane,,2,,,Golgari Graveyard Value
 Wary Thespian,Mixed,,common,G,Creature - Cat Druid,,2,3.0,1.0,Golgari Graveyard Value
@@ -363,19 +363,19 @@ Grapple with the Past,Mixed,,common,G,Instant,,2,,,Golgari Graveyard Value
 Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
 Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
-Red Herring,Mixed,,common,R,Artifact Creature - Clue Fish,,2,2.0,2.0,Boros Equipment Aggro
-Mayhem Patrol,Mixed,,common,R,Creature - Devil Warrior,,2,1.0,2.0,Boros Equipment Aggro
-Clockwork Percussionist,Mixed,,common,R,Artifact Creature - Monkey Toy,,1,1.0,1.0,Boros Equipment Aggro
-Porcelain Legionnaire,Mixed,,common,,Artifact Creature - Soldier,,2,3.0,1.0,Boros Equipment Aggro
-Faerie Guidemother,Mixed,,common,W,Creature - Faerie ,,1,1.0,1.0,Boros Equipment Aggro
-Conduit Goblin,Mixed,,common,RW,Creature - Goblin Warrior,,2,2.0,2.0,Boros Equipment Aggro
-Soltari Trooper,Mixed,,common,W,Creature - Soltari Soldier,,2,1.0,1.0,Boros Equipment Aggro
-Abraded Bluffs,Mixed,,common,,Land - Desert,,0,,,Boros Equipment Aggro
-Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Equipment Aggro
-Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Equipment Aggro
-Flame Slash,Mixed,,common,R,Sorcery,,1,,,Boros Equipment Aggro
-You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,Boros Equipment Aggro
-Unbounded Potential,Mixed,,common,W,Instant,,2,,,Boros Equipment Aggro
+Cartouche of Solidarity,Mixed,,common,W,Creature Enchantment - Aura Cartouche,,1,,,Boros Aggro
+Grim Initiate,Mixed,,common,R,Creature - Zombie Warrior,,1,1.0,1.0,Boros Aggro
+Reckless Charge,Mixed,,common,R,Sorcery,,1,,,Boros Aggro
+Inspiring Paladin,Mixed,,common,W,Creature - Human Knight,,3,3.0,3.0,Boros Aggro
+Clockwork Percussionist,Mixed,,common,R,Artifact Creature - Monkey Toy,,1,1.0,1.0,Boros Aggro
+Conduit Goblin,Mixed,,common,RW,Creature - Goblin Warrior,,2,2.0,2.0,Boros Aggro
+Abraded Bluffs,Mixed,,common,,Land - Desert,,0,,,Boros Aggro
+Tenth District Legionnaire,Mixed,,common,RW,Creature - Human Soldier,,2,2.0,2.0,Boros Aggro
+Dog Walker,Mixed,,common,RW,Creature - Human Citizen,,2,3.0,1.0,Boros Aggro
+Flame Slash,Mixed,,common,R,Sorcery,,1,,,Boros Aggro
+You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,Boros Aggro
+Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Boros Aggro
+Unbounded Potential,Mixed,,common,W,Instant,,2,,,Boros Aggro
 Repeal,Mixed,,common,U,Instant,,1,,,Simic Ramp Control
 Mana Leak,Mixed,,common,U,Instant,,2,,,Simic Ramp Control
 Prophetic Prism,Mixed,,common,,Artifact,,2,,,Simic Ramp Control
@@ -423,13 +423,13 @@ Night's Whisper,Mixed,,common,B,Sorcery,,2,,,Unassigned
 Oblivion Ring,Mixed,,common,W,Enchantment,,3,,,Unassigned
 Perilous Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Phyrexian Rager,Mixed,,common,B,Creature - Horror,,3,2.0,2.0,Unassigned
+Plagued Rusalka,Mixed,,common,B,Creature - Spirit,,1,1.0,1.0,Unassigned
 Prismari Campus,Mixed,,common,RU,Land,,0,,,Unassigned
 Prismatic Strands,Mixed,,common,W,Instant,,3,,,Unassigned
 Radiant Grove,Mixed,,common,GW,Land - Forest Plains,,0,,,Unassigned
 Rakdos Carnarium,Mixed,,common,BR,Land,,0,,,Unassigned
 Rally the Peasants,Mixed,,common,WR,Instant,,3,,,Unassigned
 Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Unassigned
-Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Unassigned
 Selesnya Sanctuary,Mixed,,common,WG,Land,,0,,,Unassigned
 Silverquill Campus,Mixed,,common,BW,Land,,0,,,Unassigned
 Simic Growth Chamber,Mixed,,common,UG,Land,,0,,,Unassigned

@@ -334,17 +334,16 @@ DUAL_COLOR_THEMES = {
     },
     
     # Red-White (Boros)
-    'Boros Equipment Aggro': {
+    'Boros Aggro': {
         'colors': [MagicColor.RED.value, MagicColor.WHITE.value],
-        'strategy': 'Aggressive creatures with equipment support and combat tricks',
+        'strategy': 'Aggressive red and white creatures, combat tricks, and burn spells',
         'keywords': [
-            'equipment', 'equip', 'equipped', 'artifact', 'sword', 'blade', 'living weapon', 'attach', 'gets +',
-            'haste', 'first strike', 'attack', 'combat', 'pump'
+            'haste', 'first strike', 'double strike', 'menace', 'pump', 'attack', 'combat', 'burn', 'damage', 'aggressive', 'removal', 'strike', 'rush', 'charge'
         ],
         'archetype': 'Aggro',
-        'scorer': create_equipment_scorer,
-        'core_card_count': 7,  # Increased to reserve more equipment
-        'color_priority': 'strict'  # Optional, if you want only RW equipment
+        'scorer': create_aggressive_scorer,
+        'core_card_count': 5,
+        'color_priority': 'strict'
     },
     
     # Green-Blue (Simic)
@@ -363,7 +362,7 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Equipment Aggro'],
+    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
