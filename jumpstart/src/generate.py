@@ -1,4 +1,5 @@
 # Image Generation Prompt Creator for Magic: The Gathering Themes
+import textwrap
 
 def generate_image_prompt(theme_name):
     """
@@ -288,22 +289,26 @@ def generate_deck_divider(theme_name, deck_dataframe):
             'colors': ['?'],
             'archetype': 'Unknown'
         }
-    
+
+    # Helper to wrap text to 50 chars
+    def wrap_text(text, width=50):
+        return '\n'.join(textwrap.wrap(text, width=width))
+
     # Get card list in alphabetical order
     card_names = []
     for idx, card in deck_dataframe.iterrows():
         card_name = card.get('name', 'Unknown Card')
         card_names.append(card_name)
-    
+
     card_names.sort()  # Alphabetical order
-    
+
     # Format the divider card
     divider = f"""{'='*50}
 {theme_name.upper().center(50)}
 {'='*50}
 
 STRATEGY:
-{theme_info['strategy']}
+{wrap_text(theme_info['strategy'])}
 
 COLORS: {' + '.join(theme_info['colors'])}
 ARCHETYPE: {theme_info['archetype']}
@@ -312,17 +317,16 @@ CARDS: {len(card_names)}
 {'─'*50}
 DECK LIST (Alphabetical):
 {'─'*50}"""
-    
+
     # Add cards in two columns for better space usage
     for i in range(0, len(card_names), 2):
         left_card = card_names[i]
         right_card = card_names[i + 1] if i + 1 < len(card_names) else ""
-        
         # Format with proper spacing (25 chars per column)
         divider += f"\n{left_card:<25} {right_card}"
-    
+
     divider += f"\n\n{'='*50}"
-    
+
     return divider
 
 
