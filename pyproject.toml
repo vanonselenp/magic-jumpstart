@@ -24,6 +24,7 @@ dependencies = [
     "matplotlib>=3.10.3",
     "mcp-server-fetch>=2025.1.17",
     "mcp[cli]>=1.5.0",
+    "nbformat>=5.10.4",
     "openai>=1.68.2",
     "openai-agents>=0.0.15",
     "playwright>=1.51.0",
