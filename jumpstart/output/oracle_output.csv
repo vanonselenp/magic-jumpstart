@@ -132,7 +132,7 @@ Bubble Snare,1,Enchantment — Aura,U,Blue,"Kicker {2}{U} (You may pay an additi
 Unable to Scream,1,Enchantment — Aura,U,Blue,"Enchant creature\nEnchanted creature loses all abilities and is a Toy artifact creature with base power and toughness 0/2 in addition to its other types.\nAs long as enchanted creature is face down, it can't be turned face up.",,,,
 Weakstone's Subjugation,1,Enchantment — Aura,U,Blue,"Enchant artifact or creature\nWhen this Aura enters, you may pay {3}. If you do, tap enchanted permanent.\nEnchanted permanent doesn't untap during its controller's untap step.",,,,
 Witness Protection,1,Enchantment — Aura,U,Blue,"Enchant creature\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Legitimate Businessperson. (It loses all other colors, card types, creature types, and names.)",,,,
-Mystic Sanctuary,0,Land — Island,U,Lands,"({T}: Add {U}.)\nThis land enters tapped unless you control three or more other Islands.\nWhen this land enters untapped, you may put target instant or sorcery card from your graveyard on top of your library.",,,,
+Mystic Sanctuary,0,Land — Island,,Lands,"({T}: Add {U}.)\nThis land enters tapped unless you control three or more other Islands.\nWhen this land enters untapped, you may put target instant or sorcery card from your graveyard on top of your library.",,,,
 Carnophage,1,Creature — Zombie,B,Black,"At the beginning of your upkeep, tap this creature unless you pay 1 life.",,,2,2
 Carrion Feeder,1,Creature — Zombie,B,Black,This creature can't block.\nSacrifice a creature: Put a +1/+1 counter on this creature.,,,1,1
 Ecstatic Awakener,1,Creature — Human Wizard,B,Black,"{2}{B}, Sacrifice another creature: Draw a card, then transform this creature. Activate only once each turn.",,,1,1
@@ -199,7 +199,7 @@ Clawing Torment,1,Enchantment — Aura,B,Black,"Enchant artifact or creature\nAs
 Gift of Fangs,1,Enchantment — Aura,B,Black,"Enchant creature\nEnchanted creature gets +2/+2 as long as it's a Vampire. Otherwise, it gets -2/-2.",,,,
 Tortured Existence,1,Enchantment,B,Black,"{B}, Discard a creature card: Return target creature card from your graveyard to your hand.",,,,
 Pestilence,4,Enchantment,B,Black,"At the beginning of the end step, if no creatures are on the battlefield, sacrifice this enchantment.\n{B}: This enchantment deals 1 damage to each creature and each player.",,,,
-Witch's Cottage,0,Land — Swamp,B,Lands,"({T}: Add {B}.)\nThis land enters tapped unless you control three or more other Swamps.\nWhen this land enters untapped, you may put target creature card from your graveyard on top of your library.",,,,
+Witch's Cottage,0,Land — Swamp,,Lands,"({T}: Add {B}.)\nThis land enters tapped unless you control three or more other Swamps.\nWhen this land enters untapped, you may put target creature card from your graveyard on top of your library.",,,,
 Clockwork Percussionist,1,Artifact Creature — Monkey Toy,R,Red,"Haste\nWhen this creature dies, exile the top card of your library. You may play it until the end of your next turn.",,,1,1
 Fanatical Firebrand,1,Creature — Goblin Pirate,R,Red,"Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}, Sacrifice this creature: It deals 1 damage to any target.",,,1,1
 Frenzied Goblin,1,Creature — Goblin Berserker,R,Red,"Whenever this creature attacks, you may pay {R}. If you do, target creature can't block this turn.",,,1,1
@@ -266,7 +266,7 @@ Rift Bolt,3,Sorcery,R,Red,"Rift Bolt deals 3 damage to any target.\nSuspend 1—
 Skewer the Critics,3,Sorcery,R,Red,Spectacle {R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nSkewer the Critics deals 3 damage to any target.,,,,
 Barbed Batterfist,2,Artifact — Equipment,R,Red,"For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nEquipped creature gets +1/-1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",,,,
 Raid Bombardment,3,Enchantment,R,Red,"Whenever a creature you control with power 2 or less attacks, this enchantment deals 1 damage to the player or planeswalker that creature is attacking.",,,,
-Teetering Peaks,0,Land,R,Lands,"This land enters tapped.\nWhen this land enters, target creature gets +2/+0 until end of turn.\n{T}: Add {R}.",,,,
+Teetering Peaks,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, target creature gets +2/+0 until end of turn.\n{T}: Add {R}.",,,,
 Arbor Elf,1,Creature — Elf Druid,G,Green,{T}: Untap target Forest.,,,1,1
 Elvish Mystic,1,Creature — Elf Druid,G,Green,{T}: Add {G}.,,,1,1
 Experiment One,1,Creature — Human Ooze,G,Green,"Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)\nRemove two +1/+1 counters from this creature: Regenerate it. (The next time this creature would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)",,,1,1
@@ -333,33 +333,33 @@ Rancor,1,Enchantment — Aura,G,Green,"Enchant creature\nEnchanted creature gets
 Utopia Sprawl,1,Enchantment — Aura,G,Green,"Enchant Forest\nAs this Aura enters, choose a color.\nWhenever enchanted Forest is tapped for mana, its controller adds an additional one mana of the chosen color.",,,,
 Wild Growth,1,Enchantment — Aura,G,Green,"Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional {G}.",,,,
 Fertile Ground,2,Enchantment — Aura,G,Green,"Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.",,,,
-Hickory Woodlot,0,Land,G,Lands,"This land enters tapped with two depletion counters on it.\n{T}, Remove a depletion counter from this land: Add {G}{G}. If there are no depletion counters on this land, sacrifice it.",,,,
-Gingerbrute,1,Artifact Creature — Food Golem,,,"Haste (This creature can attack and {T} as soon as it comes under your control.)\n{1}: This creature can't be blocked this turn except by creatures with haste.\n{2}, {T}, Sacrifice this creature: You gain 3 life.",,,1,1
-Iron Apprentice,1,Artifact Creature — Construct,,,"This creature enters with a +1/+1 counter on it.\nWhen this creature dies, if it had counters on it, put those counters on target creature you control.",,,0,0
+Hickory Woodlot,0,Land,,Lands,"This land enters tapped with two depletion counters on it.\n{T}, Remove a depletion counter from this land: Add {G}{G}. If there are no depletion counters on this land, sacrifice it.",,,,
+Gingerbrute,1,Artifact Creature — Food Golem,,Colorless,"Haste (This creature can attack and {T} as soon as it comes under your control.)\n{1}: This creature can't be blocked this turn except by creatures with haste.\n{2}, {T}, Sacrifice this creature: You gain 3 life.",,,1,1
+Iron Apprentice,1,Artifact Creature — Construct,,Colorless,"This creature enters with a +1/+1 counter on it.\nWhen this creature dies, if it had counters on it, put those counters on target creature you control.",,,0,0
 Vault Skirge,2,Artifact Creature — Phyrexian Imp,B,Black,({B/P} can be paid with either {B} or 2 life.)\nFlying\nLifelink (Damage dealt by this creature also causes you to gain that much life.),,,1,1
-Perilous Myr,2,Artifact Creature — Phyrexian Myr,,,"When this creature dies, it deals 2 damage to any target.",,,1,1
+Perilous Myr,2,Artifact Creature — Phyrexian Myr,,Colorless,"When this creature dies, it deals 2 damage to any target.",,,1,1
 Porcelain Legionnaire,3,Artifact Creature — Phyrexian Soldier,W,White,({W/P} can be paid with either {W} or 2 life.)\nFirst strike,,,3,1
 Scrapwork Mutt,2,Artifact Creature — Dog,R,Red,"When this creature enters, you may discard a card. If you do, draw a card.\nUnearth {1}{R} ({1}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",,,2,1
-Filigree Familiar,3,Artifact Creature — Fox,,,"When this creature enters, you gain 2 life.\nWhen this creature dies, draw a card.",,,2,2
-Juggernaut,4,Artifact Creature — Juggernaut,,,This creature attacks each combat if able.\nThis creature can't be blocked by Walls.,,,5,3
-Shardless Outlander,7,Artifact Creature — Construct Scout,,,"Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",,,6,5
-Ulamog's Crusher,8,Creature — Eldrazi,,,"Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents of their choice.)\nThis creature attacks each combat if able.",,,8,8
+Filigree Familiar,3,Artifact Creature — Fox,,Colorless,"When this creature enters, you gain 2 life.\nWhen this creature dies, draw a card.",,,2,2
+Juggernaut,4,Artifact Creature — Juggernaut,,Colorless,This creature attacks each combat if able.\nThis creature can't be blocked by Walls.,,,5,3
+Shardless Outlander,7,Artifact Creature — Construct Scout,,Colorless,"Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",,,6,5
+Ulamog's Crusher,8,Creature — Eldrazi,,Colorless,"Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents of their choice.)\nThis creature attacks each combat if able.",,,8,8
 Mutagenic Growth,1,Instant,G,Green,({G/P} can be paid with either {G} or 2 life.)\nTarget creature gets +2/+2 until end of turn.,,,,
 Gitaxian Probe,1,Sorcery,U,Blue,({U/P} can be paid with either {U} or 2 life.)\nLook at target player's hand.\nDraw a card.,,,,
-Bonesplitter,1,Artifact — Equipment,,,Equipped creature gets +2/+0.\nEquip {1},,,,
-Candy Trail,1,Artifact — Food Clue,,,"When this artifact enters, scry 2.\n{2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.",,,,
-Flayer Husk,1,Artifact — Equipment,,,"Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1.\nEquip {2}",,,,
-Leonin Bola,1,Artifact — Equipment,,,"Equipped creature has ""{T}, Unattach Leonin Bola: Tap target creature.""\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery. This card enters unattached and stays on the battlefield if the creature leaves.)",,,,
-Wayfarer's Bauble,1,Artifact,,,"{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",,,,
-Glimmerlight,2,Artifact — Equipment,,,"When this Equipment enters, create a 1/1 white Glimmer enchantment creature token.\nEquipped creature gets +1/+1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",,,,
-Guardian Idol,2,Artifact,,,This artifact enters tapped.\n{T}: Add {C}.\n{2}: This artifact becomes a 2/2 Golem artifact creature until end of turn.,,,,
-Mind Stone,2,Artifact,,,"{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",,,,
-Prophetic Prism,2,Artifact,,,"When this artifact enters, draw a card.\n{1}, {T}: Add one mana of any color.",,,,
-Vulshok Morningstar,2,Artifact — Equipment,,,Equipped creature gets +2/+2.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.),,,,
-Bonder's Ornament,3,Artifact,,,"{T}: Add one mana of any color.\n{4}, {T}: Each player who controls a permanent named Bonder's Ornament draws a card.",,,,
-Pristine Talisman,3,Artifact,,,{T}: Add {C}. You gain 1 life.,,,,
-Renegade Freighter,3,Artifact — Vehicle,,,"Whenever this Vehicle attacks, it gets +1/+1 and gains trample until end of turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",,,4,3
-Serrated Arrows,4,Artifact,,,"This artifact enters with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on this artifact, sacrifice it.\n{T}, Remove an arrowhead counter from this artifact: Put a -1/-1 counter on target creature.",,,,
+Bonesplitter,1,Artifact — Equipment,,Colorless,Equipped creature gets +2/+0.\nEquip {1},,,,
+Candy Trail,1,Artifact — Food Clue,,Colorless,"When this artifact enters, scry 2.\n{2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.",,,,
+Flayer Husk,1,Artifact — Equipment,,Colorless,"Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1.\nEquip {2}",,,,
+Leonin Bola,1,Artifact — Equipment,,Colorless,"Equipped creature has ""{T}, Unattach Leonin Bola: Tap target creature.""\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery. This card enters unattached and stays on the battlefield if the creature leaves.)",,,,
+Wayfarer's Bauble,1,Artifact,,Colorless,"{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",,,,
+Glimmerlight,2,Artifact — Equipment,,Colorless,"When this Equipment enters, create a 1/1 white Glimmer enchantment creature token.\nEquipped creature gets +1/+1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",,,,
+Guardian Idol,2,Artifact,,Colorless,This artifact enters tapped.\n{T}: Add {C}.\n{2}: This artifact becomes a 2/2 Golem artifact creature until end of turn.,,,,
+Mind Stone,2,Artifact,,Colorless,"{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",,,,
+Prophetic Prism,2,Artifact,,Colorless,"When this artifact enters, draw a card.\n{1}, {T}: Add one mana of any color.",,,,
+Vulshok Morningstar,2,Artifact — Equipment,,Colorless,Equipped creature gets +2/+2.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.),,,,
+Bonder's Ornament,3,Artifact,,Colorless,"{T}: Add one mana of any color.\n{4}, {T}: Each player who controls a permanent named Bonder's Ornament draws a card.",,,,
+Pristine Talisman,3,Artifact,,Colorless,{T}: Add {C}. You gain 1 life.,,,,
+Renegade Freighter,3,Artifact — Vehicle,,Colorless,"Whenever this Vehicle attacks, it gets +1/+1 and gains trample until end of turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",,,4,3
+Serrated Arrows,4,Artifact,,Colorless,"This artifact enters with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on this artifact, sacrifice it.\n{T}, Remove an arrowhead counter from this artifact: Put a -1/-1 counter on target creature.",,,,
 Momentary Blink,2,Instant,W,Multicolored,"Exile target creature you control, then return it to the battlefield under its owner's control.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",,,,
 Lyev Skyknight,3,Creature — Human Knight,UW,Multicolored,"Flying\nWhen this creature enters, detain target nonland permanent an opponent controls. (Until your next turn, that permanent can't attack or block and its activated abilities can't be activated.)",,,3,1
 Silver Drake,3,Creature — Drake,UW,Multicolored,"Flying\nWhen this creature enters, return a white or blue creature you control to its owner's hand.",,,3,3
@@ -400,52 +400,52 @@ Tempest Angler,3,Creature — Otter Wizard,RU,Multicolored,"Whenever you cast a 
 Desecrator Hag,4,Creature — Hag,BG,Multicolored,"When this creature enters, return to your hand the creature card in your graveyard with the greatest power. If two or more cards are tied for greatest power, you choose one of them.",,,2,2
 Dog Walker,2,Creature — Human Citizen,RW,Multicolored,"Vigilance\nDisguise {R/W}{R/W} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this creature is turned face up, create two tapped 1/1 white Dog creature tokens.",,,3,1
 Quandrix Pledgemage,3,Creature — Merfolk Druid,GU,Multicolored,"Magecraft — Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on this creature.",,,2,2
-Azorius Chancery,0,Land,UW,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {W}{U}.",,,,
-Skybridge Towers,0,Land,UW,Lands,"This land enters tapped.\n{T}: Add {W} or {U}.\n{2}{W}{U}, {T}, Sacrifice this land: Draw a card.",,,,
-Tranquil Cove,0,Land,UW,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {U}.",,,,
-Dimir Aqueduct,0,Land,BU,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {U}{B}.",,,,
-Dismal Backwater,0,Land,BU,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {B}.",,,,
-Waterfront District,0,Land,BU,Lands,"This land enters tapped.\n{T}: Add {U} or {B}.\n{2}{U}{B}, {T}, Sacrifice this land: Draw a card.",,,,
-Jagged Barrens,0,Land — Desert,BR,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {B} or {R}.",,,,
-Rakdos Carnarium,0,Land,BR,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {B}{R}.",,,,
-Tramway Station,0,Land,BR,Lands,"This land enters tapped.\n{T}: Add {B} or {R}.\n{2}{B}{R}, {T}, Sacrifice this land: Draw a card.",,,,
-Bristling Backwoods,0,Land — Desert,GR,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {G}.",,,,
-Gruul Turf,0,Land,GR,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {R}{G}.",,,,
-Racers' Ring,0,Land,GR,Lands,"This land enters tapped.\n{T}: Add {R} or {G}.\n{2}{R}{G}, {T}, Sacrifice this land: Draw a card.",,,,
-Botanical Plaza,0,Land,GW,Lands,"This land enters tapped.\n{T}: Add {G} or {W}.\n{2}{G}{W}, {T}, Sacrifice this land: Draw a card.",,,,
-Radiant Grove,0,Land — Forest Plains,GW,Lands,({T}: Add {G} or {W}.)\nThis land enters tapped.,,,,
-Selesnya Sanctuary,0,Land,GW,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {G}{W}.",,,,
-Orzhov Basilica,0,Land,BW,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {W}{B}.",,,,
-Scoured Barrens,0,Land,BW,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}.",,,,
-Silverquill Campus,0,Land,BW,Lands,"This land enters tapped.\n{T}: Add {W} or {B}.\n{4}, {T}: Scry 1.",,,,
-Eroded Canyon,0,Land — Desert,RU,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {U} or {R}.",,,,
-Izzet Boilerworks,0,Land,RU,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {U}{R}.",,,,
-Prismari Campus,0,Land,RU,Lands,"This land enters tapped.\n{T}: Add {U} or {R}.\n{4}, {T}: Scry 1.",,,,
-Golgari Rot Farm,0,Land,BG,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {B}{G}.",,,,
-Haunted Mire,0,Land — Swamp Forest,BG,Lands,({T}: Add {B} or {G}.)\nThis land enters tapped.,,,,
-Witherbloom Campus,0,Land,BG,Lands,"This land enters tapped.\n{T}: Add {B} or {G}.\n{4}, {T}: Scry 1.",,,,
-Abraded Bluffs,0,Land — Desert,RW,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {W}.",,,,
-Boros Garrison,0,Land,RW,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {R}{W}.",,,,
-Lorehold Campus,0,Land,RW,Lands,"This land enters tapped.\n{T}: Add {R} or {W}.\n{4}, {T}: Scry 1.",,,,
-Quandrix Campus,0,Land,GU,Lands,"This land enters tapped.\n{T}: Add {G} or {U}.\n{4}, {T}: Scry 1.",,,,
-Simic Growth Chamber,0,Land,GU,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {G}{U}.",,,,
-Tangled Islet,0,Land — Forest Island,GU,Lands,({T}: Add {G} or {U}.)\nThis land enters tapped.,,,,
-Tranquil Landscape,0,Land,GUW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Forest, Plains, or Island card, put it onto the battlefield tapped, then shuffle.\nCycling {G}{W}{U} ({G}{W}{U}, Discard this card: Draw a card.)",,,,
-Contaminated Landscape,0,Land,BUW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Plains, Island, or Swamp card, put it onto the battlefield tapped, then shuffle.\nCycling {W}{U}{B} ({W}{U}{B}, Discard this card: Draw a card.)",,,,
-Seething Landscape,0,Land,BRU,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Island, Swamp, or Mountain card, put it onto the battlefield tapped, then shuffle.\nCycling {U}{B}{R} ({U}{B}{R}, Discard this card: Draw a card.)",,,,
-Twisted Landscape,0,Land,BGR,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Swamp, Mountain, or Forest card, put it onto the battlefield tapped, then shuffle.\nCycling {B}{R}{G} ({B}{R}{G}, Discard this card: Draw a card.)",,,,
-Sheltering Landscape,0,Land,GRW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Mountain, Forest, or Plains card, put it onto the battlefield tapped, then shuffle.\nCycling {R}{G}{W} ({R}{G}{W}, Discard this card: Draw a card.)",,,,
-Shattered Landscape,0,Land,BRW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Mountain, Plains, or Swamp card, put it onto the battlefield tapped, then shuffle.\nCycling {R}{W}{B} ({R}{W}{B}, Discard this card: Draw a card.)",,,,
-Bountiful Landscape,0,Land,GRU,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Forest, Island, or Mountain card, put it onto the battlefield tapped, then shuffle.\nCycling {G}{U}{R} ({G}{U}{R}, Discard this card: Draw a card.)",,,,
-Deceptive Landscape,0,Land,BGW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Plains, Swamp, or Forest card, put it onto the battlefield tapped, then shuffle.\nCycling {W}{B}{G} ({W}{B}{G}, Discard this card: Draw a card.)",,,,
-Perilous Landscape,0,Land,RUW,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Island, Mountain, or Plains card, put it onto the battlefield tapped, then shuffle.\nCycling {U}{R}{W} ({U}{R}{W}, Discard this card: Draw a card.)",,,,
-Foreboding Landscape,0,Land,BGU,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Swamp, Forest, or Island card, put it onto the battlefield tapped, then shuffle.\nCycling {B}{G}{U} ({B}{G}{U}, Discard this card: Draw a card.)",,,,
-Basilisk Gate,0,Land — Gate,,,"{T}: Add {C}.\n{2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.",,,,
-Conduit Pylons,0,Land — Desert,,,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",,,,
-Desert,0,Land — Desert,,,{T}: Add {C}.\n{T}: This land deals 1 damage to target attacking creature. Activate only during the end of combat step.,,,,
-Escape Tunnel,0,Land,,,"{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n{T}, Sacrifice this land: Target creature with power 2 or less can't be blocked this turn.",,,,
-Haunted Fengraf,0,Land,,,"{T}: Add {C}.\n{3}, {T}, Sacrifice this land: Return a creature card at random from your graveyard to your hand.",,,,
-Hidden Grotto,0,Land,,,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",,,,
-Night Market,0,Land,,,"This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.\nCycling {3} ({3}, Discard this card: Draw a card.)",,,,
-Quicksand,0,Land,,,"{T}: Add {C}.\n{T}, Sacrifice this land: Target attacking creature without flying gets -1/-2 until end of turn.",,,,
-Tocasia's Dig Site,0,Land,,,"{T}: Add {C}.\n{3}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",,,,
+Azorius Chancery,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {W}{U}.",,,,
+Skybridge Towers,0,Land,,Lands,"This land enters tapped.\n{T}: Add {W} or {U}.\n{2}{W}{U}, {T}, Sacrifice this land: Draw a card.",,,,
+Tranquil Cove,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {U}.",,,,
+Dimir Aqueduct,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {U}{B}.",,,,
+Dismal Backwater,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {B}.",,,,
+Waterfront District,0,Land,,Lands,"This land enters tapped.\n{T}: Add {U} or {B}.\n{2}{U}{B}, {T}, Sacrifice this land: Draw a card.",,,,
+Jagged Barrens,0,Land — Desert,,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {B} or {R}.",,,,
+Rakdos Carnarium,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {B}{R}.",,,,
+Tramway Station,0,Land,,Lands,"This land enters tapped.\n{T}: Add {B} or {R}.\n{2}{B}{R}, {T}, Sacrifice this land: Draw a card.",,,,
+Bristling Backwoods,0,Land — Desert,,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {G}.",,,,
+Gruul Turf,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {R}{G}.",,,,
+Racers' Ring,0,Land,,Lands,"This land enters tapped.\n{T}: Add {R} or {G}.\n{2}{R}{G}, {T}, Sacrifice this land: Draw a card.",,,,
+Botanical Plaza,0,Land,,Lands,"This land enters tapped.\n{T}: Add {G} or {W}.\n{2}{G}{W}, {T}, Sacrifice this land: Draw a card.",,,,
+Radiant Grove,0,Land — Forest Plains,,Lands,({T}: Add {G} or {W}.)\nThis land enters tapped.,,,,
+Selesnya Sanctuary,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {G}{W}.",,,,
+Orzhov Basilica,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {W}{B}.",,,,
+Scoured Barrens,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}.",,,,
+Silverquill Campus,0,Land,,Lands,"This land enters tapped.\n{T}: Add {W} or {B}.\n{4}, {T}: Scry 1.",,,,
+Eroded Canyon,0,Land — Desert,,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {U} or {R}.",,,,
+Izzet Boilerworks,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {U}{R}.",,,,
+Prismari Campus,0,Land,,Lands,"This land enters tapped.\n{T}: Add {U} or {R}.\n{4}, {T}: Scry 1.",,,,
+Golgari Rot Farm,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {B}{G}.",,,,
+Haunted Mire,0,Land — Swamp Forest,,Lands,({T}: Add {B} or {G}.)\nThis land enters tapped.,,,,
+Witherbloom Campus,0,Land,,Lands,"This land enters tapped.\n{T}: Add {B} or {G}.\n{4}, {T}: Scry 1.",,,,
+Abraded Bluffs,0,Land — Desert,,Lands,"This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {W}.",,,,
+Boros Garrison,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {R}{W}.",,,,
+Lorehold Campus,0,Land,,Lands,"This land enters tapped.\n{T}: Add {R} or {W}.\n{4}, {T}: Scry 1.",,,,
+Quandrix Campus,0,Land,,Lands,"This land enters tapped.\n{T}: Add {G} or {U}.\n{4}, {T}: Scry 1.",,,,
+Simic Growth Chamber,0,Land,,Lands,"This land enters tapped.\nWhen this land enters, return a land you control to its owner's hand.\n{T}: Add {G}{U}.",,,,
+Tangled Islet,0,Land — Forest Island,,Lands,({T}: Add {G} or {U}.)\nThis land enters tapped.,,,,
+Tranquil Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Forest, Plains, or Island card, put it onto the battlefield tapped, then shuffle.\nCycling {G}{W}{U} ({G}{W}{U}, Discard this card: Draw a card.)",,,,
+Contaminated Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Plains, Island, or Swamp card, put it onto the battlefield tapped, then shuffle.\nCycling {W}{U}{B} ({W}{U}{B}, Discard this card: Draw a card.)",,,,
+Seething Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Island, Swamp, or Mountain card, put it onto the battlefield tapped, then shuffle.\nCycling {U}{B}{R} ({U}{B}{R}, Discard this card: Draw a card.)",,,,
+Twisted Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Swamp, Mountain, or Forest card, put it onto the battlefield tapped, then shuffle.\nCycling {B}{R}{G} ({B}{R}{G}, Discard this card: Draw a card.)",,,,
+Sheltering Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Mountain, Forest, or Plains card, put it onto the battlefield tapped, then shuffle.\nCycling {R}{G}{W} ({R}{G}{W}, Discard this card: Draw a card.)",,,,
+Shattered Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Mountain, Plains, or Swamp card, put it onto the battlefield tapped, then shuffle.\nCycling {R}{W}{B} ({R}{W}{B}, Discard this card: Draw a card.)",,,,
+Bountiful Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Forest, Island, or Mountain card, put it onto the battlefield tapped, then shuffle.\nCycling {G}{U}{R} ({G}{U}{R}, Discard this card: Draw a card.)",,,,
+Deceptive Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Plains, Swamp, or Forest card, put it onto the battlefield tapped, then shuffle.\nCycling {W}{B}{G} ({W}{B}{G}, Discard this card: Draw a card.)",,,,
+Perilous Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Island, Mountain, or Plains card, put it onto the battlefield tapped, then shuffle.\nCycling {U}{R}{W} ({U}{R}{W}, Discard this card: Draw a card.)",,,,
+Foreboding Landscape,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Swamp, Forest, or Island card, put it onto the battlefield tapped, then shuffle.\nCycling {B}{G}{U} ({B}{G}{U}, Discard this card: Draw a card.)",,,,
+Basilisk Gate,0,Land — Gate,,Lands,"{T}: Add {C}.\n{2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.",,,,
+Conduit Pylons,0,Land — Desert,,Lands,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",,,,
+Desert,0,Land — Desert,,Lands,{T}: Add {C}.\n{T}: This land deals 1 damage to target attacking creature. Activate only during the end of combat step.,,,,
+Escape Tunnel,0,Land,,Lands,"{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n{T}, Sacrifice this land: Target creature with power 2 or less can't be blocked this turn.",,,,
+Haunted Fengraf,0,Land,,Lands,"{T}: Add {C}.\n{3}, {T}, Sacrifice this land: Return a creature card at random from your graveyard to your hand.",,,,
+Hidden Grotto,0,Land,,Lands,"When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",,,,
+Night Market,0,Land,,Lands,"This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.\nCycling {3} ({3}, Discard this card: Draw a card.)",,,,
+Quicksand,0,Land,,Lands,"{T}: Add {C}.\n{T}, Sacrifice this land: Target attacking creature without flying gets -1/-2 until end of turn.",,,,
+Tocasia's Dig Site,0,Land,,Lands,"{T}: Add {C}.\n{3}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",,,,

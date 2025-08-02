@@ -92,36 +92,46 @@ def _extract_card_data(card_row, column_mapping):
 
 def _process_column_value(column_name, value, card_row=None):
     """Process column values based on their type."""
-    if pd.isnull(value):
-        return '' if column_name != 'CMC' else 0
-    
     if column_name == 'CMC':
+        if pd.isnull(value):
+            return 0
         return int(float(value)) if value else 0
     elif column_name == 'Color':
+        # Special case: Lands should have empty/null Color to match legacy format
+        if card_row is not None and 'Land' in str(card_row.get('type', '')):
+            return ''
+        
         # Special case: if Color column is empty but we have colorIdentity, use that
         if (pd.isnull(value) or not str(value).strip()) and card_row is not None:
             if 'colorIdentity' in card_row.index and pd.notna(card_row['colorIdentity']):
                 value = card_row['colorIdentity']
+        # Handle null/nan values for Color
+        if pd.isnull(value) or str(value).lower() == 'nan':
+            return ''
         # Convert "W, U" -> "WU" for the Color column
         return ''.join(str(value).replace(' ', '').split(','))
     elif column_name == 'Color Category':
-        # Convert color codes to descriptive names for Color Category column
-        return _convert_colors_to_category(str(value), card_row)
+        # Always process Color Category, even if value is null
+        return _convert_colors_to_category(value, card_row)
     elif column_name == 'name':
         # Split on "//" and use the left entry (for double-faced cards)
         return str(value).split(' // ')[0]
     else:
+        # For all other columns, handle nulls
+        if pd.isnull(value):
+            return ''
         return value
 
 
 def _convert_colors_to_category(color_value, card_row=None):
     """Convert color codes to descriptive category names."""
-    if pd.isnull(color_value) or not color_value:
-        return 'Colorless'
-    
-    # Check if this is a land card
+    # Check if this is a land card first
     if card_row is not None and 'Land' in str(card_row.get('type', '')):
         return 'Lands'
+    
+    # Handle null/empty values
+    if pd.isnull(color_value) or not str(color_value).strip() or str(color_value).lower() == 'nan':
+        return 'Colorless'
     
     # Clean up the color value (remove spaces, etc.)
     clean_colors = ''.join(str(color_value).replace(' ', '').split(','))
@@ -141,8 +151,12 @@ def _convert_colors_to_category(color_value, card_row=None):
         }
         return color_map.get(clean_colors, 'Colorless')
     
-    # Multiple colors
+    # Multiple colors - check if it might be hybrid
     elif len(clean_colors) > 1:
+        # For now, treat all multicolor as "Multicolored"
+        # Note: The legacy data seems to have "Hybrid" for some specific cases
+        # but without more context about what makes a card "Hybrid" vs "Multicolored",
+        # we'll use "Multicolored" for consistency
         return 'Multicolored'
     
     return 'Colorless'
