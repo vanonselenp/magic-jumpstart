@@ -166,7 +166,74 @@ class CardSelector:
             deck_state.needs_more_creatures(constraints)):
             base_score += 2.0  # Significant boost to prioritize creatures when below minimum
 
+        # CMC balance factor integration
+        if deck_state is not None and constraints is not None:
+            base_score = self._add_cmc_balance_factor(base_score, card, deck_state, constraints)
+
         return base_score
+
+    def _add_cmc_balance_factor(self, card_score: float, card: pd.Series, 
+                               deck_state: DeckState, constraints: CardConstraints) -> float:
+        """
+        Add CMC balance factor to card scoring.
+        This encourages selecting cards that bring the deck closer to target CMC.
+        """
+        # Skip land cards for CMC balancing
+        if is_land_card(card):
+            return card_score
+        
+        card_cmc = int(card['CMC'])
+        current_avg_cmc = deck_state.avg_cmc
+        target_cmc = constraints.target_avg_cmc
+        
+        # If we have no non-land cards yet, any card is fine
+        if deck_state.non_land_count == 0:
+            # Slight preference for cards closer to target
+            cmc_deviation = abs(card_cmc - target_cmc)
+            cmc_bonus = max(0, 1.0 - (cmc_deviation * 0.2))
+            return card_score + cmc_bonus
+        
+        # Calculate what the average would be if we add this card
+        projected_total_cmc = deck_state.total_cmc + card_cmc
+        projected_count = deck_state.non_land_count + 1
+        projected_avg_cmc = projected_total_cmc / projected_count
+        
+        # Calculate how much this card improves/worsens CMC balance
+        current_deviation = abs(current_avg_cmc - target_cmc)
+        projected_deviation = abs(projected_avg_cmc - target_cmc)
+        
+        # CMC balance factor: positive if card improves balance, negative if it worsens it
+        cmc_improvement = current_deviation - projected_deviation
+        cmc_balance_factor = cmc_improvement * 2.0  # Scale factor for impact
+        
+        # Additional distribution balance factor
+        distribution = deck_state.get_cmc_distribution()
+        
+        # Check if we need more of this CMC category
+        distribution_bonus = 0.0
+        if card_cmc <= 2:  # Low CMC
+            if distribution['low'] < constraints.min_low_cmc_pct:
+                distribution_bonus = 1.0  # Encourage low CMC cards if below minimum
+            elif distribution['low'] > constraints.max_low_cmc_pct * 0.8:
+                distribution_bonus = -0.5  # Discourage if approaching maximum
+        elif card_cmc <= 4:  # Medium CMC
+            if distribution['med'] < constraints.min_med_cmc_pct:
+                distribution_bonus = 1.0
+            elif distribution['med'] > constraints.max_med_cmc_pct * 0.8:
+                distribution_bonus = -0.5
+        else:  # High CMC
+            if distribution['high'] > constraints.max_high_cmc_pct * 0.8:
+                distribution_bonus = -1.0  # Strongly discourage high CMC if approaching limit
+        
+        # Constraint violation check - heavily penalize cards that would violate hard constraints
+        violation_penalty = 0.0
+        if deck_state.would_violate_cmc_constraints(card_cmc, constraints):
+            violation_penalty = -5.0  # Heavy penalty for constraint violations
+        
+        # Combine all factors
+        total_cmc_adjustment = cmc_balance_factor + distribution_bonus + violation_penalty
+        
+        return card_score + total_cmc_adjustment
 
     def _get_score_threshold(self, phase: str) -> float:
         """Get minimum score threshold for different phases."""
