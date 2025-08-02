@@ -49,6 +49,10 @@ class DeckBuilder:
         if incomplete_count > 0:
             print(f"\n🔄 Attempting reorganization for {incomplete_count} incomplete decks...")
             result = self._attempt_reorganization(result)
+            
+            # Phase 6: Re-validate constraints after reorganization
+            print(f"\n🔍 Re-validating constraints after reorganization...")
+            result = self._validate_dataframe_constraints(result)
         
         return result
     
@@ -236,12 +240,50 @@ class DeckBuilder:
         is_mono = len(theme_config['colors']) == 1
         max_lands = self.constraints.get_max_lands(is_mono)
         
+        # Fix creature violations first (most critical)
+        if deck_state.creature_count > self.constraints.max_creatures:
+            excess_creatures = deck_state.creature_count - self.constraints.max_creatures
+            print(f"    🚫 Removing {excess_creatures} excess creatures...")
+            
+            # Find creature indices to remove (remove from the end, last added first)
+            creature_indices_to_remove = []
+            for i, card_idx in enumerate(reversed(deck_state.cards)):
+                card = self.oracle_df.iloc[card_idx]
+                if is_creature_card(card) and len(creature_indices_to_remove) < excess_creatures:
+                    creature_indices_to_remove.append(len(deck_state.cards) - 1 - i)
+            
+            # Remove creatures in reverse order to maintain indices
+            for idx in sorted(creature_indices_to_remove, reverse=True):
+                card_idx = deck_state.cards.pop(idx)
+                card = self.oracle_df.iloc[card_idx]
+                deck_state.creature_count -= 1
+                
+                # Update CMC tracking for removed non-land cards
+                if not is_land_card(card):
+                    card_cmc = int(card['CMC'])
+                    deck_state.total_cmc -= card_cmc
+                    
+                    # Update CMC distribution counts
+                    if card_cmc <= 2:
+                        deck_state.cmc_counts['low'] -= 1
+                    elif card_cmc <= 4:
+                        deck_state.cmc_counts['med'] -= 1
+                    else:
+                        deck_state.cmc_counts['high'] -= 1
+                
+                self.selector.mark_unused(card_idx)
+                print(f"    🔧 Removed excess creature: {card['name']}")
+        
+        # Fix land violations
         if deck_state.land_count > max_lands:
+            excess_lands = deck_state.land_count - max_lands
+            print(f"    🚫 Removing {excess_lands} excess lands...")
+            
             # Remove excess lands (remove last added ones)
             land_indices_to_remove = []
             for i, card_idx in enumerate(reversed(deck_state.cards)):
                 card = self.oracle_df.iloc[card_idx]
-                if is_land_card(card) and len(land_indices_to_remove) < (deck_state.land_count - max_lands):
+                if is_land_card(card) and len(land_indices_to_remove) < excess_lands:
                     land_indices_to_remove.append(len(deck_state.cards) - 1 - i)
             
             # Remove in reverse order to maintain indices
@@ -252,6 +294,123 @@ class DeckBuilder:
                 deck_state.land_names.discard(card['name'])
                 self.selector.mark_unused(card_idx)
                 print(f"    🔧 Removed excess land: {card['name']}")
+        
+        # Fix minimum creature violations by adding more creatures if available
+        if deck_state.creature_count < self.constraints.min_creatures:
+            creatures_needed = self.constraints.min_creatures - deck_state.creature_count
+            print(f"    ➕ Need {creatures_needed} more creatures to meet minimum...")
+            
+            # Try to find available creatures
+            theme_colors = set(theme_config['colors'])
+            for idx, card in self.oracle_df.iterrows():
+                if (idx not in self.selector.used_cards and 
+                    is_creature_card(card) and 
+                    self.selector._is_color_compatible(card, theme_colors, "completion") and
+                    creatures_needed > 0 and
+                    deck_state.size < self.constraints.target_deck_size):
+                    
+                    deck_state.add_card(idx, card)
+                    self.selector.mark_used(idx)
+                    creatures_needed -= 1
+                    print(f"    ✅ Added creature to meet minimum: {card['name']}")
+                    
+                    if creatures_needed == 0:
+                        break
+    
+    def _validate_dataframe_constraints(self, deck_dataframes: Dict[str, pd.DataFrame]) -> Dict[str, pd.DataFrame]:
+        """Validate and fix constraint violations in deck DataFrames after reorganization."""
+        violations_found = 0
+        
+        for theme_name, deck_df in deck_dataframes.items():
+            if deck_df.empty:
+                continue
+            
+            theme_config = ALL_THEMES[theme_name]
+            is_mono = len(theme_config['colors']) == 1
+            max_lands = self.constraints.get_max_lands(is_mono)
+            
+            # Count current creatures and lands
+            creature_count = len(deck_df[deck_df['Type'].str.contains('Creature', case=False, na=False)])
+            land_count = len(deck_df[deck_df['Type'].str.contains('Land', case=False, na=False)])
+            
+            violations = []
+            if creature_count > self.constraints.max_creatures:
+                violations.append(f"creatures: {creature_count}/{self.constraints.max_creatures}")
+            if creature_count < self.constraints.min_creatures:
+                violations.append(f"min creatures: {creature_count}/{self.constraints.min_creatures}")
+            if land_count > max_lands:
+                violations.append(f"lands: {land_count}/{max_lands}")
+            
+            if violations:
+                violations_found += 1
+                print(f"  ⚠️  {theme_name}: VIOLATION - {', '.join(violations)}")
+                deck_dataframes[theme_name] = self._fix_dataframe_constraint_violations(
+                    theme_name, deck_df, violations
+                )
+        
+        if violations_found == 0:
+            print("  ✅ No constraint violations found after reorganization")
+        else:
+            print(f"  🔧 Fixed {violations_found} constraint violations after reorganization")
+        
+        return deck_dataframes
+    
+    def _fix_dataframe_constraint_violations(self, theme_name: str, deck_df: pd.DataFrame, 
+                                           violations: List[str]) -> pd.DataFrame:
+        """Fix constraint violations in a deck DataFrame."""
+        theme_config = ALL_THEMES[theme_name]
+        is_mono = len(theme_config['colors']) == 1
+        max_lands = self.constraints.get_max_lands(is_mono)
+        
+        # Fix creature violations first (most critical)
+        creature_count = len(deck_df[deck_df['Type'].str.contains('Creature', case=False, na=False)])
+        if creature_count > self.constraints.max_creatures:
+            excess_creatures = creature_count - self.constraints.max_creatures
+            print(f"    🚫 Removing {excess_creatures} excess creatures from DataFrame...")
+            
+            # Get creature rows
+            creature_mask = deck_df['Type'].str.contains('Creature', case=False, na=False)
+            creature_indices = deck_df[creature_mask].index.tolist()
+            
+            # Remove excess creatures from the end (last added first)
+            creatures_to_remove = creature_indices[-excess_creatures:]
+            
+            # Get names before dropping (for logging)
+            removed_names = []
+            for idx in creatures_to_remove:
+                removed_names.append(deck_df.loc[idx, 'name'])
+            
+            deck_df = deck_df.drop(creatures_to_remove)
+            
+            # Log removed creatures
+            for name in removed_names:
+                print(f"    🔧 Removed excess creature: {name}")
+        
+        # Fix land violations
+        land_count = len(deck_df[deck_df['Type'].str.contains('Land', case=False, na=False)])
+        if land_count > max_lands:
+            excess_lands = land_count - max_lands
+            print(f"    🚫 Removing {excess_lands} excess lands from DataFrame...")
+            
+            # Get land rows
+            land_mask = deck_df['Type'].str.contains('Land', case=False, na=False)
+            land_indices = deck_df[land_mask].index.tolist()
+            
+            # Remove excess lands from the end
+            lands_to_remove = land_indices[-excess_lands:]
+            
+            # Get names before dropping (for logging)
+            removed_names = []
+            for idx in lands_to_remove:
+                removed_names.append(deck_df.loc[idx, 'name'])
+            
+            deck_df = deck_df.drop(lands_to_remove)
+            
+            # Log removed lands
+            for name in removed_names:
+                print(f"    🔧 Removed excess land: {name}")
+        
+        return deck_df
     
     def _convert_to_dataframes(self) -> Dict[str, pd.DataFrame]:
         """Convert deck states to DataFrames."""

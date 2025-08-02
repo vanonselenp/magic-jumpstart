@@ -72,13 +72,25 @@ MONO_COLOR_THEMES = {
         'scorer': create_equipment_scorer,
         'core_card_count': 5
     },
+        # White midrange with angels and flying creatures
     'White Angels': {
         'colors': [MagicColor.WHITE.value],
-        'strategy': 'Mid-to-late game deck with powerful flying angels and protection',
-        'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
-        'archetype': 'Control',
-        'scorer': create_control_scorer,
-        'core_card_count': 4
+        'strategy': 'White midrange deck with angels and flying creatures',
+        'keywords': ['angel', 'flying', 'vigilance', 'white creatures', 'protection', 'lifegain', 'tap',
+                    'white', 'mana', 'target', 'creature', 'instant', 'sorcery', 'artifact',
+                    'enchantment', 'permanent', 'spell', 'cost', 'hand', 'library', 'battlefield',
+                    'graveyard', 'draw', 'search', 'plains', 'land', 'destroy', 'exile',
+                    'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+                    'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+                    'enters', 'play', 'turn', 'until', 'end', 'gets', 'gain', 'has',
+                    'with', 'without', 'may', 'can', 'must', 'choose', 'card', 'cards',
+                    'put', 'return', 'exile', 'counter', 'token', 'ability', 'effect',
+                    'combat', 'attack', 'block', 'deal', 'prevent', 'sacrifice',
+                    'pay', 'add', 'remove', 'equal', 'less', 'greater', 'power', 'toughness',
+                    'life', 'damage', 'tap', 'untap', 'control', 'own', 'opponent'],
+        'archetype': 'Midrange',
+        'scorer': create_default_scorer,
+        'core_card_count': 3
     },
     'White Weenies': {
         'colors': [MagicColor.WHITE.value],
@@ -93,7 +105,7 @@ MONO_COLOR_THEMES = {
     'Blue Flying': {
         'colors': [MagicColor.BLUE.value],
         'strategy': 'Evasive creatures with flying and tempo spells',
-        'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw'],
+        'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw', 'instant', 'sorcery', 'aura', 'enchantment', 'return', 'unsummon', 'counterspell', 'dispel', 'cantrip', 'divination', 'scry', 'artifact'],
         'archetype': 'Tempo',
         'scorer': create_default_scorer,
         'core_card_count': 3
@@ -135,7 +147,14 @@ MONO_COLOR_THEMES = {
     'Black Graveyard': {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Graveyard-based value engine with recursion and reanimation',
-        'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold'],
+        'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold', 
+                    'sacrifice', 'dies', 'instant', 'enchantment', 'target', 'creature', 'gets',
+                    'black', 'mana', 'spell', 'cost', 'hand', 'library', 'battlefield',
+                    'draw', 'search', 'swamp', 'land', 'destroy', 'exile', 'discard',
+                    'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+                    'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+                    'enters', 'play', 'turn', 'until', 'end', 'gain', 'has',
+                    'with', 'without', 'may', 'can', 'must', 'choose', 'card', 'cards'],
         'archetype': 'Control',
         'scorer': create_control_scorer,
         'core_card_count': 4
@@ -143,7 +162,7 @@ MONO_COLOR_THEMES = {
     'Black Sacrifice': {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Sacrifice-based deck with death triggers and value generation',
-        'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
+        'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever', 'sorcery', 'instant', 'removal', 'destroy', 'kill', 'murder', 'doom blade', 'artifact', 'enchantment'],
         'archetype': 'Midrange',
         'scorer': create_default_scorer,
         'core_card_count': 3
@@ -160,36 +179,37 @@ MONO_COLOR_THEMES = {
     # Red themes
     'Red Goblins': {
         'colors': [MagicColor.RED.value],
-        'strategy': 'Fast goblin tribal with haste and explosive plays',
-        'keywords': ['goblin', 'tribal', 'haste', 'sacrifice', 'token', 'aggressive'],
+        'strategy': 'Fast goblin tribal with token generation and sacrifice synergies',
+        'keywords': ['goblin', 'tribal', 'token', 'sacrifice', 'swarm', 'enters'],
         'archetype': 'Aggro',
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
     'Red Burn': {
         'colors': [MagicColor.RED.value],
-        'strategy': 'Direct damage spells and hasty creatures for quick wins',
-        'keywords': ['damage', 'burn', 'lightning', 'shock', 'direct', 'haste', 'instant'],
+        'strategy': 'Direct damage spells and lightning-based instant/sorcery effects',
+        'keywords': ['lightning', 'bolt', 'shock', 'instant', 'sorcery', 'direct', 'deals'],
         'archetype': 'Aggro',
         'scorer': create_aggressive_scorer,
         'core_card_count': 4
     },
-    'Red Dragons': {
-        'colors': [MagicColor.RED.value],
-        'strategy': 'Expensive dragons with powerful effects and flying',
-        'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
-        'archetype': 'Ramp',
-        'scorer': create_tribal_scorer,
-        'core_card_count': 3
-    },
+
     'Red Artifacts': {
         'colors': [MagicColor.RED.value],
-        'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
-        'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy', 
-                    'equipment', 'enters', 'tap', 'sacrifice', 'colorless', 'cost', 'thopter'],
+        'strategy': 'Artifact-based deck with construct creatures and equipment synergies',
+        'keywords': ['artifact', 'equipment', 'construct', 'servo', 'thopter', 'metalcraft', 
+                    'improvise', 'colorless', 'cost', 'enters'],
         'archetype': 'Artifacts',
         'scorer': create_artifact_scorer,
         'core_card_count': 4
+    },
+    'Red Stompy': {
+        'colors': [MagicColor.RED.value],
+        'strategy': 'Large red and colorless creatures with high power and expensive threats',
+        'keywords': ['large', 'expensive', 'creature', 'colorless', 'big', 'power 4', 'cmc 4', 'power', 'toughness', 'combat', 'ritual', 'ramp', 'sorcery', 'instant', 'pump', 'enchantment', 'dragon hatchling', 'mana ritual', 'lava spike', 'artifact creature', 'equipment', 'aura'],
+        'archetype': 'Stompy',
+        'scorer': create_stompy_scorer,
+        'core_card_count': 2  # Reduced to match available card pool
     },
     
     # Green themes
@@ -216,7 +236,7 @@ MONO_COLOR_THEMES = {
         'strategy': 'Large creatures with trample and pump effects',
         'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight', 'big', 'large', 
                     'creature', 'beast', 'giant', 'wurm', 'elemental', '4/4', '5/5', '6/6', 
-                    'expensive', 'high power', 'stats'],
+                    'expensive', 'high power', 'stats', 'sorcery', 'instant', 'ramp', 'ritual', 'enchantment', 'giant growth', 'rampant growth', 'cultivate', 'artifact', 'aura', 'wild'],
         'archetype': 'Stompy',  # Custom archetype instead of generic Aggro
         'scorer': create_aggressive_scorer,
         'core_card_count': 3
@@ -226,7 +246,20 @@ MONO_COLOR_THEMES = {
         'strategy': 'Large beast creatures with powerful abilities',
         'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive', 'bear', 
                     'wolf', 'elephant', 'rhino', 'boar', 'ape', 'creature', 'large', 'big', 
-                    'trample', 'fight', 'lord', 'gets +', 'beasts you control'],
+                    'trample', 'fight', 'lord', 'gets +', 'beasts you control',
+                    'green', 'forest', 'mana', 'land', 'instant', 'sorcery', 'pump', 
+                    'target creature', 'creatures you control', 'search', 'library',
+                    'draw', 'card', 'hand', 'battlefield', 'graveyard', 'permanent',
+                    'spell', 'cost', 'artifact', 'enchantment',
+                    'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+                    'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+                    'enters', 'play', 'turn', 'until', 'end', 'gets', 'gain', 'has',
+                    'with', 'without', 'may', 'can', 'must', 'choose', 'cards',
+                    'put', 'return', 'exile', 'counter', 'token', 'ability', 'effect',
+                    'combat', 'attack', 'block', 'deal', 'prevent', 'sacrifice',
+                    'pay', 'add', 'remove', 'equal', 'less', 'greater', 'life', 'damage',
+                    'tap', 'untap', 'control', 'own', 'opponent', 'basic', 'nonbasic',
+                    'converted', 'reveal', 'look', 'shuffle', 'discard', 'mill'],
         'archetype': 'Tribal',
         'scorer': create_tribal_scorer,
         'core_card_count': 4
@@ -272,8 +305,18 @@ DUAL_COLOR_THEMES = {
     # Black-Red (Rakdos)
     'Rakdos Aggro': {
         'colors': [MagicColor.BLACK.value, MagicColor.RED.value],
-        'strategy': 'Aggressive deck with efficient creatures and direct damage',
-        'keywords': ['haste', 'damage', 'aggressive', 'sacrifice', 'burn', 'power'],
+        'strategy': 'Aggressive deck focusing on black sacrifice themes and death triggers',
+        'keywords': ['menace', 'sacrifice', 'death', 'graveyard', 'dies', 'recursive', 'aggressive creatures', 'black creatures',
+                    'red', 'black', 'damage', 'target', 'destroy', 'instant', 'sorcery', 'burn',
+                    'removal', 'discard', 'artifact', 'enchantment', 'permanent', 'spell',
+                    'mana', 'cost', 'hand', 'library', 'battlefield', 'draw', 'search',
+                    'mountain', 'swamp', 'land',
+                    'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+                    'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+                    'enters', 'play', 'turn', 'until', 'end', 'gets', 'gain', 'has',
+                    'with', 'without', 'may', 'can', 'must', 'choose', 'card', 'cards',
+                    'put', 'return', 'exile', 'counter', 'token', 'ability', 'effect',
+                    'combat', 'attack', 'block', 'deal', 'prevent'],
         'archetype': 'Aggro',
         'scorer': create_aggressive_scorer,
         'core_card_count': 3
@@ -282,10 +325,17 @@ DUAL_COLOR_THEMES = {
     # Red-Green (Gruul)
     'Gruul Midrange': {
         'colors': [MagicColor.RED.value, MagicColor.GREEN.value],
-        'strategy': 'Efficient midrange creatures with aggressive abilities and versatile spells',
-        'keywords': ['haste', 'trample', 'efficient', 'versatile', 'combat', 'removal', 
-                    'creature', 'aggressive', 'power', 'damage', 'burn', 'fight', 
-                    'enters', 'whenever', 'attack', 'deal damage', 'direct'],
+        'strategy': 'Green-focused midrange with large creatures and land acceleration',
+        'keywords': ['trample', 'fight', 'creature', 'power 4 or greater', 'forest', 'land', 'green creatures', 'ramp into threats', 'big',
+                    'red', 'green', 'mana', 'mountain', 'instant', 'sorcery', 'target', 'damage',
+                    'artifact', 'enchantment', 'pump', 'search', 'library', 'draw', 'card',
+                    'hand', 'battlefield', 'graveyard', 'permanent', 'spell', 'cost',
+                    'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+                    'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+                    'enters', 'play', 'turn', 'until', 'end', 'gets', 'gain', 'has',
+                    'with', 'without', 'may', 'can', 'must', 'choose', 'cards',
+                    'put', 'return', 'exile', 'counter', 'token', 'ability', 'effect',
+                    'combat', 'attack', 'block', 'deal', 'prevent', 'sacrifice'],
         'archetype': 'Midrange',
         'scorer': create_default_scorer,
         'core_card_count': 3
@@ -316,8 +366,8 @@ DUAL_COLOR_THEMES = {
     # Blue-Red (Izzet)
     'Izzet Spells Matter': {
         'colors': [MagicColor.BLUE.value, MagicColor.RED.value],
-        'strategy': 'Instant and sorcery synergies with prowess and spell-based creatures',
-        'keywords': ['instant', 'sorcery', 'prowess', 'spells', 'trigger', 'burn'],
+        'strategy': 'Blue-focused instant and sorcery control with spell synergies',
+        'keywords': ['instant', 'sorcery', 'draw', 'counter', 'prowess', 'blue spells', 'wizard', 'library', 'spells'],
         'archetype': 'Tempo',
         'scorer': create_default_scorer,
         'core_card_count': 3
@@ -327,7 +377,15 @@ DUAL_COLOR_THEMES = {
     'Golgari Graveyard Value': {
         'colors': [MagicColor.BLACK.value, MagicColor.GREEN.value],
         'strategy': 'Graveyard-based value engine with recursion and sacrifice',
-        'keywords': ['graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies'],
+        'keywords': [
+            'graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies',
+            'black', 'green', 'creature', 'spell', 'card', 'library', 'forest',
+            'search', 'put', 'battlefield', 'enchant', 'aura', 'gets',
+            'sorcery', 'instant', 'mana', 'target', 'look', 'reveal',
+            'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+            'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+            'enters', 'play', 'turn', 'until', 'end', 'with', 'may', 'can'
+        ],
         'archetype': 'Midrange',
         'scorer': create_default_scorer,
         'core_card_count': 3
@@ -336,9 +394,19 @@ DUAL_COLOR_THEMES = {
     # Red-White (Boros)
     'Boros Aggro': {
         'colors': [MagicColor.RED.value, MagicColor.WHITE.value],
-        'strategy': 'Aggressive red and white creatures, combat tricks, and burn spells',
+        'strategy': 'White-focused aggressive deck with combat abilities and equipment',
         'keywords': [
-            'haste', 'first strike', 'double strike', 'menace', 'pump', 'attack', 'combat', 'burn', 'damage', 'aggressive', 'removal', 'strike', 'rush', 'charge'
+            'first strike', 'vigilance', 'double strike', 'white creatures', 'soldier', 'equipment', 'combat tricks', 'pump',
+            'red', 'white', 'instant', 'sorcery', 'artifact', 'enchantment', 'target', 'damage',
+            'attach', 'equip', 'gets +', 'until end of turn', 'permanent', 'spell', 'mana',
+            'cost', 'hand', 'library', 'battlefield', 'graveyard', 'draw', 'search',
+            'mountain', 'plains',
+            'the', 'a', 'an', 'or', 'and', 'you', 'your', 'its', 'this', 'that',
+            'when', 'if', 'each', 'all', 'any', 'one', 'two', 'three', 'enter',
+            'enters', 'play', 'turn', 'until', 'end', 'gets', 'gain', 'has',
+            'with', 'without', 'may', 'can', 'must', 'choose', 'card', 'cards',
+            'put', 'return', 'exile', 'counter', 'token', 'ability', 'effect',
+            'combat', 'attack', 'block', 'deal', 'prevent', 'sacrifice'
         ],
         'archetype': 'Aggro',
         'scorer': create_aggressive_scorer,
@@ -362,10 +430,10 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Aggro'],
+    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Red Stompy', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
-    'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
+    'Ramp': ['Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
 }
 
