@@ -1,110 +1,176 @@
 import pandas as pd
 import numpy as np
 from collections import Counter
+from typing import Dict, List, Optional, Union
 from .enums import Archetype
 
-def average_cmc(deck_df):
-    if 'CMC' in deck_df:
-        return deck_df['CMC'].mean()
-    return np.nan
+# Constants for scoring thresholds
+AGGRO_CMC_THRESHOLD = 3
+STOMPY_CMC_THRESHOLD = 4
+HIGH_CMC_THRESHOLD = 4
+MAX_SCORE = 1.0
 
-def card_type_distribution(deck_df):
-    if 'Type' in deck_df:
-        types = deck_df['Type'].fillna('').str.lower()
-        type_counts = Counter()
-        for t in types:
-            for part in t.split(' '):
-                type_counts[part] += 1
-        total = sum(type_counts.values())
-        return {k: v / total for k, v in type_counts.items() if total > 0}
-    return {}
+def _safe_get_column_mean(deck_df: pd.DataFrame, column: str, default: float = 0.0) -> float:
+    """Safely get the mean of a column, returning default if column doesn't exist."""
+    if column in deck_df.columns:
+        return deck_df[column].mean()
+    return default
 
-def keyword_density(deck_df, keywords):
-    if 'Oracle Text' in deck_df:
-        text = ' '.join(deck_df['Oracle Text'].fillna('')).lower()
-        return sum(1 for kw in keywords if kw in text) / max(1, len(keywords))
-    return 0
-
-def _get_deck_stats(deck_df):
-    """Extract common deck statistics for archetype scoring."""
-    deck_size = len(deck_df)
-    avg_cmc = deck_df['CMC'].mean() if 'CMC' in deck_df else 0
+def _get_combined_text(deck_df: pd.DataFrame) -> str:
+    """Combine Oracle Text and Type fields into a single searchable string."""
+    if deck_df.empty:
+        return ""
     
-    # Combine text fields for analysis
-    text_fields = deck_df['Oracle Text'].fillna('') + ' ' + deck_df['Type'].fillna('')
-    full_text = ' '.join(text_fields).lower()
+    oracle_text = deck_df.get('Oracle Text', pd.Series()).fillna('')
+    type_text = deck_df.get('Type', pd.Series()).fillna('')
+    combined = oracle_text + ' ' + type_text
+    return ' '.join(combined).lower()
+
+def _count_card_type(deck_df: pd.DataFrame, card_type: str) -> int:
+    """Count cards of a specific type (case-insensitive)."""
+    if 'Type' not in deck_df.columns or deck_df.empty:
+        return 0
+    return deck_df['Type'].str.contains(card_type, case=False, na=False).sum()
+
+def _calculate_ratio(count: int, total: int) -> float:
+    """Calculate a ratio, returning 0 if total is 0."""
+    return count / total if total > 0 else 0.0
+
+def average_cmc(deck_df: pd.DataFrame) -> float:
+    """Calculate average converted mana cost of the deck."""
+    return _safe_get_column_mean(deck_df, 'CMC', 0.0)
+
+def card_type_distribution(deck_df: pd.DataFrame) -> Dict[str, float]:
+    """
+    Calculate the distribution of card types in the deck.
+    
+    Returns a dictionary mapping type names to their frequency ratios.
+    """
+    if 'Type' not in deck_df.columns or deck_df.empty:
+        return {}
+    
+    types = deck_df['Type'].fillna('').str.lower()
+    type_counts = Counter()
+    
+    for type_line in types:
+        # Split on common delimiters and spaces
+        parts = type_line.replace('—', ' ').replace('-', ' ').split()
+        for part in parts:
+            if part.strip():  # Only count non-empty parts
+                type_counts[part.strip()] += 1
+    
+    total = sum(type_counts.values())
+    return {k: _calculate_ratio(v, total) for k, v in type_counts.items()}
+
+def keyword_density(deck_df: pd.DataFrame, keywords: List[str]) -> float:
+    """
+    Calculate density of specific keywords in the deck's Oracle text.
+    
+    Returns the ratio of found keywords to total keywords searched.
+    """
+    if not keywords or deck_df.empty:
+        return 0.0
+    
+    text = _get_combined_text(deck_df)
+    found_keywords = sum(1 for keyword in keywords if keyword.lower() in text)
+    return _calculate_ratio(found_keywords, len(keywords))
+
+def _get_deck_stats(deck_df: pd.DataFrame) -> Dict[str, Union[int, float, str]]:
+    """Extract common deck statistics for archetype scoring."""
+    if deck_df.empty:
+        return {
+            'size': 0,
+            'avg_cmc': 0.0,
+            'text': '',
+            'creature_ratio': 0.0,
+            'artifact_ratio': 0.0,
+            'high_cmc_ratio': 0.0
+        }
+    
+    deck_size = len(deck_df)
+    avg_cmc = _safe_get_column_mean(deck_df, 'CMC', 0.0)
+    full_text = _get_combined_text(deck_df)
     
     # Count card types
-    creature_count = deck_df['Type'].str.contains('creature', case=False, na=False).sum()
-    artifact_count = deck_df['Type'].str.contains('artifact', case=False, na=False).sum()
+    creature_count = _count_card_type(deck_df, 'creature')
+    artifact_count = _count_card_type(deck_df, 'artifact')
+    
+    # Count high CMC cards
+    high_cmc_count = 0
+    if 'CMC' in deck_df.columns:
+        high_cmc_count = (deck_df['CMC'] > HIGH_CMC_THRESHOLD).sum()
     
     return {
         'size': deck_size,
         'avg_cmc': avg_cmc,
         'text': full_text,
-        'creature_ratio': creature_count / deck_size,
-        'artifact_ratio': artifact_count / deck_size,
-        'high_cmc_ratio': (deck_df['CMC'] > 4).sum() / deck_size if 'CMC' in deck_df else 0
+        'creature_ratio': _calculate_ratio(creature_count, deck_size),
+        'artifact_ratio': _calculate_ratio(artifact_count, deck_size),
+        'high_cmc_ratio': _calculate_ratio(high_cmc_count, deck_size)
     }
 
-def _score_aggro_alignment(stats):
+def _count_keywords_in_text(text: str, keywords: List[str]) -> int:
+    """Count occurrences of keywords in text."""
+    return sum(text.count(keyword.lower()) for keyword in keywords)
+
+def _score_aggro_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with aggressive archetype."""
-    # Favor creature-heavy decks with low average CMC
     creature_bonus = stats['creature_ratio']
-    cmc_bonus = 1.0 if stats['avg_cmc'] <= 3 else 0.5
+    cmc_bonus = MAX_SCORE if stats['avg_cmc'] <= AGGRO_CMC_THRESHOLD else 0.5
     return creature_bonus * cmc_bonus
 
-def _score_control_alignment(stats):
+def _score_control_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with control archetype."""
-    # Count control-related keywords
     control_keywords = ['removal', 'destroy', 'counter', 'draw', 'exile']
-    control_score = sum(stats['text'].count(keyword) for keyword in control_keywords)
-    return min(control_score / stats['size'], 1.0)  # Cap at 1.0
+    control_score = _count_keywords_in_text(stats['text'], control_keywords)
+    return min(_calculate_ratio(control_score, stats['size']), MAX_SCORE)
 
-def _score_midrange_alignment(stats):
+def _score_midrange_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with midrange archetype."""
-    # Balance of creatures and removal/value
     creature_component = stats['creature_ratio'] * 0.5
-    removal_component = min(stats['text'].count('removal') / stats['size'], 0.5) * 0.5
+    removal_score = stats['text'].count('removal')
+    removal_component = min(_calculate_ratio(removal_score, stats['size']), 0.5) * 0.5
     return creature_component + removal_component
 
-def _score_ramp_alignment(stats):
+def _score_ramp_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with ramp archetype."""
-    # Mana acceleration and expensive spells
     ramp_keywords = ['ramp', 'mana', 'search', 'land']
-    ramp_score = sum(stats['text'].count(keyword) for keyword in ramp_keywords)
-    expensive_bonus = stats['high_cmc_ratio']
-    return min((ramp_score / stats['size']) + expensive_bonus, 1.0)  # Cap at 1.0
+    ramp_score = _count_keywords_in_text(stats['text'], ramp_keywords)
+    ramp_component = _calculate_ratio(ramp_score, stats['size'])
+    expensive_component = stats['high_cmc_ratio']
+    return min(ramp_component + expensive_component, MAX_SCORE)
 
-def _score_tempo_alignment(stats):
+def _score_tempo_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with tempo archetype."""
-    # Evasion and tempo-related effects
     tempo_keywords = ['flying', 'bounce', 'return', 'counter', 'flash']
-    tempo_score = sum(stats['text'].count(keyword) for keyword in tempo_keywords)
-    return min(tempo_score / stats['size'], 1.0)  # Cap at 1.0
+    tempo_score = _count_keywords_in_text(stats['text'], tempo_keywords)
+    return min(_calculate_ratio(tempo_score, stats['size']), MAX_SCORE)
 
-def _score_stompy_alignment(stats):
+def _score_stompy_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with stompy archetype."""
-    # Similar to aggro but allows higher CMC for bigger creatures
     creature_bonus = stats['creature_ratio']
-    cmc_bonus = 1.0 if stats['avg_cmc'] <= 4 else 0.8  # More forgiving than aggro
+    cmc_bonus = MAX_SCORE if stats['avg_cmc'] <= STOMPY_CMC_THRESHOLD else 0.8
     return creature_bonus * cmc_bonus
 
-def _score_tribal_alignment(stats, keywords):
+def _score_tribal_alignment(stats: Dict[str, Union[int, float, str]], keywords: List[str]) -> float:
     """Score alignment with tribal archetype."""
-    # Count tribal-specific keywords
-    tribal_score = sum(stats['text'].count(keyword) for keyword in keywords)
-    return min(tribal_score / stats['size'], 1.0)  # Cap at 1.0
+    tribal_score = _count_keywords_in_text(stats['text'], keywords)
+    return min(_calculate_ratio(tribal_score, stats['size']), MAX_SCORE)
 
-def _score_artifacts_alignment(stats):
+def _score_artifacts_alignment(stats: Dict[str, Union[int, float, str]]) -> float:
     """Score alignment with artifacts archetype."""
     return stats['artifact_ratio']
 
-def archetype_alignment_score(deck_df, theme_config):
+def archetype_alignment_score(deck_df: pd.DataFrame, theme_config: Dict) -> float:
     """
     Calculate how well a deck aligns with its intended archetype.
     
-    Returns a score between 0 and 1, where 1 indicates perfect alignment.
+    Args:
+        deck_df: DataFrame containing deck cards
+        theme_config: Configuration dictionary containing 'archetype' and 'keywords'
+    
+    Returns:
+        Score between 0 and 1, where 1 indicates perfect alignment.
     """
     if deck_df is None or deck_df.empty:
         return 0.0
@@ -113,15 +179,9 @@ def archetype_alignment_score(deck_df, theme_config):
     keywords = theme_config.get('keywords', [])
     
     # Normalize archetype to enum value
-    if isinstance(archetype, Archetype):
-        archetype_type = archetype
-    else:
-        # Try to match string to enum
-        archetype_str = str(archetype).upper() if archetype else ''
-        try:
-            archetype_type = Archetype[archetype_str]
-        except (KeyError, AttributeError):
-            return 0.0
+    archetype_type = _normalize_archetype(archetype)
+    if archetype_type is None:
+        return 0.0
     
     # Get deck statistics once
     stats = _get_deck_stats(deck_df)
@@ -144,42 +204,106 @@ def archetype_alignment_score(deck_df, theme_config):
     
     return 0.0
 
-def card_quality_score(deck_df):
-    # Use average power + toughness if available
-    if 'Power' in deck_df and 'Toughness' in deck_df:
-        try:
-            power = pd.to_numeric(deck_df['Power'], errors='coerce')
-            toughness = pd.to_numeric(deck_df['Toughness'], errors='coerce')
-            return (power.fillna(0) + toughness.fillna(0)).mean()
-        except Exception:
-            return np.nan
-    return np.nan
+def _normalize_archetype(archetype) -> Optional[Archetype]:
+    """Convert archetype input to Archetype enum."""
+    if isinstance(archetype, Archetype):
+        return archetype
+    
+    if archetype is None:
+        return None
+        
+    # Try to match string to enum
+    archetype_str = str(archetype).upper()
+    try:
+        return Archetype[archetype_str]
+    except (KeyError, AttributeError):
+        return None
 
-def synergy_score(deck_df, keywords):
-    # Count how many cards share a keyword/tribal type
-    if 'Oracle Text' in deck_df:
-        text = ' '.join(deck_df['Oracle Text'].fillna('')).lower()
-        return sum(text.count(kw) for kw in keywords) / max(1, len(deck_df))
-    return 0
+def card_quality_score(deck_df: pd.DataFrame) -> float:
+    """
+    Calculate average card quality based on power and toughness.
+    
+    Returns the average combined power and toughness, or 0.0 if unavailable.
+    """
+    if deck_df.empty or 'Power' not in deck_df.columns or 'Toughness' not in deck_df.columns:
+        return 0.0
+    
+    try:
+        power = pd.to_numeric(deck_df['Power'], errors='coerce').fillna(0)
+        toughness = pd.to_numeric(deck_df['Toughness'], errors='coerce').fillna(0)
+        return (power + toughness).mean()
+    except Exception:
+        return 0.0
 
-def compute_deck_metrics(deck_df, theme_config):
-    metrics = {}
-    metrics['avg_cmc'] = average_cmc(deck_df)
-    type_dist = card_type_distribution(deck_df)
-    for t, v in type_dist.items():
-        metrics[f'type_{t}'] = v
-    metrics['keyword_density'] = keyword_density(deck_df, theme_config.get('keywords', []))
-    metrics['archetype_alignment'] = archetype_alignment_score(deck_df, theme_config)
-    metrics['card_quality'] = card_quality_score(deck_df)
-    metrics['synergy'] = synergy_score(deck_df, theme_config.get('keywords', []))
-    metrics['deck_size'] = len(deck_df) if deck_df is not None else 0
+def synergy_score(deck_df: pd.DataFrame, keywords: List[str]) -> float:
+    """
+    Calculate how well cards in the deck synergize based on shared keywords.
+    
+    Returns the average number of keyword matches per card.
+    """
+    if deck_df.empty or not keywords:
+        return 0.0
+    
+    text = _get_combined_text(deck_df)
+    keyword_matches = _count_keywords_in_text(text, keywords)
+    return _calculate_ratio(keyword_matches, len(deck_df))
+
+def compute_deck_metrics(deck_df: pd.DataFrame, theme_config: Dict) -> Dict[str, Union[int, float]]:
+    """
+    Compute comprehensive metrics for a single deck.
+    
+    Args:
+        deck_df: DataFrame containing deck cards
+        theme_config: Theme configuration dictionary
+        
+    Returns:
+        Dictionary of metric names to values
+    """
+    if deck_df is None or deck_df.empty:
+        return {
+            'avg_cmc': 0.0,
+            'keyword_density': 0.0,
+            'archetype_alignment': 0.0,
+            'card_quality': 0.0,
+            'synergy': 0.0,
+            'deck_size': 0
+        }
+    
+    metrics = {
+        'avg_cmc': average_cmc(deck_df),
+        'keyword_density': keyword_density(deck_df, theme_config.get('keywords', [])),
+        'archetype_alignment': archetype_alignment_score(deck_df, theme_config),
+        'card_quality': card_quality_score(deck_df),
+        'synergy': synergy_score(deck_df, theme_config.get('keywords', [])),
+        'deck_size': len(deck_df)
+    }
+    
+    # Add card type distribution metrics
+    type_distribution = card_type_distribution(deck_df)
+    for card_type, ratio in type_distribution.items():
+        metrics[f'type_{card_type}'] = ratio
+    
     return metrics
 
-def compute_all_deck_metrics(deck_dataframes, all_themes):
+def compute_all_deck_metrics(deck_dataframes: Dict[str, pd.DataFrame], 
+                           all_themes: Dict[str, Dict]) -> pd.DataFrame:
+    """
+    Compute metrics for all decks in the collection.
+    
+    Args:
+        deck_dataframes: Dictionary mapping theme names to deck DataFrames
+        all_themes: Dictionary mapping theme names to theme configurations
+        
+    Returns:
+        DataFrame with one row per deck and columns for each metric
+    """
     rows = []
-    for theme, deck_df in deck_dataframes.items():
-        theme_config = all_themes.get(theme, {})
-        row = {'theme': theme}
+    
+    for theme_name, deck_df in deck_dataframes.items():
+        theme_config = all_themes.get(theme_name, {})
+        
+        row = {'theme': theme_name}
         row.update(compute_deck_metrics(deck_df, theme_config))
         rows.append(row)
+    
     return pd.DataFrame(rows)
