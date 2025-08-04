@@ -18,7 +18,7 @@ Main exports:
 
 import pandas as pd
 from typing import Dict, Any, List
-from ..consts import MagicColor
+from ..enums import MagicColor
 
 from .core import CardConstraints, DeckState
 from .selector import CardSelector  

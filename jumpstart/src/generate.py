@@ -18,10 +18,12 @@ def generate_image_prompt(theme_name):
     
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .enums import Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from enums import Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     
@@ -221,10 +223,12 @@ def generate_theme_image_prompts(theme_names=None):
     """
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .enums import Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from enums import Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     
@@ -275,10 +279,12 @@ def generate_deck_divider(theme_name, deck_dataframe):
     """
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .enums import Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from enums import Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     

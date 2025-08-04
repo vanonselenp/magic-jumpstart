@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from collections import Counter
-from .consts import Archetype
+from .enums import Archetype
 
 def average_cmc(deck_df):
     if 'CMC' in deck_df:

@@ -4,7 +4,7 @@ Utility functions for card type checking, color analysis, and land evaluation.
 
 import pandas as pd
 from typing import List, Set
-from ..consts import MagicColor
+from ..enums import MagicColor
 
 
 def is_land_card(card: pd.Series) -> bool:

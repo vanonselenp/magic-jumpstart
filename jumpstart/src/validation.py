@@ -7,7 +7,7 @@ check for constraint compliance, and analyze card distribution.
 
 import pandas as pd
 from typing import Dict, List, Set, Tuple
-from .consts import MagicColor
+from .enums import MagicColor
 
 # from src.validation import (
 #     validate_card_uniqueness,      # Check for duplicate cards
@@ -17,9 +17,6 @@ from .consts import MagicColor
 #     display_validation_summary     # Show formatted results
 # )
 
-import pandas as pd
-from typing import Dict, List, Tuple
-from .consts import MagicColor
 from .construct.core import CardConstraints
 
 

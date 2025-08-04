@@ -7,7 +7,7 @@ tested, modified, or disabled independently.
 
 import re
 from .base import ScoringRule, CardContext
-from ..consts import Archetype
+from ..enums import Archetype
 
 
 class KeywordMatchingRule(ScoringRule):
