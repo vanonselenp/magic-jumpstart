@@ -45,7 +45,7 @@ The system constructs 30 different themed decks across all colors:
 ### Red Themes
 - **Red Goblins**: Fast goblin tribal with haste and explosive plays
 - **Red Burn**: Direct damage spells and hasty creatures for quick wins
-- **Red Dragons**: Expensive dragons with powerful effects and flying
+- **Red Inferno**: Expensive dragons with powerful effects and flying
 - **Red Artifacts**: Artifact-based deck with improvise and metalcraft synergies
 
 ### Green Themes  

@@ -174,7 +174,7 @@ MONO_COLOR_THEMES = {
         'scorer': create_aggressive_scorer,
         'core_card_count': 4
     },
-    'Red Dragons': {
+    'Red Inferno': {
         'colors': [MagicColor.RED.value],
         'strategy': 'Expensive dragons with powerful effects and flying',
         'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
@@ -365,7 +365,7 @@ THEME_CATEGORIES = {
     'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Vanguard', 'Rakdos Aggro', 'Boros Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
-    'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
+    'Ramp': ['Red Inferno', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
     'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
 }
 

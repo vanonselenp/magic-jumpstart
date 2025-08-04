@@ -504,10 +504,10 @@ The image should immediately convey the essence of a aggro strategy in Magic: Th
 --------------------------------------------------------------------------------
 
 ============================================================
-THEME: Red Dragons
+THEME: Red Inferno
 ============================================================
 
-Create a fantasy art image for a Magic: The Gathering theme called "Red Dragons". 
+Create a fantasy art image for a Magic: The Gathering theme called "Red Inferno". 
 
 **Image Specifications:**
 - Dimensions: 100mm × 78mm aspect ratio (landscape orientation)
