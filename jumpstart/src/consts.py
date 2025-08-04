@@ -80,7 +80,7 @@ MONO_COLOR_THEMES = {
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
-    'White Weenies': {
+    'White Vanguard': {
         'colors': [MagicColor.WHITE.value],
         'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
         'keywords': ['creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance', 'efficient', 'low cost', 'small'],
@@ -362,7 +362,7 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Weenies', 'Rakdos Aggro', 'Boros Aggro'],
+    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Vanguard', 'Rakdos Aggro', 'Boros Aggro'],
     'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
     'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
     'Ramp': ['Red Dragons', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],

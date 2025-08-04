@@ -28,7 +28,7 @@ The system constructs 30 different themed decks across all colors:
 - **White Soldiers**: Aggressive tribal deck focused on soldier creatures with anthem effects
 - **White Equipment**: Equipment-based deck with efficient creatures and powerful gear  
 - **White Angels**: Mid-to-late game deck with powerful flying angels and protection
-- **White Weenies**: Aggressive low-cost creatures with efficient stats and combat abilities
+- **White Vanguard**: Aggressive low-cost creatures with efficient stats and combat abilities
 
 ### Blue Themes  
 - **Blue Flying**: Evasive creatures with flying and tempo spells

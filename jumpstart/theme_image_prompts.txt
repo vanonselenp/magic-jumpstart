@@ -109,10 +109,10 @@ The image should immediately convey the essence of a control strategy in Magic: 
 --------------------------------------------------------------------------------
 
 ============================================================
-THEME: White Weenies
+THEME: White Vanguard
 ============================================================
 
-Create a fantasy art image for a Magic: The Gathering theme called "White Weenies". 
+Create a fantasy art image for a Magic: The Gathering theme called "White Vanguard". 
 
 **Image Specifications:**
 - Dimensions: 100mm × 78mm aspect ratio (landscape orientation)
