@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from collections import Counter
+from .consts import Archetype
 
 def average_cmc(deck_df):
     if 'CMC' in deck_df:
@@ -27,29 +28,48 @@ def keyword_density(deck_df, keywords):
 def archetype_alignment_score(deck_df, theme_config):
     # Reuse logic from notebook
     keywords = theme_config.get('keywords', [])
-    archetype = theme_config.get('archetype', '').lower()
+    archetype = theme_config.get('archetype')
     if deck_df is None or deck_df.empty:
         return 0
     text_fields = deck_df['Oracle Text'].fillna('') + ' ' + deck_df['Type'].fillna('')
     text = ' '.join(text_fields).lower()
+    
+    # Handle enum archetype values
+    if isinstance(archetype, Archetype):
+        archetype_value = archetype.value.lower()
+    else:
+        archetype_value = str(archetype).lower() if archetype else ''
+    
     # Aggro: low CMC, lots of creatures
-    if archetype == 'aggro':
+    if archetype_value == Archetype.AGGRO.value.lower():
         avg_cmc = deck_df['CMC'].mean() if 'CMC' in deck_df else 0
         creature_count = deck_df['Type'].str.contains('creature', case=False, na=False).sum()
         return (creature_count / len(deck_df)) * (1 if avg_cmc <= 3 else 0.5)
     # Control: removal, card draw, instants/sorceries
-    if archetype == 'control':
+    if archetype_value == Archetype.CONTROL.value.lower():
         removal_count = text.count('removal') + text.count('destroy') + text.count('counter')
         return removal_count / len(deck_df)
     # Midrange: mix of creatures, value, removal
-    if archetype == 'midrange':
+    if archetype_value == Archetype.MIDRANGE.value.lower():
         return 0.5 * (deck_df['Type'].str.contains('creature', case=False, na=False).sum() / len(deck_df)) + 0.5 * (text.count('removal') / len(deck_df))
     # Ramp: ramp, mana, expensive spells
-    if archetype == 'ramp':
+    if archetype_value == Archetype.RAMP.value.lower():
         return text.count('ramp') + text.count('mana') + (deck_df['CMC'] > 4).sum() / len(deck_df)
     # Tempo: flying, bounce, tempo
-    if archetype == 'tempo':
+    if archetype_value == Archetype.TEMPO.value.lower():
         return text.count('flying') + text.count('bounce') + text.count('tempo')
+    # Handle custom archetypes
+    if archetype_value == Archetype.STOMPY.value.lower():
+        # Similar to aggro but favors higher power creatures
+        avg_cmc = deck_df['CMC'].mean() if 'CMC' in deck_df else 0
+        creature_count = deck_df['Type'].str.contains('creature', case=False, na=False).sum()
+        return (creature_count / len(deck_df)) * (0.8 if avg_cmc <= 4 else 1.0)  # Allow slightly higher CMC
+    if archetype_value == Archetype.TRIBAL.value.lower():
+        # Count tribal synergies
+        return sum(text.count(kw) for kw in keywords) / max(1, len(deck_df))
+    if archetype_value == Archetype.ARTIFACTS.value.lower():
+        artifact_count = deck_df['Type'].str.contains('artifact', case=False, na=False).sum()
+        return artifact_count / len(deck_df)
     return 0
 
 def card_quality_score(deck_df):

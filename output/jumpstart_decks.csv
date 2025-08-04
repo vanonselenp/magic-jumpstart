@@ -183,29 +183,29 @@ Improvised Club,Mixed,,common,R,Instant,,2,,,Red Burn
 Bristling Backwoods,Mixed,,common,,Land — Desert,,0,,,Red Burn
 Bogardan Dragonheart,Mixed,,common,R,Creature — Human Shaman,,3,2.0,2.0,Red Inferno
 Thriving Skyclaw,Mixed,,common,R,Creature — Cat Dragon,,4,3.0,2.0,Red Inferno
-Wrangle,Mixed,,common,R,Sorcery,,2,,,Red Inferno
-Yavimaya Steelcrusher,Mixed,,common,R,Creature — Ape Warrior,,2,2.0,2.0,Red Inferno
 Oliphaunt,Mixed,,common,R,Creature — Elephant,,6,6.0,4.0,Red Inferno
+Wrangle,Mixed,,common,R,Sorcery,,2,,,Red Inferno
+Fireblast,Mixed,,common,R,Instant,,6,,,Red Inferno
 Raid Bombardment,Mixed,,common,R,Enchantment,,3,,,Red Inferno
+Yavimaya Steelcrusher,Mixed,,common,R,Creature — Ape Warrior,,2,2.0,2.0,Red Inferno
 Gruul Turf,Mixed,,common,,Land,,0,,,Red Inferno
-Rimrock Knight,Mixed,,common,R,Instant — Adventure,,2,,,Red Inferno
-Thriving Grubs,Mixed,,common,R,Creature — Gremlin,,2,2.0,1.0,Red Inferno
-Underworld Rage-Hound,Mixed,,common,R,Creature — Elemental Dog,,2,3.0,1.0,Red Inferno
-Volatile Wanderglyph,Mixed,,common,R,Artifact Creature — Golem,,2,2.0,2.0,Red Inferno
 Hissing Iguanar,Mixed,,common,R,Creature — Lizard,,3,3.0,1.0,Red Inferno
 Spelleater Wolverine,Mixed,,common,R,Creature — Wolverine,,3,3.0,2.0,Red Inferno
+Tuskeri Firewalker,Mixed,,common,R,Creature — Human Berserker,,3,3.0,2.0,Red Inferno
+Ardent Elementalist,Mixed,,common,R,Creature — Human Shaman,,4,2.0,1.0,Red Inferno
+Beetleback Chief,Mixed,,common,R,Creature — Goblin Warrior,,4,2.0,2.0,Red Inferno
 Leonin Bola,Mixed,,common,,Artifact — Equipment,,1,,,Red Artifacts
 Barbed Batterfist,Mixed,,common,R,Artifact — Equipment,,2,,,Red Artifacts
 Bonesplitter,Mixed,,common,,Artifact — Equipment,,1,,,Red Artifacts
 Aether Chaser,Mixed,,common,R,Creature — Human Artificer,,2,2.0,1.0,Red Artifacts
+Thriving Grubs,Mixed,,common,R,Creature — Gremlin,,2,2.0,1.0,Red Artifacts
+Volatile Wanderglyph,Mixed,,common,R,Artifact Creature — Golem,,2,2.0,2.0,Red Artifacts
 Scholar of Combustion,Mixed,,common,R,Creature — Human Wizard,,4,3.0,2.0,Red Artifacts
-Ardent Elementalist,Mixed,,common,R,Creature — Human Shaman,,4,2.0,1.0,Red Artifacts
-Beetleback Chief,Mixed,,common,R,Creature — Goblin Warrior,,4,2.0,2.0,Red Artifacts
-Tuskeri Firewalker,Mixed,,common,R,Creature — Human Berserker,,3,3.0,2.0,Red Artifacts
+Underworld Rage-Hound,Mixed,,common,R,Creature — Elemental Dog,,2,3.0,1.0,Red Artifacts
 Wildfire Elemental,Mixed,,common,R,Creature — Elemental,,4,3.0,3.0,Red Artifacts
-Fireblast,Mixed,,common,R,Instant,,6,,,Red Artifacts
 Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Artifacts
 Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Artifacts
+Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Red Artifacts
 Prismari Campus,Mixed,,common,,Land,,0,,,Red Artifacts
 Longstalk Brawl,Mixed,,common,G,Sorcery,,1,,,Green Elves
 Experiment One,Mixed,,common,G,Creature — Human Ooze,,1,1.0,1.0,Green Elves
@@ -221,44 +221,44 @@ Werebear,Mixed,,common,G,Creature — Human Bear Druid,,2,1.0,1.0,Green Elves
 Utopia Sprawl,Mixed,,common,G,Enchantment — Aura,,1,,,Green Elves
 Haunted Mire,Mixed,,common,,Land — Swamp Forest,,0,,,Green Elves
 Colossal Dreadmask,Mixed,,common,G,Artifact — Equipment,,6,,,Green Ramp
-Tranquil Landscape,Mixed,,common,,Land,,0,,,Green Ramp
-Sakura-Tribe Elder,Mixed,,common,G,Creature — Snake Shaman,,2,1.0,1.0,Green Ramp
-Yavimaya Elder,Mixed,,common,G,Creature — Human Druid,,3,2.0,1.0,Green Ramp
 Generous Ent,Mixed,,common,G,Creature — Treefolk,,6,5.0,7.0,Green Ramp
 Greater Tanuki,Mixed,,common,G,Enchantment Creature — Dog,,6,6.0,5.0,Green Ramp
 Krosan Tusker,Mixed,,common,G,Creature — Boar Beast,,7,6.0,5.0,Green Ramp
-Annoyed Altisaur,Mixed,,common,G,Creature — Dinosaur,,7,6.0,5.0,Green Ramp
-Jade Avenger,Mixed,,common,G,Creature — Frog Samurai,,2,2.0,2.0,Green Ramp
-Mother Bear,Mixed,,common,G,Creature — Bear,,2,2.0,2.0,Green Ramp
-Wall of Roots,Mixed,,common,G,Creature — Plant Wall,,2,0.0,5.0,Green Ramp
+Yavimaya Elder,Mixed,,common,G,Creature — Human Druid,,3,2.0,1.0,Green Ramp
+Sakura-Tribe Elder,Mixed,,common,G,Creature — Snake Shaman,,2,1.0,1.0,Green Ramp
 Nature's Lore,Mixed,,common,G,Sorcery,,2,,,Green Ramp
 Wild Growth,Mixed,,common,G,Enchantment — Aura,,1,,,Green Ramp
-Bannerhide Krushok,Mixed,,common,G,Creature — Beast,,4,4.0,4.0,Green Stompy
+Fertile Ground,Mixed,,common,G,Enchantment — Aura,,2,,,Green Ramp
+Conclave Naturalists,Mixed,,common,G,Creature — Dryad,,5,4.0,4.0,Green Ramp
+Hooting Mandrills,Mixed,,common,G,Creature — Ape,,6,4.0,4.0,Green Ramp
+Bramble Wurm,Mixed,,common,G,Creature — Wurm,,7,7.0,6.0,Green Ramp
+Witherbloom Campus,Mixed,,common,,Land,,0,,,Green Ramp
+Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Stompy
 Gnarlid Colony,Mixed,,common,G,Creature — Beast,,2,2.0,2.0,Green Stompy
-Hazard of the Dunes,Mixed,,common,G,Creature — Wurm,,4,4.0,4.0,Green Stompy
-Bramble Wurm,Mixed,,common,G,Creature — Wurm,,7,7.0,6.0,Green Stompy
-Ram Through,Mixed,,common,G,Instant,,2,,,Green Stompy
-Tuskguard Captain,Mixed,,common,G,Creature — Human Warrior,,3,2.0,3.0,Green Stompy
-Blastoderm,Mixed,,common,G,Creature — Beast,,4,5.0,5.0,Green Stompy
-Bloom Hulk,Mixed,,common,G,Creature — Plant Elemental,,4,4.0,4.0,Green Stompy
-Silverback Shaman,Mixed,,common,G,Creature — Ape Shaman,,5,5.0,4.0,Green Stompy
-Hooting Mandrills,Mixed,,common,G,Creature — Ape,,6,4.0,4.0,Green Stompy
 Giant Growth,Mixed,,common,G,Instant,,1,,,Green Stompy
+Hazard of the Dunes,Mixed,,common,G,Creature — Wurm,,4,4.0,4.0,Green Stompy
+Jade Avenger,Mixed,,common,G,Creature — Frog Samurai,,2,2.0,2.0,Green Stompy
+Mother Bear,Mixed,,common,G,Creature — Bear,,2,2.0,2.0,Green Stompy
+Wall of Roots,Mixed,,common,G,Creature — Plant Wall,,2,0.0,5.0,Green Stompy
+Tuskguard Captain,Mixed,,common,G,Creature — Human Warrior,,3,2.0,3.0,Green Stompy
 Massive Might,Mixed,,common,G,Instant,,1,,,Green Stompy
-Witherbloom Campus,Mixed,,common,,Land,,0,,,Green Stompy
+Ram Through,Mixed,,common,G,Instant,,2,,,Green Stompy
+Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Stompy
+Rancor,Mixed,,common,G,Enchantment — Aura,,1,,,Green Stompy
+Simic Growth Chamber,Mixed,,common,,Land,,0,,,Green Stompy
 Contagious Vorrac,Mixed,,common,G,Creature — Phyrexian Boar Beast,,3,3.0,3.0,Green Beasts
+Bannerhide Krushok,Mixed,,common,G,Creature — Beast,,4,4.0,4.0,Green Beasts
 Renegade Freighter,Mixed,,common,,Artifact — Vehicle,,3,4.0,3.0,Green Beasts
 Owlbear,Mixed,,common,G,Creature — Bird Bear,,5,4.0,4.0,Green Beasts
-Bushwhack,Mixed,,common,G,Sorcery,,1,,,Green Beasts
+Blastoderm,Mixed,,common,G,Creature — Beast,,4,5.0,5.0,Green Beasts
 Sarulf's Packmate,Mixed,,common,G,Creature — Wolf,,4,3.0,3.0,Green Beasts
-Rancor,Mixed,,common,G,Enchantment — Aura,,1,,,Green Beasts
 Phantom Tiger,Mixed,,common,G,Creature — Cat Spirit,,3,1.0,0.0,Green Beasts
+Bloom Hulk,Mixed,,common,G,Creature — Plant Elemental,,4,4.0,4.0,Green Beasts
 Jade Guardian,Mixed,,common,G,Creature — Merfolk Shaman,,4,2.0,2.0,Green Beasts
-Conclave Naturalists,Mixed,,common,G,Creature — Dryad,,5,4.0,4.0,Green Beasts
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Green Beasts
-Horrific Assault,Mixed,,common,G,Sorcery,,1,,,Green Beasts
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Green Beasts
-Simic Growth Chamber,Mixed,,common,,Land,,0,,,Green Beasts
+Trumpeting Herd,Mixed,,common,G,Sorcery,,4,,,Green Beasts
+Tangled Islet,Mixed,,common,,Land — Forest Island,,0,,,Green Beasts
 Condescend,Mixed,,common,U,Instant,,1,,,Azorius Control
 Rhox Veteran,Mixed,,common,W,Creature — Rhino Soldier,,4,2.0,4.0,Azorius Control
 Eagles of the North,Mixed,,common,W,Creature — Bird Soldier,,6,3.0,3.0,Azorius Control
@@ -271,7 +271,7 @@ Silver Drake,Mixed,,common,UW,Creature — Drake,,3,3.0,3.0,Azorius Control
 Filigree Familiar,Mixed,,common,,Artifact Creature — Fox,,3,2.0,2.0,Azorius Control
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Azorius Control
 Mind Stone,Mixed,,common,,Artifact,,2,,,Azorius Control
-Alabaster Host Intercessor,Mixed,,common,W,Creature — Phyrexian Samurai,,6,3.0,4.0,Azorius Control
+Prophetic Prism,Mixed,,common,,Artifact,,2,,,Azorius Control
 Deranged Assistant,Mixed,,common,U,Creature — Human Wizard,,2,1.0,1.0,Dimir Mill
 Mire Triton,Mixed,,common,B,Creature — Zombie Merfolk,,2,2.0,1.0,Dimir Mill
 Consider,Mixed,,common,U,Instant,,1,,,Dimir Mill
@@ -320,10 +320,10 @@ Armadillo Cloak,Mixed,,common,GW,Enchantment — Aura,,3,,,Selesnya Value
 Botanical Plaza,Mixed,,common,,Land,,0,,,Selesnya Value
 Safehold Elite,Mixed,,common,GW,Creature — Elf Scout,,2,2.0,2.0,Selesnya Value
 Treetop Snarespinner,Mixed,,common,G,Creature — Spider,,4,1.0,4.0,Selesnya Value
-Trumpeting Herd,Mixed,,common,G,Sorcery,,4,,,Selesnya Value
 Journey to Nowhere,Mixed,,common,W,Enchantment,,2,,,Selesnya Value
 Trapped in the Screen,Mixed,,common,W,Enchantment,,3,,,Selesnya Value
 Ardenvale Tactician,Mixed,,common,W,Instant — Adventure,,3,,,Selesnya Value
+Heliod's Pilgrim,Mixed,,common,W,Creature — Human Cleric,,3,1.0,2.0,Selesnya Value
 Greatsword of Tyr,Mixed,,common,W,Artifact — Equipment,,2,,,Orzhov Lifegain Value
 Seeker of the Way,Mixed,,common,W,Creature — Human Warrior,,2,2.0,2.0,Orzhov Lifegain Value
 Feed the Swarm,Mixed,,common,B,Sorcery,,2,,,Orzhov Lifegain Value
@@ -333,10 +333,10 @@ Kingpin's Pet,Mixed,,common,BW,Creature — Thrull,,3,2.0,2.0,Orzhov Lifegain Va
 Gift of Orzhova,Mixed,,common,BW,Enchantment — Aura,,3,,,Orzhov Lifegain Value
 Pillory of the Sleepless,Mixed,,common,BW,Enchantment — Aura,,3,,,Orzhov Lifegain Value
 Vault Skirge,Mixed,,common,B,Artifact Creature — Phyrexian Imp,,2,1.0,1.0,Orzhov Lifegain Value
-Heliod's Pilgrim,Mixed,,common,W,Creature — Human Cleric,,3,1.0,2.0,Orzhov Lifegain Value
 Dauntless Unity,Mixed,,common,W,Instant,,2,,,Orzhov Lifegain Value
 Raise the Alarm,Mixed,,common,W,Instant,,2,,,Orzhov Lifegain Value
 Unbounded Potential,Mixed,,common,W,Instant,,2,,,Orzhov Lifegain Value
+You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,Orzhov Lifegain Value
 Mocking Sprite,Mixed,,common,U,Creature — Faerie Rogue,,3,2.0,1.0,Izzet Spells Matter
 Goblin Electromancer,Mixed,,common,RU,Creature — Goblin Wizard,,2,2.0,2.0,Izzet Spells Matter
 Bloodwater Entity,Mixed,,common,RU,Creature — Elemental,,3,2.0,2.0,Izzet Spells Matter
@@ -346,10 +346,10 @@ Quick Study,Mixed,,common,U,Instant,,3,,,Izzet Spells Matter
 Hard Evidence,Mixed,,common,U,Sorcery,,1,,,Izzet Spells Matter
 Serum Visions,Mixed,,common,U,Sorcery,,1,,,Izzet Spells Matter
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Spells Matter
+Rimrock Knight,Mixed,,common,R,Instant — Adventure,,2,,,Izzet Spells Matter
 Incinerate,Mixed,,common,R,Instant,,2,,,Izzet Spells Matter
 Searing Spear,Mixed,,common,R,Instant,,2,,,Izzet Spells Matter
 Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Izzet Spells Matter
-Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Izzet Spells Matter
 Death Denied,Mixed,,common,B,Instant — Arcane,,2,,,Golgari Graveyard Value
 Wary Thespian,Mixed,,common,G,Creature — Cat Druid,,2,3.0,1.0,Golgari Graveyard Value
 Eldrazi Repurposer,Mixed,,common,G,Creature — Eldrazi Drone,,3,3.0,3.0,Golgari Graveyard Value
@@ -358,11 +358,11 @@ Infuse with Vitality,Mixed,,common,BG,Instant,,2,,,Golgari Graveyard Value
 Desecrator Hag,Mixed,,common,BG,Creature — Hag,,4,2.0,2.0,Golgari Graveyard Value
 Dreg Mangler,Mixed,,common,BG,Creature — Plant Zombie,,3,3.0,3.0,Golgari Graveyard Value
 Putrid Leech,Mixed,,common,BG,Creature — Zombie Leech,,2,2.0,2.0,Golgari Graveyard Value
+Evolution Witness,Mixed,,common,G,Creature — Elf Shaman Mutant,,3,2.0,1.0,Golgari Graveyard Value
 Grapple with the Past,Mixed,,common,G,Instant,,2,,,Golgari Graveyard Value
 Pulse of Murasa,Mixed,,common,G,Instant,,3,,,Golgari Graveyard Value
 Malevolent Rumble,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
 Winding Way,Mixed,,common,G,Sorcery,,2,,,Golgari Graveyard Value
-Crypt Rats,Mixed,,common,B,Creature — Rat,,3,1.0,1.0,Golgari Graveyard Value
 Cartouche of Solidarity,Mixed,,common,W,Enchantment — Aura Cartouche,,1,,,Boros Aggro
 Goblin Motivator,Mixed,,common,R,Creature — Goblin Warrior,,1,1.0,1.0,Boros Aggro
 Grim Initiate,Mixed,,common,R,Creature — Zombie Warrior,,1,1.0,1.0,Boros Aggro
@@ -373,23 +373,24 @@ Abraded Bluffs,Mixed,,common,,Land — Desert,,0,,,Boros Aggro
 Tenth District Legionnaire,Mixed,,common,RW,Creature — Human Soldier,,2,2.0,2.0,Boros Aggro
 Dog Walker,Mixed,,common,RW,Creature — Human Citizen,,2,3.0,1.0,Boros Aggro
 Flame Slash,Mixed,,common,R,Sorcery,,1,,,Boros Aggro
-You Hear Something on Watch,Mixed,,common,W,Instant,,2,,,Boros Aggro
 Mana Tithe,Mixed,,common,W,Instant,,1,,,Boros Aggro
 Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Boros Aggro
+Prismatic Strands,Mixed,,common,W,Instant,,3,,,Boros Aggro
+Silverback Shaman,Mixed,,common,G,Creature — Ape Shaman,,5,5.0,4.0,Simic Ramp Control
+Annoyed Altisaur,Mixed,,common,G,Creature — Dinosaur,,7,6.0,5.0,Simic Ramp Control
 Repeal,Mixed,,common,U,Instant,,1,,,Simic Ramp Control
 Mana Leak,Mixed,,common,U,Instant,,2,,,Simic Ramp Control
-Prophetic Prism,Mixed,,common,,Artifact,,2,,,Simic Ramp Control
-Evolution Witness,Mixed,,common,G,Creature — Elf Shaman Mutant,,3,2.0,1.0,Simic Ramp Control
 Quandrix Campus,Mixed,,common,,Land,,0,,,Simic Ramp Control
 Snapping Voidcraw,Mixed,,common,GU,Creature — Eldrazi Turtle,,3,1.0,3.0,Simic Ramp Control
 Quandrix Pledgemage,Mixed,,common,GU,Creature — Merfolk Druid,,3,2.0,2.0,Simic Ramp Control
-Coiling Oracle,Mixed,,common,GU,Creature — Snake Elf Druid,,2,1.0,1.0,Simic Ramp Control
 Growth Spiral,Mixed,,common,GU,Instant,,2,,,Simic Ramp Control
+Urban Daggertooth,Mixed,,common,G,Creature — Dinosaur,,4,4.0,3.0,Simic Ramp Control
 Snakeskin Veil,Mixed,,common,G,Instant,,1,,,Simic Ramp Control
 Gitaxian Probe,Mixed,,common,U,Sorcery,,1,,,Simic Ramp Control
-Urban Daggertooth,Mixed,,common,G,Creature — Dinosaur,,4,4.0,3.0,Simic Ramp Control
-Fertile Ground,Mixed,,common,G,Enchantment — Aura,,2,,,Simic Ramp Control
+Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Simic Ramp Control
+You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Simic Ramp Control
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Unassigned
+Alabaster Host Intercessor,Mixed,,common,W,Creature — Phyrexian Samurai,,6,3.0,4.0,Unassigned
 Basilisk Gate,Mixed,,common,,Land — Gate,,0,,,Unassigned
 Boros Garrison,Mixed,,common,,Land,,0,,,Unassigned
 Borrowed Grace,Mixed,,common,W,Instant,,3,,,Unassigned
@@ -399,8 +400,10 @@ Carnophage,Mixed,,common,B,Creature — Zombie,,1,2.0,2.0,Unassigned
 Cavern Harpy,Mixed,,common,BU,Creature — Harpy Beast,,2,2.0,1.0,Unassigned
 Cindering Cutthroat,Mixed,,common,BR,Creature — Lizard Assassin,,3,3.0,2.0,Unassigned
 Clawing Torment,Mixed,,common,B,Enchantment — Aura,,1,,,Unassigned
+Coiling Oracle,Mixed,,common,GU,Creature — Snake Elf Druid,,2,1.0,1.0,Unassigned
 Conduit Pylons,Mixed,,common,,Land — Desert,,0,,,Unassigned
 Contaminated Landscape,Mixed,,common,,Land,,0,,,Unassigned
+Crypt Rats,Mixed,,common,B,Creature — Rat,,3,1.0,1.0,Unassigned
 Deceptive Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Desert,Mixed,,common,,Land — Desert,,0,,,Unassigned
 Disfigure,Mixed,,common,B,Instant,,1,,,Unassigned
@@ -415,7 +418,6 @@ Haunted Fengraf,Mixed,,common,,Land,,0,,,Unassigned
 Hickory Woodlot,Mixed,,common,,Land,,0,,,Unassigned
 Hidden Grotto,Mixed,,common,,Land,,0,,,Unassigned
 Hordeling Outburst,Mixed,,common,R,Sorcery,,3,,,Unassigned
-Lead the Stampede,Mixed,,common,G,Sorcery,,3,,,Unassigned
 Lorehold Campus,Mixed,,common,,Land,,0,,,Unassigned
 Momentary Blink,Mixed,,common,W,Instant,,2,,,Unassigned
 Mutagenic Growth,Mixed,,common,G,Instant,,1,,,Unassigned
@@ -425,27 +427,25 @@ Oblivion Ring,Mixed,,common,W,Enchantment,,3,,,Unassigned
 Pegasus Guardian,Mixed,,common,W,Instant — Adventure,,6,,,Unassigned
 Perilous Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Phyrexian Rager,Mixed,,common,B,Creature — Phyrexian Horror,,3,2.0,2.0,Unassigned
-Prismatic Strands,Mixed,,common,W,Instant,,3,,,Unassigned
 Quicksand,Mixed,,common,,Land,,0,,,Unassigned
 Rally the Peasants,Mixed,,common,W,Instant,,3,,,Unassigned
 Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Unassigned
-Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Unassigned
 Seething Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Settle Beyond Reality,Mixed,,common,W,Sorcery,,5,,,Unassigned
 Shattered Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Sheltering Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Silverquill Campus,Mixed,,common,,Land,,0,,,Unassigned
 Skewer the Critics,Mixed,,common,R,Sorcery,,3,,,Unassigned
+Sulfurous Blast,Mixed,,common,R,Instant,,4,,,Unassigned
 Tamiyo's Safekeeping,Mixed,,common,G,Instant,,1,,,Unassigned
-Tangled Islet,Mixed,,common,,Land — Forest Island,,0,,,Unassigned
 Tempest Angler,Mixed,,common,RU,Creature — Otter Wizard,,3,2.0,2.0,Unassigned
 Tithing Blade,Mixed,,common,B,Artifact,,2,,,Unassigned
 Tocasia's Dig Site,Mixed,,common,,Land,,0,,,Unassigned
 Tragic Slip,Mixed,,common,B,Instant,,1,,,Unassigned
+Tranquil Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Twisted Landscape,Mixed,,common,,Land,,0,,,Unassigned
 Unable to Scream,Mixed,,common,U,Enchantment — Aura,,1,,,Unassigned
 Vampire Lacerator,Mixed,,common,B,Creature — Vampire Warrior,,1,2.0,2.0,Unassigned
 Weakstone's Subjugation,Mixed,,common,U,Enchantment — Aura,,1,,,Unassigned
 Witness Protection,Mixed,,common,U,Enchantment — Aura,,1,,,Unassigned
 Wrenn's Resolve,Mixed,,common,R,Sorcery,,2,,,Unassigned
-You Meet in a Tavern,Mixed,,common,G,Sorcery,,4,,,Unassigned

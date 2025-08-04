@@ -18,10 +18,10 @@ def generate_image_prompt(theme_name):
     
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     
@@ -40,6 +40,12 @@ def generate_image_prompt(theme_name):
     strategy = theme_info['strategy']
     keywords = theme_info['keywords']
     archetype = theme_info['archetype']
+    
+    # Handle enum archetype values
+    if isinstance(archetype, Archetype):
+        archetype_value = archetype.value
+    else:
+        archetype_value = str(archetype) if archetype else 'Midrange'
     
     # Color mapping for visual descriptions
     color_descriptions = {
@@ -77,42 +83,42 @@ def generate_image_prompt(theme_name):
     
     # Archetype-based visual themes
     archetype_themes = {
-        'Aggro': {
+        Archetype.AGGRO.value: {
             'mood': 'dynamic action, speed, aggression',
             'composition': 'diagonal lines, motion blur, charging forward',
             'lighting': 'dramatic, high contrast, intense'
         },
-        'Midrange': {
+        Archetype.MIDRANGE.value: {
             'mood': 'balanced power, strategic positioning, versatility',
             'composition': 'stable triangular forms, layered depth, organized chaos',
             'lighting': 'balanced, natural, clear visibility'
         },
-        'Control': {
+        Archetype.CONTROL.value: {
             'mood': 'patient power, defensive strength, calculated dominance',
             'composition': 'symmetrical, fortress-like, imposing structures',
             'lighting': 'cool, controlled, strategic shadows'
         },
-        'Ramp': {
+        Archetype.RAMP.value: {
             'mood': 'building power, escalating threat, monumental scale',
             'composition': 'vertical emphasis, towering elements, progression',
             'lighting': 'growing intensity, building to climax'
         },
-        'Tempo': {
+        Archetype.TEMPO.value: {
             'mood': 'swift precision, tactical advantage, fluid motion',
             'composition': 'flowing curves, spirals, interconnected elements',
             'lighting': 'quick flashes, stroboscopic, rhythmic'
         },
-        'Tribal': {
+        Archetype.TRIBAL.value: {
             'mood': 'unity, shared purpose, collective strength',
             'composition': 'grouped elements, patterns, repetitive motifs',
             'lighting': 'communal warmth, shared illumination'
         },
-        'Artifacts': {
+        Archetype.ARTIFACTS.value: {
             'mood': 'mechanical precision, technological power, constructed reality',
             'composition': 'geometric shapes, interlocking gears, precise angles',
             'lighting': 'metallic gleams, electric blue, industrial'
         },
-        'Stompy': {
+        Archetype.STOMPY.value: {
             'mood': 'overwhelming force, raw power, crushing dominance',
             'composition': 'massive scale, ground-shaking impact, towering presence',
             'lighting': 'earth-shaking shadows, primal intensity'
@@ -131,7 +137,7 @@ def generate_image_prompt(theme_name):
         color_palettes.append(color_descriptions[color]['palette'])
     
     # Get archetype information
-    archetype_info = archetype_themes.get(archetype, archetype_themes['Midrange'])
+    archetype_info = archetype_themes.get(archetype_value, archetype_themes[Archetype.MIDRANGE.value])
     
     # Extract key thematic elements from keywords
     creature_types = [kw for kw in keywords if kw in ['soldier', 'zombie', 'goblin', 'elf', 'dragon', 'angel', 'wizard', 'beast']]
@@ -149,7 +155,7 @@ def generate_image_prompt(theme_name):
 **Theme Details:**
 - Colors: {' and '.join(color_names)} magic
 - Strategy: {strategy}
-- Archetype: {archetype}
+- Archetype: {archetype_value}
 
 **Visual Elements to Include:**
 - Color Palette: {', '.join(color_palettes)}
@@ -197,7 +203,7 @@ def generate_image_prompt(theme_name):
 - Avoid text or symbols, focus on pure visual storytelling
 
 **Additional Context:**
-The image should immediately convey the essence of a {archetype.lower()} strategy in Magic: The Gathering, representing the {' and '.join(color_names)} color combination through both literal color palette and thematic elements that players would associate with this playstyle."""
+The image should immediately convey the essence of a {archetype_value.lower()} strategy in Magic: The Gathering, representing the {' and '.join(color_names)} color combination through both literal color palette and thematic elements that players would associate with this playstyle."""
 
     return prompt
 
@@ -215,10 +221,10 @@ def generate_theme_image_prompts(theme_names=None):
     """
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     
@@ -269,10 +275,10 @@ def generate_deck_divider(theme_name, deck_dataframe):
     """
     # Import theme data
     try:
-        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+        from .consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
     except ImportError:
         try:
-            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+            from consts import MONO_COLOR_THEMES, DUAL_COLOR_THEMES, Archetype
         except ImportError:
             raise ImportError("Could not import theme constants from consts.py")
     
@@ -287,7 +293,7 @@ def generate_deck_divider(theme_name, deck_dataframe):
         theme_info = {
             'strategy': 'Strategy not found in theme definitions',
             'colors': ['?'],
-            'archetype': 'Unknown'
+            'archetype': Archetype.MIDRANGE
         }
 
     # Helper to wrap text to 50 chars
@@ -302,6 +308,11 @@ def generate_deck_divider(theme_name, deck_dataframe):
 
     card_names.sort()  # Alphabetical order
 
+    # Extract archetype value for display
+    archetype_display = theme_info['archetype']
+    if isinstance(archetype_display, Archetype):
+        archetype_display = archetype_display.value
+
     # Format the divider card
     divider = f"""{'='*50}
 {theme_name.upper().center(50)}
@@ -311,7 +322,7 @@ STRATEGY:
 {wrap_text(theme_info['strategy'])}
 
 COLORS: {' + '.join(theme_info['colors'])}
-ARCHETYPE: {theme_info['archetype']}
+ARCHETYPE: {archetype_display}
 CARDS: {len(card_names)}
 
 {'─'*50}

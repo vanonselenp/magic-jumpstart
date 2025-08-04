@@ -7,6 +7,7 @@ tested, modified, or disabled independently.
 
 import re
 from .base import ScoringRule, CardContext
+from ..consts import Archetype
 
 
 class KeywordMatchingRule(ScoringRule):
@@ -41,33 +42,51 @@ class ArchetypeManaCurveRule(ScoringRule):
         super().__init__("Archetype Mana Curve", "CMC bonuses/penalties based on archetype")
     
     def applies(self, card_context: CardContext, theme_config: dict) -> bool:
-        return theme_config.get('archetype') in ['Aggro', 'Control', 'Midrange']
+        archetype = theme_config.get('archetype')
+        if isinstance(archetype, Archetype):
+            return archetype in [Archetype.AGGRO, Archetype.CONTROL, Archetype.MIDRANGE, Archetype.STOMPY, Archetype.RAMP]
+        # Fallback for string values (for backwards compatibility)
+        return str(archetype) in [Archetype.AGGRO.value, Archetype.CONTROL.value, Archetype.MIDRANGE.value, Archetype.STOMPY.value, Archetype.RAMP.value]
     
     def score(self, card_context: CardContext, theme_config: dict) -> float:
-        archetype = theme_config.get('archetype', '')
+        archetype = theme_config.get('archetype')
         cmc = card_context.cmc
         
-        if archetype == 'Aggro':
+        # Handle enum archetype values
+        if isinstance(archetype, Archetype):
+            archetype_value = archetype.value
+        else:
+            archetype_value = str(archetype) if archetype else ''
+        
+        if archetype_value == Archetype.AGGRO.value or archetype_value == Archetype.STOMPY.value:
             if cmc == 1:
                 return 2.0  # Big bonus for 1-drops
             elif cmc == 2:
                 return 1.0  # Good bonus for 2-drops
             elif cmc >= 4:
-                return -1.0  # Penalty for expensive cards
+                # Stompy allows slightly higher CMC than pure aggro
+                penalty = -0.5 if archetype_value == Archetype.STOMPY.value else -1.0
+                return penalty
         
-        elif archetype == 'Control':
+        elif archetype_value == Archetype.CONTROL.value:
             if cmc >= 4:
                 return 0.5  # Bonus for expensive cards
             elif cmc == 1:
                 return -0.5  # Small penalty for 1-drops
         
-        elif archetype == 'Midrange':
+        elif archetype_value == Archetype.MIDRANGE.value:
             if 2 <= cmc <= 4:
                 return 1.0  # Bonus for 2-4 CMC cards
             elif cmc == 1:
                 return -0.5  # Penalty for too aggressive
             elif cmc >= 5:
                 return -1.0  # Penalty for too expensive
+        
+        elif archetype_value == Archetype.RAMP.value:
+            if cmc >= 5:
+                return 1.0  # Big bonus for expensive cards
+            elif cmc <= 2:
+                return -0.5  # Penalty for cheap cards unless they're ramp
         
         return 0.0
 

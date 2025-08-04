@@ -2,6 +2,53 @@
 
 from enum import Enum
 from typing import Set, List, Dict
+from functools import total_ordering
+
+@total_ordering
+class Archetype(Enum):
+    """Magic: The Gathering deck archetype constants."""
+    AGGRO = 'Aggro'
+    CONTROL = 'Control'
+    MIDRANGE = 'Midrange'
+    RAMP = 'Ramp'
+    TEMPO = 'Tempo'
+    TRIBAL = 'Tribal'
+    ARTIFACTS = 'Artifacts'
+    STOMPY = 'Stompy'
+    
+    def __lt__(self, other):
+        """Define ordering for archetype enum values."""
+        if not isinstance(other, Archetype):
+            return NotImplemented
+        # Order by string value
+        return self.value < other.value
+    
+    def __eq__(self, other):
+        """Define equality for archetype enum values."""
+        if isinstance(other, Archetype):
+            return self.value == other.value
+        elif isinstance(other, str):
+            return self.value == other
+        return False
+    
+    def __hash__(self):
+        """Define hash for archetype enum values."""
+        return hash(self.value)
+    
+    @classmethod
+    def all_archetypes(cls) -> List[str]:
+        """Get all archetype values as a list."""
+        return [archetype.value for archetype in cls]
+    
+    @classmethod
+    def aggressive_archetypes(cls) -> List[str]:
+        """Get archetypes that are aggressive in nature."""
+        return [cls.AGGRO.value, cls.STOMPY.value, cls.TEMPO.value]
+    
+    @classmethod
+    def value_archetypes(cls) -> List[str]:
+        """Get archetypes that focus on card advantage and value."""
+        return [cls.CONTROL.value, cls.MIDRANGE.value, cls.RAMP.value]
 
 class MagicColor(Enum):
     """Magic: The Gathering color constants."""
@@ -11,7 +58,7 @@ class MagicColor(Enum):
     RED = 'R'
     GREEN = 'G'
     COLORLESS = 'C'
-    
+
     @classmethod
     def all_colors(cls) -> List[str]:
         """Get all color values as a list."""
@@ -59,7 +106,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.WHITE.value],
         'strategy': 'Aggressive tribal deck focused on soldier creatures with anthem effects',
         'keywords': ['soldier', 'tribal', 'anthem', 'pump', 'attack', 'vigilance', 'first strike'],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
@@ -68,7 +115,7 @@ MONO_COLOR_THEMES = {
         'strategy': 'Equipment-based deck with efficient creatures and powerful gear',
         'keywords': ['equipment', 'attach', 'equipped', 'equip', 'metalcraft', 'artifact', 'power', 'toughness', 
                     'sword', 'blade', 'equipped creature', 'gets +', 'artifact creature', 'living weapon', 'armor'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_equipment_scorer,
         'core_card_count': 5
     },
@@ -76,7 +123,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.WHITE.value],
         'strategy': 'Mid-to-late game deck with powerful flying angels and protection',
         'keywords': ['angel', 'flying', 'vigilance', 'lifelink', 'protection', 'expensive'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
@@ -84,7 +131,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.WHITE.value],
         'strategy': 'Aggressive low-cost creatures with efficient stats and combat abilities',
         'keywords': ['creature', 'cheap', 'aggressive', 'power', 'attack', 'first strike', 'vigilance', 'efficient', 'low cost', 'small'],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_aggressive_scorer,
         'core_card_count': 3
     },
@@ -94,7 +141,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value],
         'strategy': 'Evasive creatures with flying and tempo spells',
         'keywords': ['flying', 'bird', 'drake', 'spirit', 'bounce', 'counter', 'draw'],
-        'archetype': 'Tempo',
+        'archetype': Archetype.TEMPO,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -102,7 +149,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value],
         'strategy': 'Wizard tribal with spell-based synergies and card advantage',
         'keywords': ['wizard', 'instant', 'sorcery', 'prowess', 'draw', 'counter', 'tribal'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
@@ -110,7 +157,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value],
         'strategy': 'Card advantage engine with draw spells and library manipulation',
         'keywords': ['draw', 'card', 'scry', 'look', 'library', 'hand', 'cycling'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
@@ -118,7 +165,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value],
         'strategy': 'Efficient creatures with evasion and tempo spells for board control',
         'keywords': ['bounce', 'return', 'counter', 'flying', 'flash', 'prowess', 'tempo', 'efficient', 'evasion'],
-        'archetype': 'Tempo',
+        'archetype': Archetype.TEMPO,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -128,7 +175,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Zombie tribal with graveyard recursion and sacrifice synergies',
         'keywords': ['zombie', 'tribal', 'graveyard', 'return', 'sacrifice', 'dies'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
@@ -136,7 +183,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Graveyard-based value engine with recursion and reanimation',
         'keywords': ['graveyard', 'return', 'mill', 'flashback', 'unearth', 'threshold'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
@@ -144,7 +191,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Sacrifice-based deck with death triggers and value generation',
         'keywords': ['sacrifice', 'dies', 'death', 'aristocrats', 'token', 'whenever'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -152,7 +199,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value],
         'strategy': 'Control deck with removal spells and efficient creatures for board control',
         'keywords': ['destroy', 'remove', 'target', 'exile', 'control', 'doom blade', 'murder', 'kill', 'discard', 'draw'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
@@ -162,7 +209,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.RED.value],
         'strategy': 'Fast goblin tribal with haste and explosive plays',
         'keywords': ['goblin', 'tribal', 'haste', 'sacrifice', 'token', 'aggressive'],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
@@ -170,7 +217,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.RED.value],
         'strategy': 'Direct damage spells and hasty creatures for quick wins',
         'keywords': ['damage', 'burn', 'lightning', 'shock', 'direct', 'haste', 'instant'],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_aggressive_scorer,
         'core_card_count': 4
     },
@@ -178,7 +225,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.RED.value],
         'strategy': 'Expensive dragons with powerful effects and flying',
         'keywords': ['dragon', 'flying', 'expensive', 'power', 'trample', 'haste'],
-        'archetype': 'Ramp',
+        'archetype': Archetype.RAMP,
         'scorer': create_tribal_scorer,
         'core_card_count': 3
     },
@@ -187,7 +234,7 @@ MONO_COLOR_THEMES = {
         'strategy': 'Artifact-based deck with improvise and metalcraft synergies',
         'keywords': ['artifact', 'improvise', 'metalcraft', 'construct', 'servo', 'energy', 
                     'equipment', 'enters', 'tap', 'sacrifice', 'colorless', 'cost', 'thopter'],
-        'archetype': 'Artifacts',
+        'archetype': Archetype.ARTIFACTS,
         'scorer': create_artifact_scorer,
         'core_card_count': 4
     },
@@ -199,7 +246,7 @@ MONO_COLOR_THEMES = {
         'keywords': ['elf', 'tribal', 'mana', 'tap', 'forest', 'counter', 'token', 'druid', 
                     'shaman', 'ranger', 'creature', 'add', 'produces', 'enters', 'lord', 
                     'gets +', 'elves you control', 'elf creature'],
-        'archetype': 'Tribal',
+        'archetype': Archetype.TRIBAL,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     },
@@ -207,7 +254,7 @@ MONO_COLOR_THEMES = {
         'colors': [MagicColor.GREEN.value],
         'strategy': 'Mana acceleration into large threats and expensive spells',
         'keywords': ['mana', 'land', 'search', 'expensive', 'big', 'ritual', 'forest'],
-        'archetype': 'Ramp',
+        'archetype': Archetype.RAMP,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -217,7 +264,7 @@ MONO_COLOR_THEMES = {
         'keywords': ['trample', 'power', 'toughness', 'pump', 'overrun', 'fight', 'big', 'large', 
                     'creature', 'beast', 'giant', 'wurm', 'elemental', '4/4', '5/5', '6/6', 
                     'expensive', 'high power', 'stats'],
-        'archetype': 'Stompy',  # Custom archetype instead of generic Aggro
+        'archetype': Archetype.STOMPY,  # Custom archetype instead of generic Aggro
         'scorer': create_aggressive_scorer,
         'core_card_count': 3
     },
@@ -227,7 +274,7 @@ MONO_COLOR_THEMES = {
         'keywords': ['beast', 'tribal', 'power', 'toughness', 'enters', 'expensive', 'bear', 
                     'wolf', 'elephant', 'rhino', 'boar', 'ape', 'creature', 'large', 'big', 
                     'trample', 'fight', 'lord', 'gets +', 'beasts you control'],
-        'archetype': 'Tribal',
+        'archetype': Archetype.TRIBAL,
         'scorer': create_tribal_scorer,
         'core_card_count': 4
     }
@@ -253,7 +300,7 @@ DUAL_COLOR_THEMES = {
             # Control timing
             'flash', 'instant speed', 'end of turn', 'during upkeep'
         ],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'color_priority': 'strict',  # Prioritize true WU cards
         'scorer': create_control_scorer,
         'core_card_count': 4
@@ -264,7 +311,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value, MagicColor.BLACK.value],
         'strategy': 'Mill-based strategy with graveyard interaction and card advantage',
         'keywords': ['mill', 'graveyard', 'library', 'flashback', 'threshold', 'draw'],
-        'archetype': 'Control',
+        'archetype': Archetype.CONTROL,
         'scorer': create_control_scorer,
         'core_card_count': 4
     },
@@ -274,7 +321,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value, MagicColor.RED.value],
         'strategy': 'Aggressive deck with efficient creatures and direct damage',
         'keywords': ['haste', 'damage', 'aggressive', 'sacrifice', 'burn', 'power'],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_aggressive_scorer,
         'core_card_count': 3
     },
@@ -286,7 +333,7 @@ DUAL_COLOR_THEMES = {
         'keywords': ['haste', 'trample', 'efficient', 'versatile', 'combat', 'removal', 
                     'creature', 'aggressive', 'power', 'damage', 'burn', 'fight', 
                     'enters', 'whenever', 'attack', 'deal damage', 'direct'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -298,7 +345,7 @@ DUAL_COLOR_THEMES = {
         'keywords': ['efficient', 'creature', 'removal', 'destroy', 'exile', 'enchantment', 
                     'versatile', 'value', 'enters', 'lifegain', 'vigilance', 'flying', 
                     'combat tricks', 'instant', 'sorcery', 'token', 'utility', 'aura'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -308,7 +355,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.WHITE.value, MagicColor.BLACK.value],
         'strategy': 'Incremental advantage through lifegain and card quality',
         'keywords': ['lifelink', 'lifegain', 'card advantage', 'value', 'ETB effects', 'versatile threats'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -318,7 +365,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.BLUE.value, MagicColor.RED.value],
         'strategy': 'Instant and sorcery synergies with prowess and spell-based creatures',
         'keywords': ['instant', 'sorcery', 'prowess', 'spells', 'trigger', 'burn'],
-        'archetype': 'Tempo',
+        'archetype': Archetype.TEMPO,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -328,7 +375,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.BLACK.value, MagicColor.GREEN.value],
         'strategy': 'Graveyard-based value engine with recursion and sacrifice',
         'keywords': ['graveyard', 'sacrifice', 'return', 'dredge', 'undergrowth', 'dies'],
-        'archetype': 'Midrange',
+        'archetype': Archetype.MIDRANGE,
         'scorer': create_default_scorer,
         'core_card_count': 3
     },
@@ -340,7 +387,7 @@ DUAL_COLOR_THEMES = {
         'keywords': [
             'haste', 'first strike', 'double strike', 'menace', 'pump', 'attack', 'combat', 'burn', 'damage', 'aggressive', 'removal', 'strike', 'rush', 'charge'
         ],
-        'archetype': 'Aggro',
+        'archetype': Archetype.AGGRO,
         'scorer': create_aggressive_scorer,
         'core_card_count': 5,
         'color_priority': 'strict'
@@ -351,7 +398,7 @@ DUAL_COLOR_THEMES = {
         'colors': [MagicColor.GREEN.value, MagicColor.BLUE.value],
         'strategy': 'Ramp into large threats with card draw and protection',
         'keywords': ['ramp', 'mana', 'draw', 'expensive', 'evolve', 'counter', 'adapt'],
-        'archetype': 'Ramp',
+        'archetype': Archetype.RAMP,
         'scorer': create_control_scorer,
         'core_card_count': 4
     }
@@ -362,11 +409,14 @@ ALL_THEMES = {**MONO_COLOR_THEMES, **DUAL_COLOR_THEMES}
 
 # Theme categories for organization
 THEME_CATEGORIES = {
-    'Aggressive': ['White Soldiers', 'Red Goblins', 'Red Burn', 'Green Stompy', 'White Vanguard', 'Rakdos Aggro', 'Boros Aggro'],
-    'Midrange': ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Red Artifacts', 'Green Beasts', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
-    'Control': ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
-    'Ramp': ['Red Inferno', 'Green Elves', 'Green Ramp', 'Simic Ramp Control'],
-    'Tempo': ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter']
+    Archetype.AGGRO.value: ['White Soldiers', 'Red Goblins', 'Red Burn', 'White Vanguard', 'Rakdos Aggro', 'Boros Aggro'],
+    Archetype.MIDRANGE.value: ['White Equipment', 'Black Zombies', 'Black Sacrifice', 'Gruul Midrange', 'Selesnya Value', 'Orzhov Lifegain Value', 'Golgari Graveyard Value'],
+    Archetype.CONTROL.value: ['White Angels', 'Blue Wizards', 'Blue Card Draw', 'Black Graveyard', 'Black Control', 'Azorius Control', 'Dimir Mill'],
+    Archetype.RAMP.value: ['Red Inferno', 'Green Ramp', 'Simic Ramp Control'],
+    Archetype.TEMPO.value: ['Blue Flying', 'Blue Tempo', 'Izzet Spells Matter'],
+    Archetype.TRIBAL.value: ['Green Elves', 'Green Beasts'],
+    Archetype.ARTIFACTS.value: ['Red Artifacts'],
+    Archetype.STOMPY.value: ['Green Stompy']
 }
 
 # Color identity mapping for validation
