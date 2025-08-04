@@ -134,14 +134,6 @@ jumpstart/
 │   ├── validation.py                 # Deck validation and analysis
 │   ├── balance.py                    # Deck performance and balance analysis
 │   └── consts.py                     # Theme definitions and constants
-├── .build/                           # Auto-downloaded MTG data cache
-│   ├── AllPrintings.json.zip         # Downloaded MTG data (122 MB)
-│   ├── AllPrintings.json             # Extracted JSON data (494 MB)
-│   └── cards.csv                     # Processed card database (6.8 MB)
-├── output/                           # Generated analysis outputs
-│   ├── oracle_output.csv             # Processed card oracle
-│   ├── jumpstart_decks.csv           # Generated deck lists
-│   └── deck_performance_analysis.csv # Performance metrics
 ├── jumpstart.ipynb                   # Main analysis notebook
 ├── pauper_cube_example_oracle.txt    # Example card list
 └── pyproject.toml                    # Project dependencies
