@@ -1,14 +1,14 @@
 MAGIC: THE GATHERING KEYWORD VALIDATION REPORT
 ============================================================
 
-Generated: 2025-08-05 16:12:09
+Generated: 2025-08-05 16:46:30
 Cards analyzed: 32,383
 Keyword sets validated: 36
 
 SUMMARY STATISTICS:
 ------------------------------
-Average accuracy score: 0.984
-Accuracy standard deviation: 0.050
+Average accuracy score: 0.983
+Accuracy standard deviation: 0.053
 Sets with >95% accuracy: 33
 Sets with <90% accuracy: 3
 
@@ -27,9 +27,9 @@ INFECT         : 1.000 (227 matches)
 
 PROBLEMATIC KEYWORD SETS:
 -----------------------------------
-AGGRESSIVE     : 0.789 (1955 false positives)
-TRIBAL         : 0.809 (2288 false positives)
-CONTROL        : 0.883 (2440 false positives)
+AGGRESSIVE     : 0.768 (1822 false positives)
+TRIBAL         : 0.812 (2289 false positives)
+CONTROL        : 0.864 (1327 false positives)
 
 RECOMMENDATIONS:
 --------------------

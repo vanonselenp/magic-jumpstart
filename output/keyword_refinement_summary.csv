@@ -1,0 +1,3 @@
+Keyword_Set,Original_Accuracy,Refined_Accuracy,Improvement,Original_Matches,Refined_Matches,Original_False_Positives,Refined_False_Positives
+AGGRESSIVE_KEYWORDS,0.789,0.999,0.21,9279,7856,1955,4
+CONTROL_KEYWORDS,0.883,0.999,0.116,20826,9732,2440,8
