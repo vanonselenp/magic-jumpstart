@@ -1,0 +1,40 @@
+MAGIC: THE GATHERING KEYWORD VALIDATION REPORT
+============================================================
+
+Generated: 2025-08-05 15:17:31
+Cards analyzed: 32,383
+Keyword sets validated: 36
+
+SUMMARY STATISTICS:
+------------------------------
+Average accuracy score: 0.984
+Accuracy standard deviation: 0.050
+Sets with >95% accuracy: 33
+Sets with <90% accuracy: 3
+
+TOP PERFORMING KEYWORD SETS:
+----------------------------------------
+CYCLING        : 1.000 (673 matches)
+STORM          : 1.000 (663 matches)
+PLANESWALKERS  : 1.000 (1,167 matches)
+MADNESS        : 1.000 (1,793 matches)
+MULTICOLOR     : 1.000 (189 matches)
+LIFEGAIN       : 1.000 (2,579 matches)
+KICKER         : 1.000 (631 matches)
+REANIMATOR     : 1.000 (1,317 matches)
+ENERGY         : 1.000 (168 matches)
+INFECT         : 1.000 (227 matches)
+
+PROBLEMATIC KEYWORD SETS:
+-----------------------------------
+AGGRESSIVE     : 0.789 (1955 false positives)
+TRIBAL         : 0.809 (2288 false positives)
+CONTROL        : 0.883 (2440 false positives)
+
+RECOMMENDATIONS:
+--------------------
+1. AGGRESSIVE keywords: Add specific combat terms, avoid generic 'damage'
+2. CONTROL keywords: Separate into creature-control vs spell-control
+3. TRIBAL keywords: Use more context-aware matching
+4. COMBO keywords: Focus on specific combo enablers
+5. Consider implementing negative keywords (exclusions)
