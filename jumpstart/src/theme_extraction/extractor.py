@@ -154,7 +154,7 @@ class ThemeExtractor:
         
         # Analyze different keyword categories
         theme_categories = [
-            ('Equipment', EQUIPMENT_KEYWORDS, Archetype.MIDRANGE, create_equipment_scorer),
+            ('Equipment', EQUIPMENT_KEYWORDS, Archetype.EQUIPMENT, create_equipment_scorer),
             ('Aggro', AGGRESSIVE_KEYWORDS, Archetype.AGGRO, create_aggressive_scorer),
             ('Control', CONTROL_KEYWORDS, Archetype.CONTROL, create_control_scorer),
             ('Ramp', RAMP_KEYWORDS, Archetype.RAMP, create_default_scorer),
@@ -173,6 +173,7 @@ class ThemeExtractor:
             ('Landfall', LANDFALL_KEYWORDS, Archetype.LANDFALL, create_default_scorer),
             ('Cycling', CYCLING_KEYWORDS, Archetype.CYCLING, create_default_scorer),
             ('Madness', MADNESS_KEYWORDS, Archetype.MADNESS, create_default_scorer),
+            ('Midrange', MIDRANGE_KEYWORDS, Archetype.MIDRANGE, create_default_scorer),
             ('Vehicles', VEHICLES_KEYWORDS, Archetype.VEHICLES, create_default_scorer),
             ('Planeswalkers', PLANESWALKERS_KEYWORDS, Archetype.PLANESWALKERS, create_default_scorer),
             ('Historic', HISTORIC_KEYWORDS, Archetype.HISTORIC, create_default_scorer),
@@ -349,47 +350,10 @@ class ThemeExtractor:
             # Analyze keyword themes
             keyword_themes = self._analyze_keyword_themes(colors)
             for i, theme in enumerate(keyword_themes):
-                # Determine theme name based on archetype
-                archetype_names = {
-                    Archetype.AFFINITY: 'Affinity',
-                    Archetype.AGGRO: 'Aggro',
-                    Archetype.ARISTOCRATS: 'Aristocrats',
-                    Archetype.ARTIFACTS: 'Artifacts',
-                    Archetype.BLINK: 'Blink',
-                    Archetype.BURN: 'Burn',
-                    Archetype.COMBO: 'Combo',
-                    Archetype.CONTROL: 'Control',
-                    Archetype.COUNTERS: 'Counters',
-                    Archetype.CYCLING: 'Cycling',
-                    Archetype.DEVOTION: 'Devotion',
-                    Archetype.ELDRAZI: 'Eldrazi',
-                    Archetype.ENCHANTMENTS: 'Enchantments',
-                    Archetype.ENERGY: 'Energy',
-                    Archetype.GRAVEYARD: 'Graveyard',
-                    Archetype.HISTORIC: 'Historic',
-                    Archetype.INFECT: 'Infect',
-                    Archetype.KICKER: 'Kicker',
-                    Archetype.LANDFALL: 'Landfall',
-                    Archetype.LIFEGAIN: 'Lifegain',
-                    Archetype.MADNESS: 'Madness',
-                    Archetype.MIDRANGE: 'Equipment',  # Keep as Equipment for consistency
-                    Archetype.MILL: 'Mill',
-                    Archetype.MULTICOLOR: 'Multicolor',
-                    Archetype.PLANESWALKERS: 'Planeswalkers',
-                    Archetype.RAMP: 'Ramp',
-                    Archetype.REANIMATOR: 'Reanimator',
-                    Archetype.SACRIFICE: 'Sacrifice',
-                    Archetype.SLIVERS: 'Slivers',
-                    Archetype.SPELLSLINGER: 'Spellslinger',
-                    Archetype.STOMPY: 'Stompy',
-                    Archetype.STORM: 'Storm',
-                    Archetype.TEMPO: 'Tempo',
-                    Archetype.TOKENS: 'Tokens',
-                    Archetype.TRIBAL: 'Tribal',
-                    Archetype.VEHICLES: 'Vehicles',
-                    Archetype.VOLTRON: 'Voltron'
-                }
-                theme_name = f"{color_prefix} {archetype_names.get(theme['archetype'], 'Theme')}"
+                # Use enum value directly for theme naming
+                archetype_name = theme['archetype'].value
+                
+                theme_name = f"{color_prefix} {archetype_name}"
                 if theme_name not in all_themes:  # Avoid duplicates
                     all_themes[theme_name] = theme
             

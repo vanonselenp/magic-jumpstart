@@ -127,6 +127,13 @@ MADNESS_KEYWORDS = {
     'empty hand', 'no cards in hand', 'graveyard size'
 }
 
+# Midrange keywords (efficient threats + card advantage + interaction)
+MIDRANGE_KEYWORDS = {
+    'efficient', 'value', 'threat', 'removal', 'interaction', 'versatile',
+    'good stats', 'card advantage', 'flexible', 'balanced', 'quality',
+    'solid', 'reasonable', 'enters.*battlefield', 'when.*enters'
+}
+
 # Vehicles keywords
 VEHICLES_KEYWORDS = {
     'vehicle', 'crew', 'pilot', 'artifact creature', 'becomes.*creature',
@@ -239,6 +246,7 @@ ALL_KEYWORD_SETS = {
     'LANDFALL_KEYWORDS': LANDFALL_KEYWORDS,
     'CYCLING_KEYWORDS': CYCLING_KEYWORDS,
     'MADNESS_KEYWORDS': MADNESS_KEYWORDS,
+    'MIDRANGE_KEYWORDS': MIDRANGE_KEYWORDS,
     'VEHICLES_KEYWORDS': VEHICLES_KEYWORDS,
     'PLANESWALKERS_KEYWORDS': PLANESWALKERS_KEYWORDS,
     'HISTORIC_KEYWORDS': HISTORIC_KEYWORDS,

@@ -22,6 +22,7 @@ class Archetype(Enum):
     ELDRAZI = 'Eldrazi'
     ENCHANTMENTS = 'Enchantments'
     ENERGY = 'Energy'
+    EQUIPMENT = 'Equipment'
     GRAVEYARD = 'Graveyard'
     HISTORIC = 'Historic'
     INFECT = 'Infect'
