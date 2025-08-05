@@ -17,7 +17,8 @@ class ThemeExtractor:
     TRIBAL_TYPES = {
         'soldier', 'wizard', 'goblin', 'elf', 'zombie', 'angel', 'dragon', 
         'beast', 'bird', 'cat', 'dog', 'human', 'vampire', 'werewolf',
-        'knight', 'warrior', 'rogue', 'cleric', 'shaman', 'druid'
+        'knight', 'warrior', 'rogue', 'cleric', 'shaman', 'druid',
+        'sliver', 'eldrazi', 'pirate', 'merfolk', 'faerie', 'ninja'
     }
     
     # Equipment and artifact keywords
@@ -42,6 +43,186 @@ class ThemeExtractor:
     RAMP_KEYWORDS = {
         'mana', 'land', 'search', 'expensive', 'big', 'ritual', 'ramp'
     }
+    
+    # Tempo keywords
+    TEMPO_KEYWORDS = {
+        'bounce', 'return', 'tap', 'counter', 'flash', 'cheap', 'efficient',
+        'draw', 'cantrip', 'pressure', 'disrupt', 'tempo'
+    }
+    
+    # Combo keywords
+    COMBO_KEYWORDS = {
+        'combo', 'synergy', 'enters', 'sacrifice', 'triggered', 'ability',
+        'when', 'whenever', 'cost reduction', 'infinite', 'untap', 'activated'
+    }
+    
+    # Voltron keywords (single creature focus)
+    VOLTRON_KEYWORDS = {
+        'aura', 'enchant', 'attach', 'equipped', 'gets +', 'hexproof',
+        'protection', 'indestructible', 'unblockable', 'trample', 'enchantment'
+    }
+    
+    # Aristocrats keywords (sacrifice/death matters)
+    ARISTOCRATS_KEYWORDS = {
+        'sacrifice', 'dies', 'death', 'creature dies', 'when.*dies',
+        'blood artist', 'drain', 'token', 'creature token', 'etb', 'leaves'
+    }
+    
+    # Graveyard keywords
+    GRAVEYARD_KEYWORDS = {
+        'graveyard', 'return', 'flashback', 'escape', 'delve', 'threshold',
+        'mill', 'self-mill', 'dredge', 'reanimator', 'from.*graveyard'
+    }
+    
+    # Burn/Direct Damage keywords
+    BURN_KEYWORDS = {
+        'damage', 'burn', 'shock', 'bolt', 'deals.*damage', 'ping',
+        'direct damage', 'face damage', 'player', 'target.*player'
+    }
+    
+    # Spellslinger keywords
+    SPELLSLINGER_KEYWORDS = {
+        'instant', 'sorcery', 'prowess', 'spell', 'cast', 'magecraft',
+        'storm', 'copy', 'fork', 'noncreature spell'
+    }
+    
+    # Lifegain keywords
+    LIFEGAIN_KEYWORDS = {
+        'lifegain', 'gain.*life', 'lifelink', 'soul sister', 'soul warden',
+        'when.*gain.*life', 'life total', 'life you gained', 'whenever.*gain.*life'
+    }
+    
+    # Token keywords
+    TOKEN_KEYWORDS = {
+        'token', 'create.*token', 'creature token', 'artifact token',
+        'populate', 'convoke', 'go wide', 'amass', 'fabricate'
+    }
+    
+    # Enchantments matter keywords
+    ENCHANTMENTS_KEYWORDS = {
+        'enchantment', 'constellation', 'enchantress', 'aura', 'enchant',
+        'enchantments matter', 'when.*enchantment.*enters'
+    }
+    
+    # +1/+1 Counters keywords
+    COUNTERS_KEYWORDS = {
+        'counter', '+1/+1', 'modular', 'evolve', 'proliferate', 'graft',
+        'adapt', 'monstrosity', 'renown', 'outlast', 'bolster'
+    }
+    
+    # Mill/Self-Mill keywords
+    MILL_KEYWORDS = {
+        'mill', 'library', 'top.*library', 'bottom.*library', 'self-mill',
+        'surveil', 'look.*top', 'cards.*library'
+    }
+    
+    # Landfall keywords
+    LANDFALL_KEYWORDS = {
+        'landfall', 'land.*enters', 'whenever.*land', 'land drop',
+        'lands matter', 'additional land', 'extra land'
+    }
+    
+    # Cycling keywords
+    CYCLING_KEYWORDS = {
+        'cycling', 'cycle', 'discard.*draw', 'whenever.*cycle',
+        'cycling matters', 'astral slide', 'lightning rift'
+    }
+    
+    # Madness keywords
+    MADNESS_KEYWORDS = {
+        'madness', 'discard', 'whenever.*discard', 'hellbent',
+        'empty hand', 'no cards in hand', 'graveyard size'
+    }
+    
+    # Vehicles keywords
+    VEHICLES_KEYWORDS = {
+        'vehicle', 'crew', 'pilot', 'artifact creature', 'becomes.*creature',
+        'crewed', 'manning'
+    }
+    
+    # Planeswalkers keywords
+    PLANESWALKERS_KEYWORDS = {
+        'planeswalker', 'loyalty', 'superfriends', 'planeswalkers matter',
+        'whenever.*planeswalker', 'loyalty counter'
+    }
+    
+    # Historic keywords (artifacts, legendaries, sagas)
+    HISTORIC_KEYWORDS = {
+        'historic', 'legendary', 'artifact', 'saga', 'historic spell',
+        'artifacts.*legendaries.*sagas'
+    }
+    
+    # Kicker keywords
+    KICKER_KEYWORDS = {
+        'kicker', 'kicked', 'additional cost', 'multikicker', 'entwine',
+        'modal', 'choose.*mode', 'if.*kicked'
+    }
+    
+    # Multicolor/Domain keywords
+    MULTICOLOR_KEYWORDS = {
+        'multicolored', 'domain', 'converge', 'sunburst', 'basic land types',
+        'different.*colors', 'five colors', 'rainbow'
+    }
+    
+    # Blink/ETB Value keywords
+    BLINK_KEYWORDS = {
+        'blink', 'flicker', 'exile.*return', 'enters.*battlefield',
+        'etb', 'leaves.*battlefield', 'when.*enters', 'triggered ability'
+    }
+    
+    # Sacrifice keywords (distinct from aristocrats)
+    SACRIFICE_KEYWORDS = {
+        'sacrifice', 'sac', 'as.*additional.*cost', 'devour', 'exploit',
+        'emerge', 'offering', 'altar'
+    }
+    
+    # Storm keywords
+    STORM_KEYWORDS = {
+        'storm', 'spell.*cast.*turn', 'copy.*spell', 'replicate',
+        'cascade', 'suspend', 'rebound'
+    }
+    
+    # Infect keywords
+    INFECT_KEYWORDS = {
+        'infect', 'poisonous', 'poison counter', 'infected', 'toxic',
+        'wither', 'persist', '-1/-1 counter'
+    }
+    
+    # Reanimator keywords
+    REANIMATOR_KEYWORDS = {
+        'reanimate', 'animate dead', 'return.*creature.*graveyard', 'resurrection',
+        'unearth', 'persist', 'undying', 'return.*battlefield', 'brings back'
+    }
+    
+    # Slivers keywords
+    SLIVERS_KEYWORDS = {
+        'sliver', 'all slivers', 'sliver creatures', 'shared', 'abilities',
+        'all creatures share', 'gains', 'have'
+    }
+    
+    # Eldrazi keywords  
+    ELDRAZI_KEYWORDS = {
+        'eldrazi', 'annihilator', 'devoid', 'colorless', 'exile.*permanent',
+        'ingest', 'process', 'void', 'emerge', 'large'
+    }
+    
+    # Energy keywords
+    ENERGY_KEYWORDS = {
+        'energy', 'energy counter', 'get.*energy', 'pay.*energy',
+        'fabricate', 'servo', 'aetherworks'
+    }
+    
+    # Devotion keywords
+    DEVOTION_KEYWORDS = {
+        'devotion', 'mana symbols', 'permanents you control', 'among permanents',
+        'devotion to', 'colored mana symbols'
+    }
+    
+    # Affinity keywords
+    AFFINITY_KEYWORDS = {
+        'affinity', 'artifact', 'metalcraft', 'costs.*less', 'improvise',
+        'artifact spells', 'artifact creatures', 'cost reduction'
+    }
 
     def __init__(self, oracle_df: pd.DataFrame):
         """Initialize with oracle DataFrame."""
@@ -50,41 +231,16 @@ class ThemeExtractor:
     
     def _preprocess_data(self) -> None:
         """Preprocess the oracle data for analysis."""
-        # Map column names to expected format (handle different naming conventions)
-        column_mapping = {
-            'Color': 'colors',
-            'Type': 'type_line', 
-            'Oracle Text': 'oracle_text',
-            'CMC': 'cmc',
-            'name': 'name'  # Keep as is
-        }
-        
-        # Rename columns to standardized format
-        for old_name, new_name in column_mapping.items():
-            if old_name in self.oracle_df.columns and new_name != old_name:
-                self.oracle_df.rename(columns={old_name: new_name}, inplace=True)
-        
-        # Ensure required columns exist after mapping
-        required_cols = ['name', 'cmc', 'type_line', 'oracle_text', 'colors']
-        for col in required_cols:
-            if col not in self.oracle_df.columns:
-                print(f"Warning: Creating missing column '{col}' with empty values")
-                self.oracle_df[col] = ''
-        
-        # For compatibility with existing code, add mana_cost if it doesn't exist
-        if 'mana_cost' not in self.oracle_df.columns:
-            self.oracle_df['mana_cost'] = ''  # Not available in this dataset
-        
-        # Clean and normalize text data
-        self.oracle_df['oracle_text'] = self.oracle_df['oracle_text'].fillna('').astype(str).str.lower()
-        self.oracle_df['type_line'] = self.oracle_df['type_line'].fillna('').astype(str).str.lower()
-        self.oracle_df['colors'] = self.oracle_df['colors'].fillna('').astype(str)
+        # Clean and normalize text data using original column names
+        self.oracle_df['Oracle Text'] = self.oracle_df['Oracle Text'].fillna('').astype(str).str.lower()
+        self.oracle_df['Type'] = self.oracle_df['Type'].fillna('').astype(str).str.lower()
+        self.oracle_df['Color'] = self.oracle_df['Color'].fillna('').astype(str)
         
         # Convert CMC to numeric, handling non-numeric values
-        self.oracle_df['cmc_numeric'] = pd.to_numeric(self.oracle_df['cmc'], errors='coerce').fillna(0)
+        self.oracle_df['cmc_numeric'] = pd.to_numeric(self.oracle_df['CMC'], errors='coerce').fillna(0)
         
         # Extract creature types
-        self.oracle_df['creature_types'] = self.oracle_df['type_line'].apply(self._extract_creature_types)
+        self.oracle_df['creature_types'] = self.oracle_df['Type'].apply(self._extract_creature_types)
         
         # Calculate derived metrics using numeric CMC
         self.oracle_df['is_expensive'] = self.oracle_df['cmc_numeric'] >= 5
@@ -107,7 +263,7 @@ class ThemeExtractor:
         color_counts = defaultdict(int)
         
         for _, card in self.oracle_df.iterrows():
-            colors = self._parse_colors(card['colors'])  # Use mapped column name
+            colors = self._parse_colors(card['Color'])  # Use original column name
             if colors:
                 color_key = tuple(sorted(colors))
                 color_counts[color_key] += 1
@@ -209,6 +365,36 @@ class ThemeExtractor:
             ('Aggro', self.AGGRESSIVE_KEYWORDS, Archetype.AGGRO, create_aggressive_scorer),
             ('Control', self.CONTROL_KEYWORDS, Archetype.CONTROL, create_control_scorer),
             ('Ramp', self.RAMP_KEYWORDS, Archetype.RAMP, create_default_scorer),
+            ('Tempo', self.TEMPO_KEYWORDS, Archetype.TEMPO, create_aggressive_scorer),
+            ('Combo', self.COMBO_KEYWORDS, Archetype.COMBO, create_default_scorer),
+            ('Voltron', self.VOLTRON_KEYWORDS, Archetype.VOLTRON, create_equipment_scorer),
+            ('Aristocrats', self.ARISTOCRATS_KEYWORDS, Archetype.ARISTOCRATS, create_default_scorer),
+            ('Graveyard', self.GRAVEYARD_KEYWORDS, Archetype.GRAVEYARD, create_default_scorer),
+            ('Burn', self.BURN_KEYWORDS, Archetype.BURN, create_aggressive_scorer),
+            ('Spellslinger', self.SPELLSLINGER_KEYWORDS, Archetype.SPELLSLINGER, create_default_scorer),
+            ('Lifegain', self.LIFEGAIN_KEYWORDS, Archetype.LIFEGAIN, create_default_scorer),
+            ('Tokens', self.TOKEN_KEYWORDS, Archetype.TOKENS, create_default_scorer),
+            ('Enchantments', self.ENCHANTMENTS_KEYWORDS, Archetype.ENCHANTMENTS, create_default_scorer),
+            ('Counters', self.COUNTERS_KEYWORDS, Archetype.COUNTERS, create_default_scorer),
+            ('Mill', self.MILL_KEYWORDS, Archetype.MILL, create_default_scorer),
+            ('Landfall', self.LANDFALL_KEYWORDS, Archetype.LANDFALL, create_default_scorer),
+            ('Cycling', self.CYCLING_KEYWORDS, Archetype.CYCLING, create_default_scorer),
+            ('Madness', self.MADNESS_KEYWORDS, Archetype.MADNESS, create_default_scorer),
+            ('Vehicles', self.VEHICLES_KEYWORDS, Archetype.VEHICLES, create_default_scorer),
+            ('Planeswalkers', self.PLANESWALKERS_KEYWORDS, Archetype.PLANESWALKERS, create_default_scorer),
+            ('Historic', self.HISTORIC_KEYWORDS, Archetype.HISTORIC, create_default_scorer),
+            ('Kicker', self.KICKER_KEYWORDS, Archetype.KICKER, create_default_scorer),
+            ('Multicolor', self.MULTICOLOR_KEYWORDS, Archetype.MULTICOLOR, create_default_scorer),
+            ('Blink', self.BLINK_KEYWORDS, Archetype.BLINK, create_default_scorer),
+            ('Sacrifice', self.SACRIFICE_KEYWORDS, Archetype.SACRIFICE, create_default_scorer),
+            ('Storm', self.STORM_KEYWORDS, Archetype.STORM, create_default_scorer),
+            ('Infect', self.INFECT_KEYWORDS, Archetype.INFECT, create_aggressive_scorer),
+            ('Reanimator', self.REANIMATOR_KEYWORDS, Archetype.REANIMATOR, create_default_scorer),
+            ('Slivers', self.SLIVERS_KEYWORDS, Archetype.SLIVERS, create_tribal_scorer),
+            ('Eldrazi', self.ELDRAZI_KEYWORDS, Archetype.ELDRAZI, create_default_scorer),
+            ('Energy', self.ENERGY_KEYWORDS, Archetype.ENERGY, create_default_scorer),
+            ('Devotion', self.DEVOTION_KEYWORDS, Archetype.DEVOTION, create_default_scorer),
+            ('Affinity', self.AFFINITY_KEYWORDS, Archetype.AFFINITY, create_artifact_scorer),
         ]
         
         for theme_name, keywords, archetype, scorer in theme_categories:
@@ -270,13 +456,13 @@ class ThemeExtractor:
             # Card must contain all filter colors and no others
             return card_colors_set == filter_colors_set
         
-        return self.oracle_df[self.oracle_df['colors'].apply(matches_colors)]
+        return self.oracle_df[self.oracle_df['Color'].apply(matches_colors)]
     
     def _count_keyword_cards(self, df: pd.DataFrame, keywords: Set[str]) -> int:
         """Count cards that contain any of the given keywords."""
         count = 0
         for _, card in df.iterrows():
-            text = f"{card['oracle_text']} {card['type_line']}".lower()
+            text = f"{card['Oracle Text']} {card['Type']}".lower()
             if any(keyword in text for keyword in keywords):
                 count += 1
         return count
@@ -372,10 +558,43 @@ class ThemeExtractor:
             for i, theme in enumerate(keyword_themes):
                 # Determine theme name based on archetype
                 archetype_names = {
+                    Archetype.AFFINITY: 'Affinity',
                     Archetype.AGGRO: 'Aggro',
-                    Archetype.CONTROL: 'Control', 
-                    Archetype.MIDRANGE: 'Equipment',
-                    Archetype.RAMP: 'Ramp'
+                    Archetype.ARISTOCRATS: 'Aristocrats',
+                    Archetype.ARTIFACTS: 'Artifacts',
+                    Archetype.BLINK: 'Blink',
+                    Archetype.BURN: 'Burn',
+                    Archetype.COMBO: 'Combo',
+                    Archetype.CONTROL: 'Control',
+                    Archetype.COUNTERS: 'Counters',
+                    Archetype.CYCLING: 'Cycling',
+                    Archetype.DEVOTION: 'Devotion',
+                    Archetype.ELDRAZI: 'Eldrazi',
+                    Archetype.ENCHANTMENTS: 'Enchantments',
+                    Archetype.ENERGY: 'Energy',
+                    Archetype.GRAVEYARD: 'Graveyard',
+                    Archetype.HISTORIC: 'Historic',
+                    Archetype.INFECT: 'Infect',
+                    Archetype.KICKER: 'Kicker',
+                    Archetype.LANDFALL: 'Landfall',
+                    Archetype.LIFEGAIN: 'Lifegain',
+                    Archetype.MADNESS: 'Madness',
+                    Archetype.MIDRANGE: 'Equipment',  # Keep as Equipment for consistency
+                    Archetype.MILL: 'Mill',
+                    Archetype.MULTICOLOR: 'Multicolor',
+                    Archetype.PLANESWALKERS: 'Planeswalkers',
+                    Archetype.RAMP: 'Ramp',
+                    Archetype.REANIMATOR: 'Reanimator',
+                    Archetype.SACRIFICE: 'Sacrifice',
+                    Archetype.SLIVERS: 'Slivers',
+                    Archetype.SPELLSLINGER: 'Spellslinger',
+                    Archetype.STOMPY: 'Stompy',
+                    Archetype.STORM: 'Storm',
+                    Archetype.TEMPO: 'Tempo',
+                    Archetype.TOKENS: 'Tokens',
+                    Archetype.TRIBAL: 'Tribal',
+                    Archetype.VEHICLES: 'Vehicles',
+                    Archetype.VOLTRON: 'Voltron'
                 }
                 theme_name = f"{color_prefix} {archetype_names.get(theme['archetype'], 'Theme')}"
                 if theme_name not in all_themes:  # Avoid duplicates
