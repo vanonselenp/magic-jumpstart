@@ -149,7 +149,7 @@ def print_detailed_deck_analysis(decks_df: Dict[str, pd.DataFrame], analysis: Di
 
 
 # Main construction function for backward compatibility
-def construct_jumpstart_decks(oracle_df, constraints=None):
+def construct_jumpstart_decks(oracle_df, themes=None, constraints=None):
     """
     Construct all jumpstart decks using the modular deck builder.
     
@@ -158,12 +158,14 @@ def construct_jumpstart_decks(oracle_df, constraints=None):
     
     Args:
         oracle_df (pd.DataFrame): Card database with oracle information
+        themes (Dict[str, Dict[str, Any]], optional): Theme configurations to use.
+                                                     If None, uses ALL_THEMES from consts.
         constraints (CardConstraints, optional): Deck building constraints
     
     Returns:
         Dict[str, pd.DataFrame]: Dictionary mapping theme names to deck DataFrames
     """
-    builder = DeckBuilder(oracle_df, constraints)
+    builder = DeckBuilder(oracle_df, themes, constraints)
     return builder.build_all_decks()
 
 __all__ = [

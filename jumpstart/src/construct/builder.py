@@ -3,8 +3,8 @@ Main deck building orchestrator for Jumpstart cube construction.
 """
 
 import pandas as pd
-from typing import Dict, List
-from ..consts import ALL_THEMES, MONO_COLOR_THEMES, DUAL_COLOR_THEMES
+from typing import Dict, List, Any
+from ..consts import ALL_THEMES
 from .core import CardConstraints, DeckState
 from .selector import CardSelector
 from .utils import is_creature_card, is_land_card, can_land_produce_colors, get_card_type_display
@@ -13,8 +13,9 @@ from .utils import is_creature_card, is_land_card, can_land_produce_colors, get_
 class DeckBuilder:
     """Main deck building orchestrator."""
     
-    def __init__(self, oracle_df: pd.DataFrame, constraints: CardConstraints = None):
+    def __init__(self, oracle_df: pd.DataFrame, themes: Dict[str, Dict[str, Any]] = None, constraints: CardConstraints = None):
         self.oracle_df = oracle_df
+        self.themes = themes or ALL_THEMES  # Use provided themes or fall back to ALL_THEMES
         self.constraints = constraints or CardConstraints()
         self.selector = CardSelector(oracle_df)
         self.decks = {}  # theme_name -> DeckState
@@ -54,7 +55,7 @@ class DeckBuilder:
     
     def _initialize_decks(self):
         """Initialize empty deck states for all themes."""
-        for theme_name in ALL_THEMES:
+        for theme_name in self.themes:
             self.decks[theme_name] = DeckState(cards=[])
     
     def _build_core_card_reservation_phase(self):
@@ -62,7 +63,7 @@ class DeckBuilder:
         print("\n🔒 Phase 0: Core card reservation")
         print("Ensuring each theme gets its defining cards before general competition...")
         
-        for theme_name, theme_config in ALL_THEMES.items():
+        for theme_name, theme_config in self.themes.items():
             self._reserve_core_cards_for_theme(theme_name, theme_config)
     
     def _reserve_core_cards_for_theme(self, theme_name: str, theme_config: dict):
@@ -124,14 +125,18 @@ class DeckBuilder:
         """Phase 1: Assign multicolor cards to dual-color themes."""
         print("\n📦 Phase 1: Multicolor card assignment")
         
-        for theme_name, theme_config in DUAL_COLOR_THEMES.items():
+        # Filter for dual-color themes from the provided themes
+        dual_color_themes = {name: config for name, config in self.themes.items() 
+                           if len(config.get('colors', [])) == 2}
+        
+        for theme_name, theme_config in dual_color_themes.items():
             self._build_deck_phase(theme_name, theme_config, "multicolor")
     
     def _build_general_phase(self):
         """Phase 2: General card assignment for all themes."""
         print("\n📦 Phase 2: General card assignment")
         
-        for theme_name, theme_config in ALL_THEMES.items():
+        for theme_name, theme_config in self.themes.items():
             if self.decks[theme_name].size < self.constraints.target_deck_size:
                 self._build_deck_phase(theme_name, theme_config, "general")
     
@@ -148,7 +153,7 @@ class DeckBuilder:
         incomplete_themes.sort(key=lambda x: x[1].size, reverse=True)
         
         for theme_name, _ in incomplete_themes:
-            theme_config = ALL_THEMES[theme_name]
+            theme_config = self.themes[theme_name]
             self._build_deck_phase(theme_name, theme_config, "completion")
     
     def _build_deck_phase(self, theme_name: str, theme_config: dict, phase: str):
@@ -208,7 +213,7 @@ class DeckBuilder:
             if deck_state.size == 0:
                 continue
             
-            theme_config = ALL_THEMES[theme_name]
+            theme_config = self.themes[theme_name]
             is_mono = len(theme_config['colors']) == 1
             max_lands = self.constraints.get_max_lands(is_mono)
             
@@ -232,7 +237,7 @@ class DeckBuilder:
     
     def _fix_constraint_violations(self, theme_name: str, deck_state: DeckState, violations: List[str]):
         """Fix constraint violations by removing excess cards."""
-        theme_config = ALL_THEMES[theme_name]
+        theme_config = self.themes[theme_name]
         is_mono = len(theme_config['colors']) == 1
         max_lands = self.constraints.get_max_lands(is_mono)
         
@@ -286,11 +291,11 @@ class DeckBuilder:
                   f"(C:{deck_state.creature_count} L:{deck_state.land_count})")
         
         print(f"\n🎯 CONSTRUCTION RESULTS:")
-        print(f"✅ Complete decks: {complete_decks}/{len(ALL_THEMES)}")
+        print(f"✅ Complete decks: {complete_decks}/{len(self.themes)}")
         print(f"📊 Total cards used: {total_cards_used}/{len(self.oracle_df)}")
         
-        if complete_decks == len(ALL_THEMES):
-            print(f"\n🎉 SUCCESS! All {len(ALL_THEMES)} jumpstart decks completed!")
+        if complete_decks == len(self.themes):
+            print(f"\n🎉 SUCCESS! All {len(self.themes)} jumpstart decks completed!")
         
         return deck_dataframes
     
@@ -321,7 +326,7 @@ class DeckBuilder:
         for theme_name in incomplete_themes:
             current_deck = deck_dataframes[theme_name]
             cards_needed = self.constraints.target_deck_size - len(current_deck)
-            theme_config = ALL_THEMES[theme_name]
+            theme_config = self.themes[theme_name]
             theme_colors = set(theme_config['colors'])
             
             print(f"\n🎯 Completing {theme_name} (needs {cards_needed} cards)")
@@ -419,9 +424,9 @@ class DeckBuilder:
         # Final summary
         final_complete = sum(1 for df in deck_dataframes.values() 
                            if len(df) == self.constraints.target_deck_size)
-        final_incomplete = len(ALL_THEMES) - final_complete
+        final_incomplete = len(self.themes) - final_complete
         
-        print(f"✅ Final complete decks: {final_complete}/{len(ALL_THEMES)}")
+        print(f"✅ Final complete decks: {final_complete}/{len(self.themes)}")
         if final_incomplete > 0:
             print(f"⚠️  Remaining incomplete: {final_incomplete}")
             print("   Consider adjusting theme requirements or adding more compatible cards")
