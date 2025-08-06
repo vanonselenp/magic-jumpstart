@@ -461,3 +461,338 @@ class ThemeExtractor:
         
         summary.append(f"**Total Themes Found:** {len(themes)}")
         return "\n".join(summary)
+    
+    def select_optimal_themes(self, themes: Dict[str, Dict[str, Any]], 
+                            mono_count: int = 10, dual_count: int = 10,
+                            prioritize_buildability: bool = True,
+                            diversity_weight: float = 0.3) -> Dict[str, Dict[str, Any]]:
+        """
+        Select an optimal subset of themes for deck construction based on buildability and diversity.
+        
+        Args:
+            themes: Dictionary of all available themes
+            mono_count: Number of mono-color themes to select
+            dual_count: Number of dual-color themes to select  
+            prioritize_buildability: Whether to prioritize themes with more available cards
+            diversity_weight: Weight for diversity scoring (0-1), higher = more diverse
+            
+        Returns:
+            Dictionary of selected themes
+        """
+        print(f"🎯 Selecting optimal themes: {mono_count} mono + {dual_count} dual = {mono_count + dual_count} total")
+        
+        # Separate mono and dual color themes
+        mono_themes = {name: theme for name, theme in themes.items() 
+                      if len(theme['colors']) == 1}
+        dual_themes = {name: theme for name, theme in themes.items() 
+                      if len(theme['colors']) == 2}
+        
+        print(f"Available: {len(mono_themes)} mono, {len(dual_themes)} dual themes")
+        
+        # Select mono-color themes with balanced color distribution
+        selected_mono = self._select_balanced_mono_themes(
+            mono_themes, mono_count, prioritize_buildability, diversity_weight
+        )
+        
+        # Select dual-color themes  
+        selected_dual = self._select_themes_by_criteria(
+            dual_themes, dual_count, prioritize_buildability, diversity_weight, "dual-color"
+        )
+        
+        # Combine selections
+        selected_themes = {}
+        selected_themes.update(selected_mono)
+        selected_themes.update(selected_dual)
+        
+        print(f"\n✅ Selected {len(selected_themes)} themes:")
+        print(f"  📦 Mono-color: {len(selected_mono)}")
+        print(f"  🎭 Dual-color: {len(selected_dual)}")
+        
+        # Show selection summary
+        self._print_selection_summary(selected_themes)
+        
+        return selected_themes
+    
+    def _select_themes_by_criteria(self, themes: Dict[str, Dict[str, Any]], 
+                                 count: int, prioritize_buildability: bool,
+                                 diversity_weight: float, theme_type: str) -> Dict[str, Dict[str, Any]]:
+        """Select themes based on buildability and diversity criteria."""
+        if len(themes) <= count:
+            print(f"  ℹ️  Only {len(themes)} {theme_type} themes available (requested {count})")
+            return themes
+        
+        # Score each theme
+        scored_themes = []
+        for name, theme in themes.items():
+            score = self._calculate_theme_score(name, theme, themes, prioritize_buildability, diversity_weight)
+            scored_themes.append((name, theme, score))
+        
+        # Sort by score (highest first) and select top N
+        scored_themes.sort(key=lambda x: x[2], reverse=True)
+        selected = {name: theme for name, theme, score in scored_themes[:count]}
+        
+        print(f"  🎯 Selected top {len(selected)} {theme_type} themes")
+        
+        return selected
+    
+    def _select_balanced_mono_themes(self, mono_themes: Dict[str, Dict[str, Any]], 
+                                   count: int, prioritize_buildability: bool,
+                                   diversity_weight: float) -> Dict[str, Dict[str, Any]]:
+        """Select mono-color themes with balanced distribution across all five colors."""
+        if len(mono_themes) <= count:
+            print(f"  ℹ️  Only {len(mono_themes)} mono-color themes available (requested {count})")
+            return mono_themes
+        
+        # Group themes by color
+        themes_by_color = defaultdict(list)
+        for name, theme in mono_themes.items():
+            color = theme['colors'][0]  # Single color for mono themes
+            # Normalize color notation (handle both 'W' and 'WHITE' formats)
+            if '.' in color:
+                color_key = color.split('.')[-1]  # Extract 'W' from 'MagicColor.WHITE'
+            else:
+                color_key = color
+            themes_by_color[color_key].append((name, theme))
+        
+        # Calculate themes per color (as evenly as possible)
+        colors = ['W', 'U', 'B', 'R', 'G']  # White, Blue, Black, Red, Green
+        themes_per_color = count // 5
+        extra_themes = count % 5
+        
+        print(f"  🎨 Distributing {count} mono themes: {themes_per_color} per color + {extra_themes} extra")
+        
+        selected = {}
+        color_distribution = {}
+        
+        # First pass: select base number of themes per color
+        for color in colors:
+            if color not in themes_by_color:
+                print(f"  ⚠️  No themes available for color {color}")
+                color_distribution[color] = 0
+                continue
+                
+            available = themes_by_color[color]
+            target_count = themes_per_color
+            
+            # Score and select best themes for this color
+            scored_themes = []
+            for name, theme in available:
+                score = self._calculate_theme_score(name, theme, mono_themes, prioritize_buildability, diversity_weight)
+                scored_themes.append((name, theme, score))
+            
+            # Sort by score and select top themes
+            scored_themes.sort(key=lambda x: x[2], reverse=True)
+            selected_count = min(target_count, len(scored_themes))
+            
+            for i in range(selected_count):
+                name, theme, score = scored_themes[i]
+                selected[name] = theme
+            
+            color_distribution[color] = selected_count
+            print(f"    {color}: {selected_count} themes selected")
+        
+        # Second pass: distribute extra themes to colors with available themes
+        remaining_extra = extra_themes
+        while remaining_extra > 0:
+            # Find colors that still have available themes
+            for color in colors:
+                if remaining_extra <= 0:
+                    break
+                    
+                if color not in themes_by_color:
+                    continue
+                    
+                current_selected = color_distribution[color]
+                available_count = len(themes_by_color[color])
+                
+                if current_selected < available_count:
+                    # Select next best theme for this color
+                    available = themes_by_color[color]
+                    scored_themes = []
+                    for name, theme in available:
+                        if name not in selected:  # Not already selected
+                            score = self._calculate_theme_score(name, theme, mono_themes, prioritize_buildability, diversity_weight)
+                            scored_themes.append((name, theme, score))
+                    
+                    if scored_themes:
+                        scored_themes.sort(key=lambda x: x[2], reverse=True)
+                        name, theme, score = scored_themes[0]
+                        selected[name] = theme
+                        color_distribution[color] += 1
+                        remaining_extra -= 1
+                        print(f"    {color}: +1 extra theme ({color_distribution[color]} total)")
+            
+            # Safety check to avoid infinite loop
+            if remaining_extra == extra_themes:
+                print(f"  ⚠️  Could not distribute {remaining_extra} extra themes (no more available)")
+                break
+            extra_themes = remaining_extra
+        
+        print(f"  🎯 Final distribution: {dict(color_distribution)}")
+        print(f"  ✅ Selected {len(selected)} balanced mono-color themes")
+        
+        return selected
+    
+    def _calculate_theme_score(self, theme_name: str, theme: Dict[str, Any], 
+                             all_themes: Dict[str, Dict[str, Any]],
+                             prioritize_buildability: bool, diversity_weight: float) -> float:
+        """Calculate a score for a theme based on buildability and diversity."""
+        score = 0.0
+        
+        # 1. Buildability Score (0-1)
+        buildability = self._assess_buildability(theme_name, theme)
+        score += buildability * (0.7 if prioritize_buildability else 0.5)
+        
+        # 2. Diversity Score (0-1) 
+        diversity = self._assess_diversity(theme, all_themes)
+        score += diversity * diversity_weight
+        
+        # 3. Archetype Balance Score (0-1)
+        balance = self._assess_archetype_rarity(theme, all_themes)
+        score += balance * (1.0 - diversity_weight - (0.7 if prioritize_buildability else 0.5))
+        
+        return score
+    
+    def _assess_buildability(self, theme_name: str, theme: Dict[str, Any]) -> float:
+        """Assess how likely a theme is to build successfully into a complete deck."""
+        colors = theme['colors']
+        is_mono = len(colors) == 1
+        
+        # Filter cards for this theme
+        filtered_df = self._filter_by_colors([c.split('.')[-1] for c in colors])
+        available_cards = len(filtered_df)
+        
+        # Base score from card availability
+        card_score = min(available_cards / 30.0, 1.0)  # Normalize to 30 cards as ideal
+        
+        # Keyword density bonus
+        keywords = set(theme.get('keywords', []))
+        keyword_matches = 0
+        for _, card in filtered_df.iterrows():
+            text = f"{card['Oracle Text']} {card['Type']}".lower()
+            if any(keyword in text for keyword in keywords):
+                keyword_matches += 1
+        
+        keyword_score = min(keyword_matches / max(available_cards, 1), 0.5)
+        
+        # Archetype suitability
+        archetype = theme.get('archetype')
+        archetype_score = 0.8  # Default good score
+        
+        if archetype:
+            # Bonus for archetypes that are easier to build
+            easy_archetypes = [Archetype.AGGRO, Archetype.MIDRANGE, Archetype.TRIBAL]
+            if archetype in easy_archetypes:
+                archetype_score = 1.0
+            elif archetype in [Archetype.CONTROL, Archetype.COMBO]:
+                archetype_score = 0.6  # Harder to build well
+        
+        # Color availability bonus (mono-color themes easier to build)
+        color_score = 1.0 if is_mono else 0.8
+        
+        total_score = (card_score * 0.4 + keyword_score * 0.3 + 
+                      archetype_score * 0.2 + color_score * 0.1)
+        
+        return min(total_score, 1.0)
+    
+    def _assess_diversity(self, theme: Dict[str, Any], all_themes: Dict[str, Dict[str, Any]]) -> float:
+        """Assess how much diversity this theme adds to the overall selection."""
+        archetype = theme.get('archetype')
+        colors = theme['colors']
+        strategy = theme.get('strategy', '')
+        
+        # Count similar themes
+        similar_archetype_count = sum(1 for t in all_themes.values() 
+                                    if t.get('archetype') == archetype)
+        similar_color_count = sum(1 for t in all_themes.values() 
+                                if set(t['colors']) == set(colors))
+        
+        # Diversity bonus for underrepresented archetypes/colors
+        archetype_diversity = 1.0 / max(similar_archetype_count, 1)
+        color_diversity = 1.0 / max(similar_color_count, 1)
+        
+        # Strategy uniqueness (basic text analysis)
+        strategy_words = set(strategy.lower().split())
+        strategy_diversity = len(strategy_words) / max(len(strategy.split()), 1)
+        
+        diversity_score = (archetype_diversity * 0.5 + color_diversity * 0.3 + 
+                         strategy_diversity * 0.2)
+        
+        return min(diversity_score, 1.0)
+    
+    def _assess_archetype_rarity(self, theme: Dict[str, Any], 
+                               all_themes: Dict[str, Dict[str, Any]]) -> float:
+        """Give bonus to archetypes that are underrepresented."""
+        archetype = theme.get('archetype')
+        
+        # Count archetype frequency
+        archetype_counts = defaultdict(int)
+        for t in all_themes.values():
+            if t.get('archetype'):
+                archetype_counts[t['archetype']] += 1
+        
+        total_themes = len(all_themes)
+        current_count = archetype_counts[archetype]
+        
+        # Bonus for rare archetypes
+        rarity_score = 1.0 - (current_count / max(total_themes, 1))
+        
+        return max(rarity_score, 0.1)  # Minimum score of 0.1
+    
+    def _print_selection_summary(self, selected_themes: Dict[str, Dict[str, Any]]):
+        """Print a summary of selected themes."""
+        print(f"\n📋 THEME SELECTION SUMMARY:")
+        print("=" * 50)
+        
+        # Group by color count
+        mono_themes = {name: theme for name, theme in selected_themes.items() 
+                      if len(theme['colors']) == 1}
+        dual_themes = {name: theme for name, theme in selected_themes.items() 
+                      if len(theme['colors']) == 2}
+        
+        # Mono-color themes with color distribution
+        if mono_themes:
+            print("🟡 MONO-COLOR THEMES:")
+            
+            # Group by color for distribution display
+            color_groups = defaultdict(list)
+            for name, theme in mono_themes.items():
+                color = theme['colors'][0]
+                if '.' in color:
+                    color_key = color.split('.')[-1]
+                else:
+                    color_key = color
+                color_groups[color_key].append((name, theme))
+            
+            # Display by color
+            color_names = {'W': 'White', 'U': 'Blue', 'B': 'Black', 'R': 'Red', 'G': 'Green'}
+            for color in ['W', 'U', 'B', 'R', 'G']:
+                if color in color_groups:
+                    print(f"  {color_names[color]} ({color}): {len(color_groups[color])} themes")
+                    for name, theme in sorted(color_groups[color]):
+                        archetype = theme['archetype'].value if hasattr(theme['archetype'], 'value') else str(theme['archetype'])
+                        print(f"    • {name:<25} - {archetype}")
+                else:
+                    print(f"  {color_names[color]} ({color}): 0 themes")
+        
+        # Dual-color themes  
+        if dual_themes:
+            print("\n🎭 DUAL-COLOR THEMES:")
+            for name, theme in sorted(dual_themes.items()):
+                colors = '+'.join([c.split('.')[-1] if '.' in c else c for c in theme['colors']])
+                archetype = theme['archetype'].value if hasattr(theme['archetype'], 'value') else str(theme['archetype'])
+                print(f"  • {name:<25} ({colors}) - {archetype}")
+        
+        # Archetype distribution
+        archetype_counts = defaultdict(int)
+        for theme in selected_themes.values():
+            archetype = theme['archetype']
+            if hasattr(archetype, 'value'):
+                archetype = archetype.value
+            archetype_counts[str(archetype)] += 1
+        
+        print(f"\n🎯 ARCHETYPE DISTRIBUTION:")
+        for archetype, count in sorted(archetype_counts.items()):
+            print(f"  • {archetype:<12}: {count} themes")
+        
+        print(f"\n✅ Ready for deck construction with {len(selected_themes)} optimized themes!")
