@@ -91,6 +91,9 @@ def export_cube_to_csv(deck_dataframes, filename=None, oracle_df=None):
     column_order = ['Name', 'Set', 'Collector Number', 'Rarity', 'Color Identity', 'Type', 'Mana Cost', 'CMC', 'Power', 'Toughness', 'Tags']
     export_df = export_df[column_order]
     
+    # Sort alphabetically by card name for consistent ordering
+    export_df = export_df.sort_values('Name', key=lambda x: x.str.lower())
+    
     # Export to CSV
     export_df.to_csv(filename, index=False)
     

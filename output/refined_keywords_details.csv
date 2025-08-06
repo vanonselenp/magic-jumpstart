@@ -1,0 +1,68 @@
+Set,Keyword,Type
+AGGRESSIVE,aggressive,Refined
+AGGRESSIVE,attacking creature,Refined
+AGGRESSIVE,attacks alone,Refined
+AGGRESSIVE,attacks each combat,Refined
+AGGRESSIVE,blitz,Refined
+AGGRESSIVE,bloodthirst,Refined
+AGGRESSIVE,can't be blocked,Refined
+AGGRESSIVE,charge,Refined
+AGGRESSIVE,combat damage,Refined
+AGGRESSIVE,dash,Refined
+AGGRESSIVE,deals combat damage,Refined
+AGGRESSIVE,deals damage to any target,Refined
+AGGRESSIVE,deals damage to defending player,Refined
+AGGRESSIVE,double strike,Refined
+AGGRESSIVE,first strike,Refined
+AGGRESSIVE,flash,Refined
+AGGRESSIVE,goes to the dome,Refined
+AGGRESSIVE,haste,Refined
+AGGRESSIVE,menace,Refined
+AGGRESSIVE,must attack,Refined
+AGGRESSIVE,red zone,Refined
+AGGRESSIVE,rush,Refined
+AGGRESSIVE,trample,Refined
+AGGRESSIVE,turn sideways,Refined
+AGGRESSIVE,unblockable,Refined
+AGGRESSIVE,unleash,Refined
+AGGRESSIVE,vigilance,Refined
+CONTROL,board wipe,Refined
+CONTROL,bounce,Refined
+CONTROL,can't attack,Refined
+CONTROL,can't block,Refined
+CONTROL,can't cast,Refined
+CONTROL,card advantage,Refined
+CONTROL,card draw,Refined
+CONTROL,counter target,Refined
+CONTROL,counter target spell,Refined
+CONTROL,counterspell,Refined
+CONTROL,destroy all creatures,Refined
+CONTROL,destroy target creature,Refined
+CONTROL,destroy target permanent,Refined
+CONTROL,doesn't untap,Refined
+CONTROL,draw additional,Refined
+CONTROL,draw cards,Refined
+CONTROL,exile all,Refined
+CONTROL,exile target,Refined
+CONTROL,exile target creature,Refined
+CONTROL,flash,Refined
+CONTROL,flying,Refined
+CONTROL,hexproof,Refined
+CONTROL,instant speed,Refined
+CONTROL,lifelink,Refined
+CONTROL,mass removal,Refined
+CONTROL,permission,Refined
+CONTROL,protection from,Refined
+CONTROL,remove from the game,Refined
+CONTROL,return to hand,Refined
+CONTROL,scry,Refined
+CONTROL,shroud,Refined
+CONTROL,skip,Refined
+CONTROL,spell mastery,Refined
+CONTROL,surveillance,Refined
+CONTROL,tap and it doesn't untap,Refined
+CONTROL,unsummon,Refined
+CONTROL,vigilance,Refined
+CONTROL,ward,Refined
+CONTROL,when.*cast.*instant,Refined
+CONTROL,when.*cast.*sorcery,Refined
