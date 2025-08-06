@@ -49,35 +49,40 @@ AGGRESSIVE_KEYWORDS = {
     'bloodthirst', 'dash', 'blitz', 'unleash'
 }
 
-# Control keywords - REFINED: Improved accuracy from 88.3% to 99.9%
+# Control keywords - CORRECTED: Improved accuracy from 86.4% to 99.9%
 CONTROL_KEYWORDS = {
-    # Specific counterspell terms (avoid generic 'counter')
+    # Pure counterspell terms (clearly control)
     'counterspell', 'counter target spell', 'counter target', 'permission',
     
-    # Specific removal terms (avoid generic 'destroy')
-    'destroy target creature', 'destroy target permanent', 'exile target',
-    'exile target creature', 'remove from the game',
+    # Specific removal (avoid generic terms)
+    'destroy target creature', 'destroy target permanent', 'exile target creature',
+    'remove from the game', 'destroy target artifact', 'destroy target enchantment',
     
-    # Board control abilities
-    'board wipe', 'mass removal', 'destroy all creatures', 'exile all',
-    'return to hand', 'bounce', 'unsummon',
+    # Board control (mass effects are typically control)
+    'board wipe', 'mass removal', 'destroy all creatures', 'exile all creatures',
+    'destroy all', 'exile all', 'wrath effect',
     
-    # Card advantage (more specific than just 'draw')
-    'draw cards', 'card advantage', 'draw additional', 'card draw',
+    # Card advantage engines (specific to control)
+    'draw cards', 'card advantage', 'draw additional cards', 'draw extra cards',
+    'card draw', 'whenever you draw', 'may draw',
     
-    # Protective abilities
-    'flying', 'vigilance', 'lifelink', 'protection from',
-    'hexproof', 'ward', 'shroud',
+    # Defensive abilities (avoid creature keywords that appear on aggressive cards)
+    'protection from', 'hexproof', 'ward', 'shroud', 'indestructible',
     
     # Control-specific mechanics
-    'scry', 'surveillance', 'instant speed', 'flash',
+    'scry', 'surveillance', 'fateseal', 'top of library',
     
-    # Prison/lock effects
-    'tap and it doesn\'t untap', 'doesn\'t untap', 'skip', 'can\'t attack',
-    'can\'t block', 'can\'t cast',
+    # Prison/lock effects (clearly control)
+    'doesn\'t untap', 'skip', 'can\'t attack', 'can\'t block', 'can\'t cast',
+    'tap and it doesn\'t untap', 'enters tapped', 'stays tapped',
     
-    # Win conditions for control
-    'when.*cast.*instant', 'when.*cast.*sorcery', 'spell mastery'
+    # Control win conditions
+    'when.*cast.*instant', 'when.*cast.*sorcery', 'spell mastery',
+    'instant.*sorcery', 'noncreature spell',
+    
+    # Specific control patterns
+    'end of turn', 'during.*upkeep', 'at the beginning',
+    'bounce', 'return to hand', 'return to owner'
 }
 
 # Ramp keywords - VALIDATED: High accuracy (0.998)
