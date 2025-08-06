@@ -323,12 +323,83 @@ class ThemeExtractor:
         }
         return color_map.get(color.upper(), color.upper())
     
-    def extract_themes(self, min_cards_per_theme: int = 10) -> Dict[str, Dict[str, Any]]:
+    def _extract_guild_themes(self) -> Dict[str, Dict[str, Any]]:
+        """Extract guild themes with lower thresholds specifically for 2-color combinations."""
+        guild_themes = {}
+        
+        # Get all 2-color combinations with any number of cards
+        color_combinations = self._get_color_combinations(min_cards=1)
+        two_color_combinations = [(colors, name) for colors, name in color_combinations if len(colors) == 2]
+        
+        for colors, guild_name in two_color_combinations:
+            filtered_df = self._filter_by_colors(colors)
+            card_count = len(filtered_df)
+            
+            if card_count >= 3:  # Lower threshold for guilds
+                # Determine best archetype based on guild identity
+                guild_archetypes = {
+                    'Azorius': Archetype.CONTROL,      # U/W - Control
+                    'Dimir': Archetype.CONTROL,        # U/B - Control/Mill  
+                    'Rakdos': Archetype.AGGRO,         # B/R - Aggro/Burn
+                    'Gruul': Archetype.AGGRO,          # R/G - Aggro/Ramp
+                    'Selesnya': Archetype.MIDRANGE,    # G/W - Tokens/Midrange
+                    'Orzhov': Archetype.MIDRANGE,      # B/W - Lifegain/Midrange
+                    'Izzet': Archetype.TEMPO,          # U/R - Spells/Tempo
+                    'Golgari': Archetype.MIDRANGE,     # B/G - Graveyard/Midrange
+                    'Boros': Archetype.AGGRO,         # R/W - Aggro/Equipment
+                    'Simic': Archetype.RAMP            # G/U - Ramp/Value
+                }
+                
+                archetype = guild_archetypes.get(guild_name, Archetype.MIDRANGE)
+                
+                # Create guild-specific keywords based on the guild identity
+                guild_keywords = {
+                    'Azorius': ['flying', 'counter', 'detain', 'control', 'flying creatures'],
+                    'Dimir': ['mill', 'graveyard', 'card draw', 'control', 'surveillance'], 
+                    'Rakdos': ['haste', 'aggressive', 'damage', 'sacrifice', 'unleash'],
+                    'Gruul': ['trample', 'haste', 'power matters', 'bloodrush', 'ramp'],
+                    'Selesnya': ['tokens', 'populate', 'convoke', 'creatures matter', 'anthem'],
+                    'Orzhov': ['lifegain', 'extort', 'removal', 'aristocrats', 'afterlife'],
+                    'Izzet': ['instant', 'sorcery', 'spells matter', 'card draw', 'overload'],
+                    'Golgari': ['graveyard', 'scavenge', 'dredge', 'sacrifice', 'undergrowth'],
+                    'Boros': ['equipment', 'battalion', 'mentor', 'aggressive', 'combat'],
+                    'Simic': ['card draw', 'ramp', 'evolve', 'adapt', '+1/+1 counters']
+                }
+                
+                keywords = guild_keywords.get(guild_name, ['multicolor', 'synergy'])
+                
+                # Get appropriate scorer for archetype
+                scorer_map = {
+                    Archetype.AGGRO: create_aggressive_scorer,
+                    Archetype.CONTROL: create_control_scorer,
+                    Archetype.MIDRANGE: create_default_scorer,
+                    Archetype.TEMPO: create_aggressive_scorer,
+                    Archetype.RAMP: create_default_scorer
+                }
+                scorer = scorer_map.get(archetype, create_default_scorer)
+                
+                # Create the theme
+                theme = {
+                    'colors': [self._color_to_enum_value(c) for c in colors],
+                    'strategy': f'{guild_name} guild synergies with {archetype.value.lower()} gameplan',
+                    'keywords': keywords,
+                    'archetype': archetype,
+                    'scorer': scorer,
+                    'core_card_count': min(3, max(2, card_count // 2))
+                }
+                
+                theme_name = f"{guild_name} {archetype.value.title()}"
+                guild_themes[theme_name] = theme
+        
+        return guild_themes
+    
+    def extract_themes(self, min_cards_per_theme: int = 10, include_guilds: bool = True) -> Dict[str, Dict[str, Any]]:
         """
         Extract all potential themes from the oracle data.
         
         Args:
             min_cards_per_theme: Minimum number of cards required for a theme
+            include_guilds: Whether to include guild themes with lower thresholds
             
         Returns:
             Dictionary of theme names to theme configurations
@@ -364,6 +435,11 @@ class ThemeExtractor:
                 theme_name = f"{color_prefix} {archetype_name}"
                 if theme_name not in all_themes:
                     all_themes[theme_name] = theme
+        
+        # Add guild themes if requested
+        if include_guilds:
+            guild_themes = self._extract_guild_themes()
+            all_themes.update(guild_themes)
         
         return all_themes
     
