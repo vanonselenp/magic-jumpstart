@@ -28,25 +28,38 @@ EQUIPMENT_KEYWORDS = {
     'sword', 'blade', 'armor', 'weapon', 'improvise', 'construct', 'servo'
 }
 
-# Aggressive keywords - REFINED: Improved accuracy from 78.9% to 99.9%
+# Aggressive keywords - REFINED: Reduced false positives by removing overly broad terms
 AGGRESSIVE_KEYWORDS = {
-    # Core aggressive abilities
+    # Core aggressive abilities - specific keyword abilities
     'haste', 'first strike', 'double strike', 'menace', 
-    'trample', 'vigilance',
+    'trample', 'vigilance', 'intimidate', 'fear',
     
-    # Specific combat terms (avoiding generic 'damage' and 'attack')
-    'combat damage', 'deals combat damage', 'attacking creature',
-    'deals damage to defending player', 'deals damage to any target',
+    # Specific evasion abilities (highly targeted)
+    'unblockable', 'can\'t be blocked', 'cannot block',
+    'attacks alone', 'attacks each combat', 'must attack',
+    'attack each turn if able',
     
-    # Evasion and pressure
-    'can\'t be blocked', 'unblockable', 'attacks alone', 
-    'attacks each combat', 'must attack',
+    # Direct player damage (specific targeting)
+    'deals damage to target player', 'each opponent loses',
+    'direct damage to target player',
     
-    # Aggressive strategies
-    'aggressive', 'rush', 'charge', 'flash',
+    # Aggressive combat triggers (specific patterns)
+    'whenever ~ attacks', 'when ~ deals combat damage',
+    'attacking alone', 'attacking creature gets',
     
-    # Aggressive mechanics
-    'bloodthirst', 'dash', 'blitz', 'unleash'
+    # Aggressive creature types
+    'berserker', 'warrior', 'barbarian', 'goblin',
+    
+    # Aggressive mechanics and abilities
+    'bloodthirst', 'dash', 'blitz', 'unleash', 'battle cry',
+    'exalted', 'bushido', 'rampage',
+    
+    # Landwalk abilities (evasion)
+    'landwalk', 'mountainwalk', 'plainswalk', 'forestwalk',
+    'islandwalk', 'swampwalk',
+    
+    # Aggressive descriptors (when used in context)
+    'hasty', 'aggressive', 'rush'
 }
 
 # Control keywords - CORRECTED: Improved accuracy from 86.4% to 99.9%

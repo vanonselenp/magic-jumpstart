@@ -138,6 +138,12 @@ def _convert_json_to_csv(json_file_path, csv_file_path):
         for set_code, set_data in data['data'].items():
             if 'cards' in set_data:
                 for card in set_data['cards']:
+                    # Get card text and properly escape newlines
+                    card_text = card.get('text', '')
+                    if card_text:
+                        # Replace literal newlines with \n escape sequences
+                        card_text = card_text.replace('\n', '\\n').replace('\r', '\\r')
+                    
                     # Only include the fields we need
                     card_data = {
                         'name': card.get('name', ''),
@@ -145,7 +151,7 @@ def _convert_json_to_csv(json_file_path, csv_file_path):
                         'type': card.get('type', ''),
                         'colors': ','.join(card.get('colors', [])),
                         'colorIdentity': ','.join(card.get('colorIdentity', [])),
-                        'text': card.get('text', ''),
+                        'text': card_text,  # Use escaped text
                         'power': card.get('power', ''),
                         'toughness': card.get('toughness', ''),
                         'setCode': set_code,
@@ -161,7 +167,8 @@ def _convert_json_to_csv(json_file_path, csv_file_path):
         # Remove duplicates, keeping the most recent printing
         df = df.drop_duplicates(subset=['name'], keep='last')
         
-        df.to_csv(csv_file_path, index=False)
+        # Write CSV with proper quoting to handle any remaining special characters
+        df.to_csv(csv_file_path, index=False, quoting=1)  # QUOTE_ALL ensures proper escaping
         print(f"CSV created: {csv_file_path} ({len(df)} unique cards)")
         
     except (json.JSONDecodeError, KeyError) as e:
