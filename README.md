@@ -2,27 +2,50 @@
 
 # Magic: The Gathering Jumpstart Cube Constructor
 
-An intelligent deck construction system for building themed Magic: The Gathering Jumpstart cubes with perfect theme coherence and balanced gameplay from a Pauper Cube. 
+An intelligent deck construction system for building themed Magic: The Gathering Jumpstart cubes with perfect theme coherence and balanced gameplay from any card pool. The system features automated theme extraction, balanced color distribution, and comprehensive performance analysis.
 
 ## Overview
 
-This project automatically constructs 30 themed Jumpstart decks from a card pool, ensuring each deck has strong thematic identity while maintaining balanced gameplay. The system uses a sophisticated multi-phase algorithm with specialized scoring to create cohesive, playable decks.
+This project automatically constructs themed Jumpstart decks from a card pool, ensuring each deck has strong thematic identity while maintaining balanced gameplay. The system uses sophisticated multi-phase algorithms with specialized scoring, automated theme extraction, and intelligent color balancing to create cohesive, playable cubes.
 
 see: [Pauper Jumpstart](https://cubecobra.com/cube/list/pauper-jumpstart-06-2025)
 
 ### Key Features
 
+- **🤖 Automated Theme Extraction**: AI-powered analysis discovers themes from any card pool automatically
+- **⚖️ Balanced Color Distribution**: Ensures equal representation across all Magic colors (20% each)
 - **🎯 Theme-Aware Construction**: Advanced scoring system ensures decks match their intended themes
 - **🔒 Core Card Reservation**: Guarantees theme-defining cards reach their intended decks
-- **⚖️ Constraint Management**: Enforces deck building rules (creature limits, land ratios, etc.)
+- **📏 Constraint Management**: Enforces deck building rules (creature limits, land ratios, etc.)
 - **📊 Comprehensive Analysis**: Detailed reporting on deck composition and theme coherence
 - **🚀 Auto-Download System**: Automatically downloads and caches MTG data - no manual setup required
 - **📈 Performance Analysis**: In-depth deck performance evaluation with improvement suggestions
 - **🏗️ Modular Architecture**: Clean, maintainable codebase with focused responsibilities
+- **🎨 Guild Theme Support**: Automatic detection and inclusion of dual-color guild strategies
 
-## Deck Themes
+## Automated Theme Discovery
 
-The system constructs 30 different themed decks across all colors:
+The system can automatically extract themes from any card pool using advanced keyword analysis and machine learning techniques:
+
+### Theme Extraction Features
+
+- **🔍 Intelligent Keyword Detection**: Analyzes card text for thematic patterns and synergies
+- **🎭 Multi-Level Theme Analysis**: Discovers tribal, mechanical, and strategic themes
+- **🌈 Balanced Color Selection**: Ensures perfect 20% distribution across all five Magic colors
+- **⚙️ Configurable Parameters**: Adjustable minimum card requirements and diversity weights
+- **🎯 Guild Integration**: Automatic detection of dual-color guild strategies
+- **📊 Quality Scoring**: Ranks themes by buildability and coherence
+
+### Supported Theme Types
+
+- **Tribal Themes**: Elves, Goblins, Zombies, Angels, Wizards, Soldiers, etc.
+- **Mechanical Themes**: Equipment, Artifacts, Spells Matter, Graveyard, etc.
+- **Strategic Themes**: Aggro, Control, Ramp, Burn, Mill, etc.
+- **Guild Themes**: Azorius Control, Simic Ramp, Rakdos Aggro, etc.
+
+## Example Deck Themes
+
+The system can construct decks from discovered themes or use predefined themes:
 
 ### White Themes
 - **White Soldiers**: Aggressive tribal deck focused on soldier creatures with anthem effects
@@ -129,12 +152,22 @@ jumpstart/
 │   │   ├── base.py                   # Base scorer classes
 │   │   ├── rules.py                  # Individual scoring rules
 │   │   └── scorer.py                 # Main scorer implementation
+│   ├── theme_extraction/             # Automated theme discovery system
+│   │   ├── __init__.py               # Theme extraction API
+│   │   ├── extractor.py              # Main theme extraction engine
+│   │   ├── keywords.py               # Keyword databases and pattern matching
+│   │   └── utils.py                  # Theme formatting and code generation
+│   ├── balance/                      # Performance analysis and metrics
+│   │   ├── __init__.py               # Balance analysis API
+│   │   ├── metrics.py                # Performance metric calculations
+│   │   ├── archetypes.py             # Archetype-specific analysis
+│   │   └── utils.py                  # Analysis utilities
 │   ├── oracle.py                     # Auto-download MTG data and card processing
 │   ├── export.py                     # CSV export functionality
 │   ├── validation.py                 # Deck validation and analysis
-│   ├── balance.py                    # Deck performance and balance analysis
+│   ├── generate.py                   # Main cube generation orchestrator
 │   └── consts.py                     # Theme definitions and constants
-├── jumpstart.ipynb                   # Main analysis notebook
+├── jumpstart.ipynb                   # Main analysis notebook with comprehensive examples
 ├── pauper_cube_example_oracle.txt    # Example card list
 └── pyproject.toml                    # Project dependencies
 ```
@@ -186,6 +219,42 @@ To refresh data, simply delete the `.build/` directory and run again.
 
 ### Basic Usage
 
+#### Automated Theme Extraction and Balanced Selection
+
+```python
+# Extract themes automatically from your card pool
+from jumpstart.src.theme_extraction.extractor import ThemeExtractor
+from jumpstart.src.oracle import generate_oracle_csv
+import pandas as pd
+
+# Generate oracle with auto-download (first run downloads MTG data)
+generate_oracle_csv('your_card_list.txt', 'output/oracle_output.csv')
+oracle_df = pd.read_csv('output/oracle_output.csv')
+
+# Extract themes with balanced color distribution
+extractor = ThemeExtractor(oracle_df)
+all_themes = extractor.extract_themes(
+    min_cards_per_theme=10, 
+    include_guilds=True  # Include dual-color guild themes
+)
+
+# Generate summary of discovered themes
+print(extractor.generate_theme_summary(all_themes))
+
+# Select optimal themes with perfect color balance
+selected_themes = extractor.select_optimal_themes(
+    themes=all_themes,
+    mono_count=20,  # 20 mono-color themes (4 per color)
+    dual_count=10,  # 10 dual-color guild themes  
+    prioritize_buildability=True,
+    diversity_weight=0.7
+)
+
+# Verify perfect color balance
+color_distribution = extractor.analyze_color_distribution(selected_themes)
+print("Color balance ratio:", color_distribution['balance_ratio'])  # Should be 1.00
+```
+
 #### Quick Start - Build All Decks
 
 ```python
@@ -208,8 +277,12 @@ constraints = CardConstraints(
     max_creatures=9, 
 )
 
-# Build all decks
-deck_dataframes = construct_jumpstart_decks(oracle_df, constraints=constraints)
+# Build all decks using discovered themes (or predefined ALL_THEMES)
+deck_dataframes = construct_jumpstart_decks(
+    oracle_df, 
+    constraints=constraints,
+    themes=selected_themes  # Use extracted themes or ALL_THEMES
+)
 
 # Analyze results
 from jumpstart.src.construct import analyze_deck_composition, print_detailed_deck_analysis
@@ -217,26 +290,52 @@ analysis = analyze_deck_composition(deck_dataframes)
 print_detailed_deck_analysis(deck_dataframes, analysis, constraints)
 ```
 
-#### Performance Analysis
+#### Comprehensive Performance Analysis
 
 ```python
-# Generate comprehensive performance analysis
+# Generate comprehensive performance analysis with improvement suggestions
 from jumpstart.src.balance import compute_all_deck_metrics
 from jumpstart.src.consts import ALL_THEMES
 
-# Calculate detailed performance metrics
-metrics_df = compute_all_deck_metrics(deck_dataframes, ALL_THEMES)
+# Calculate detailed performance metrics across 8 dimensions
+def calculate_deck_performance_metrics(deck_df, theme_name, oracle_df):
+    """
+    Calculates comprehensive performance metrics including:
+    - Speed & Consistency (mana curve efficiency)
+    - Card Quality (power level assessment)  
+    - Threat Density (win condition availability)
+    - Interaction Quality (removal and answers)
+    - Mana Efficiency (cost-to-impact ratio)
+    - Late Game Power (expensive threats)
+    - Archetype Coherence (strategy alignment)
+    - Overall Performance Score (weighted composite)
+    """
+    # ... comprehensive analysis implementation
 
-# The system analyzes:
-# - Speed & Consistency (mana curve efficiency)
-# - Card Quality (power level assessment)  
-# - Threat Density (win condition availability)
-# - Interaction Quality (removal and answers)
-# - Archetype Coherence (strategy alignment)
-# - Overall Performance Score (weighted composite)
+# Analyze all decks with performance scoring
+performance_data = []
+for theme_name, deck_df in deck_dataframes.items():
+    metrics = calculate_deck_performance_metrics(deck_df, theme_name, oracle_df)
+    performance_data.append(metrics)
+
+performance_df = pd.DataFrame(performance_data)
+
+# Generate improvement suggestions for weak decks
+def generate_improvement_suggestions(deck_name, metrics, deck_df):
+    """
+    Provides specific actionable suggestions like:
+    - ⚡ SPEED: Reduce average CMC - add more 1-2 mana cards
+    - 👊 THREATS: Add more win conditions - need creatures with 3+ power
+    - 🛡️ INTERACTION: Add removal spells or counterspells
+    - 🎯 FOCUS: Better align cards with archetype strategy
+    """
+    # ... intelligent suggestion generation
 
 print("Top performing decks:")
-print(metrics_df.nlargest(5, 'overall_performance'))
+print(performance_df.nlargest(5, 'overall_performance'))
+
+# Export comprehensive analysis
+performance_df.to_csv('output/deck_performance_analysis.csv')
 ```
 
 **Running with uv:**
@@ -331,6 +430,31 @@ print(f"Strategy: {theme['strategy']}")
 
 ## Algorithm Innovations
 
+### Automated Theme Extraction System
+
+**Problem**: Manual theme definition required deep MTG knowledge and was time-consuming for custom card pools.
+
+**Solution**: AI-powered theme extraction that:
+- Analyzes card text for thematic keywords and patterns
+- Groups cards by tribal, mechanical, and strategic synergies  
+- Scores theme quality and buildability automatically
+- Discovers both obvious and subtle thematic connections
+- Generates properly formatted theme dictionaries for construction
+
+**Results**: Users can build themed cubes from any card pool without manually defining themes, while maintaining high theme coherence.
+
+### Balanced Color Distribution
+
+**Problem**: Random theme selection could create color imbalances (e.g., 6 white themes, 2 black themes).
+
+**Solution**: Intelligent selection algorithm that:
+- Ensures exactly 20% representation for each Magic color (W, U, B, R, G)
+- Maintains quality-based selection within color constraints
+- Balances mono-color themes equally (4 per color for 20 themes)
+- Handles dual-color guild distribution intelligently
+
+**Results**: Perfect color balance with 1.00 balance ratio, ensuring fair gameplay across all color combinations.
+
 ### Automated MTG Data Management
 
 **Problem**: Manual data setup created barriers to entry and required technical knowledge of MTG data sources.
@@ -364,21 +488,27 @@ Each theme uses purpose-built scorers that understand the specific strategies:
 
 ### Comprehensive Performance Analysis
 
-The system provides detailed performance evaluation for each deck:
+The system provides detailed performance evaluation and improvement recommendations:
 
 **Performance Metrics:**
 - **Speed & Consistency**: Mana curve analysis and game plan reliability
-- **Card Quality**: Individual card power level assessment
+- **Card Quality**: Individual card power level assessment using rarity and efficiency
 - **Threat Density**: Win condition availability and pressure capability  
 - **Interaction Quality**: Removal spells and answer availability
+- **Mana Efficiency**: Cost-to-impact ratio analysis
+- **Late Game Power**: Expensive threat evaluation
 - **Archetype Coherence**: How well the deck follows its intended strategy
 - **Overall Performance**: Weighted composite score for deck ranking
 
 **Analysis Features:**
-- Automated improvement suggestions for weak decks
-- Balance assessment across all archetypes
-- Exportable performance data for external analysis
-- Visual dashboards showing performance comparisons
+- Automated improvement suggestions for weak decks (e.g., "⚡ SPEED: Reduce average CMC", "👊 THREATS: Add win conditions")
+- Balance assessment across all archetypes with statistical analysis
+- Exportable performance data for external analysis (`deck_performance_analysis.csv`)
+- Visual dashboards showing performance comparisons and radar charts
+- Detailed CMC curve analysis with archetype-specific coloring
+- Category leaders identification (fastest, most consistent, highest quality, etc.)
+
+**Smart Recommendations**: The system analyzes each deck's weaknesses and provides specific actionable suggestions like adding early-game cards, improving threat density, or enhancing archetype focus.
 
 ## Output Format
 
@@ -392,16 +522,20 @@ Kor Skyfisher,Mixed,,common,W,Creature - Kor Soldier,,2,2.0,3.0,White Equipment
 ...
 ```
 
+### Oracle Data (`output/oracle_output.csv`)
+Processed card database with complete MTG data including power/toughness, oracle text, and color identity.
+
 ### Performance Analysis (`output/deck_performance_analysis.csv`)
 ```csv
-theme,archetype,overall_performance,speed_score,card_quality,threat_density,interaction_score
-White Soldiers,Aggro,3.245,4.2,2.8,0.65,0.15
-Blue Control,Control,3.012,2.1,3.4,0.45,0.35
+theme,archetype,overall_performance,speed_score,card_quality,threat_density,interaction_score,mana_efficiency,late_game_power,archetype_coherence
+White Soldiers,Aggro,3.245,4.2,2.8,0.65,0.15,1.2,0.1,0.85
+Blue Control,Control,3.012,2.1,3.4,0.45,0.35,0.9,0.3,0.75
+Red Goblins,Aggro,3.156,4.5,2.5,0.70,0.10,1.1,0.05,0.90
 ...
 ```
 
-### Oracle Data (`output/oracle_output.csv`)
-Processed card database with complete MTG data including power/toughness, oracle text, and color identity.
+### Theme Extraction Results (`output/keyword_refinement_summary.csv`)
+Analysis of discovered themes with keyword density and buildability scores.
 
 Each deck is tagged with its theme for easy identification and analysis.
 
@@ -409,11 +543,12 @@ Each deck is tagged with its theme for easy identification and analysis.
 
 Contributions are welcome! The modular architecture makes it easy to:
 
-- **Add new themes** in `src/consts.py`
+- **Add new themes** in `src/consts.py` or use automated theme extraction
 - **Create specialized scorers** for new strategies in `src/scorer/`
 - **Enhance the constraint system** in `src/construct/core.py`
 - **Improve card analysis utilities** in `src/construct/utils.py`
-- **Add performance metrics** in `src/balance.py`
+- **Add performance metrics** in `src/balance/`
+- **Extend theme extraction** with new keyword patterns in `src/theme_extraction/`
 
 ### Development Setup
 
@@ -432,24 +567,30 @@ uv run black jumpstart/src/
 
 ## Future Enhancements
 
-💡 **Performance & Analysis:**
-- Advanced synergy detection algorithms
-- Mulligan probability calculations  
-- Expected win rate modeling
-- Matchup analysis between themes
+💡 **Theme Extraction & AI:**
+- Advanced synergy detection using card interaction patterns
+- Machine learning models for theme quality prediction
+- Natural language processing for flavor-based theme discovery
+- Community-driven theme validation and rating system
 
-💡 **Scoring Improvements:**
-- PowerToughnessRatioRule: Score based on P/T efficiency
-- ColorRequirementRule: Penalty for hard-to-cast cards  
-- SynergyChainRule: Bonus for cards that work well together
-- RarityBasedRule: Consider card rarity in limited environment
-- MetagameRule: Adjust scores based on format considerations
+💡 **Performance & Analysis:**
+- Mulligan probability calculations with opening hand simulation
+- Expected win rate modeling based on deck composition
+- Matchup analysis between themes with statistical modeling
+- Meta-game adaptation for different play environments
+
+💡 **Balance & Optimization:**
+- Genetic algorithms for optimal theme selection
+- Dynamic constraint adjustment based on card pool characteristics  
+- Multi-objective optimization balancing fun, power, and diversity
+- A/B testing framework for cube iterations
 
 💡 **Data & Integration:**
-- EDHRec integration for synergy data
-- Scryfall API integration for real-time card data
-- Export formats for popular platforms (MTGO, Arena, etc.)
-- Deck similarity analysis and clustering
+- EDHRec integration for community synergy data
+- Scryfall API integration for real-time card data and pricing
+- Export formats for popular platforms (MTGO, Arena, Cockatrice, etc.)
+- Deck similarity analysis and clustering for meta-analysis
+- Integration with cube draft simulators for playtesting
 
 ## License
 
