@@ -1,15 +1,15 @@
 Name,Set,Collector Number,Rarity,Color Identity,Type,Mana Cost,CMC,Power,Toughness,Tags
-Abrade,Mixed,,common,R,Instant,,2,,,Red Spellslinger
+Abrade,Mixed,,common,R,Instant,,2,,,Red Burn
 Abraded Bluffs,Mixed,,common,,Land — Desert,,0,,,Boros Aggro
 Abundant Harvest,Mixed,,common,G,Sorcery,,1,,,Green Mill
 Accursed Marauder,Mixed,,common,B,Creature — Zombie Warrior,,2,2.0,1.0,Black Tribals
 Aerie Auxiliary,Mixed,,common,W,Creature — Bird Soldier,,4,3.0,3.0,White Tribals
 Aether Chaser,Mixed,,common,R,Creature — Human Artificer,,2,2.0,1.0,Red Tribals
 Aether Poisoner,Mixed,,common,B,Creature — Human Artificer,,2,1.0,1.0,Black Aristocrats
-Aethersnipe,Mixed,,common,U,Creature — Elemental,,6,4.0,4.0,Simic Ramp
+Aethersnipe,Mixed,,common,U,Creature — Elemental,,6,4.0,4.0,Blue Tempo
 Ainok Bond-Kin,Mixed,,common,W,Creature — Dog Soldier,,2,2.0,1.0,White Slivers
 Alabaster Host Intercessor,Mixed,,common,W,Creature — Phyrexian Samurai,,6,3.0,4.0,Unassigned
-Ambitious Assault,Mixed,,common,R,Instant,,3,,,Izzet Tempo
+Ambitious Assault,Mixed,,common,R,Instant,,3,,,Red Spellslinger
 Ancestral Blade,Mixed,,common,W,Artifact — Equipment,,2,,,White Tribals
 Annoyed Altisaur,Mixed,,common,G,Creature — Dinosaur,,7,6.0,5.0,Green Ramp
 Arbor Elf,Mixed,,common,G,Creature — Elf Druid,,1,1.0,1.0,Green Tempo
@@ -27,7 +27,7 @@ Basilisk Gate,Mixed,,common,,Land — Gate,,0,,,Unassigned
 Basking Broodscale,Mixed,,common,G,Creature — Eldrazi Lizard,,2,2.0,2.0,Green Tempo
 Battle Screech,Mixed,,common,W,Sorcery,,4,,,Selesnya Midrange
 Beetleback Chief,Mixed,,common,R,Creature — Goblin Warrior,,4,2.0,2.0,Red Tribals
-Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Izzet Tempo
+Behold the Multiverse,Mixed,,common,U,Instant,,4,,,Blue Spellslinger
 Blastoderm,Mixed,,common,G,Creature — Beast,,4,5.0,5.0,Green Tempo
 Blessed Hippogriff,Mixed,,common,W,Instant — Adventure,,4,,,White Slivers
 Blightning,Mixed,,common,BR,Sorcery,,3,,,Rakdos Aggro
@@ -75,7 +75,7 @@ Colossal Dreadmask,Mixed,,common,G,Artifact — Equipment,,6,,,Green Voltron
 Combat Professor,Mixed,,common,W,Creature — Bird Cleric,,4,2.0,3.0,White Slivers
 Compulsive Research,Mixed,,common,U,Sorcery,,3,,,Izzet Tempo
 Conclave Naturalists,Mixed,,common,G,Creature — Dryad,,5,4.0,4.0,Green Voltron
-Condescend,Mixed,,common,U,Instant,,1,,,Blue Spellslinger
+Condescend,Mixed,,common,U,Instant,,1,,,Blue Mill
 Conduit Goblin,Mixed,,common,RW,Creature — Goblin Warrior,,2,2.0,2.0,Boros Aggro
 Conduit Pylons,Mixed,,common,,Land — Desert,,0,,,Unassigned
 Consider,Mixed,,common,U,Instant,,1,,,Blue Mill
@@ -96,11 +96,11 @@ Deftblade Elite,Mixed,,common,W,Creature — Human Soldier,,1,1.0,1.0,White Sliv
 Deranged Assistant,Mixed,,common,U,Creature — Human Wizard,,2,1.0,1.0,Blue Mill
 Desecrator Hag,Mixed,,common,BG,Creature — Hag,,4,2.0,2.0,Golgari Midrange
 Desert,Mixed,,common,,Land — Desert,,0,,,Unassigned
-Dimir Aqueduct,Mixed,,common,,Land,,0,,,Blue Tempo
+Dimir Aqueduct,Mixed,,common,,Land,,0,,,Blue Mill
 Dimir Guildmage,Mixed,,common,BU,Creature — Human Wizard,,2,2.0,2.0,Dimir Control
 Dinrova Horror,Mixed,,common,BU,Creature — Horror,,6,4.0,4.0,Dimir Control
 Disfigure,Mixed,,common,B,Instant,,1,,,Black Aristocrats
-Dismal Backwater,Mixed,,common,,Land,,0,,,Blue Spellslinger
+Dismal Backwater,Mixed,,common,,Land,,0,,,Blue Tempo
 Displace,Mixed,,common,U,Instant,,3,,,Izzet Tempo
 Dog Umbra,Mixed,,common,W,Enchantment — Aura,,2,,,White Enchantments
 Dog Walker,Mixed,,common,RW,Creature — Human Citizen,,2,3.0,1.0,Boros Aggro
@@ -111,7 +111,7 @@ Dreg Mangler,Mixed,,common,BG,Creature — Plant Zombie,,3,3.0,3.0,Golgari Midra
 Eagles of the North,Mixed,,common,W,Creature — Bird Soldier,,6,3.0,3.0,White Tribals
 Ecstatic Awakener,Mixed,,common,B,Creature — Demon,,1,4.0,4.0,Black Tempo
 Eldrazi Repurposer,Mixed,,common,G,Creature — Eldrazi Drone,,3,3.0,3.0,Golgari Midrange
-Eldrazi Skyspawner,Mixed,,common,U,Creature — Eldrazi Drone,,3,2.0,1.0,Blue Mill
+Eldrazi Skyspawner,Mixed,,common,U,Creature — Eldrazi Drone,,3,2.0,1.0,Simic Ramp
 Elite Vanguard,Mixed,,common,W,Creature — Human Soldier,,1,2.0,1.0,Boros Aggro
 Elvish Mystic,Mixed,,common,G,Creature — Elf Druid,,1,1.0,1.0,Green Mill
 Ephemerate,Mixed,,common,W,Instant,,1,,,Boros Aggro
@@ -134,10 +134,10 @@ Fertile Ground,Mixed,,common,G,Enchantment — Aura,,2,,,Green Ramp
 Filigree Familiar,Mixed,,common,,Artifact Creature — Fox,,3,2.0,2.0,Dimir Control
 Fireball,Mixed,,common,R,Sorcery,,1,,,Red Aggro
 Fireblade Artist,Mixed,,common,BR,Creature — Human Shaman,,2,2.0,2.0,Rakdos Aggro
-Fireblast,Mixed,,common,R,Instant,,6,,,Red Spellslinger
+Fireblast,Mixed,,common,R,Instant,,6,,,Red Burn
 Firebolt,Mixed,,common,R,Sorcery,,1,,,Red Aggro
 Firebrand Archer,Mixed,,common,R,Creature — Human Archer,,2,2.0,1.0,Red Spellslinger
-Fireslinger,Mixed,,common,R,Creature — Human Wizard,,2,1.0,1.0,Red Burn
+Fireslinger,Mixed,,common,R,Creature — Human Wizard,,2,1.0,1.0,Rakdos Aggro
 First-Sphere Gargantua,Mixed,,common,B,Creature — Phyrexian Horror,,6,5.0,4.0,Black Tribals
 Flame Slash,Mixed,,common,R,Sorcery,,1,,,Red Burn
 Flayer Husk,Mixed,,common,,Artifact — Equipment,,1,,,White Voltron
@@ -147,7 +147,7 @@ Frenzied Goblin,Mixed,,common,R,Creature — Goblin Berserker,,1,1.0,1.0,Red Agg
 Frost Trickster,Mixed,,common,U,Creature — Bird Wizard,,3,2.0,2.0,Blue Tribals
 Galvanic Discharge,Mixed,,common,R,Instant,,1,,,Red Aggro
 Generous Ent,Mixed,,common,G,Creature — Treefolk,,6,5.0,7.0,Green Mill
-Geyser Drake,Mixed,,common,U,Creature — Drake,,3,2.0,3.0,Blue Mill
+Geyser Drake,Mixed,,common,U,Creature — Drake,,3,2.0,3.0,Simic Ramp
 Ghostly Flicker,Mixed,,common,U,Instant,,3,,,Izzet Tempo
 Giant Growth,Mixed,,common,G,Instant,,1,,,Gruul Aggro
 Gideon's Lawkeeper,Mixed,,common,W,Creature — Human Soldier,,1,1.0,1.0,White Enchantments
@@ -158,13 +158,13 @@ Gitaxian Probe,Mixed,,common,U,Sorcery,,1,,,Unassigned
 Gixian Infiltrator,Mixed,,common,B,Creature — Phyrexian Human,,2,2.0,1.0,Black Aristocrats
 Glimmerlight,Mixed,,common,,Artifact — Equipment,,2,,,White Enchantments
 Gnarlid Colony,Mixed,,common,G,Creature — Beast,,2,2.0,2.0,Green Tempo
-Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Unassigned
+Gnawing Crescendo,Mixed,,common,R,Instant,,3,,,Red Spellslinger
 Go for the Throat,Mixed,,common,B,Instant,,2,,,Orzhov Midrange
 Goblin Anarchomancer,Mixed,,common,GR,Creature — Goblin Shaman,,2,2.0,2.0,Gruul Aggro
 Goblin Bushwhacker,Mixed,,common,R,Creature — Goblin Warrior,,1,1.0,1.0,Red Tribals
 Goblin Electromancer,Mixed,,common,RU,Creature — Goblin Wizard,,2,2.0,2.0,Izzet Tempo
 Goblin Motivator,Mixed,,common,R,Creature — Goblin Warrior,,1,1.0,1.0,Red Aggro
-Goblin Surprise,Mixed,,common,R,Instant,,3,,,Unassigned
+Goblin Surprise,Mixed,,common,R,Instant,,3,,,Red Spellslinger
 Gods Willing,Mixed,,common,W,Instant,,1,,,White Slivers
 Goldmeadow Harrier,Mixed,,common,W,Creature — Kithkin Soldier,,1,1.0,1.0,White Slivers
 Golgari Rot Farm,Mixed,,common,,Land,,0,,,Golgari Midrange
@@ -177,7 +177,7 @@ Greatsword of Tyr,Mixed,,common,W,Artifact — Equipment,,2,,,White Voltron
 Grim Bauble,Mixed,,common,B,Artifact,,1,,,Black Tribals
 Grim Initiate,Mixed,,common,R,Creature — Zombie Warrior,,1,1.0,1.0,Red Tribals
 Growth Spiral,Mixed,,common,GU,Instant,,2,,,Unassigned
-Gruul Turf,Mixed,,common,,Land,,0,,,Red Spellslinger
+Gruul Turf,Mixed,,common,,Land,,0,,,Red Burn
 Guardian Idol,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
 Guardian of the Guildpact,Mixed,,common,W,Creature — Spirit,,4,2.0,3.0,White Voltron
 Guildsworn Prowler,Mixed,,common,B,Creature — Tiefling Rogue Assassin,,2,2.0,1.0,Black Aristocrats
@@ -207,7 +207,7 @@ Inspiring Overseer,Mixed,,common,W,Creature — Angel Cleric,,3,2.0,1.0,White Vo
 Inspiring Paladin,Mixed,,common,W,Creature — Human Knight,,3,3.0,3.0,White Slivers
 Into the Roil,Mixed,,common,U,Instant,,2,,,Blue Tempo
 Iron Apprentice,Mixed,,common,,Artifact Creature — Construct,,1,0.0,0.0,Azorius Control
-Izzet Boilerworks,Mixed,,common,,Land,,0,,,Blue Mill
+Izzet Boilerworks,Mixed,,common,,Land,,0,,,Blue Spellslinger
 Izzet Charm,Mixed,,common,RU,Instant,,2,,,Izzet Tempo
 Jackal Pup,Mixed,,common,R,Creature — Jackal,,1,2.0,1.0,Rakdos Aggro
 Jade Avenger,Mixed,,common,G,Creature — Frog Samurai,,2,2.0,2.0,Green Voltron
@@ -230,7 +230,7 @@ Llanowar Elves,Mixed,,common,G,Creature — Elf Druid,,1,1.0,1.0,Green Mill
 Llanowar Visionary,Mixed,,common,G,Creature — Elf Druid,,3,2.0,2.0,Green Tempo
 Loathsome Curator,Mixed,,common,B,Creature — Gorgon Wizard,,5,5.0,4.0,Black Aristocrats
 Longstalk Brawl,Mixed,,common,G,Sorcery,,1,,,Green Tempo
-Looter il-Kor,Mixed,,common,U,Creature — Kor Rogue,,2,1.0,1.0,Blue Tempo
+Looter il-Kor,Mixed,,common,U,Creature — Kor Rogue,,2,1.0,1.0,Blue Mill
 Lorehold Campus,Mixed,,common,,Land,,0,,,Unassigned
 Lose Focus,Mixed,,common,U,Instant,,2,,,Blue Spellslinger
 Lyev Skyknight,Mixed,,common,UW,Creature — Human Knight,,3,3.0,1.0,Azorius Control
@@ -243,19 +243,19 @@ Mandibular Kite,Mixed,,common,W,Artifact — Equipment,,1,,,White Enchantments
 Mardu Skullhunter,Mixed,,common,B,Creature — Human Warrior,,2,2.0,1.0,Black Tempo
 Massive Might,Mixed,,common,G,Instant,,1,,,Gruul Aggro
 Mayhem Patrol,Mixed,,common,R,Creature — Devil Warrior,,2,1.0,2.0,Red Aggro
-Merfolk Looter,Mixed,,common,U,Creature — Merfolk Rogue,,2,1.0,1.0,Blue Tempo
+Merfolk Looter,Mixed,,common,U,Creature — Merfolk Rogue,,2,1.0,1.0,Blue Mill
 Militia Bugler,Mixed,,common,W,Creature — Human Soldier,,3,2.0,3.0,White Tribals
 Mind Stone,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
 Miner's Guidewing,Mixed,,common,W,Creature — Bird,,1,1.0,1.0,Azorius Control
 Mire Triton,Mixed,,common,B,Creature — Zombie Merfolk,,2,2.0,1.0,Dimir Control
 Mirrorshell Crab,Mixed,,common,U,Artifact Creature — Crab,,7,5.0,7.0,Azorius Control
 Miscalculation,Mixed,,common,U,Instant,,2,,,Blue Tempo
-Mist Raven,Mixed,,common,U,Creature — Bird,,4,2.0,2.0,Simic Ramp
+Mist Raven,Mixed,,common,U,Creature — Bird,,4,2.0,2.0,Blue Tempo
 Mistral Singer,Mixed,,common,U,Creature — Siren,,3,2.0,2.0,Blue Spellslinger
 Mocking Sprite,Mixed,,common,U,Creature — Faerie Rogue,,3,2.0,1.0,Blue Spellslinger
 Mogg War Marshal,Mixed,,common,R,Creature — Goblin Warrior,,2,1.0,1.0,Red Tribals
 Molten Gatekeeper,Mixed,,common,R,Artifact Creature — Golem,,3,2.0,3.0,Red Tribals
-Momentary Blink,Mixed,,common,W,Instant,,2,,,Unassigned
+Momentary Blink,Mixed,,common,W,Instant,,2,,,Boros Aggro
 Monastery Swiftspear,Mixed,,common,R,Creature — Human Monk,,1,1.0,2.0,Red Spellslinger
 Monstrous Emergence,Mixed,,common,G,Sorcery,,2,,,Unassigned
 Moon-Circuit Hacker,Mixed,,common,U,Enchantment Creature — Human Ninja,,2,2.0,1.0,Blue Tempo
@@ -297,9 +297,9 @@ Plagued Rusalka,Mixed,,common,B,Creature — Spirit,,1,1.0,1.0,Black Aristocrats
 Planar Disruption,Mixed,,common,W,Enchantment — Aura,,2,,,White Enchantments
 Ponder,Mixed,,common,U,Sorcery,,1,,,Blue Mill
 Porcelain Legionnaire,Mixed,,common,W,Artifact Creature — Phyrexian Soldier,,3,3.0,1.0,Boros Aggro
-Preening Champion,Mixed,,common,U,Creature — Bird Knight,,3,2.0,2.0,Blue Mill
+Preening Champion,Mixed,,common,U,Creature — Bird Knight,,3,2.0,2.0,Simic Ramp
 Preordain,Mixed,,common,U,Sorcery,,1,,,Blue Mill
-Prismari Campus,Mixed,,common,,Land,,0,,,Red Burn
+Prismari Campus,Mixed,,common,,Land,,0,,,Red Spellslinger
 Prismatic Strands,Mixed,,common,W,Instant,,3,,,Orzhov Midrange
 Pristine Talisman,Mixed,,common,,Artifact,,3,,,Selesnya Midrange
 Prophetic Prism,Mixed,,common,,Artifact,,2,,,Rakdos Aggro
@@ -322,16 +322,16 @@ Ram Through,Mixed,,common,G,Instant,,2,,,Gruul Aggro
 Rancor,Mixed,,common,G,Enchantment — Aura,,1,,,Green Voltron
 Ransack the Lab,Mixed,,common,B,Sorcery,,2,,,Golgari Midrange
 Reckless Charge,Mixed,,common,R,Sorcery,,1,,,Red Tribals
-Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Boros Aggro
+Reckless Impulse,Mixed,,common,R,Sorcery,,2,,,Izzet Tempo
 Red Herring,Mixed,,common,R,Artifact Creature — Clue Fish,,2,2.0,2.0,Red Aggro
 Remove Soul,Mixed,,common,U,Instant,,2,,,Blue Tribals
 Renegade Freighter,Mixed,,common,,Artifact — Vehicle,,3,4.0,3.0,Azorius Control
 Repeal,Mixed,,common,U,Instant,,1,,,Blue Tempo
 Retrofitted Transmogrant,Mixed,,common,B,Artifact Creature — Zombie,,1,1.0,1.0,Black Tribals
 Rhox Veteran,Mixed,,common,W,Creature — Rhino Soldier,,4,2.0,4.0,White Tribals
-Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Red Spellslinger
+Rift Bolt,Mixed,,common,R,Sorcery,,3,,,Red Burn
 Rimrock Knight,Mixed,,common,R,Instant — Adventure,,2,,,Red Tribals
-Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Red Burn
+Rolling Thunder,Mixed,,common,R,Sorcery,,2,,,Izzet Tempo
 Safehold Elite,Mixed,,common,GW,Creature — Elf Scout,,2,2.0,2.0,Selesnya Midrange
 Sakura-Tribe Elder,Mixed,,common,G,Creature — Snake Shaman,,2,1.0,1.0,Green Mill
 Sandsteppe Outcast,Mixed,,common,W,Creature — Human Warrior,,3,2.0,1.0,White Voltron
@@ -415,7 +415,7 @@ Urban Daggertooth,Mixed,,common,G,Creature — Dinosaur,,4,4.0,3.0,Green Tempo
 Utopia Sprawl,Mixed,,common,G,Enchantment — Aura,,1,,,Green Voltron
 Vampire Lacerator,Mixed,,common,B,Creature — Vampire Warrior,,1,2.0,2.0,Black Tempo
 Vampire Sovereign,Mixed,,common,B,Creature — Vampire Noble,,5,3.0,4.0,Unassigned
-Vault Skirge,Mixed,,common,B,Artifact Creature — Phyrexian Imp,,2,1.0,1.0,Rakdos Aggro
+Vault Skirge,Mixed,,common,B,Artifact Creature — Phyrexian Imp,,2,1.0,1.0,Unassigned
 Vendetta,Mixed,,common,B,Instant,,1,,,Unassigned
 Village Rites,Mixed,,common,B,Instant,,1,,,Black Spellslinger
 Vines of Vastwood,Mixed,,common,G,Instant,,1,,,Gruul Aggro
@@ -425,7 +425,7 @@ Voracious Varmint,Mixed,,common,G,Creature — Varmint,,2,2.0,2.0,Green Voltron
 Voracious Vermin,Mixed,,common,B,Creature — Rat,,3,2.0,1.0,Black Tribals
 Vulshok Morningstar,Mixed,,common,,Artifact — Equipment,,2,,,White Voltron
 Wall of Roots,Mixed,,common,G,Creature — Plant Wall,,2,0.0,5.0,Green Tempo
-Warden of Evos Isle,Mixed,,common,U,Creature — Bird Wizard,,3,2.0,2.0,Simic Ramp
+Warden of Evos Isle,Mixed,,common,U,Creature — Bird Wizard,,3,2.0,2.0,Unassigned
 Wary Thespian,Mixed,,common,G,Creature — Cat Druid,,2,3.0,1.0,Green Mill
 Waterfront District,Mixed,,common,,Land,,0,,,Dimir Control
 Wayfarer's Bauble,Mixed,,common,,Artifact,,1,,,Rakdos Aggro
@@ -439,7 +439,7 @@ Witch's Cottage,Mixed,,common,,Land — Swamp,,0,,,Black Tribals
 Wither and Bloom,Mixed,,common,B,Instant,,2,,,Dimir Control
 Witherbloom Campus,Mixed,,common,,Land,,0,,,Green Mill
 Witness Protection,Mixed,,common,U,Enchantment — Aura,,1,,,Unassigned
-Witty Roastmaster,Mixed,,common,R,Creature — Devil Citizen,,3,3.0,2.0,Red Burn
+Witty Roastmaster,Mixed,,common,R,Creature — Devil Citizen,,3,3.0,2.0,Unassigned
 Wrangle,Mixed,,common,R,Sorcery,,2,,,Gruul Aggro
 Wrenn's Resolve,Mixed,,common,R,Sorcery,,2,,,Boros Aggro
 Writhing Chrysalis,Mixed,,common,GR,Creature — Eldrazi Drone,,4,2.0,3.0,Unassigned
